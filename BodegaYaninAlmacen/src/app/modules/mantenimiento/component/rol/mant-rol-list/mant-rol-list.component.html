@@ -1,0 +1,52 @@
+<div class="container-fluid px-4 mt-5">
+    <div class="card bg-light mb-3">
+        <div class="card-header text-center">
+            <h1 class="mt-4"> MANTENIMIENTO DE ROL</h1>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Estado</th>
+                        <th>
+                            <button (click)="crearRol(ModalEdit)" class="btn btn-primary btn-sm">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let rol of rols">
+                        <td>{{rol.codigoRol}}</td>
+                        <td>{{rol.nombre}}</td>
+                        <td>{{rol.descripcion}}</td>
+                        <td>{{rol.estado}}</td>
+                        <td>
+                            <button (click)="editarRol(ModalEdit,rol)" class="btn btn-primary btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button (click)="eliminarRegistro(rol.codigoRol)" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+</div>
+
+<ng-template #ModalEdit>
+    <app-mant-rol-register
+        [title]="titleModal"
+        [rol]="rolSelected"
+        [accion]="accionModal"
+        (closeModalEmmit)="getCloseModalEmmit($event)"
+    ></app-mant-rol-register>
+</ng-template>
+

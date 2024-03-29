@@ -1,0 +1,298 @@
+-- Creación de la base de datos
+CREATE DATABASE BodegaYaninAlmacen;
+GO
+USE BodegaYaninAlmacen;
+GO
+
+-- 1. Tabla de documentos
+CREATE TABLE TipoDocumentos
+(	
+	CodigoDocumento INT IDENTITY(100,1) PRIMARY KEY NOT NULL,
+    Nombre            VARCHAR(30) NOT NULL,
+    Descripcion     VARCHAR(100) NOT NULL
+    
+);
+
+-- 2. Tabla de categorías
+CREATE TABLE Categorias
+(
+    CodigoCategoria INT IDENTITY(100,1) PRIMARY KEY NOT NULL,
+    Nombre            VARCHAR(40) NOT NULL,
+    Descripcion     VARCHAR(150) NOT NULL,
+    Estado          BIT NOT NULL DEFAULT(1),
+	FechaRegistro		DateTime NOT NULL,
+	FechaActualizacion	DateTime NOT NULL,
+);
+
+-- 3. Tabla de subcategorías
+CREATE TABLE SubCategorias
+(
+    CodigoSubCategoria	INT IDENTITY(100,1) PRIMARY KEY NOT NULL,
+    CodigoCategoria		INT NOT NULL,
+    Nombre				VARCHAR(40) NOT NULL,
+    Descripcion			VARCHAR(150) NOT NULL,
+    Estado				BIT NOT NULL DEFAULT(1),
+	FechaRegistro		DateTime NOT NULL,
+	FechaActualizacion	DateTime NOT NULL,
+    FOREIGN KEY (CodigoCategoria) REFERENCES Categorias(CodigoCategoria)
+);
+
+-- 4. Tabla de Rol
+CREATE TABLE Rol
+(
+    CodigoRol				INT IDENTITY(100,1) PRIMARY KEY NOT NULL,
+    Nombre					VARCHAR(70) NOT NULL,
+    Descripcion				VARCHAR(70) NOT NULL,
+	Estado					BIT NOT NULL DEFAULT(1)
+);
+
+-- 5. Tabla de Almacenes
+CREATE TABLE Almacenes
+(
+    CodigoAlmacenes			INT IDENTITY(100,1) PRIMARY KEY NOT NULL,
+    Nombre					VARCHAR(70) NOT NULL,
+	CapacidadLimite			INT NOT NULL,
+	Estado					BIT NOT NULL DEFAULT(1)
+);
+
+-- 6. Tabla de Proveedores
+CREATE TABLE Proveedores
+(
+    CodigoProveedor		INT IDENTITY(100,1) PRIMARY KEY NOT NULL,
+	Nombre				VARCHAR(150) NOT NULL,
+    Ruc					VARCHAR(20) NOT NULL,
+	RazonSocial			VARCHAR(500) NOT NULL,
+	Telefono			VARCHAR(15) NOT NULL,
+	Correo				VARCHAR(150) NOT NULL,
+	FechaRegistro		DateTime NOT NULL,
+	FechaActualizacion	DateTime NOT NULL,
+	Estado				BIT NOT NULL DEFAULT(1)
+);
+
+-- 7. Tabla de personas
+CREATE TABLE Personas
+(   
+    CodigoPersona			INT IDENTITY(100,1) PRIMARY KEY NOT NULL,
+    CodigoDocumento			INT NOT NULL,
+	CodigoRol				INT NOT NULL,
+	NumeroDocumento			VARCHAR(15) NOT NULL,
+    Nombre					VARCHAR(50) NOT NULL,
+    ApPaterno				VARCHAR(60) NOT NULL,
+    ApMaterno				VARCHAR(60) NOT NULL,
+    Sexo					CHAR(1) NOT NULL,
+    FechaNacimiento			DATETIME NOT NULL,
+    Correo					VARCHAR(60) NOT NULL,
+    Celular					VARCHAR(12),
+	FOREIGN KEY (CodigoRol) REFERENCES Rol(CodigoRol),
+    FOREIGN KEY (CodigoDocumento) REFERENCES TipoDocumentos(CodigoDocumento),
+);
+
+-- 8. Tabla de Usuarios
+CREATE TABLE Usuarios
+(
+	CodigoUsuario			INT IDENTITY(100,1) PRIMARY KEY NOT NULL,
+	CodigoRol				INT NOT NULL,
+	CodigoPersona			INT NOT NULL,
+	UserName				VARCHAR(50) NOT NULL,
+	Password				VARCHAR(50) NOT NULL,
+	Estado					BIT NOT NULL,
+	FechaRegistro			DATETIME NOT NULL,
+	FechaActualizar			DATETIME NOT NULL,
+	FOREIGN KEY (CodigoPersona) REFERENCES Personas(CodigoPersona),
+	FOREIGN KEY (CodigoRol) REFERENCES Rol(CodigoRol)
+)
+
+
+
+-- 9. Tabla de Unidad de Medidas
+CREATE TABLE UnidadMedidas
+(
+    CodigoUnidadMedida  INT IDENTITY(100,1) PRIMARY KEY NOT NULL,
+    Nombre			VARCHAR(40) NOT NULL unique,
+	Descripcion				VARCHAR(70) NOT NULL,
+    Estado			BIT     NOT NULL default(1)
+)
+
+
+
+-- 10. Tabla de productos
+CREATE TABLE Productos
+(
+    CodigoProducto      INT IDENTITY(100,1) PRIMARY KEY NOT NULL,
+	CodigoUnidadMedida  INT NOT NULL,
+    CodigoCategoria     INT NOT NULL,
+    CodigoSubCategoria  INT NOT NULL,
+	CodigoProveedor		INT NOT NULL,
+	CodigoAlmacenes		INT NOT NULL,
+    Nombre              VARCHAR(70) NOT NULL,
+    Stock               CHAR(4) NOT NULL,
+    Precio              DECIMAL(8,2) NOT NULL,
+    Imagen              VARCHAR(50) NOT NULL,
+    Descripcion         VARCHAR(200) NOT NULL,
+	FOREIGN KEY (CodigoUnidadMedida) REFERENCES UnidadMedidas(CodigoUnidadMedida),
+    FOREIGN KEY (CodigoCategoria) REFERENCES Categorias(CodigoCategoria),
+    FOREIGN KEY (CodigoSubCategoria) REFERENCES SubCategorias(CodigoSubCategoria),
+	FOREIGN KEY (CodigoProveedor) REFERENCES Proveedores(CodigoProveedor),
+	FOREIGN KEY (CodigoAlmacenes) REFERENCES Almacenes(CodigoAlmacenes)
+);
+
+-- 11. Tabla de pedidos
+CREATE TABLE Pedidos
+(
+    CodigoPedido	INT IDENTITY(100,1) PRIMARY KEY NOT NULL,
+	CodigoUsuario	INT NOT NULL,
+    CodigoProducto  INT NOT NULL,
+	MontoTotal		DECIMAL(8,2) NOT NULL,
+	MontoPagado		DECIMAL(8,2) NOT NULL,
+	Vuelto			DECIMAL(8,2) NOT NULL,
+	RegistroPedido	DATETIME NOT NULL,
+    EntregaPedido	DATETIME NOT NULL,
+	FOREIGN KEY (CodigoUsuario) REFERENCES Usuarios(CodigoUsuario),
+    FOREIGN KEY (CodigoProducto) REFERENCES Productos(CodigoProducto),
+);
+
+-- 12. Tabla de detalle de pedidos
+CREATE TABLE DetallePedidos
+(
+    CodigoDetallePedido INT IDENTITY(100,1) PRIMARY KEY,
+    CodigoPedido        INT NOT NULL,
+	Cantidad			DECIMAL(8,2) NOT NULL,
+    PrecioTotal         DECIMAL(8,2) NOT NULL,
+    PrecioUnitario      DECIMAL(8,2) NOT NULL,
+	Estado                BIT NOT NULL,
+	FOREIGN KEY (CodigoPedido) REFERENCES Pedidos(CodigoPedido)
+);
+
+
+-- 13. Tabla de cajas
+CREATE TABLE Cajas
+(
+    CodigoCaja            INT IDENTITY(100,1) PRIMARY KEY,
+    Fecha                 DATETIME,
+    UsuarioApertura       VARCHAR(50),
+    UsuarioCierre         VARCHAR(50),
+    Estado                BIT NOT NULL,
+    MontoApertura         DECIMAL(10,2),
+    MontoCierre           DECIMAL(10,2),
+    MontoAdicional        DECIMAL(10,2)
+);
+
+--14. Tabla de movimientos de cajas
+CREATE TABLE MovimientoCajas
+(
+    CodigoMovimientoCaja INT IDENTITY(100,1) PRIMARY KEY,
+    Tipo                  VARCHAR(30),
+    Monto                 DECIMAL(10,2),
+    CodigoCaja            INT NOT NULL,
+	CodigoPedido            INT NOT NULL,
+    FOREIGN KEY (CodigoPedido) REFERENCES Pedidos(CodigoPedido),
+    FOREIGN KEY (CodigoCaja) REFERENCES Cajas(CodigoCaja)
+);
+
+-- 15. Tabla de Menus
+CREATE TABLE Menus
+(
+    CodigoMenus		INT IDENTITY(100,1) PRIMARY KEY,
+    Nombre          VARCHAR(30),
+    Icono           VARCHAR(30),
+    Url				VARCHAR(1000) NOT NULL,
+);
+
+-- 16. Tabla de MenuRol
+CREATE TABLE MenuRol
+(
+    CodigoMenuRol		INT IDENTITY(100,1) PRIMARY KEY NOT NULL,
+    CodigoMenus				INT NOT NULL,
+	CodigoRol				INT NOT NULL,
+    FOREIGN KEY (CodigoRol) REFERENCES Rol(CodigoRol),
+	FOREIGN KEY (CodigoMenus) REFERENCES Menus(CodigoMenus),
+);
+
+-- 17. Tabla de Error
+CREATE TABLE Error
+(
+    id int NOT NULL,
+    urls varchar(max) NULL,
+    controller nvarchar(200) NULL,
+    ips nvarchar(100) NULL,
+    method nvarchar(20) NULL,
+    user_agent nvarchar(150) NULL,
+    host nvarchar(max) NULL,
+    class_component varchar(100) NULL,
+    function_name varchar(100) NULL,
+    line_number int NOT NULL,
+    error nvarchar(max) NULL,
+    StackTrace nvarchar(max) NULL,
+    statu smallint NOT NULL,
+    request nvarchar(max) NULL,
+    error_code int NOT NULL,
+    id_persona int NULL,
+    usuario_crea int NULL,
+    usuario_actualiza int NOT NULL,
+    fecha_crea datetime2(7) NOT NULL,
+    fecha_actualiza datetime2(7) NOT NULL,
+    id_usuario int NULL,
+    CONSTRAINT PK_Error PRIMARY KEY CLUSTERED 
+    (
+        id ASC
+    ) 
+    WITH (
+        PAD_INDEX = OFF, 
+        STATISTICS_NORECOMPUTE = OFF, 
+        IGNORE_DUP_KEY = OFF, 
+        ALLOW_ROW_LOCKS = ON, 
+        ALLOW_PAGE_LOCKS = ON, 
+        OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF
+    )
+);
+
+GO
+
+-- 18. Vista UsuarioError
+-- Creación de la vista Vista UsuarioError
+CREATE VIEW WVError AS
+SELECT	u.CodigoUsuario, 
+		u.UserName AS NombreUsuario, 
+		e.id AS IdError, 
+		e.urls, 
+		e.controller, 
+		e.ips, 
+		e.method, 
+		e.user_agent, 
+		e.host, 
+		e.class_component, 
+		e.function_name, 
+		e.line_number, 
+		e.error, 
+		e.StackTrace, 
+		e.statu, 
+		e.request, 
+		e.error_code, 
+		e.id_persona, 
+		e.usuario_crea, 
+		e.usuario_actualiza, 
+		e.fecha_crea, 
+		e.fecha_actualiza, 
+		e.id_usuario
+FROM Usuarios u
+INNER JOIN Error e ON u.CodigoUsuario = e.id_usuario;
+GO
+
+-- 19. Vista UsuarioError
+-- Creación de la vista VUsuario
+CREATE VIEW VUsuario AS
+SELECT 
+    U.CodigoUsuario,
+    U.UserName,
+    U.Password,
+    U.Estado AS EstadoUsuario,
+    U.FechaRegistro AS FechaRegistroUsuario,
+    U.FechaActualizar AS FechaActualizarUsuario,
+    R.CodigoRol,
+    R.Nombre AS NombreRol,
+    R.Descripcion AS DescripcionRol,
+    R.Estado AS EstadoRol
+FROM Usuarios U
+INNER JOIN Rol R ON U.CodigoRol = R.CodigoRol;
+
+

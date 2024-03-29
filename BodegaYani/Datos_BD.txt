@@ -1,0 +1,190 @@
+-- Insertar datos en la tabla Almacen
+INSERT INTO Almacenes 
+(Nombre, CapacidadLimite)
+VALUES 
+('Almacen A', 1000),
+('Almacen B', 1000);
+-- Verificar los datos insertados en la tabla Almacen
+SELECT * FROM Almacenes;
+
+-- Insertar datos en la tabla Proveedores
+INSERT INTO Proveedores 
+(Nombre, Ruc, RazonSocial, Telefono, Correo, FechaRegistro, FechaActualizacion)
+VALUES 
+('Distribuidora Los Andes', '20123456789', 'Distribuidora Los Andes SAC', '965432178', 'distribuidoralosandes@gmail.com', GETDATE(), GETDATE()),
+('Minimarket La Esquina', '20987654321', 'Minimarket La Esquina EIRL', '987654321', 'minimarketlaesquina@gmail.com', GETDATE(), GETDATE()),
+('Distribuidora San Miguel', '20345678901', 'Distribuidora San Miguel SAC', '943215678', 'distribuidorasanmiguel@gmail.com', GETDATE(), GETDATE()),
+('Distribuidora La Económica', '20567890123', 'Distribuidora La Económica SAC', '987654321', 'distribuidoralaeconomica@gmail.com', GETDATE(), GETDATE()),
+('Bodega San José', '20765432109', 'Bodega San José EIRL', '123456789', 'bodegasanjose@gmail.com', GETDATE(), GETDATE());
+-- Verificar los datos insertados en la tabla Proveedores
+SELECT * FROM Proveedores;
+
+-- Insertar datos en la tabla Categorias
+INSERT INTO Categorias 
+(Nombre, Descripcion, FechaRegistro, FechaActualizacion)
+VALUES 
+('Gaseosa', 'Bebida saborizada, efervescente (carbonatada) y sin alcohol', GETDATE(), GETDATE()),
+('Lácteos', 'Productos lácteos como leche, queso, yogur, etc.', GETDATE(), GETDATE()),
+('Carnes', 'Diferentes tipos de carnes frescas y cortes', GETDATE(), GETDATE()),
+('Verduras', 'Vegetales frescos y variados', GETDATE(), GETDATE()),
+('Cereales y Granos', 'Variedad de cereales, arroces, legumbres, etc.', GETDATE(), GETDATE()),
+('Bebidas Alcohólicas', 'Variedad de bebidas alcohólicas como vinos, cervezas, licores, etc.', GETDATE(), GETDATE()),
+('Panadería', 'Variedad de pan fresco y productos horneados', GETDATE(), GETDATE()),
+('Productos de Limpieza', 'Artículos para la limpieza del hogar y productos de higiene', GETDATE(), GETDATE()),
+('Snacks y Dulces', 'Diversos aperitivos, chocolates, caramelos, etc.', GETDATE(), GETDATE()),
+('Condimentos y Especias', 'Sazonadores y especias para dar sabor a las comidas', GETDATE(), GETDATE()),
+('Productos enlatados', 'Alimentos enlatados como conservas, salsas, etc.', GETDATE(), GETDATE()),
+('Galletas', 'Variedad de galletas dulces y saladas para satisfacer diferentes gustos y necesidades', GETDATE(), GETDATE());
+-- Verificar los datos insertados en la tabla Categorias
+SELECT * FROM Categorias;
+
+-- Insertar datos en la tabla SubCategorias
+INSERT INTO SubCategorias 
+(CodigoCategoria, Nombre, Descripcion, FechaRegistro, FechaActualizacion) 
+VALUES 
+(100, 'Refrescos', 'Bebidas gaseosas y refrescantes', GETDATE(), GETDATE()),
+(100, 'Agua', 'Agua embotellada y bebidas sin gas', GETDATE(), GETDATE()),
+(101, 'Leche', 'Variedad de leches frescas y productos lácteos líquidos', GETDATE(), GETDATE()),
+(101, 'Queso', 'Diferentes tipos de quesos y productos lácteos sólidos', GETDATE(), GETDATE()),
+(102, 'Carnes Rojas', 'Carnes de res, cordero y cerdo', GETDATE(), GETDATE()),
+(102, 'Carnes Blancas', 'Carnes de pollo, pavo y otras aves', GETDATE(), GETDATE()),
+(103, 'Vegetales Frescos', 'Vegetales frescos como tomates, lechugas, zanahorias, etc.', GETDATE(), GETDATE()),
+(103, 'Vegetales Congelados', 'Vegetales congelados para mayor durabilidad', GETDATE(), GETDATE()),
+(104, 'Cereales', 'Variedad de cereales para el desayuno y otros usos', GETDATE(), GETDATE()),
+(104, 'Legumbres', 'Diferentes tipos de legumbres como frijoles, lentejas, garbanzos, etc.', GETDATE(), GETDATE()),
+(105, 'Vinos', 'Vinos de diferentes cepas y regiones', GETDATE(), GETDATE()),
+(105, 'Cervezas', 'Cervezas de distintos estilos y marcas', GETDATE(), GETDATE()),
+(106, 'Pan Fresco', 'Pan recién horneado de diferentes tipos y sabores', GETDATE(), GETDATE()),
+(106, 'Repostería', 'Productos horneados dulces como pasteles, galletas y tartas', GETDATE(), GETDATE()),
+(107, 'Productos de Limpieza del Hogar', 'Artículos para limpiar y mantener el hogar ordenado', GETDATE(), GETDATE()),
+(107, 'Productos de Higiene Personal', 'Productos para el cuidado y la higiene personal', GETDATE(), GETDATE()),
+(108, 'Snacks', 'Aperitivos salados y crujientes para picar', GETDATE(), GETDATE()),
+(108, 'Dulces', 'Chocolates, caramelos y golosinas para satisfacer el antojo', GETDATE(), GETDATE()),
+(109, 'Especias', 'Variedad de especias para condimentar y mejorar el sabor de los platos', GETDATE(), GETDATE()),
+(109, 'Salsas', 'Diferentes tipos de salsas para acompañar comidas y darles sabor', GETDATE(), GETDATE()),
+(110, 'Conservas', 'Alimentos enlatados como verduras, frutas y carnes', GETDATE(), GETDATE()),
+(110, 'Salsas y Aderezos', 'Salsas, aderezos y condimentos envasados para múltiples usos', GETDATE(), GETDATE()),
+(111, 'Galletas Dulces', 'Galletas dulces de diferentes sabores y texturas', GETDATE(), GETDATE()),
+(111, 'Galletas Saladas', 'Galletas saladas ideales para acompañar bebidas y aperitivos', GETDATE(), GETDATE());
+-- Verificar los datos insertados en la tabla SubCategorias
+SELECT * FROM SubCategorias;
+
+-- Insertar datos en la tabla UnidadMedidas
+INSERT INTO UnidadMedidas 
+(Nombre, Descripcion)
+VALUES 
+('Unidad', 'Medida estándar individual'),
+('Peso', 'Medida de peso en gramos o kilogramos'),
+('Kg', 'Kilogramo, unidad de peso'),
+('Sixpack', 'Paquete de seis unidades'),
+('Docena', 'Conjunto de doce unidades'),
+('Paquete', 'Paquete con varias unidades'),
+('Litros', 'Medida de volumen en litros');
+-- Verificar los datos insertados en la tabla UnidadMedidas
+SELECT * FROM UnidadMedidas;
+
+-- Insertar datos en la tabla TipoDocumentos
+INSERT INTO TipoDocumentos 
+(Nombre, Descripcion)
+VALUES 
+('DNI', 'Documento Nacional de Identidad'),
+('CarnetExt', 'Carné de Extranjería'),
+('RUC', 'Registro Único de Contribuyentes'),
+('Pasaporte', 'Documento de identificación internacional'),
+('Cedula', 'Documento de identificación en algunos países'),
+('Otros', 'Otros tipos de documentos de identificación');
+-- Verificar los datos insertados en la tabla TipoDocumentos
+SELECT * FROM TipoDocumentos;
+
+-- Insertar datos en la tabla Rol
+INSERT INTO Rol 
+(Nombre, Descripcion)
+VALUES 
+('Administrador', 'Rol con acceso completo al sistema'),
+('Almacenero', 'Rol con acceso a funciones relacionadas con el almacén'),
+('Vendedor', 'Rol con acceso limitado para realizar ventas');
+-- Verificar los datos insertados en la tabla Rol
+SELECT * FROM Rol;
+
+-- Insertar datos en la tabla Personas
+INSERT INTO Personas 
+(CodigoDocumento, CodigoRol, NumeroDocumento, Nombre, ApPaterno, ApMaterno, Sexo, FechaNacimiento, Correo, Celular)
+VALUES 
+(100, 101, '12345678', 'Angelo', 'Rodriguez', 'Altez', 'M', '2004-04-02', 'angelo@gmail.com', '912345678'),
+(100, 100, '87654321', 'Abigail', 'Rojas', 'Champa', 'F', '2004-04-02', 'rojas@gmail.com', '912345679'),
+(100, 102, '98765432', 'Camila', 'Rojas', 'Champa', 'F', '2008-05-03', 'camila@gmail.com', '912345670'),
+(100, 101, '23456789', 'Roberto', 'Perez', 'Gonzales', 'M', '2008-05-03', 'roberto@gmail.com', '912345680'),
+(100, 100, '34567890', 'Maria', 'Lopez', 'Vargas', 'F', '2008-05-03', 'maria@gmail.com', '912345681'),
+(100, 102, '45678901', 'Juan', 'Gomez', 'Silva', 'M', '2008-05-03', 'juan@gmail.com', '912345682');
+-- Verificar los datos insertados en la tabla Personas
+SELECT * FROM Personas;
+
+-- Insertar datos en la tabla Usuarios
+INSERT INTO Usuarios 
+(CodigoRol, CodigoPersona, UserName, Password, Estado, FechaRegistro, FechaActualizar)
+VALUES 
+(101, 100, 'Angelo16RA', 'angelo123', 1, GETDATE(), GETDATE()),
+(100, 101, 'Abigail19RC', 'abigail123', 1, GETDATE(), GETDATE()),
+(102, 102, 'Camila15RC', 'camila123', 1, GETDATE(), GETDATE()),
+(101, 103, 'Roberto16PG', 'roberto123', 1, GETDATE(), GETDATE()),
+(100, 104, 'Maria19LV', 'maria123', 1, GETDATE(), GETDATE()),
+(102, 105, 'Juan15GS', 'juan123', 1, GETDATE(), GETDATE());
+-- Verificar los datos insertados en la tabla Usuarios
+SELECT * FROM Usuarios;
+
+-- Insertar datos en la tabla Cajas
+INSERT INTO Cajas 
+(Fecha, UsuarioApertura, UsuarioCierre, Estado, MontoApertura, MontoCierre, MontoAdicional)
+VALUES 
+(GETDATE(), 'Angelo', 'Angelo', 1, 10.00, 2000.50, 1.50),
+(GETDATE(), 'Abigail', 'Abigail', 1, 10.00, 1500.75, 1.50),
+(GETDATE(), 'Camila', 'Camila', 1, 10.00, 1700.25, 1.50),
+(GETDATE(), 'Roberto', 'Roberto', 1, 10.00, 1800.35, 1.50),
+(GETDATE(), 'Maria', 'Maria', 1, 10.00, 1900.45, 1.50);
+-- Verificar los datos insertados en la tabla Cajas
+SELECT * FROM Cajas;
+
+-- Insertar datos en la tabla Productos
+INSERT INTO Productos 
+(CodigoUnidadMedida, CodigoCategoria, CodigoSubCategoria, CodigoProveedor, CodigoAlmacenes, Nombre, Stock, Precio, Imagen, Descripcion)
+VALUES 
+(100, 100, 100, 100, 100, 'Inka Kola', 50, 5.90, 'imagen1.jpg', 'Gaseosa Inca Kola Botella 1.5L'),
+(100, 100, 100, 100, 100, 'Coca Cola', 50, 4.50, 'imagen1.jpg', 'Gaseosa Coca Cola Botella 1L'),
+(100, 100, 101, 101, 100, 'Agua Cielo', 100, 2.50, 'imagen2.jpg', 'Agua purificada en botella 1L'),
+(102, 101, 102, 102, 101, 'Leche Gloria', 100, 3.50, 'imagen3.jpg', 'Leche fresca pasteurizada en bolsa 1L'),
+(102, 101, 103, 103, 100, 'Queso Edam', 30, 7.20, 'imagen4.jpg', 'Queso Edam holandés en porciones 200g'),
+(102, 102, 104, 104, 101, 'Filete de Res', 20, 15.50, 'imagen5.jpg', 'Filete de res fresco 500g'),
+(102, 102, 105, 103, 101, 'Pechuga de Pollo', 25, 10.80, 'imagen6.jpg', 'Pechuga de pollo sin piel 1kg'),
+(100, 103, 106, 100, 100, 'Tomate', 15, 2.30, 'imagen7.jpg', 'Tomates frescos de calidad 1kg'),
+(100, 103, 107, 101, 100, 'Espinacas Congeladas', 10, 4.50, 'imagen8.jpg', 'Espinacas congeladas para uso culinario 500g'),
+(100, 104, 108, 102, 101, 'Avena en Hojuelas', 40, 3.80, 'imagen9.jpg', 'Avena integral en hojuelas 500g'),
+(100, 104, 109, 103, 101, 'Lentejas', 20, 2.10, 'imagen10.jpg', 'Lentejas secas de alta calidad 500g'),
+(100, 105, 110, 104, 100, 'Cabernet Sauvignon', 10, 25.00, 'imagen11.jpg', 'Vino tinto Cabernet Sauvignon 750ml'),
+(100, 105, 111, 104, 100, 'Cerveza Pilsen', 30, 2.80, 'imagen12.jpg', 'Cerveza Pilsen en lata 330ml'),
+(100, 106, 112, 100, 101, 'Pan Baguette', 15, 3.00, 'imagen13.jpg', 'Pan francés fresco y crujiente 250g'),
+(100, 106, 113, 101, 101, 'Torta de Chocolate', 5, 18.50, 'imagen14.jpg', 'Torta de chocolate casera 1kg'),
+(100, 107, 114, 102, 100, 'Detergente en Polvo', 20, 8.90, 'imagen15.jpg', 'Detergente en polvo para ropa 1kg'),
+(100, 107, 115, 103, 100, 'Shampoo Suave', 15, 6.50, 'imagen16.jpg', 'Shampoo suave para uso diario 500ml'),
+(100, 108, 116, 104, 100, 'Papas Fritas', 40, 2.20, 'imagen17.jpg', 'Papas fritas saladas y crujientes 100g'),
+(100, 108, 117, 101, 100, 'Chocolate Amargo', 25, 3.80, 'imagen18.jpg', 'Chocolate amargo con alto contenido de cacao 80g'),
+(100, 109, 118, 100, 101, 'Cúrcuma Molida', 10, 4.50, 'imagen19.jpg', 'Cúrcuma molida orgánica y de calidad 100g'),
+(100, 109, 119, 101, 101, 'Salsa de Tomate', 20, 2.80, 'imagen20.jpg', 'Salsa de tomate casera y natural 250ml'),
+(100, 110, 120, 102, 101, 'Atún en Lata', 15, 3.50, 'imagen21.jpg', 'Atún en lata al natural de excelente sabor 200g'),
+(100, 110, 121, 103, 101, 'Mayonesa', 20, 2.50, 'imagen22.jpg', 'Mayonesa clásica para todo tipo de comidas 250g'),
+(100, 111, 122, 104, 101, 'Galletas de Vainilla', 35, 1.80, 'imagen23.jpg', 'Galletas dulces de vainilla y mantequilla 200g'),
+(100, 111, 123, 100, 100, 'Galletas de Queso', 30, 2.20, 'imagen24.jpg', 'Galletas saladas de queso y hierbas finas 150g');
+-- Verificar los datos insertados en la tabla Cajas
+SELECT * FROM Productos;
+
+-- Insertar datos en la tabla Pedidos
+INSERT INTO Pedidos 
+(CodigoUsuario, CodigoProducto, MontoTotal, MontoPagado, Vuelto, RegistroPedido, EntregaPedido)
+VALUES 
+(100, 101, 30.20, 50.00, 19.80, GETDATE(), GETDATE()),
+(101, 100, 75.50, 100.00, 24.50, GETDATE(), GETDATE()),
+(102, 102, 40.20, 50.00, 9.80, GETDATE(), GETDATE());
+
+-- Verificar los datos insertados en la tabla Pedidos
+SELECT * FROM Pedidos;
+
+

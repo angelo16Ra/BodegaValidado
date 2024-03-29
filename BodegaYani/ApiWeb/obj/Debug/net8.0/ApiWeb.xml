@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiWeb</name>
+    </assembly>
+    <members>
+        <member name="T:ApiWeb.Controllers.AuthController">
+            <summary>
+            METODOS PARA INICAR SESION
+            </summary>
+        </member>
+        <member name="M:ApiWeb.Controllers.AuthController.Login(RequestResponseModels.Request.RequestLogin)">
+            <summary>
+            Realiza el proceso de login
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiWeb.Midllerware.HelperHttpContext.getTokenClaims(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Retorna todas variables que se le asignaron a los claims al momento de generar el token
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiWeb.Midllerware.IHelperHttpContext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ApiWeb.Midllerware.IHelperHttpContext.GetInfoRequest(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

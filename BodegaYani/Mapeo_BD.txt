@@ -1,0 +1,1 @@
+Scaffold-DbContext "Data Source=DESKTOP-3SJ3EOR;Initial Catalog=BodegaYaninAlmacen;Trusted_Connection=True;Trust Server Certificate=true" Microsoft.EntityFrameworkCore.SqlServer -DataAnnotations -Context _bodegaContext -OutputDir BodegaYani -Force
