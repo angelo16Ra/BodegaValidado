@@ -16,78 +16,92 @@ namespace Business.Almacen
 {
     public class BusinessProducto : IBusinessProducto
     {
-        #region DECLARAR VARIABLE CONSTRUCTORES / DISPOSE
-        private readonly IRepositoryProducto _productoRepository;
+        #region DECLARACIÓN DE VARIABLES Y CONSTRUCTOR / DISPOSE
+        private readonly IRepositoryProducto _repositoryProducto;
         private readonly IMapper _mapper;
 
         public BusinessProducto(IMapper mapper)
         {
             _mapper = mapper;
-            _productoRepository = new RepositoryProducto();
+            _repositoryProducto = new RepositoryProducto();
         }
+
         public void Dispose()
         {
             GC.SuppressFinalize(this);
         }
-        #endregion DECLARAR VARIABLE CONSTRUCTORES / DISPOSE
+
+        #endregion DECLARACIÓN DE VARIABLES Y CONSTRUCTOR / DISPOSE
 
         #region CRUD METHODS
-        public ResponseProducto Create(RequestProducto entity)
-        {
-            Producto productoEntity = _mapper.Map<Producto>(entity);
-            Producto createdProducto = _productoRepository.Create(productoEntity);
-            return _mapper.Map<ResponseProducto>(createdProducto);
-        }
-
-        public List<ResponseProducto> CreateMultiple(List<RequestProducto> list)
-        {
-            List<Producto> productoEntities = _mapper.Map<List<Producto>>(list);
-            List<Producto> createdProductos = _productoRepository.CreateMultiple(productoEntities);
-            return _mapper.Map<List<ResponseProducto>>(createdProductos);
-        }
-
-        public int Delete(object id)
-        {
-            return _productoRepository.Delete(id);
-        }
-
-        public int DeleteMultiple(List<RequestProducto> list)
-        {
-            List<Producto> productoEntities = _mapper.Map<List<Producto>>(list);
-            return _productoRepository.DeleteMultiple(productoEntities);
-        }
 
         public List<ResponseProducto> GetAll()
         {
-            List<Producto> productos = _productoRepository.GetAll();
-            return _mapper.Map<List<ResponseProducto>>(productos);
-        }
-
-        public ResponseFilterGeneric<ResponseProducto> GetByFilter(RequestFilterGeneric request)
-        {
-            throw new NotImplementedException();
+            List<Producto> productos = _repositoryProducto.GetAll();
+            List<ResponseProducto> result = _mapper.Map<List<ResponseProducto>>(productos);
+            return result;
         }
 
         public ResponseProducto GetById(object id)
         {
-            Producto productoEntity = _productoRepository.GetById(id);
-            return _mapper.Map<ResponseProducto>(productoEntity);
+            Producto producto = _repositoryProducto.GetById(id);
+            ResponseProducto result = _mapper.Map<ResponseProducto>(producto);
+            return result;
+        }
+
+        public ResponseProducto Create(RequestProducto entity)
+        {
+            Producto producto = _mapper.Map<Producto>(entity);
+            producto = _repositoryProducto.Create(producto);
+            ResponseProducto result = _mapper.Map<ResponseProducto>(producto);
+            return result;
+        }
+
+        public List<ResponseProducto> CreateMultiple(List<RequestProducto> lista)
+        {
+            List<Producto> productos = _mapper.Map<List<Producto>>(lista);
+            productos = _repositoryProducto.CreateMultiple(productos);
+            List<ResponseProducto> result = _mapper.Map<List<ResponseProducto>>(productos);
+            return result;
         }
 
         public ResponseProducto Update(RequestProducto entity)
         {
-            Producto productoEntity = _mapper.Map<Producto>(entity);
-            Producto updatedProducto = _productoRepository.Update(productoEntity);
-            return _mapper.Map<ResponseProducto>(updatedProducto);
+            Producto producto = _mapper.Map<Producto>(entity);
+            producto = _repositoryProducto.Update(producto);
+            ResponseProducto result = _mapper.Map<ResponseProducto>(producto);
+            return result;
         }
 
-        public List<ResponseProducto> UpdateMultiple(List<RequestProducto> list)
+        public List<ResponseProducto> UpdateMultiple(List<RequestProducto> lista)
         {
-            List<Producto> productoEntities = _mapper.Map<List<Producto>>(list);
-            List<Producto> updatedProductos = _productoRepository.UpdateMultiple(productoEntities);
-            return _mapper.Map<List<ResponseProducto>>(updatedProductos);
+            List<Producto> productos = _mapper.Map<List<Producto>>(lista);
+            productos = _repositoryProducto.UpdateMultiple(productos);
+            List<ResponseProducto> response = _mapper.Map<List<ResponseProducto>>(productos);
+            return response;
         }
+
+        public int Delete(object id)
+        {
+            int cantidad = _repositoryProducto.Delete(id);
+            return cantidad;
+        }
+
+        public int DeleteMultiple(List<RequestProducto> lista)
+        {
+            List<Producto> productos = _mapper.Map<List<Producto>>(lista);
+            int cantidad = _repositoryProducto.DeleteMultiple(productos);
+            return cantidad;
+        }
+
+        public ResponseFilterGeneric<ResponseProducto> GetByFilter(RequestFilterGeneric request)
+        {
+            ResponseFilterGeneric<ResponseProducto> result = _mapper.Map<ResponseFilterGeneric<ResponseProducto>>(_repositoryProducto.GetByFilter(request));
+            return result;
+        }
+
         #endregion CRUD METHODS
+
     }
 
 }

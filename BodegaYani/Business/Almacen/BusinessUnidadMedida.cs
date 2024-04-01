@@ -16,78 +16,92 @@ namespace Business.Almacen
 {
     public class BusinessUnidadMedida : IBusinessUnidadMedida
     {
-        #region DECLARAR VARIABLE CONSTRUCTORES / DISPOSE
-        private readonly IRepositoryUnidadMedida _unidadMedidaRepository;
+        #region DECLARACIÓN DE VARIABLES Y CONSTRUCTOR / DISPOSE
+        private readonly IRepositoryUnidadMedida _repositoryUnidadMedida;
         private readonly IMapper _mapper;
 
         public BusinessUnidadMedida(IMapper mapper)
         {
             _mapper = mapper;
-            _unidadMedidaRepository = new RepositoryUnidadMedida();
+            _repositoryUnidadMedida = new RepositoryUnidadMedida();
         }
+
         public void Dispose()
         {
             GC.SuppressFinalize(this);
         }
-        #endregion DECLARAR VARIABLE CONSTRUCTORES / DISPOSE
+
+        #endregion DECLARACIÓN DE VARIABLES Y CONSTRUCTOR / DISPOSE
 
         #region CRUD METHODS
-        public ResponseUnidadMedida Create(RequestUnidadMedida entity)
-        {
-            UnidadMedida unidadMedidaEntity = _mapper.Map<UnidadMedida>(entity);
-            UnidadMedida createdUnidadMedida = _unidadMedidaRepository.Create(unidadMedidaEntity);
-            return _mapper.Map<ResponseUnidadMedida>(createdUnidadMedida);
-        }
-
-        public List<ResponseUnidadMedida> CreateMultiple(List<RequestUnidadMedida> list)
-        {
-            List<UnidadMedida> unidadMedidaEntities = _mapper.Map<List<UnidadMedida>>(list);
-            List<UnidadMedida> createdUnidadMedidas = _unidadMedidaRepository.CreateMultiple(unidadMedidaEntities);
-            return _mapper.Map<List<ResponseUnidadMedida>>(createdUnidadMedidas);
-        }
-
-        public int Delete(object id)
-        {
-            return _unidadMedidaRepository.Delete(id);
-        }
-
-        public int DeleteMultiple(List<RequestUnidadMedida> list)
-        {
-            List<UnidadMedida> unidadMedidaEntities = _mapper.Map<List<UnidadMedida>>(list);
-            return _unidadMedidaRepository.DeleteMultiple(unidadMedidaEntities);
-        }
 
         public List<ResponseUnidadMedida> GetAll()
         {
-            List<UnidadMedida> unidadMedidas = _unidadMedidaRepository.GetAll();
-            return _mapper.Map<List<ResponseUnidadMedida>>(unidadMedidas);
-        }
-
-        public ResponseFilterGeneric<ResponseUnidadMedida> GetByFilter(RequestFilterGeneric request)
-        {
-            throw new NotImplementedException();
+            List<UnidadMedida> unidadesMedida = _repositoryUnidadMedida.GetAll();
+            List<ResponseUnidadMedida> result = _mapper.Map<List<ResponseUnidadMedida>>(unidadesMedida);
+            return result;
         }
 
         public ResponseUnidadMedida GetById(object id)
         {
-            UnidadMedida unidadMedidaEntity = _unidadMedidaRepository.GetById(id);
-            return _mapper.Map<ResponseUnidadMedida>(unidadMedidaEntity);
+            UnidadMedida unidadMedida = _repositoryUnidadMedida.GetById(id);
+            ResponseUnidadMedida result = _mapper.Map<ResponseUnidadMedida>(unidadMedida);
+            return result;
+        }
+
+        public ResponseUnidadMedida Create(RequestUnidadMedida entity)
+        {
+            UnidadMedida unidadMedida = _mapper.Map<UnidadMedida>(entity);
+            unidadMedida = _repositoryUnidadMedida.Create(unidadMedida);
+            ResponseUnidadMedida result = _mapper.Map<ResponseUnidadMedida>(unidadMedida);
+            return result;
+        }
+
+        public List<ResponseUnidadMedida> CreateMultiple(List<RequestUnidadMedida> lista)
+        {
+            List<UnidadMedida> unidadesMedida = _mapper.Map<List<UnidadMedida>>(lista);
+            unidadesMedida = _repositoryUnidadMedida.CreateMultiple(unidadesMedida);
+            List<ResponseUnidadMedida> result = _mapper.Map<List<ResponseUnidadMedida>>(unidadesMedida);
+            return result;
         }
 
         public ResponseUnidadMedida Update(RequestUnidadMedida entity)
         {
-            UnidadMedida unidadMedidaEntity = _mapper.Map<UnidadMedida>(entity);
-            UnidadMedida updatedUnidadMedida = _unidadMedidaRepository.Update(unidadMedidaEntity);
-            return _mapper.Map<ResponseUnidadMedida>(updatedUnidadMedida);
+            UnidadMedida unidadMedida = _mapper.Map<UnidadMedida>(entity);
+            unidadMedida = _repositoryUnidadMedida.Update(unidadMedida);
+            ResponseUnidadMedida result = _mapper.Map<ResponseUnidadMedida>(unidadMedida);
+            return result;
         }
 
-        public List<ResponseUnidadMedida> UpdateMultiple(List<RequestUnidadMedida> list)
+        public List<ResponseUnidadMedida> UpdateMultiple(List<RequestUnidadMedida> lista)
         {
-            List<UnidadMedida> unidadMedidaEntities = _mapper.Map<List<UnidadMedida>>(list);
-            List<UnidadMedida> updatedUnidadMedidas = _unidadMedidaRepository.UpdateMultiple(unidadMedidaEntities);
-            return _mapper.Map<List<ResponseUnidadMedida>>(updatedUnidadMedidas);
+            List<UnidadMedida> unidadesMedida = _mapper.Map<List<UnidadMedida>>(lista);
+            unidadesMedida = _repositoryUnidadMedida.UpdateMultiple(unidadesMedida);
+            List<ResponseUnidadMedida> response = _mapper.Map<List<ResponseUnidadMedida>>(unidadesMedida);
+            return response;
         }
+
+        public int Delete(object id)
+        {
+            int cantidad = _repositoryUnidadMedida.Delete(id);
+            return cantidad;
+        }
+
+        public int DeleteMultiple(List<RequestUnidadMedida> lista)
+        {
+            List<UnidadMedida> unidadesMedida = _mapper.Map<List<UnidadMedida>>(lista);
+            int cantidad = _repositoryUnidadMedida.DeleteMultiple(unidadesMedida);
+            return cantidad;
+        }
+
+        public ResponseFilterGeneric<ResponseUnidadMedida> GetByFilter(RequestFilterGeneric request)
+        {
+            ResponseFilterGeneric<ResponseUnidadMedida> result = _mapper.Map<ResponseFilterGeneric<ResponseUnidadMedida>>(_repositoryUnidadMedida.GetByFilter(request));
+            return result;
+        }
+
         #endregion CRUD METHODS
+
     }
 
 }

@@ -5,11 +5,9 @@ import { CrudService } from '../../shared/services/crud.service';
 import { RequestRol } from '../models/rol-request.model';
 import { ResponseRol } from '../models/rol-response.model';
 
-
 @Injectable({
   providedIn: 'root'
 })
-
 export class RolService extends CrudService<RequestRol,ResponseRol> {
 
   constructor(
@@ -18,6 +16,4 @@ export class RolService extends CrudService<RequestRol,ResponseRol> {
   {
     super(_http,urlConstans.rol);
   }
-
 }
- 

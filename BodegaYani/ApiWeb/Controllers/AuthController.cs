@@ -10,6 +10,7 @@ using RequestResponseModels.Generic;
 using RequestResponseModels.Request;
 using RequestResponseModels.Response;
 using RequestResponseModels.Response.Almacen;
+using Security;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net;
 using System.Security.Claims;
@@ -29,24 +30,30 @@ namespace ApiWeb.Controllers
 
         private readonly IAuthBusiness _authBusiness;
         private readonly IMapper _mapper;
+        private readonly UtilEncriptarDesencriptar _cripto;
 
         public AuthController(IMapper mapper)
         {
             _mapper = mapper;
             _authBusiness = new AuthBusiness(mapper);
+            _cripto = new UtilEncriptarDesencriptar();
         }
 
+        /// <summary>
+        /// Valida que el servicio este activo
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<bool>))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(GenericResponse))]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError, Type = typeof(GenericResponse))]
         public IActionResult Get()
         {
-            return Ok("El servicio está escuchando");
+            return Ok(true);
         }
 
         /// <summary>
-        /// Realiza el proceso de login
+        /// Metodo para realizar el inicio de sesión
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
@@ -59,10 +66,11 @@ namespace ApiWeb.Controllers
             LoginResponse loginResponse = _authBusiness.Login(request);
             
             loginResponse.Token = CreateToken(loginResponse);
-
             return Ok(loginResponse);
 
         }
+
+
         #region INICIO GENERACIÓN DE TOKEN
 
         private string CreateToken(LoginResponse oLoginResponse)

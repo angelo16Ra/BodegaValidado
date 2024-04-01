@@ -1,4 +1,5 @@
 ﻿using IBusiness.Generic;
+using RequestResponseModels.Generic;
 using RequestResponseModels.Request.Almacen;
 using RequestResponseModels.Response.Almacen;
 using System;
@@ -12,4 +13,5 @@ namespace IBusiness.Almacen
     public interface IBusinessAlmacene : IBusinessCrud<RequestAlmacene, ResponseAlmacene>
     {
     }
+
 }

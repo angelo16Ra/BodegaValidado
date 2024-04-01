@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalModule } from 'ngx-bootstrap/modal';
-
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 
 @NgModule({
@@ -15,6 +15,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     FormsModule,
     ModalModule.forRoot(),
     HttpClientModule,
+    PaginationModule.forRoot()
   ],
   exports:[
     CommonModule,
@@ -22,6 +23,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ReactiveFormsModule,
     FormsModule,
     ModalModule,
+    PaginationModule
   ]
 })
 export class SharedModule { }

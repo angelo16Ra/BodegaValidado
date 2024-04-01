@@ -667,7 +667,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\BACKYFROM\\BodegaYani\\RequestResponseModels\\RequestResponseModels.csproj": {
+                "projectPath": "E:\\BACKYFROM\\BodegaYani\\RequestResponseModels\\RequestResponseModels.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -1141,7 +1145,14 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\BACKYFROM\\BodegaYani\\IService\\IService.csproj": {
+                "projectPath": "E:\\BACKYFROM\\BodegaYani\\IService\\IService.csproj"
+              },
+              "E:\\BACKYFROM\\BodegaYani\\RequestResponseModels\\RequestResponseModels.csproj": {
+                "projectPath": "E:\\BACKYFROM\\BodegaYani\\RequestResponseModels\\RequestResponseModels.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -1162,6 +1173,10 @@
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [

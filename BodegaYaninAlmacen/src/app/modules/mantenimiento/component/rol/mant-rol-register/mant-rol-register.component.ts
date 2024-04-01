@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output, output } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AccionMantConst } from '../../../../../constans/general.constants';
 import { convertToBoolean } from '../../../../../functions/general.functions';
+import { SharedModule } from '../../../../shared/shared.module';
 import { RequestRol } from '../../../models/rol-request.model';
 import { ResponseRol } from '../../../models/rol-response.model';
 import { RolService } from '../../../service/rol.service';
@@ -13,9 +14,8 @@ import { MantRolListComponent } from '../mant-rol-list/mant-rol-list.component';
   standalone: true,
   imports: [
     MantRolListComponent,
-    ReactiveFormsModule,
-    FormsModule,
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   templateUrl: './mant-rol-register.component.html',
   styleUrl: './mant-rol-register.component.css'

@@ -77,6 +77,7 @@ E:\BACKYFROM\BodegaYani\IBusiness\obj\Debug\net8.0\IBusiness.GeneratedMSBuildEdi
 E:\BACKYFROM\BodegaYani\IBusiness\obj\Debug\net8.0\IBusiness.AssemblyInfoInputs.cache
 E:\BACKYFROM\BodegaYani\IBusiness\obj\Debug\net8.0\IBusiness.AssemblyInfo.cs
 E:\BACKYFROM\BodegaYani\IBusiness\obj\Debug\net8.0\IBusiness.csproj.CoreCompileInputs.cache
+E:\BACKYFROM\BodegaYani\IBusiness\obj\Debug\net8.0\IBusiness.sourcelink.json
 E:\BACKYFROM\BodegaYani\IBusiness\obj\Debug\net8.0\IBusiness.csproj.Up2Date
 E:\BACKYFROM\BodegaYani\IBusiness\obj\Debug\net8.0\IBusiness.dll
 E:\BACKYFROM\BodegaYani\IBusiness\obj\Debug\net8.0\refint\IBusiness.dll

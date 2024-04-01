@@ -55,6 +55,7 @@ E:\BACKYFROM\BodegaYani\RequestResponseModels\obj\Debug\net8.0\RequestResponseMo
 E:\BACKYFROM\BodegaYani\RequestResponseModels\obj\Debug\net8.0\RequestResponseModels.AssemblyInfoInputs.cache
 E:\BACKYFROM\BodegaYani\RequestResponseModels\obj\Debug\net8.0\RequestResponseModels.AssemblyInfo.cs
 E:\BACKYFROM\BodegaYani\RequestResponseModels\obj\Debug\net8.0\RequestResponseModels.csproj.CoreCompileInputs.cache
+E:\BACKYFROM\BodegaYani\RequestResponseModels\obj\Debug\net8.0\RequestResponseModels.sourcelink.json
 E:\BACKYFROM\BodegaYani\RequestResponseModels\obj\Debug\net8.0\RequestResponseModels.dll
 E:\BACKYFROM\BodegaYani\RequestResponseModels\obj\Debug\net8.0\refint\RequestResponseModels.dll
 E:\BACKYFROM\BodegaYani\RequestResponseModels\obj\Debug\net8.0\RequestResponseModels.pdb

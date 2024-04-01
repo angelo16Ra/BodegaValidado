@@ -14,7 +14,37 @@ namespace Repository.Almacen
     {
         public ResponseFilterGeneric<TipoDocumento> GetByFilter(RequestFilterGeneric request)
         {
-            throw new NotImplementedException();
+            var query = dbSet.Where(x => x.CodigoDocumento == x.CodigoDocumento);
+            request.Filtros.ForEach(j =>
+            {
+                if (!string.IsNullOrEmpty(j.Value))
+                {
+                    switch (j.Name)
+                    {
+                        case "codigo":
+                            query = query.Where(x => x.CodigoDocumento == int.Parse(j.Value));
+                            break;
+                        case "nombre":
+                            query = query.Where(x => x.Nombre.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "descripcion":
+                            query = query.Where(x => x.Descripcion.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                    }
+                }
+            });
+
+            ResponseFilterGeneric<TipoDocumento> res = new ResponseFilterGeneric<TipoDocumento>();
+
+            res.TotalRegistros = query.Count();
+            res.Lista = query
+                .Skip((request.NumeroPagina - 1) * request.Cantidad).Take(request.Cantidad)
+                .OrderBy(x => x.CodigoDocumento)
+                .ToList();
+
+            return res;
+
+
         }
     }
 

@@ -50,6 +50,7 @@ E:\BACKYFROM\BodegaYani\Constants\obj\Debug\net8.0\Constants.GeneratedMSBuildEdi
 E:\BACKYFROM\BodegaYani\Constants\obj\Debug\net8.0\Constants.AssemblyInfoInputs.cache
 E:\BACKYFROM\BodegaYani\Constants\obj\Debug\net8.0\Constants.AssemblyInfo.cs
 E:\BACKYFROM\BodegaYani\Constants\obj\Debug\net8.0\Constants.csproj.CoreCompileInputs.cache
+E:\BACKYFROM\BodegaYani\Constants\obj\Debug\net8.0\Constants.sourcelink.json
 E:\BACKYFROM\BodegaYani\Constants\obj\Debug\net8.0\Constants.dll
 E:\BACKYFROM\BodegaYani\Constants\obj\Debug\net8.0\refint\Constants.dll
 E:\BACKYFROM\BodegaYani\Constants\obj\Debug\net8.0\Constants.pdb

@@ -13,6 +13,13 @@ namespace RequestResponseModels.Response.Almacen
         public string? UsuarioApertura { get; set; }
         public string? UsuarioCierre { get; set; }
         public bool Estado { get; set; }
+        public string EstadoDescripcion
+        {
+            get
+            {
+                return Estado ? "Activo" : "Inactivo";
+            }
+        }
         public decimal? MontoApertura { get; set; }
         public decimal? MontoCierre { get; set; }
         public decimal? MontoAdicional { get; set; }

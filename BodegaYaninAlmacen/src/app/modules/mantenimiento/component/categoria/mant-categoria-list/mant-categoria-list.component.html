@@ -1,1 +1,54 @@
-<p>mant-categoria-list works!</p>
+<div class="container-fluid px-4 mt-5">
+    <div class="card bg-light mb-3">
+        <div class="card-header text-center">
+            <h1 class="mt-4"> MANTENIMIENTO DE CATEGORÍA</h1>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Estado</th>
+                        <th>Fecha de Registro</th>
+                        <th>Fecha de Actualización</th>
+                        <th>
+                            <button (click)="crearCategoria(ModalEdit)" class="btn btn-primary btn-sm">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let categoria of categorias">
+                        <td>{{categoria.codigoCategoria}}</td>
+                        <td>{{categoria.nombre}}</td>
+                        <td>{{categoria.descripcion}}</td>
+                        <td>{{categoria.estado}}</td>
+                        <td>{{categoria.fechaRegistro}}</td>
+                        <td>{{categoria.fechaActualizacion}}</td>
+                        <td>
+                            <button (click)="editarCategoria(ModalEdit, categoria)" class="btn btn-primary btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button (click)="eliminarCategoria(categoria.codigoCategoria)" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<ng-template #ModalEdit>
+    <app-mant-categoria-register
+        [title]="titleModal"
+        [categoria]="categoriaSelected"
+        [accion]="accionModal"
+        (closeModalEmmit)="getCloseModalEmmit( $event )" > 
+    ></app-mant-categoria-register>
+</ng-template>
+

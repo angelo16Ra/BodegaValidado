@@ -28,6 +28,11 @@ namespace ApiWeb.Controllers.Almacen
         #endregion constructor
 
         #region CRUD METHODS
+
+        /// <summary>
+        /// RETORNA TODOS LOS REGISTROS DE LA TABLA PERSONA
+        /// </summary>
+        /// <returns>List-PersonaResponse</returns>
         [HttpGet]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<ResponsePersona>))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(GenericResponse))]
@@ -36,6 +41,12 @@ namespace ApiWeb.Controllers.Almacen
         {
             return Ok(_persona.GetAll());
         }
+
+        /// <summary>
+        /// RETORNA EL REGISTRO DE LA TABLA FILTRADO POR EL PRIMARY KEY
+        /// </summary>
+        /// <param name="id">PRIMARY KEY</param>
+        /// <returns>ResponsePersona</returns>
         [HttpGet("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ResponsePersona))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(GenericResponse))]
@@ -44,6 +55,12 @@ namespace ApiWeb.Controllers.Almacen
         {
             return Ok(_persona.GetById(id));
         }
+
+        /// <summary>
+        /// INSERTA UN REGISTRO EN LA TABLA PERSONA
+        /// </summary>
+        /// <param name="request">RequestPersona</param>
+        /// <returns>ResponsePersona</returns>
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ResponsePersona))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(GenericResponse))]
@@ -52,6 +69,38 @@ namespace ApiWeb.Controllers.Almacen
         {
             return Ok(_persona.Create(request));
         }
+
+        /// <summary>
+        /// RETORNA LA TABLA PERSONA EN BASE A PAGINACIÓN Y FILTROS
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost("filter")]
+        public IActionResult GetByFilter([FromBody] RequestFilterGeneric request)
+        {
+            ResponseFilterGeneric<ResponsePersona> res = _persona.GetByFilter(request);
+
+            return Ok(res);
+        }
+
+        /// <summary>
+        /// RETORNA LA TABLA PERSONA EN BASE A PAGINACIÓN Y FILTROS
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost("multiple")]
+        public IActionResult CreateMultiple([FromBody] List<RequestPersona> request)
+        {
+            List<ResponsePersona> res = _persona.CreateMultiple(request);
+
+            return Ok(res);
+        }
+
+        /// <summary>
+        /// ACTUALIZA UN REGISTRO EN LA TABLA PERSONA
+        /// </summary>
+        /// <param name="request">RequestPersona</param>
+        /// <returns>ResponsePersona</returns>
         [HttpPut]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ResponsePersona))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(GenericResponse))]
@@ -60,6 +109,12 @@ namespace ApiWeb.Controllers.Almacen
         {
             return Ok(_persona.Update(request));
         }
+
+        /// <summary>
+        /// ELIMINA EL REGISTRO DE LA TABLA FILTRADO POR EL PRIMARY KEY
+        /// </summary>
+        /// <param name="id">PRIMARY KEY</param>
+        /// <returns>cantidad de registros eliminados</returns>
         [HttpDelete("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(int))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(GenericResponse))]

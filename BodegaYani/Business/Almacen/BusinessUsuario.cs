@@ -77,7 +77,9 @@ namespace Business.Almacen
 
         public ResponseFilterGeneric<ResponseUsuario> GetByFilter(RequestFilterGeneric request)
         {
-            throw new NotImplementedException();
+            ResponseFilterGeneric<ResponseUsuario> result = _mapper.Map<ResponseFilterGeneric<ResponseUsuario>>(_usuario.GetByFilter(request));
+
+            return result;
         }
 
         public ResponseUsuario GetById(object id)
@@ -108,6 +110,7 @@ namespace Business.Almacen
             Vusuario _vusuario = _usuario.GetByVistaUserName(username);
             return _vusuario;
         }
+
 
         #endregion CRUD METHODS
     }

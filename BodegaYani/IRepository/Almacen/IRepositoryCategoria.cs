@@ -9,7 +9,7 @@ using DBBodegaYani.BodegaYani;
 
 namespace IRepository.Almacen
 {
-    public interface IRepositoryCategorias: IRepositoryCrud <Categoria>
+    public interface IRepositoryCategoria: IRepositoryCrud <Categoria>
     {
     }
 }

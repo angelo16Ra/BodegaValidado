@@ -17,6 +17,5 @@ namespace RequestResponseModels.Response
         public UsuarioLoginResponse Usuario { get; set; } = new UsuarioLoginResponse();
         public ResponsePersona Persona { get; set; } = new ResponsePersona();
         public ResponseRol Rol { get; set; } = new ResponseRol();
-        // retornar rol al que le corresponde
     }
 }

@@ -28,6 +28,11 @@ namespace ApiWeb.Controllers.Almacen
         #endregion constructor
 
         #region CRUD METHODS
+
+        /// <summary>
+        /// RETORNA TODOS LOS REGISTROS DE LA TABLA UNIDAD DE MEDIDA
+        /// </summary>
+        /// <returns>List-UnidadMedidaResponse</returns>
         [HttpGet]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<ResponseUnidadMedida>))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(GenericResponse))]
@@ -36,6 +41,12 @@ namespace ApiWeb.Controllers.Almacen
         {
             return Ok(_unidadMedida.GetAll());
         }
+
+        /// <summary>
+        /// RETORNA EL REGISTRO DE LA TABLA FILTRADO POR EL PRIMARY KEY
+        /// </summary>
+        /// <param name="id">PRIMARY KEY</param>
+        /// <returns>ResponseUnidadMedida</returns>
         [HttpGet("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ResponseUnidadMedida))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(GenericResponse))]
@@ -44,6 +55,12 @@ namespace ApiWeb.Controllers.Almacen
         {
             return Ok(_unidadMedida.GetById(id));
         }
+
+        /// <summary>
+        /// INSERTA UN REGISTRO EN LA TABLA UNIDAD DE MEDIDA
+        /// </summary>
+        /// <param name="request">RequestUnidadMedida</param>
+        /// <returns>ResponseUnidadMedida</returns>
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ResponseUnidadMedida))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(GenericResponse))]
@@ -52,6 +69,38 @@ namespace ApiWeb.Controllers.Almacen
         {
             return Ok(_unidadMedida.Create(request));
         }
+
+        /// <summary>
+        /// RETORNA LA TABLA UNIDAD DE MEDIDA EN BASE A PAGINACIÓN Y FILTROS
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost("filter")]
+        public IActionResult GetByFilter([FromBody] RequestFilterGeneric request)
+        {
+            ResponseFilterGeneric<ResponseUnidadMedida> res = _unidadMedida.GetByFilter(request);
+
+            return Ok(res);
+        }
+
+        /// <summary>
+        /// RETORNA LA TABLA UNIDAD DE MEDIDA EN BASE A PAGINACIÓN Y FILTROS
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost("multiple")]
+        public IActionResult CreateMultiple([FromBody] List<RequestUnidadMedida> request)
+        {
+            List<ResponseUnidadMedida> res = _unidadMedida.CreateMultiple(request);
+
+            return Ok(res);
+        }
+
+        /// <summary>
+        /// ACTUALIZA UN REGISTRO EN LA TABLA UNIDAD DE MEDIDA
+        /// </summary>
+        /// <param name="request">RequestUnidadMedida</param>
+        /// <returns>ResponseUnidadMedida</returns>
         [HttpPut]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ResponseUnidadMedida))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(GenericResponse))]
@@ -60,6 +109,12 @@ namespace ApiWeb.Controllers.Almacen
         {
             return Ok(_unidadMedida.Update(request));
         }
+
+        /// <summary>
+        /// ELIMINA EL REGISTRO DE LA TABLA FILTRADO POR EL PRIMARY KEY
+        /// </summary>
+        /// <param name="id">PRIMARY KEY</param>
+        /// <returns>cantidad de registros eliminados</returns>
         [HttpDelete("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(int))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(GenericResponse))]
@@ -69,6 +124,7 @@ namespace ApiWeb.Controllers.Almacen
             return Ok(_unidadMedida.Delete(id));
         }
         #endregion CRUD METHODS
+
 
 
     }

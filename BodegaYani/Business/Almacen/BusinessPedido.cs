@@ -16,7 +16,7 @@ namespace Business.Almacen
 {
     public class BusinessPedido : IBusinessPedido
     {
-        #region DECLARAR VARIABLE CONSTRUCTORES / DISPOSE
+        #region DECLARACIÓN DE VARIABLES Y CONSTRUCTOR / DISPOSE
         private readonly IRepositoryPedido _pedidoRepository;
         private readonly IMapper _mapper;
 
@@ -25,69 +25,83 @@ namespace Business.Almacen
             _mapper = mapper;
             _pedidoRepository = new RepositoryPedido();
         }
+
         public void Dispose()
         {
             GC.SuppressFinalize(this);
         }
-        #endregion DECLARAR VARIABLE CONSTRUCTORES / DISPOSE
+
+        #endregion DECLARACIÓN DE VARIABLES Y CONSTRUCTOR / DISPOSE
 
         #region CRUD METHODS
-        public ResponsePedido Create(RequestPedido entity)
-        {
-            Pedido pedidoEntity = _mapper.Map<Pedido>(entity);
-            Pedido createdPedido = _pedidoRepository.Create(pedidoEntity);
-            return _mapper.Map<ResponsePedido>(createdPedido);
-        }
-
-        public List<ResponsePedido> CreateMultiple(List<RequestPedido> list)
-        {
-            List<Pedido> pedidoEntities = _mapper.Map<List<Pedido>>(list);
-            List<Pedido> createdPedidos = _pedidoRepository.CreateMultiple(pedidoEntities);
-            return _mapper.Map<List<ResponsePedido>>(createdPedidos);
-        }
-
-        public int Delete(object id)
-        {
-            return _pedidoRepository.Delete(id);
-        }
-
-        public int DeleteMultiple(List<RequestPedido> list)
-        {
-            List<Pedido> pedidoEntities = _mapper.Map<List<Pedido>>(list);
-            return _pedidoRepository.DeleteMultiple(pedidoEntities);
-        }
 
         public List<ResponsePedido> GetAll()
         {
             List<Pedido> pedidos = _pedidoRepository.GetAll();
-            return _mapper.Map<List<ResponsePedido>>(pedidos);
-        }
-
-        public ResponseFilterGeneric<ResponsePedido> GetByFilter(RequestFilterGeneric request)
-        {
-            throw new NotImplementedException();
+            List<ResponsePedido> result = _mapper.Map<List<ResponsePedido>>(pedidos);
+            return result;
         }
 
         public ResponsePedido GetById(object id)
         {
-            Pedido pedidoEntity = _pedidoRepository.GetById(id);
-            return _mapper.Map<ResponsePedido>(pedidoEntity);
+            Pedido pedido = _pedidoRepository.GetById(id);
+            ResponsePedido result = _mapper.Map<ResponsePedido>(pedido);
+            return result;
+        }
+
+        public ResponsePedido Create(RequestPedido entity)
+        {
+            Pedido pedido = _mapper.Map<Pedido>(entity);
+            pedido = _pedidoRepository.Create(pedido);
+            ResponsePedido result = _mapper.Map<ResponsePedido>(pedido);
+            return result;
+        }
+
+        public List<ResponsePedido> CreateMultiple(List<RequestPedido> lista)
+        {
+            List<Pedido> pedidos = _mapper.Map<List<Pedido>>(lista);
+            pedidos = _pedidoRepository.CreateMultiple(pedidos);
+            List<ResponsePedido> result = _mapper.Map<List<ResponsePedido>>(pedidos);
+            return result;
         }
 
         public ResponsePedido Update(RequestPedido entity)
         {
-            Pedido pedidoEntity = _mapper.Map<Pedido>(entity);
-            Pedido updatedPedido = _pedidoRepository.Update(pedidoEntity);
-            return _mapper.Map<ResponsePedido>(updatedPedido);
+            Pedido pedido = _mapper.Map<Pedido>(entity);
+            pedido = _pedidoRepository.Update(pedido);
+            ResponsePedido result = _mapper.Map<ResponsePedido>(pedido);
+            return result;
         }
 
-        public List<ResponsePedido> UpdateMultiple(List<RequestPedido> list)
+        public List<ResponsePedido> UpdateMultiple(List<RequestPedido> lista)
         {
-            List<Pedido> pedidoEntities = _mapper.Map<List<Pedido>>(list);
-            List<Pedido> updatedPedidos = _pedidoRepository.UpdateMultiple(pedidoEntities);
-            return _mapper.Map<List<ResponsePedido>>(updatedPedidos);
+            List<Pedido> pedidos = _mapper.Map<List<Pedido>>(lista);
+            pedidos = _pedidoRepository.UpdateMultiple(pedidos);
+            List<ResponsePedido> response = _mapper.Map<List<ResponsePedido>>(pedidos);
+            return response;
         }
+
+        public int Delete(object id)
+        {
+            int cantidad = _pedidoRepository.Delete(id);
+            return cantidad;
+        }
+
+        public int DeleteMultiple(List<RequestPedido> lista)
+        {
+            List<Pedido> pedidos = _mapper.Map<List<Pedido>>(lista);
+            int cantidad = _pedidoRepository.DeleteMultiple(pedidos);
+            return cantidad;
+        }
+
+        public ResponseFilterGeneric<ResponsePedido> GetByFilter(RequestFilterGeneric request)
+        {
+            ResponseFilterGeneric<ResponsePedido> result = _mapper.Map<ResponseFilterGeneric<ResponsePedido>>(_pedidoRepository.GetByFilter(request));
+            return result;
+        }
+
         #endregion CRUD METHODS
+
     }
 
 }

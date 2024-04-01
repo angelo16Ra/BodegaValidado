@@ -55,6 +55,7 @@ E:\BACKYFROM\BodegaYani\PDF\obj\Debug\net8.0\PDF.GeneratedMSBuildEditorConfig.ed
 E:\BACKYFROM\BodegaYani\PDF\obj\Debug\net8.0\PDF.AssemblyInfoInputs.cache
 E:\BACKYFROM\BodegaYani\PDF\obj\Debug\net8.0\PDF.AssemblyInfo.cs
 E:\BACKYFROM\BodegaYani\PDF\obj\Debug\net8.0\PDF.csproj.CoreCompileInputs.cache
+E:\BACKYFROM\BodegaYani\PDF\obj\Debug\net8.0\PDF.sourcelink.json
 E:\BACKYFROM\BodegaYani\PDF\obj\Debug\net8.0\PDF.dll
 E:\BACKYFROM\BodegaYani\PDF\obj\Debug\net8.0\refint\PDF.dll
 E:\BACKYFROM\BodegaYani\PDF\obj\Debug\net8.0\PDF.pdb

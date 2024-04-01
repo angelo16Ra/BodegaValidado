@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { RequestFilterGeneric } from '../../../models/request-filter-generic.model';
+import { ResponseFilterGeneric } from '../../../models/response-filter-generic.model';
 import { CrudInterface } from '../interfaces/crud-interface';
 
 @Injectable({
@@ -28,7 +30,6 @@ export class CrudService <T,Y> implements CrudInterface<T,Y> {
 
   /**TODO: Inserta un registro */
   create(request: T): Observable<Y> {
-
     return this._http.post<Y>(this.url_service , request) ;
   }
 
@@ -38,7 +39,17 @@ export class CrudService <T,Y> implements CrudInterface<T,Y> {
   }
   
   /**TODO: Elimina un registro */
-  delete(codigoRol: number): Observable<number> {
-    return this._http.delete<number>(`${this.url_service}${codigoRol}`);
+  delete(codigo: number): Observable<number> {
+    return this._http.delete<number>(`${this.url_service}${codigo}`);
   }
+
+  /**TODO: Filtro generico */
+
+  genericFilter(request: RequestFilterGeneric) : Observable<ResponseFilterGeneric<Y>> {
+
+    return this._http.post<ResponseFilterGeneric<Y>>(`${this.url_service}filter`, request);
+
+  }
+
+
 }

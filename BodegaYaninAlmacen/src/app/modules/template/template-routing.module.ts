@@ -1,10 +1,11 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TemplateComponent } from './component/template/template.component';
 
 const routes: Routes = [
   {
-    path: '', component:TemplateComponent,
+    path: '', 
+    component: TemplateComponent,
     children: [
       {
         path:'mantenimiento',loadChildren:() => import("./../mantenimiento/mantenimiento.module").then( x => x.MantenimientoModule)

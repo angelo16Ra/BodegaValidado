@@ -1,34 +1,42 @@
 <div class="container-fluid px-4 mt-5">
     <div class="card bg-light mb-3">
         <div class="card-header text-center">
-            <h1 class="mt-4"> MANTENIMIENTO DE ROL</h1>
+            <h1 class="mt-4"> MANTENIMIENTO DE USUARIOS</h1>
         </div>
         <div class="card-body">
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>Codigo</th>
-                        <th>Nombre</th>
-                        <th>Descripcion</th>
+                        <th>CodigoRol</th>
+                        <th>CodigoPersona</th>
+                        <th>UserName</th>
+                        <th>Password</th>
                         <th>Estado</th>
+                        <th>Fecha De Registro</th>
+                        <th>Fecha De Actualizacion</th>
                         <th>
-                            <button (click)="openModal(ModalEdit)" class="btn btn-primary btn-sm">
+                            <button (click)="crearUsuario(ModalEdit)" class="btn btn-primary btn-sm">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let rol of rols">
-                        <td>{{rol.codigoRol}}</td>
-                        <td>{{rol.nombre}}</td>
-                        <td>{{rol.descripcion}}</td>
-                        <td>{{rol.estado}}</td>
+                    <tr *ngFor="let usuario of usuarios">
+                        <td>{{usuario.CodigoUsuario}}</td>
+                        <td>{{usuario.CodigoRol}}</td>
+                        <td>{{usuario.CodigoPersona}}</td>
+                        <td>{{usuario.UserName}}</td>
+                        <td>{{usuario.Password}}</td>
+                        <td>{{usuario.FechaRegistro}}</td>
+                        <td>{{usuario.UserName}}</td>
+                        <td>{{usuario.FechaActualizar}}</td>
                         <td>
-                            <button (click)="openModal(ModalEdit)" class="btn btn-primary btn-sm">
+                            <button (click)="editarUsuario(ModalEdit,usuario)" class="btn btn-primary btn-sm">
                                 <i class="fas fa-edit"></i>
                             </button>
-                            <button class="btn btn-danger btn-sm">
+                            <button (click)="eliminarRegistro(usuario.CodigoUsuario)" class="btn btn-danger btn-sm">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </td>
@@ -42,6 +50,11 @@
 </div>
 
 <ng-template #ModalEdit>
-    <app-mant-rol-register></app-mant-rol-register>
+    <app-mant-usuario-register
+        [title]="titleModal"
+        [usuario]="usuarioSelected"
+        [accion]="accionModal"
+        (closeModalEmmit)="getCloseModalEmmit($event)"
+    ></app-mant-usuario-register>
 </ng-template>
 

@@ -25,69 +25,83 @@ namespace Business.Almacen
             _mapper = mapper;
             _cajaRepository = new RepositoryCaja();
         }
+
         public void Dispose()
         {
             GC.SuppressFinalize(this);
         }
+
         #endregion DECLARAR VARIABLE CONSTRUCTORES / DISPOSE
 
         #region CRUD METHODS
-        public ResponseCaja Create(RequestCaja entity)
-        {
-            Caja cajaEntity = _mapper.Map<Caja>(entity);
-            Caja createdCaja = _cajaRepository.Create(cajaEntity);
-            return _mapper.Map<ResponseCaja>(createdCaja);
-        }
 
-        public List<ResponseCaja> CreateMultiple(List<RequestCaja> list)
-        {
-            List<Caja> cajaEntities = _mapper.Map<List<Caja>>(list);
-            List<Caja> createdCajas = _cajaRepository.CreateMultiple(cajaEntities);
-            return _mapper.Map<List<ResponseCaja>>(createdCajas);
-        }
-
-        public int Delete(object id)
-        {
-            return _cajaRepository.Delete(id);
-        }
-
-        public int DeleteMultiple(List<RequestCaja> list)
-        {
-            List<Caja> cajaEntities = _mapper.Map<List<Caja>>(list);
-            return _cajaRepository.DeleteMultiple(cajaEntities);
-        }
-        
         public List<ResponseCaja> GetAll()
         {
             List<Caja> cajas = _cajaRepository.GetAll();
-            return _mapper.Map<List<ResponseCaja>>(cajas);
-        }
-
-        public ResponseFilterGeneric<ResponseCaja> GetByFilter(RequestFilterGeneric request)
-        {
-            throw new NotImplementedException();
+            List<ResponseCaja> result = _mapper.Map<List<ResponseCaja>>(cajas);
+            return result;
         }
 
         public ResponseCaja GetById(object id)
         {
-            Caja cajaEntity = _cajaRepository.GetById(id);
-            return _mapper.Map<ResponseCaja>(cajaEntity);
+            Caja caja = _cajaRepository.GetById(id);
+            ResponseCaja result = _mapper.Map<ResponseCaja>(caja);
+            return result;
+        }
+
+        public ResponseCaja Create(RequestCaja entity)
+        {
+            Caja caja = _mapper.Map<Caja>(entity);
+            caja = _cajaRepository.Create(caja);
+            ResponseCaja result = _mapper.Map<ResponseCaja>(caja);
+            return result;
+        }
+
+        public List<ResponseCaja> CreateMultiple(List<RequestCaja> lista)
+        {
+            List<Caja> cajas = _mapper.Map<List<Caja>>(lista);
+            cajas = _cajaRepository.CreateMultiple(cajas);
+            List<ResponseCaja> result = _mapper.Map<List<ResponseCaja>>(cajas);
+            return result;
         }
 
         public ResponseCaja Update(RequestCaja entity)
         {
-            Caja cajaEntity = _mapper.Map<Caja>(entity);
-            Caja updatedCaja = _cajaRepository.Update(cajaEntity);
-            return _mapper.Map<ResponseCaja>(updatedCaja);
+            Caja caja = _mapper.Map<Caja>(entity);
+            caja = _cajaRepository.Update(caja);
+            ResponseCaja result = _mapper.Map<ResponseCaja>(caja);
+            return result;
         }
 
-        public List<ResponseCaja> UpdateMultiple(List<RequestCaja> list)
+        public List<ResponseCaja> UpdateMultiple(List<RequestCaja> lista)
         {
-            List<Caja> cajaEntities = _mapper.Map<List<Caja>>(list);
-            List<Caja> updatedCajas = _cajaRepository.UpdateMultiple(cajaEntities);
-            return _mapper.Map<List<ResponseCaja>>(updatedCajas);
+            List<Caja> cajas = _mapper.Map<List<Caja>>(lista);
+            cajas = _cajaRepository.UpdateMultiple(cajas);
+            List<ResponseCaja> response = _mapper.Map<List<ResponseCaja>>(cajas);
+            return response;
         }
+
+        public int Delete(object id)
+        {
+            int cantidad = _cajaRepository.Delete(id);
+            return cantidad;
+        }
+
+        public int DeleteMultiple(List<RequestCaja> lista)
+        {
+            List<Caja> cajas = _mapper.Map<List<Caja>>(lista);
+            int cantidad = _cajaRepository.DeleteMultiple(cajas);
+            return cantidad;
+        }
+
+        public ResponseFilterGeneric<ResponseCaja> GetByFilter(RequestFilterGeneric request)
+        {
+            ResponseFilterGeneric<ResponseCaja> result = _mapper.Map<ResponseFilterGeneric<ResponseCaja>>(_cajaRepository.GetByFilter(request));
+            return result;
+        }
+
         #endregion CRUD METHODS
+
     }
 
 }

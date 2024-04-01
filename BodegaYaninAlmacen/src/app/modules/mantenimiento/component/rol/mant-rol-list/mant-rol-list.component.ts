@@ -1,10 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { error } from 'console';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 import { AccionMantConst } from '../../../../../constans/general.constants';
+import { RequestFilterGeneric } from '../../../../../models/request-filter-generic.model';
+import { ResponseFilterGeneric } from '../../../../../models/response-filter-generic.model';
+import { SharedModule } from '../../../../shared/shared.module';
 import { ResponseRol } from '../../../models/rol-response.model';
 import { RolService } from '../../../service/rol.service';
 import { MantRolRegisterComponent } from '../mant-rol-register/mant-rol-register.component';
@@ -15,8 +18,7 @@ import { MantRolRegisterComponent } from '../mant-rol-register/mant-rol-register
   imports: [
     MantRolRegisterComponent,
     CommonModule,
-    ReactiveFormsModule,
-    FormsModule
+    SharedModule
   ],
   templateUrl: './mant-rol-list.component.html',
   styleUrl: './mant-rol-list.component.css'
@@ -28,14 +30,25 @@ export class MantRolListComponent implements OnInit{
   rolSelected: ResponseRol = new  ResponseRol();
   titleModal: string = "";
   accionModal: number = 0; //1 crea, 2 edita, 3 eliminar
+  myFormFilter:FormGroup;
+  totalItems: number = 0;
+  itemsPerPage: number = 3;
+  request: RequestFilterGeneric = new RequestFilterGeneric();
 
 
   constructor(
     private _route:Router,
+    private fb: FormBuilder,
     private modalService: BsModalService,
     private _rolService:RolService
-  ){
 
+  ){
+    this.myFormFilter= this.fb.group({
+      codigoRol: ["", []],
+      nombre: ["", []],
+      descripcion: ["", []],
+      estadoDescripcion: ["", []],
+    });
   }
 
 
@@ -46,7 +59,7 @@ export class MantRolListComponent implements OnInit{
 
   ngOnInit(): void {
     
-    this.listarRols();
+    this.filtrar();
 
   }
 
@@ -118,7 +131,44 @@ export class MantRolListComponent implements OnInit{
 
   }
 
+  filtrar()
+  {
+    let request: RequestFilterGeneric = new RequestFilterGeneric(); 
+    let valueForm = this.myFormFilter.getRawValue();
 
+    this.request.filtros.push({name:"codigoRol", value: valueForm.codigoRol});
+    this.request.filtros.push({name:"nombre", value: valueForm.nombre});
+    this.request.filtros.push({name:"descripcion", value: valueForm.descripcion});
+    this.request.filtros.push({name:"estadoDescripcion", value: valueForm.estado});
+
+    this._rolService.genericFilter(this.request).subscribe({
+      next: (data: ResponseFilterGeneric<ResponseRol> ) => {
+        console.log(data);
+        this.rols = data.lista;
+        this.totalItems = data.totalRegistros;
+      },
+      error: ( ) => {
+        console.log("error");
+      },
+      complete: ( ) => {
+        console.log("completo");
+      },
+    });
+    
+  }
+
+  changePage(event: PageChangedEvent){
+    this.request.numeroPagina = event.page;
+    // let numeroPagina = event.page;
+    // console.log(numeroPagina);
+    this.filtrar();
+  }
+
+  changeItemsPerPage()
+  {
+    this.request.cantidad = this.itemsPerPage;
+    this.filtrar();
+  }
 
 
 }

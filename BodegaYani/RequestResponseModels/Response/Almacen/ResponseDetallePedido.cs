@@ -14,5 +14,12 @@ namespace RequestResponseModels.Response.Almacen
         public decimal PrecioTotal { get; set; }
         public decimal PrecioUnitario { get; set; }
         public bool Estado { get; set; }
+        public string EstadoDescripcion
+        {
+            get
+            {
+                return Estado ? "Activo" : "Inactivo";
+            }
+        }
     }
 }

@@ -28,6 +28,11 @@ namespace ApiWeb.Controllers.Almacen
         #endregion constructor
 
         #region CRUD METHODS
+
+        /// <summary>
+        /// RETORNA TODOS LOS REGISTROS DE LA TABLA SUBCATEGORÍA
+        /// </summary>
+        /// <returns>List-SubCategoriaResponse</returns>
         [HttpGet]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<ResponseSubCategoria>))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(GenericResponse))]
@@ -36,6 +41,12 @@ namespace ApiWeb.Controllers.Almacen
         {
             return Ok(_subCategoria.GetAll());
         }
+
+        /// <summary>
+        /// RETORNA EL REGISTRO DE LA TABLA FILTRADO POR EL PRIMARY KEY
+        /// </summary>
+        /// <param name="id">PRIMARY KEY</param>
+        /// <returns>ResponseSubCategoria</returns>
         [HttpGet("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ResponseSubCategoria))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(GenericResponse))]
@@ -44,6 +55,12 @@ namespace ApiWeb.Controllers.Almacen
         {
             return Ok(_subCategoria.GetById(id));
         }
+
+        /// <summary>
+        /// INSERTA UN REGISTRO EN LA TABLA SUBCATEGORÍA
+        /// </summary>
+        /// <param name="request">RequestSubCategoria</param>
+        /// <returns>ResponseSubCategoria</returns>
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ResponseSubCategoria))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(GenericResponse))]
@@ -52,6 +69,38 @@ namespace ApiWeb.Controllers.Almacen
         {
             return Ok(_subCategoria.Create(request));
         }
+
+        /// <summary>
+        /// RETORNA LA TABLA SUBCATEGORÍA EN BASE A PAGINACIÓN Y FILTROS
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost("filter")]
+        public IActionResult GetByFilter([FromBody] RequestFilterGeneric request)
+        {
+            ResponseFilterGeneric<ResponseSubCategoria> res = _subCategoria.GetByFilter(request);
+
+            return Ok(res);
+        }
+
+        /// <summary>
+        /// RETORNA LA TABLA SUBCATEGORÍA EN BASE A PAGINACIÓN Y FILTROS
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost("multiple")]
+        public IActionResult CreateMultiple([FromBody] List<RequestSubCategoria> request)
+        {
+            List<ResponseSubCategoria> res = _subCategoria.CreateMultiple(request);
+
+            return Ok(res);
+        }
+
+        /// <summary>
+        /// ACTUALIZA UN REGISTRO EN LA TABLA SUBCATEGORÍA
+        /// </summary>
+        /// <param name="request">RequestSubCategoria</param>
+        /// <returns>ResponseSubCategoria</returns>
         [HttpPut]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ResponseSubCategoria))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(GenericResponse))]
@@ -60,6 +109,12 @@ namespace ApiWeb.Controllers.Almacen
         {
             return Ok(_subCategoria.Update(request));
         }
+
+        /// <summary>
+        /// ELIMINA EL REGISTRO DE LA TABLA FILTRADO POR EL PRIMARY KEY
+        /// </summary>
+        /// <param name="id">PRIMARY KEY</param>
+        /// <returns>cantidad de registros eliminados</returns>
         [HttpDelete("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(int))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(GenericResponse))]
@@ -69,6 +124,7 @@ namespace ApiWeb.Controllers.Almacen
             return Ok(_subCategoria.Delete(id));
         }
         #endregion CRUD METHODS
+
 
     }
 }

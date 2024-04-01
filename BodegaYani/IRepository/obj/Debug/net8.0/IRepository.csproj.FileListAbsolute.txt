@@ -79,6 +79,7 @@ E:\BACKYFROM\BodegaYani\IRepository\obj\Debug\net8.0\IRepository.GeneratedMSBuil
 E:\BACKYFROM\BodegaYani\IRepository\obj\Debug\net8.0\IRepository.AssemblyInfoInputs.cache
 E:\BACKYFROM\BodegaYani\IRepository\obj\Debug\net8.0\IRepository.AssemblyInfo.cs
 E:\BACKYFROM\BodegaYani\IRepository\obj\Debug\net8.0\IRepository.csproj.CoreCompileInputs.cache
+E:\BACKYFROM\BodegaYani\IRepository\obj\Debug\net8.0\IRepository.sourcelink.json
 E:\BACKYFROM\BodegaYani\IRepository\obj\Debug\net8.0\IReposit.1D40EF52.Up2Date
 E:\BACKYFROM\BodegaYani\IRepository\obj\Debug\net8.0\IRepository.dll
 E:\BACKYFROM\BodegaYani\IRepository\obj\Debug\net8.0\refint\IRepository.dll

@@ -12,5 +12,12 @@ namespace RequestResponseModels.Response.Almacen
         public string Nombre { get; set; } = null!;
         public int CapacidadLimite { get; set; }
         public bool Estado { get; set; }
+        public string EstadoDescripcion
+        {
+            get
+            {
+                return Estado ? "Activo" : "Inactivo";
+            }
+        }
     }
 }

@@ -34,18 +34,49 @@ namespace Business.Almacen
         #endregion DECLARAR VARIABLE CONSTRUCTORES / DISPOSE
 
         #region CRUD METHODS
+
+        public List<ResponseRol> GetAll()
+        {
+            List<Rol> roles = _rol.GetAll();
+            List<ResponseRol> result = _mapper.Map<List<ResponseRol>>(roles);
+            return result;
+        }
+
+        public ResponseRol GetById(object id)
+        {
+            Rol roles = _rol.GetById(id);
+            ResponseRol result = _mapper.Map<ResponseRol>(roles);
+            return result;
+        }
+
         public ResponseRol Create(RequestRol entity)
         {
             Rol roles = _mapper.Map<Rol>(entity);
             roles = _rol.Create(roles);
-            ResponseRol response = _mapper.Map<ResponseRol>(roles);
-            return response;
+            ResponseRol result = _mapper.Map<ResponseRol>(roles);
+            return result;
         }
 
         public List<ResponseRol> CreateMultiple(List<RequestRol> lista)
         {
             List<Rol> roles = _mapper.Map<List<Rol>>(lista);
             roles = _rol.CreateMultiple(roles);
+            List<ResponseRol> result = _mapper.Map<List<ResponseRol>>(roles);
+            return result;
+        }
+
+        public ResponseRol Update(RequestRol entity)
+        {
+            Rol roles = _mapper.Map<Rol>(entity);
+            roles = _rol.Update(roles);
+            ResponseRol result = _mapper.Map<ResponseRol>(roles);
+            return result;
+        }
+
+        public List<ResponseRol> UpdateMultiple(List<RequestRol> lista)
+        {
+            List<Rol> roles = _mapper.Map<List<Rol>>(lista);
+            roles = _rol.UpdateMultiple(roles);
             List<ResponseRol> response = _mapper.Map<List<ResponseRol>>(roles);
             return response;
         }
@@ -63,39 +94,11 @@ namespace Business.Almacen
             return cantidad;
         }
 
-        public List<ResponseRol> GetAll()
-        {
-            List<Rol> roles = _rol.GetAll();
-            List<ResponseRol> response = _mapper.Map<List<ResponseRol>>(roles);
-            return response;
-        }
-
         public ResponseFilterGeneric<ResponseRol> GetByFilter(RequestFilterGeneric request)
         {
-            throw new NotImplementedException();
-        }
+            ResponseFilterGeneric<ResponseRol> result = _mapper.Map<ResponseFilterGeneric<ResponseRol>>(_rol.GetByFilter(request));
 
-        public ResponseRol GetById(object id)
-        {
-            Rol roles = _rol.GetById(id);
-            ResponseRol response = _mapper.Map<ResponseRol>(roles);
-            return response;
-        }
-
-        public ResponseRol Update(RequestRol entity)
-        {
-            Rol roles = _mapper.Map<Rol>(entity);
-            roles = _rol.Update(roles);
-            ResponseRol response = _mapper.Map<ResponseRol>(roles);
-            return response;
-        }
-
-        public List<ResponseRol> UpdateMultiple(List<RequestRol> lista)
-        {
-            List<Rol> roles = _mapper.Map<List<Rol>>(lista);
-            roles = _rol.UpdateMultiple(roles);
-            List<ResponseRol> response = _mapper.Map<List<ResponseRol>>(roles);
-            return response;
+            return result;
         }
         #endregion CRUD METHODS
 

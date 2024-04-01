@@ -64,6 +64,7 @@ E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Debug\net8.0\DBBodegaYani.GeneratedMSBu
 E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Debug\net8.0\DBBodegaYani.AssemblyInfoInputs.cache
 E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Debug\net8.0\DBBodegaYani.AssemblyInfo.cs
 E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Debug\net8.0\DBBodegaYani.csproj.CoreCompileInputs.cache
+E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Debug\net8.0\DBBodegaYani.sourcelink.json
 E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Debug\net8.0\DBBodegaYani.dll
 E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Debug\net8.0\refint\DBBodegaYani.dll
 E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Debug\net8.0\DBBodegaYani.pdb

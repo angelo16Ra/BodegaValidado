@@ -66,6 +66,7 @@ E:\BACKYFROM\BodegaYani\CommonModels\obj\Debug\net8.0\CommonModels.GeneratedMSBu
 E:\BACKYFROM\BodegaYani\CommonModels\obj\Debug\net8.0\CommonModels.AssemblyInfoInputs.cache
 E:\BACKYFROM\BodegaYani\CommonModels\obj\Debug\net8.0\CommonModels.AssemblyInfo.cs
 E:\BACKYFROM\BodegaYani\CommonModels\obj\Debug\net8.0\CommonModels.csproj.CoreCompileInputs.cache
+E:\BACKYFROM\BodegaYani\CommonModels\obj\Debug\net8.0\CommonModels.sourcelink.json
 E:\BACKYFROM\BodegaYani\CommonModels\obj\Debug\net8.0\CommonMo.500D9DF1.Up2Date
 E:\BACKYFROM\BodegaYani\CommonModels\obj\Debug\net8.0\CommonModels.dll
 E:\BACKYFROM\BodegaYani\CommonModels\obj\Debug\net8.0\refint\CommonModels.dll

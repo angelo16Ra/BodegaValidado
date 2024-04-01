@@ -35,7 +35,39 @@ namespace Repository.Almacen
 
         public ResponseFilterGeneric<Usuario> GetByFilter(RequestFilterGeneric request)
         {
-            throw new NotImplementedException();
+            var query = dbSet.Where(x => x.CodigoUsuario == x.CodigoUsuario);
+            request.Filtros.ForEach(j =>
+            {
+                if (!string.IsNullOrEmpty(j.Value))
+                {
+                    switch (j.Name)
+                    {
+                        case "codigo":
+                            query = query.Where(x => x.CodigoUsuario == int.Parse(j.Value));
+                            break;
+                        case "username":
+                            query = query.Where(x => x.UserName.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "password":
+                            query = query.Where(x => x.Password.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "estado":
+                            query = query.Where(x => x.Estado == bool.Parse(j.Value));
+                            break;
+                    }
+                }
+            });
+
+            ResponseFilterGeneric<Usuario> res = new ResponseFilterGeneric<Usuario>();
+
+            res.TotalRegistros = query.Count();
+            res.Lista = query
+                .Skip((request.NumeroPagina - 1) * request.Cantidad).Take(request.Cantidad)
+                .OrderBy(x => x.UserName)
+                .ToList();
+
+            return res;
+
         }
     }
 }

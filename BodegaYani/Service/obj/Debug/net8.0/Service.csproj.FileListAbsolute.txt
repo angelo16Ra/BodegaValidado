@@ -50,11 +50,17 @@ E:\BodegaYani\Service\obj\Debug\net8.0\ref\Service.dll
 E:\BACKYFROM\BodegaYani\Service\bin\Debug\net8.0\Service.deps.json
 E:\BACKYFROM\BodegaYani\Service\bin\Debug\net8.0\Service.dll
 E:\BACKYFROM\BodegaYani\Service\bin\Debug\net8.0\Service.pdb
+E:\BACKYFROM\BodegaYani\Service\bin\Debug\net8.0\IService.dll
+E:\BACKYFROM\BodegaYani\Service\bin\Debug\net8.0\RequestResponseModels.dll
+E:\BACKYFROM\BodegaYani\Service\bin\Debug\net8.0\IService.pdb
+E:\BACKYFROM\BodegaYani\Service\bin\Debug\net8.0\RequestResponseModels.pdb
 E:\BACKYFROM\BodegaYani\Service\obj\Debug\net8.0\Service.csproj.AssemblyReference.cache
 E:\BACKYFROM\BodegaYani\Service\obj\Debug\net8.0\Service.GeneratedMSBuildEditorConfig.editorconfig
 E:\BACKYFROM\BodegaYani\Service\obj\Debug\net8.0\Service.AssemblyInfoInputs.cache
 E:\BACKYFROM\BodegaYani\Service\obj\Debug\net8.0\Service.AssemblyInfo.cs
 E:\BACKYFROM\BodegaYani\Service\obj\Debug\net8.0\Service.csproj.CoreCompileInputs.cache
+E:\BACKYFROM\BodegaYani\Service\obj\Debug\net8.0\Service.sourcelink.json
+E:\BACKYFROM\BodegaYani\Service\obj\Debug\net8.0\Service.csproj.Up2Date
 E:\BACKYFROM\BodegaYani\Service\obj\Debug\net8.0\Service.dll
 E:\BACKYFROM\BodegaYani\Service\obj\Debug\net8.0\refint\Service.dll
 E:\BACKYFROM\BodegaYani\Service\obj\Debug\net8.0\Service.pdb

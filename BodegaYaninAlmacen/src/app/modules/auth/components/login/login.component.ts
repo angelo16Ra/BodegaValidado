@@ -42,6 +42,7 @@ export class LoginComponent {
           sessionStorage.setItem('idUsuario', data.usuario.codigoUsuario.toString());
           sessionStorage.setItem('username', data.usuario.username);
           sessionStorage.setItem('nombre', data.persona.nombre);
+          sessionStorage.setItem('codigoRol', data.rol.codigoRol.toString());
         } else {
           return;
         }

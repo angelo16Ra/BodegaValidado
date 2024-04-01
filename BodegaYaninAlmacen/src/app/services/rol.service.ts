@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { urlConstans } from '../constans/url.constans';
-import { RequestRol } from '../models/rol-request.model';
+import { RequestRol } from '../modules/mantenimiento/models/rol-request.model';
 
 @Injectable({
   providedIn: 'root'

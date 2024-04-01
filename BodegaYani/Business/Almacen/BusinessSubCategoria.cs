@@ -16,78 +16,92 @@ namespace Business.Almacen
 {
     public class BusinessSubCategoria : IBusinessSubCategoria
     {
-        #region DECLARAR VARIABLE CONSTRUCTORES / DISPOSE
-        private readonly IRepositorySubCategoria _subCategoriaRepository;
+        #region DECLARACIÓN DE VARIABLES Y CONSTRUCTOR / DISPOSE
+        private readonly IRepositorySubCategoria _repositorySubCategoria;
         private readonly IMapper _mapper;
 
         public BusinessSubCategoria(IMapper mapper)
         {
             _mapper = mapper;
-            _subCategoriaRepository = new RepositorySubCategoria();
+            _repositorySubCategoria = new RepositorySubCategoria();
         }
+
         public void Dispose()
         {
             GC.SuppressFinalize(this);
         }
-        #endregion DECLARAR VARIABLE CONSTRUCTORES / DISPOSE
+
+        #endregion DECLARACIÓN DE VARIABLES Y CONSTRUCTOR / DISPOSE
 
         #region CRUD METHODS
-        public ResponseSubCategoria Create(RequestSubCategoria entity)
-        {
-            SubCategoria subCategoriaEntity = _mapper.Map<SubCategoria>(entity);
-            SubCategoria createdSubCategoria = _subCategoriaRepository.Create(subCategoriaEntity);
-            return _mapper.Map<ResponseSubCategoria>(createdSubCategoria);
-        }
-
-        public List<ResponseSubCategoria> CreateMultiple(List<RequestSubCategoria> list)
-        {
-            List<SubCategoria> subCategoriaEntities = _mapper.Map<List<SubCategoria>>(list);
-            List<SubCategoria> createdSubCategorias = _subCategoriaRepository.CreateMultiple(subCategoriaEntities);
-            return _mapper.Map<List<ResponseSubCategoria>>(createdSubCategorias);
-        }
-
-        public int Delete(object id)
-        {
-            return _subCategoriaRepository.Delete(id);
-        }
-
-        public int DeleteMultiple(List<RequestSubCategoria> list)
-        {
-            List<SubCategoria> subCategoriaEntities = _mapper.Map<List<SubCategoria>>(list);
-            return _subCategoriaRepository.DeleteMultiple(subCategoriaEntities);
-        }
 
         public List<ResponseSubCategoria> GetAll()
         {
-            List<SubCategoria> subCategorias = _subCategoriaRepository.GetAll();
-            return _mapper.Map<List<ResponseSubCategoria>>(subCategorias);
-        }
-
-        public ResponseFilterGeneric<ResponseSubCategoria> GetByFilter(RequestFilterGeneric request)
-        {
-            throw new NotImplementedException();
+            List<SubCategoria> subCategorias = _repositorySubCategoria.GetAll();
+            List<ResponseSubCategoria> result = _mapper.Map<List<ResponseSubCategoria>>(subCategorias);
+            return result;
         }
 
         public ResponseSubCategoria GetById(object id)
         {
-            SubCategoria subCategoriaEntity = _subCategoriaRepository.GetById(id);
-            return _mapper.Map<ResponseSubCategoria>(subCategoriaEntity);
+            SubCategoria subCategoria = _repositorySubCategoria.GetById(id);
+            ResponseSubCategoria result = _mapper.Map<ResponseSubCategoria>(subCategoria);
+            return result;
+        }
+
+        public ResponseSubCategoria Create(RequestSubCategoria entity)
+        {
+            SubCategoria subCategoria = _mapper.Map<SubCategoria>(entity);
+            subCategoria = _repositorySubCategoria.Create(subCategoria);
+            ResponseSubCategoria result = _mapper.Map<ResponseSubCategoria>(subCategoria);
+            return result;
+        }
+
+        public List<ResponseSubCategoria> CreateMultiple(List<RequestSubCategoria> lista)
+        {
+            List<SubCategoria> subCategorias = _mapper.Map<List<SubCategoria>>(lista);
+            subCategorias = _repositorySubCategoria.CreateMultiple(subCategorias);
+            List<ResponseSubCategoria> result = _mapper.Map<List<ResponseSubCategoria>>(subCategorias);
+            return result;
         }
 
         public ResponseSubCategoria Update(RequestSubCategoria entity)
         {
-            SubCategoria subCategoriaEntity = _mapper.Map<SubCategoria>(entity);
-            SubCategoria updatedSubCategoria = _subCategoriaRepository.Update(subCategoriaEntity);
-            return _mapper.Map<ResponseSubCategoria>(updatedSubCategoria);
+            SubCategoria subCategoria = _mapper.Map<SubCategoria>(entity);
+            subCategoria = _repositorySubCategoria.Update(subCategoria);
+            ResponseSubCategoria result = _mapper.Map<ResponseSubCategoria>(subCategoria);
+            return result;
         }
 
-        public List<ResponseSubCategoria> UpdateMultiple(List<RequestSubCategoria> list)
+        public List<ResponseSubCategoria> UpdateMultiple(List<RequestSubCategoria> lista)
         {
-            List<SubCategoria> subCategoriaEntities = _mapper.Map<List<SubCategoria>>(list);
-            List<SubCategoria> updatedSubCategorias = _subCategoriaRepository.UpdateMultiple(subCategoriaEntities);
-            return _mapper.Map<List<ResponseSubCategoria>>(updatedSubCategorias);
+            List<SubCategoria> subCategorias = _mapper.Map<List<SubCategoria>>(lista);
+            subCategorias = _repositorySubCategoria.UpdateMultiple(subCategorias);
+            List<ResponseSubCategoria> response = _mapper.Map<List<ResponseSubCategoria>>(subCategorias);
+            return response;
         }
+
+        public int Delete(object id)
+        {
+            int cantidad = _repositorySubCategoria.Delete(id);
+            return cantidad;
+        }
+
+        public int DeleteMultiple(List<RequestSubCategoria> lista)
+        {
+            List<SubCategoria> subCategorias = _mapper.Map<List<SubCategoria>>(lista);
+            int cantidad = _repositorySubCategoria.DeleteMultiple(subCategorias);
+            return cantidad;
+        }
+
+        public ResponseFilterGeneric<ResponseSubCategoria> GetByFilter(RequestFilterGeneric request)
+        {
+            ResponseFilterGeneric<ResponseSubCategoria> result = _mapper.Map<ResponseFilterGeneric<ResponseSubCategoria>>(_repositorySubCategoria.GetByFilter(request));
+            return result;
+        }
+
         #endregion CRUD METHODS
+
     }
 
 }

@@ -14,6 +14,13 @@ namespace RequestResponseModels.Response.Almacen
         public string UserName { get; set; } = null!;
         public string Password { get; set; } = null!;
         public bool Estado { get; set; }
+        public string EstadoDescripcion
+        {
+            get
+            {
+                return Estado ? "Activo" : "Inactivo";
+            }
+        }
         public DateTime FechaRegistro { get; set; }
         public DateTime FechaActualizar { get; set; }
     }

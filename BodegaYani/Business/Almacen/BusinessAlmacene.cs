@@ -25,70 +25,84 @@ namespace Business.Almacen
             _mapper = mapper;
             _almaceneRepository = new RepositoryAlmacene();
         }
+
         public void Dispose()
         {
             GC.SuppressFinalize(this);
         }
+
         #endregion DECLARAR VARIABLE CONSTRUCTORES / DISPOSE
 
         #region CRUD METHODS
-        public ResponseAlmacene Create(RequestAlmacene entity)
-        {
-            Almacene almaceneEntity = _mapper.Map<Almacene>(entity);
-            Almacene createdAlmacene = _almaceneRepository.Create(almaceneEntity);
-            return _mapper.Map<ResponseAlmacene>(createdAlmacene);
-        }
-
-        public List<ResponseAlmacene> CreateMultiple(List<RequestAlmacene> list)
-        {
-            List<Almacene> almaceneEntities = _mapper.Map<List<Almacene>>(list);
-            List<Almacene> createdAlmacenes = _almaceneRepository.CreateMultiple(almaceneEntities);
-            return _mapper.Map<List<ResponseAlmacene>>(createdAlmacenes);
-        }
-
-        public int Delete(object id)
-        {
-            return _almaceneRepository.Delete(id);
-        }
-
-        public int DeleteMultiple(List<RequestAlmacene> list)
-        {
-            List<Almacene> almaceneEntities = _mapper.Map<List<Almacene>>(list);
-            return _almaceneRepository.DeleteMultiple(almaceneEntities);
-        }
-        
 
         public List<ResponseAlmacene> GetAll()
         {
             List<Almacene> almacenes = _almaceneRepository.GetAll();
-            return _mapper.Map<List<ResponseAlmacene>>(almacenes);
-        }
-
-        public ResponseFilterGeneric<ResponseAlmacene> GetByFilter(RequestFilterGeneric request)
-        {
-            throw new NotImplementedException();
+            List<ResponseAlmacene> result = _mapper.Map<List<ResponseAlmacene>>(almacenes);
+            return result;
         }
 
         public ResponseAlmacene GetById(object id)
         {
-            Almacene almaceneEntity = _almaceneRepository.GetById(id);
-            return _mapper.Map<ResponseAlmacene>(almaceneEntity);
+            Almacene almacene = _almaceneRepository.GetById(id);
+            ResponseAlmacene result = _mapper.Map<ResponseAlmacene>(almacene);
+            return result;
+        }
+
+        public ResponseAlmacene Create(RequestAlmacene entity)
+        {
+            Almacene almacene = _mapper.Map<Almacene>(entity);
+            almacene = _almaceneRepository.Create(almacene);
+            ResponseAlmacene result = _mapper.Map<ResponseAlmacene>(almacene);
+            return result;
+        }
+
+        public List<ResponseAlmacene> CreateMultiple(List<RequestAlmacene> lista)
+        {
+            List<Almacene> almacenes = _mapper.Map<List<Almacene>>(lista);
+            almacenes = _almaceneRepository.CreateMultiple(almacenes);
+            List<ResponseAlmacene> result = _mapper.Map<List<ResponseAlmacene>>(almacenes);
+            return result;
         }
 
         public ResponseAlmacene Update(RequestAlmacene entity)
         {
-            Almacene almaceneEntity = _mapper.Map<Almacene>(entity);
-            Almacene updatedAlmacene = _almaceneRepository.Update(almaceneEntity);
-            return _mapper.Map<ResponseAlmacene>(updatedAlmacene);
+            Almacene almacene = _mapper.Map<Almacene>(entity);
+            almacene = _almaceneRepository.Update(almacene);
+            ResponseAlmacene result = _mapper.Map<ResponseAlmacene>(almacene);
+            return result;
         }
 
-        public List<ResponseAlmacene> UpdateMultiple(List<RequestAlmacene> list)
+        public List<ResponseAlmacene> UpdateMultiple(List<RequestAlmacene> lista)
         {
-            List<Almacene> almaceneEntities = _mapper.Map<List<Almacene>>(list);
-            List<Almacene> updatedAlmacenes = _almaceneRepository.UpdateMultiple(almaceneEntities);
-            return _mapper.Map<List<ResponseAlmacene>>(updatedAlmacenes);
+            List<Almacene> almacenes = _mapper.Map<List<Almacene>>(lista);
+            almacenes = _almaceneRepository.UpdateMultiple(almacenes);
+            List<ResponseAlmacene> response = _mapper.Map<List<ResponseAlmacene>>(almacenes);
+            return response;
         }
+
+        public int Delete(object id)
+        {
+            int cantidad = _almaceneRepository.Delete(id);
+            return cantidad;
+        }
+
+        public int DeleteMultiple(List<RequestAlmacene> lista)
+        {
+            List<Almacene> almacenes = _mapper.Map<List<Almacene>>(lista);
+            int cantidad = _almaceneRepository.DeleteMultiple(almacenes);
+            return cantidad;
+        }
+
+        public ResponseFilterGeneric<ResponseAlmacene> GetByFilter(RequestFilterGeneric request)
+        {
+            ResponseFilterGeneric<ResponseAlmacene> result = _mapper.Map<ResponseFilterGeneric<ResponseAlmacene>>(_almaceneRepository.GetByFilter(request));
+            return result;
+        }
+
         #endregion CRUD METHODS
+
+
     }
 
 }

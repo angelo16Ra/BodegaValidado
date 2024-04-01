@@ -79,6 +79,7 @@ E:\BACKYFROM\BodegaYani\Mapper\obj\Debug\net8.0\Mapper.GeneratedMSBuildEditorCon
 E:\BACKYFROM\BodegaYani\Mapper\obj\Debug\net8.0\Mapper.AssemblyInfoInputs.cache
 E:\BACKYFROM\BodegaYani\Mapper\obj\Debug\net8.0\Mapper.AssemblyInfo.cs
 E:\BACKYFROM\BodegaYani\Mapper\obj\Debug\net8.0\Mapper.csproj.CoreCompileInputs.cache
+E:\BACKYFROM\BodegaYani\Mapper\obj\Debug\net8.0\Mapper.sourcelink.json
 E:\BACKYFROM\BodegaYani\Mapper\obj\Debug\net8.0\Mapper.csproj.Up2Date
 E:\BACKYFROM\BodegaYani\Mapper\obj\Debug\net8.0\Mapper.dll
 E:\BACKYFROM\BodegaYani\Mapper\obj\Debug\net8.0\refint\Mapper.dll

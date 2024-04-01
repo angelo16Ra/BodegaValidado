@@ -55,6 +55,7 @@ E:\BACKYFROM\BodegaYani\Security\obj\Debug\net8.0\Security.GeneratedMSBuildEdito
 E:\BACKYFROM\BodegaYani\Security\obj\Debug\net8.0\Security.AssemblyInfoInputs.cache
 E:\BACKYFROM\BodegaYani\Security\obj\Debug\net8.0\Security.AssemblyInfo.cs
 E:\BACKYFROM\BodegaYani\Security\obj\Debug\net8.0\Security.csproj.CoreCompileInputs.cache
+E:\BACKYFROM\BodegaYani\Security\obj\Debug\net8.0\Security.sourcelink.json
 E:\BACKYFROM\BodegaYani\Security\obj\Debug\net8.0\Security.dll
 E:\BACKYFROM\BodegaYani\Security\obj\Debug\net8.0\refint\Security.dll
 E:\BACKYFROM\BodegaYani\Security\obj\Debug\net8.0\Security.pdb

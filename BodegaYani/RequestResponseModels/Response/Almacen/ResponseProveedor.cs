@@ -16,5 +16,12 @@ namespace RequestResponseModels.Response.Almacen
         public DateTime FechaRegistro { get; set; }
         public DateTime FechaActualizacion { get; set; }
         public bool Estado { get; set; }
+        public string EstadoDescripcion
+        {
+            get
+            {
+                return Estado ? "Activo" : "Inactivo";
+            }
+        }
     }
 }

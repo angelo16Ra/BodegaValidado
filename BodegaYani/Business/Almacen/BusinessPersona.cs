@@ -16,14 +16,14 @@ namespace Business.Almacen
 {
     public class BusinessPersona : IBusinessPersona
     {
-        #region DECLARAR VARIABLE CONSTRUCTORES / DISPOSE
-        private readonly IRepositoryPersona _persona;
+        #region DECLARACIÓN DE VARIABLES Y CONSTRUCTOR / DISPOSE
+        private readonly IRepositoryPersona _repositoryPersona;
         private readonly IMapper _mapper;
 
         public BusinessPersona(IMapper mapper)
         {
             _mapper = mapper;
-            _persona = new RepositoryPersona();
+            _repositoryPersona = new RepositoryPersona();
         }
 
         public void Dispose()
@@ -31,74 +31,77 @@ namespace Business.Almacen
             GC.SuppressFinalize(this);
         }
 
-        #endregion DECLARAR VARIABLE CONSTRUCTORES / DISPOSE
+        #endregion DECLARACIÓN DE VARIABLES Y CONSTRUCTOR / DISPOSE
 
         #region CRUD METHODS
+
+        public List<ResponsePersona> GetAll()
+        {
+            List<Persona> personas = _repositoryPersona.GetAll();
+            List<ResponsePersona> result = _mapper.Map<List<ResponsePersona>>(personas);
+            return result;
+        }
+
+        public ResponsePersona GetById(object id)
+        {
+            Persona persona = _repositoryPersona.GetById(id);
+            ResponsePersona result = _mapper.Map<ResponsePersona>(persona);
+            return result;
+        }
+
         public ResponsePersona Create(RequestPersona entity)
         {
-            Persona personas = _mapper.Map<Persona>(entity);
-            personas = _persona.Create(personas);
-            ResponsePersona response = _mapper.Map<ResponsePersona>(personas);
-            return response;
+            Persona persona = _mapper.Map<Persona>(entity);
+            persona = _repositoryPersona.Create(persona);
+            ResponsePersona result = _mapper.Map<ResponsePersona>(persona);
+            return result;
         }
 
         public List<ResponsePersona> CreateMultiple(List<RequestPersona> lista)
         {
             List<Persona> personas = _mapper.Map<List<Persona>>(lista);
-            personas = _persona.CreateMultiple(personas);
+            personas = _repositoryPersona.CreateMultiple(personas);
+            List<ResponsePersona> result = _mapper.Map<List<ResponsePersona>>(personas);
+            return result;
+        }
+
+        public ResponsePersona Update(RequestPersona entity)
+        {
+            Persona persona = _mapper.Map<Persona>(entity);
+            persona = _repositoryPersona.Update(persona);
+            ResponsePersona result = _mapper.Map<ResponsePersona>(persona);
+            return result;
+        }
+
+        public List<ResponsePersona> UpdateMultiple(List<RequestPersona> lista)
+        {
+            List<Persona> personas = _mapper.Map<List<Persona>>(lista);
+            personas = _repositoryPersona.UpdateMultiple(personas);
             List<ResponsePersona> response = _mapper.Map<List<ResponsePersona>>(personas);
             return response;
         }
 
         public int Delete(object id)
         {
-            int cantidad = _persona.Delete(id);
+            int cantidad = _repositoryPersona.Delete(id);
             return cantidad;
         }
 
         public int DeleteMultiple(List<RequestPersona> lista)
         {
             List<Persona> personas = _mapper.Map<List<Persona>>(lista);
-            int cantidad = _persona.DeleteMultiple(personas);
-            return cantidad;
-        }
-
-        public List<ResponsePersona> GetAll()
-        {
-            List<Persona> personas = _persona.GetAll();
-            List<ResponsePersona> response = _mapper.Map<List<ResponsePersona>>(personas);
-            return response;
+            int cantidad = _repositoryPersona.DeleteMultiple(personas);
+            return cantidad;    
         }
 
         public ResponseFilterGeneric<ResponsePersona> GetByFilter(RequestFilterGeneric request)
         {
-            throw new NotImplementedException();
-        }
-
-        public ResponsePersona GetById(object id)
-        {
-            Persona personas = _persona.GetById(id);
-            ResponsePersona response = _mapper.Map<ResponsePersona>(personas);
-            return response;
-        }
-
-        public ResponsePersona Update(RequestPersona entity)
-        {
-            Persona personas = _mapper.Map<Persona>(entity);
-            personas = _persona.Update(personas);
-            ResponsePersona response = _mapper.Map<ResponsePersona>(personas);
-            return response;
-        }
-
-        public List<ResponsePersona> UpdateMultiple(List<RequestPersona> lista)
-        {
-            List<Persona> personas = _mapper.Map<List<Persona>>(lista);
-            personas = _persona.UpdateMultiple(personas);
-            List<ResponsePersona> response = _mapper.Map<List<ResponsePersona>>(personas);
-            return response;
+            ResponseFilterGeneric<ResponsePersona> result = _mapper.Map<ResponseFilterGeneric<ResponsePersona>>(_repositoryPersona.GetByFilter(request));
+            return result;
         }
 
         #endregion CRUD METHODS
+
     }
 
 

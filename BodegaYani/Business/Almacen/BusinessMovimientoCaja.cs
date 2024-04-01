@@ -16,7 +16,7 @@ namespace Business.Almacen
 {
     public class BusinessMovimientoCaja : IBusinessMovimientoCaja
     {
-        #region DECLARAR VARIABLE CONSTRUCTORES / DISPOSE
+        #region DECLARACIÓN DE VARIABLES Y CONSTRUCTOR / DISPOSE
         private readonly IRepositoryMovimientoCaja _movimientoCajaRepository;
         private readonly IMapper _mapper;
 
@@ -25,69 +25,83 @@ namespace Business.Almacen
             _mapper = mapper;
             _movimientoCajaRepository = new RepositoryMovimientoCaja();
         }
+
         public void Dispose()
         {
             GC.SuppressFinalize(this);
         }
-        #endregion DECLARAR VARIABLE CONSTRUCTORES / DISPOSE
+
+        #endregion DECLARACIÓN DE VARIABLES Y CONSTRUCTOR / DISPOSE
 
         #region CRUD METHODS
-        public ResponseMovimientoCaja Create(RequestMovimientoCaja entity)
-        {
-            MovimientoCaja movimientoCajaEntity = _mapper.Map<MovimientoCaja>(entity);
-            MovimientoCaja createdMovimientoCaja = _movimientoCajaRepository.Create(movimientoCajaEntity);
-            return _mapper.Map<ResponseMovimientoCaja>(createdMovimientoCaja);
-        }
-
-        public List<ResponseMovimientoCaja> CreateMultiple(List<RequestMovimientoCaja> list)
-        {
-            List<MovimientoCaja> movimientoCajaEntities = _mapper.Map<List<MovimientoCaja>>(list);
-            List<MovimientoCaja> createdMovimientoCajas = _movimientoCajaRepository.CreateMultiple(movimientoCajaEntities);
-            return _mapper.Map<List<ResponseMovimientoCaja>>(createdMovimientoCajas);
-        }
-
-        public int Delete(object id)
-        {
-            return _movimientoCajaRepository.Delete(id);
-        }
-
-        public int DeleteMultiple(List<RequestMovimientoCaja> list)
-        {
-            List<MovimientoCaja> movimientoCajaEntities = _mapper.Map<List<MovimientoCaja>>(list);
-            return _movimientoCajaRepository.DeleteMultiple(movimientoCajaEntities);
-        }
 
         public List<ResponseMovimientoCaja> GetAll()
         {
-            List<MovimientoCaja> movimientoCajas = _movimientoCajaRepository.GetAll();
-            return _mapper.Map<List<ResponseMovimientoCaja>>(movimientoCajas);
-        }
-
-        public ResponseFilterGeneric<ResponseMovimientoCaja> GetByFilter(RequestFilterGeneric request)
-        {
-            throw new NotImplementedException();
+            List<MovimientoCaja> movimientosCaja = _movimientoCajaRepository.GetAll();
+            List<ResponseMovimientoCaja> result = _mapper.Map<List<ResponseMovimientoCaja>>(movimientosCaja);
+            return result;
         }
 
         public ResponseMovimientoCaja GetById(object id)
         {
-            MovimientoCaja movimientoCajaEntity = _movimientoCajaRepository.GetById(id);
-            return _mapper.Map<ResponseMovimientoCaja>(movimientoCajaEntity);
+            MovimientoCaja movimientoCaja = _movimientoCajaRepository.GetById(id);
+            ResponseMovimientoCaja result = _mapper.Map<ResponseMovimientoCaja>(movimientoCaja);
+            return result;
+        }
+
+        public ResponseMovimientoCaja Create(RequestMovimientoCaja entity)
+        {
+            MovimientoCaja movimientoCaja = _mapper.Map<MovimientoCaja>(entity);
+            movimientoCaja = _movimientoCajaRepository.Create(movimientoCaja);
+            ResponseMovimientoCaja result = _mapper.Map<ResponseMovimientoCaja>(movimientoCaja);
+            return result;
+        }
+
+        public List<ResponseMovimientoCaja> CreateMultiple(List<RequestMovimientoCaja> lista)
+        {
+            List<MovimientoCaja> movimientosCaja = _mapper.Map<List<MovimientoCaja>>(lista);
+            movimientosCaja = _movimientoCajaRepository.CreateMultiple(movimientosCaja);
+            List<ResponseMovimientoCaja> result = _mapper.Map<List<ResponseMovimientoCaja>>(movimientosCaja);
+            return result;
         }
 
         public ResponseMovimientoCaja Update(RequestMovimientoCaja entity)
         {
-            MovimientoCaja movimientoCajaEntity = _mapper.Map<MovimientoCaja>(entity);
-            MovimientoCaja updatedMovimientoCaja = _movimientoCajaRepository.Update(movimientoCajaEntity);
-            return _mapper.Map<ResponseMovimientoCaja>(updatedMovimientoCaja);
+            MovimientoCaja movimientoCaja = _mapper.Map<MovimientoCaja>(entity);
+            movimientoCaja = _movimientoCajaRepository.Update(movimientoCaja);
+            ResponseMovimientoCaja result = _mapper.Map<ResponseMovimientoCaja>(movimientoCaja);
+            return result;
         }
 
-        public List<ResponseMovimientoCaja> UpdateMultiple(List<RequestMovimientoCaja> list)
+        public List<ResponseMovimientoCaja> UpdateMultiple(List<RequestMovimientoCaja> lista)
         {
-            List<MovimientoCaja> movimientoCajaEntities = _mapper.Map<List<MovimientoCaja>>(list);
-            List<MovimientoCaja> updatedMovimientoCajas = _movimientoCajaRepository.UpdateMultiple(movimientoCajaEntities);
-            return _mapper.Map<List<ResponseMovimientoCaja>>(updatedMovimientoCajas);
+            List<MovimientoCaja> movimientosCaja = _mapper.Map<List<MovimientoCaja>>(lista);
+            movimientosCaja = _movimientoCajaRepository.UpdateMultiple(movimientosCaja);
+            List<ResponseMovimientoCaja> response = _mapper.Map<List<ResponseMovimientoCaja>>(movimientosCaja);
+            return response;
         }
+
+        public int Delete(object id)
+        {
+            int cantidad = _movimientoCajaRepository.Delete(id);
+            return cantidad;
+        }
+
+        public int DeleteMultiple(List<RequestMovimientoCaja> lista)
+        {
+            List<MovimientoCaja> movimientosCaja = _mapper.Map<List<MovimientoCaja>>(lista);
+            int cantidad = _movimientoCajaRepository.DeleteMultiple(movimientosCaja);
+            return cantidad;
+        }
+
+        public ResponseFilterGeneric<ResponseMovimientoCaja> GetByFilter(RequestFilterGeneric request)
+        {
+            ResponseFilterGeneric<ResponseMovimientoCaja> result = _mapper.Map<ResponseFilterGeneric<ResponseMovimientoCaja>>(_movimientoCajaRepository.GetByFilter(request));
+            return result;
+        }
+
         #endregion CRUD METHODS
+
     }
 
 }

@@ -717,6 +717,7 @@ E:\BACKYFROM\BodegaYani\ApiWeb\bin\Debug\net8.0\Microsoft.OpenApi.dll
 E:\BACKYFROM\BodegaYani\ApiWeb\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 E:\BACKYFROM\BodegaYani\ApiWeb\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 E:\BACKYFROM\BodegaYani\ApiWeb\bin\Debug\net8.0\Mono.TextTemplating.dll
+E:\BACKYFROM\BodegaYani\ApiWeb\bin\Debug\net8.0\Newtonsoft.Json.dll
 E:\BACKYFROM\BodegaYani\ApiWeb\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 E:\BACKYFROM\BodegaYani\ApiWeb\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\BACKYFROM\BodegaYani\ApiWeb\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -832,6 +833,7 @@ E:\BACKYFROM\BodegaYani\ApiWeb\obj\Debug\net8.0\ApiWeb.AssemblyInfo.cs
 E:\BACKYFROM\BodegaYani\ApiWeb\obj\Debug\net8.0\ApiWeb.csproj.CoreCompileInputs.cache
 E:\BACKYFROM\BodegaYani\ApiWeb\obj\Debug\net8.0\ApiWeb.MvcApplicationPartsAssemblyInfo.cs
 E:\BACKYFROM\BodegaYani\ApiWeb\obj\Debug\net8.0\ApiWeb.MvcApplicationPartsAssemblyInfo.cache
+E:\BACKYFROM\BodegaYani\ApiWeb\obj\Debug\net8.0\ApiWeb.sourcelink.json
 E:\BACKYFROM\BodegaYani\ApiWeb\obj\Debug\net8.0\staticwebassets.build.json
 E:\BACKYFROM\BodegaYani\ApiWeb\obj\Debug\net8.0\staticwebassets.development.json
 E:\BACKYFROM\BodegaYani\ApiWeb\obj\Debug\net8.0\staticwebassets\msbuild.ApiWeb.Microsoft.AspNetCore.StaticWebAssets.props

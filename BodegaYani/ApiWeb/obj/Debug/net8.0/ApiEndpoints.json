@@ -214,6 +214,38 @@
     ]
   },
   {
+    "ContainingType": "ApiWeb.Controllers.Almacen.AlmaceneController",
+    "Method": "GetByFilter",
+    "RelativePath": "api/Almacene/filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.AlmaceneController",
+    "Method": "CreateMultiple",
+    "RelativePath": "api/Almacene/multiple",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.Collections.Generic.List\u00601[[RequestResponseModels.Request.Almacen.RequestAlmacene, RequestResponseModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ApiWeb.Controllers.AuthController",
     "Method": "Get",
     "RelativePath": "api/Auth",
@@ -510,6 +542,38 @@
     ]
   },
   {
+    "ContainingType": "ApiWeb.Controllers.Almacen.CajaController",
+    "Method": "GetByFilter",
+    "RelativePath": "api/Caja/filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.CajaController",
+    "Method": "CreateMultiple",
+    "RelativePath": "api/Caja/multiple",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.Collections.Generic.List\u00601[[RequestResponseModels.Request.Almacen.RequestCaja, RequestResponseModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ApiWeb.Controllers.Almacen.CategoriaController",
     "Method": "Get",
     "RelativePath": "api/Categoria",
@@ -722,6 +786,38 @@
         "StatusCode": 500
       }
     ]
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.CategoriaController",
+    "Method": "GetByFilter",
+    "RelativePath": "api/Categoria/filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.CategoriaController",
+    "Method": "CreateMultiple",
+    "RelativePath": "api/Categoria/multiple",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.Collections.Generic.List\u00601[[RequestResponseModels.Request.Almacen.RequestCategoria, RequestResponseModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "ApiWeb.Controllers.Almacen.DetallePedidoController",
@@ -938,6 +1034,38 @@
     ]
   },
   {
+    "ContainingType": "ApiWeb.Controllers.Almacen.DetallePedidoController",
+    "Method": "GetByFilter",
+    "RelativePath": "api/DetallePedido/filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.DetallePedidoController",
+    "Method": "CreateMultiple",
+    "RelativePath": "api/DetallePedido/multiple",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.Collections.Generic.List\u00601[[RequestResponseModels.Request.Almacen.RequestDetallePedido, RequestResponseModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ApiWeb.Controllers.Almacen.MovimientoCajaController",
     "Method": "Get",
     "RelativePath": "api/MovimientoCaja",
@@ -1150,6 +1278,38 @@
         "StatusCode": 500
       }
     ]
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.MovimientoCajaController",
+    "Method": "GetByFilter",
+    "RelativePath": "api/MovimientoCaja/filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.MovimientoCajaController",
+    "Method": "CreateMultiple",
+    "RelativePath": "api/MovimientoCaja/multiple",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.Collections.Generic.List\u00601[[RequestResponseModels.Request.Almacen.RequestMovimientoCaja, RequestResponseModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "ApiWeb.Controllers.Almacen.PedidoController",
@@ -1366,6 +1526,38 @@
     ]
   },
   {
+    "ContainingType": "ApiWeb.Controllers.Almacen.PedidoController",
+    "Method": "GetByFilter",
+    "RelativePath": "api/Pedido/filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.PedidoController",
+    "Method": "CreateMultiple",
+    "RelativePath": "api/Pedido/multiple",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.Collections.Generic.List\u00601[[RequestResponseModels.Request.Almacen.RequestPedido, RequestResponseModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ApiWeb.Controllers.Almacen.PersonaController",
     "Method": "Get",
     "RelativePath": "api/Persona",
@@ -1578,6 +1770,38 @@
         "StatusCode": 500
       }
     ]
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.PersonaController",
+    "Method": "GetByFilter",
+    "RelativePath": "api/Persona/filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.PersonaController",
+    "Method": "CreateMultiple",
+    "RelativePath": "api/Persona/multiple",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.Collections.Generic.List\u00601[[RequestResponseModels.Request.Almacen.RequestPersona, RequestResponseModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "ApiWeb.Controllers.Almacen.ProductoController",
@@ -1794,6 +2018,38 @@
     ]
   },
   {
+    "ContainingType": "ApiWeb.Controllers.Almacen.ProductoController",
+    "Method": "GetByFilter",
+    "RelativePath": "api/Producto/filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.ProductoController",
+    "Method": "CreateMultiple",
+    "RelativePath": "api/Producto/multiple",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.Collections.Generic.List\u00601[[RequestResponseModels.Request.Almacen.RequestProducto, RequestResponseModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ApiWeb.Controllers.Almacen.ProveedorController",
     "Method": "Get",
     "RelativePath": "api/Proveedor",
@@ -2006,6 +2262,38 @@
         "StatusCode": 500
       }
     ]
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.ProveedorController",
+    "Method": "GetByFilter",
+    "RelativePath": "api/Proveedor/filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.ProveedorController",
+    "Method": "CreateMultiple",
+    "RelativePath": "api/Proveedor/multiple",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.Collections.Generic.List\u00601[[RequestResponseModels.Request.Almacen.RequestProveedor, RequestResponseModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "ApiWeb.Controllers.Almacen.RolController",
@@ -2222,6 +2510,38 @@
     ]
   },
   {
+    "ContainingType": "ApiWeb.Controllers.Almacen.RolController",
+    "Method": "GetByFilter",
+    "RelativePath": "api/Rol/filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.RolController",
+    "Method": "CreateMultiple",
+    "RelativePath": "api/Rol/multiple",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.Collections.Generic.List\u00601[[RequestResponseModels.Request.Almacen.RequestRol, RequestResponseModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ApiWeb.Controllers.Almacen.SubCategoriaController",
     "Method": "Get",
     "RelativePath": "api/SubCategoria",
@@ -2434,6 +2754,38 @@
         "StatusCode": 500
       }
     ]
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.SubCategoriaController",
+    "Method": "GetByFilter",
+    "RelativePath": "api/SubCategoria/filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.SubCategoriaController",
+    "Method": "CreateMultiple",
+    "RelativePath": "api/SubCategoria/multiple",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.Collections.Generic.List\u00601[[RequestResponseModels.Request.Almacen.RequestSubCategoria, RequestResponseModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "ApiWeb.Controllers.Almacen.TipoDocumentoController",
@@ -2650,6 +3002,38 @@
     ]
   },
   {
+    "ContainingType": "ApiWeb.Controllers.Almacen.TipoDocumentoController",
+    "Method": "GetByFilter",
+    "RelativePath": "api/TipoDocumento/filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.TipoDocumentoController",
+    "Method": "CreateMultiple",
+    "RelativePath": "api/TipoDocumento/multiple",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.Collections.Generic.List\u00601[[RequestResponseModels.Request.Almacen.RequestTipoDocumento, RequestResponseModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ApiWeb.Controllers.Almacen.UnidadMedidaController",
     "Method": "Get",
     "RelativePath": "api/UnidadMedida",
@@ -2864,6 +3248,38 @@
     ]
   },
   {
+    "ContainingType": "ApiWeb.Controllers.Almacen.UnidadMedidaController",
+    "Method": "GetByFilter",
+    "RelativePath": "api/UnidadMedida/filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.UnidadMedidaController",
+    "Method": "CreateMultiple",
+    "RelativePath": "api/UnidadMedida/multiple",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.Collections.Generic.List\u00601[[RequestResponseModels.Request.Almacen.RequestUnidadMedida, RequestResponseModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ApiWeb.Controllers.Almacen.UsuarioController",
     "Method": "Get",
     "RelativePath": "api/Usuario",
@@ -3076,5 +3492,37 @@
         "StatusCode": 500
       }
     ]
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.UsuarioController",
+    "Method": "GetByFilter",
+    "RelativePath": "api/Usuario/filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.UsuarioController",
+    "Method": "CreateMultiple",
+    "RelativePath": "api/Usuario/multiple",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.Collections.Generic.List\u00601[[RequestResponseModels.Request.Almacen.RequestUsuario, RequestResponseModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
