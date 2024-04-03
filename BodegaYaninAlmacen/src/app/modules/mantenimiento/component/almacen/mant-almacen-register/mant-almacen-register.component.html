@@ -1,0 +1,66 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{title}}</h4>
+    <!-- (click)="modalRef?.hide()" -->
+    <button type="button" class="btn-close close pull-right" aria-label="Close" >
+        <span arial-hidden="true" class="visually-hidden">&times;</span>
+    </button> 
+</div>
+
+<div class="modal-body">
+
+    <form [formGroup]="myForm">
+        <div class="row">
+
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="codigoAlmacenes">Código</label>
+                    <input formControlName="codigoAlmacenes" type="text" class="form-control" placeholder="Ingrese el Código">
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="nombre">Nombre del almacén</label>
+                    <input formControlName="nombre" type="text" class="form-control" placeholder="Ingrese el nombre del almacén">
+                </div>
+
+                <div *ngIf="myForm.get('nombre')?.errors && myForm.touched">
+                    <small class="text-danger" *ngIf="myForm.get('nombre')?.hasError('required')">Campo requerido</small>
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="capacidadLimite">Capacidad Límite</label>
+                    <input formControlName="capacidadLimite" type="number" class="form-control" placeholder="Ingrese la capacidad límite del almacén">
+                </div>
+
+                <div *ngIf="myForm.get('capacidadLimite')?.errors && myForm.touched">
+                    <small class="text-danger" *ngIf="myForm.get('capacidadLimite')?.hasError('required')">Campo requerido</small>
+                </div>
+            </div>
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <select formControlName="estado" class="form-select">
+                        <option value="true">Activo</option>
+                        <option value="false">Inactivo</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-6 mt-3">
+                <div class="d-grid gap-2">
+                    <button [disabled]="myForm.invalid" (click)="guardar()" class="btn-block btn btn-primary btn-sm">Guardar</button>
+                </div>
+            </div>
+            <div class="col-6 mt-3">
+                <div class="d-grid gap-2">
+                    <!-- (click)="modalRef?.hide()" -->
+                    <button class="btn-block btn btn-danger btn-sm">Cancelar</button>
+                </div>
+            </div>      
+
+        </div>
+    </form>
+</div>

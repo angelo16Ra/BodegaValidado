@@ -1,4 +1,4 @@
-export class ResposePersona {
+export class ResponsePersona {
     codigoPersona: number = 0;
     codigoDocumento: number = 0;
     codigoRol: number = 0;
@@ -9,5 +9,5 @@ export class ResposePersona {
     sexo: string = "";
     fechaNacimiento: Date = new Date();
     correo: string = "";
-    celular?: string;
+    celular: string = "";
 }

@@ -5,6 +5,7 @@ export class ResponseUsuario {
     userName: string = "";
     password: string = "";
     estado: boolean = true;
+    estadoDescripcion: string = "";
     fechaRegistro: string = "";
     fechaActualizar: string = "";
 }

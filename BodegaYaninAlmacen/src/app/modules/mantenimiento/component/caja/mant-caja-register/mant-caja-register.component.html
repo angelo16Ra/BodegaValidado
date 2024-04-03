@@ -1,0 +1,111 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{title}}</h4>
+    <!-- (click)="modalRef?.hide()" -->
+    <button type="button" class="btn-close close pull-right" aria-label="Close" >
+        <span arial-hidden="true" class="visually-hidden">&times;</span>
+    </button> 
+</div>
+
+<div class="modal-body">
+
+    <form [formGroup]="myForm">
+        <div class="row">
+
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="codigoCaja">Código</label>
+                    <input formControlName="codigoCaja" type="text" class="form-control" placeholder="Ingrese el Código">
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="fecha">fecha</label>
+                    <input formControlName="fecha" type="datetime" class="form-control" placeholder="Ingrese el nombre del almacén">
+                </div>
+
+                <div *ngIf="myForm.get('fecha')?.errors && myForm.touched">
+                    <small class="text-danger" *ngIf="myForm.get('fecha')?.hasError('required')">Campo requerido</small>
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="usuarioApertura">usuario de Apertura</label>
+                    <input formControlName="usuarioApertura" type="number" class="form-control" placeholder="Ingrese la capacidad límite del almacén">
+                </div>
+
+                <div *ngIf="myForm.get('usuarioApertura')?.errors && myForm.touched">
+                    <small class="text-danger" *ngIf="myForm.get('usuarioApertura')?.hasError('required')">Campo requerido</small>
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="usuarioCierre">usuario de Cierre</label>
+                    <input formControlName="usuarioCierre" type="number" class="form-control" placeholder="Ingrese la capacidad límite del almacén">
+                </div>
+
+                <div *ngIf="myForm.get('usuarioCierre')?.errors && myForm.touched">
+                    <small class="text-danger" *ngIf="myForm.get('usuarioCierre')?.hasError('required')">Campo requerido</small>
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <select formControlName="estado" class="form-select">
+                        <option value="true">Activo</option>
+                        <option value="false">Inactivo</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="montoApertura">monto de Apertura</label>
+                    <input formControlName="montoApertura" type="number" class="form-control" placeholder="Ingrese la capacidad límite del almacén">
+                </div>
+
+                <div *ngIf="myForm.get('montoApertura')?.errors && myForm.touched">
+                    <small class="text-danger" *ngIf="myForm.get('montoApertura')?.hasError('required')">Campo requerido</small>
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="montoCierre">monto de Cierre</label>
+                    <input formControlName="montoCierre" type="number" class="form-control" placeholder="Ingrese la capacidad límite del almacén">
+                </div>
+
+                <div *ngIf="myForm.get('montoCierre')?.errors && myForm.touched">
+                    <small class="text-danger" *ngIf="myForm.get('montoCierre')?.hasError('required')">Campo requerido</small>
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="montoAdicional">monto Adicional</label>
+                    <input formControlName="montoAdicional" type="number" class="form-control" placeholder="Ingrese la capacidad límite del almacén">
+                </div>
+
+                <div *ngIf="myForm.get('montoAdicional')?.errors && myForm.touched">
+                    <small class="text-danger" *ngIf="myForm.get('montoAdicional')?.hasError('required')">Campo requerido</small>
+                </div>
+            </div>
+
+
+            <div class="col-6 mt-3">
+                <div class="d-grid gap-2">
+                    <button [disabled]="myForm.invalid" (click)="guardar()" class="btn-block btn btn-primary btn-sm">Guardar</button>
+                </div>
+            </div>
+            <div class="col-6 mt-3">
+                <div class="d-grid gap-2">
+                    <button class="btn-block btn btn-danger btn-sm">Cancelar</button>
+                </div>
+            </div>      
+
+        </div>
+    </form>
+</div>

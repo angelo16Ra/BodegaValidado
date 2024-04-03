@@ -10,7 +10,7 @@ export interface CrudInterface<T,Y> {
     getAll(): Observable<Y[]>;
     create(request:T):Observable<Y>;
     update(request:T):Observable<Y>;
-    delete(codigoRol: number):Observable <number> 
+    delete(codigo: number):Observable <number> 
   
     // 
 

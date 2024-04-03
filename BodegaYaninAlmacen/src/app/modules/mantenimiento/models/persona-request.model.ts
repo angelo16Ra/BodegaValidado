@@ -9,5 +9,5 @@ export class RequestPersona {
     sexo: string = "";
     fechaNacimiento: Date = new Date();
     correo: string = "";
-    celular?: string;
+    celular: string = "";
 }
