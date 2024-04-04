@@ -1,6 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { error } from 'console';
+import { RequestFilterGeneric } from '../../../../../models/request-filter-generic.model';
+import { ResponseFilterGeneric } from '../../../../../models/response-filter-generic.model';
 import { SharedModule } from '../../../../shared/shared.module';
+import { Vproducto } from '../../../models/VProducto.model';
+import { ProductoService } from '../../../service/producto.service';
 import { MantProductoRegisterComponent } from '../mant-producto-register/mant-producto-register.component';
 
 @Component({
@@ -15,5 +20,5 @@ import { MantProductoRegisterComponent } from '../mant-producto-register/mant-pr
   styleUrl: './mant-producto-list.component.css'
 })
 export class MantProductoListComponent {
-  
+
 }

@@ -1,0 +1,59 @@
+<div class="container">
+    <form [formGroup]="form">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Codigo</th>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Estado</th>
+                    <th>
+                        <button (click)="addRol()" class="btn btn-primary btn-sm">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container formArrayName="roles">
+                    <ng-container *ngFor="let rol of rolesArrayForm.controls; let i=index">
+                        <tr [formGroupName]="i">  
+                            <td>{{ i + 1}}</td>
+                            <td>
+                                <input formControlName="codigoRol" class="form-control" type="text" >
+                            </td>
+                            <td>
+                                <input formControlName="nombre" class="form-control" type="text" >
+                            </td>
+                            <td>
+                                <input formControlName="descripcion" class="form-control" type="text" >
+                            </td>
+                            <td>
+                                <select formControlName="estadoDescripcion"  class="form-select">
+                                    <option value="1">Activo</option>
+                                    <option value="0">Inactvo</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button (click)="removeRol(i)" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </ng-container>
+                </ng-container>
+                
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6">
+                        <button [disable]="form.invalid" (click)="save()" class="btn btn-primary btn-sm">Guardar
+                            <i class="fas fa-save"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</div>

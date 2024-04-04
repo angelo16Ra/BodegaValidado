@@ -47,6 +47,8 @@ const routes: Routes = [
     path:'usuario',component:MantUsuarioListComponent 
   }
   
+
+  
 ];
 
 @NgModule({
