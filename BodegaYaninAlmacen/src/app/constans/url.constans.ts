@@ -8,6 +8,7 @@ export const urlConstans = {
     detallePedido: dominio + 'api/DetallePedido/',
     pedido: dominio + 'api/Pedido/',
     producto: dominio + 'api/Producto/',
+    proveedor: dominio + 'api/Proveedor/',
     rol: dominio + 'api/Rol/',
     subCategoria: dominio + 'api/SubCategoria/',
     tipoDocumento: dominio + 'api/TipoDocumento/',

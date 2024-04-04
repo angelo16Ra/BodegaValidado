@@ -1,3 +1,4 @@
+
 import { CommonModule } from '@angular/common';
 import { Component, TemplateRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -10,13 +11,12 @@ import { ResponseFilterGeneric } from '../../../../../models/response-filter-gen
 import { SharedModule } from '../../../../shared/shared.module';
 import { ResponseCaja } from '../../../models/caja-response.model';
 import { CajaService } from '../../../service/caja.service';
-import { MantCajaRegisterComponent } from '../mant-caja-register/mant-caja-register.component';
 
 @Component({
   selector: 'app-mant-caja-list',
   standalone: true,
   imports: [
-    MantCajaRegisterComponent,
+    MantCajaListComponent,
     CommonModule,
     SharedModule
   ],

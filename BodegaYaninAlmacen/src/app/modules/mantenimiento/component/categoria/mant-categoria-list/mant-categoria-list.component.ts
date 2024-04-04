@@ -8,9 +8,7 @@ import { AccionMantConst } from '../../../../../constans/general.constants';
 import { RequestFilterGeneric } from '../../../../../models/request-filter-generic.model';
 import { ResponseFilterGeneric } from '../../../../../models/response-filter-generic.model';
 import { SharedModule } from '../../../../shared/shared.module';
-import { ResponseCaja } from '../../../models/caja-response.model';
 import { ResponseCategoria } from '../../../models/categoria-response.model';
-import { CajaService } from '../../../service/caja.service';
 import { CategoriaService } from '../../../service/categoria.service';
 import { MantCategoriaRegisterComponent } from '../mant-categoria-register/mant-categoria-register.component';
 
