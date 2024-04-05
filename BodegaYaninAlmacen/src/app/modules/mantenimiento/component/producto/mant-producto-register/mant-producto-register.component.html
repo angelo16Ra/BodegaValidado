@@ -1,0 +1,125 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{title}}</h4>
+    <!-- (click)="modalRef?.hide()" -->
+    <button type="button" class="btn-close close pull-right" aria-label="Close" >
+        <span arial-hidden="true" class="visually-hidden">&times;</span>
+    </button> 
+</div>
+<div class="modal-body">
+    
+
+    <form [formGroup]="myForm">
+        
+        <div class="row mt-2">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">codigoProducto </label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">Unidad Medida</label>
+                    <select class="form-select">
+                        <option *ngFor="let d of tipoUnidadMedida" [value]="d.codigoUnidadMedida">
+                            {{d.nombre}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">Categoria</label>
+                    <select class="form-select">
+                        <option *ngFor="let d of tipoCategoria" [value]="d.codigoCategoria">
+                            {{d.nombre}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">Sub Categoria</label>
+                    <select class="form-select">
+                        <option *ngFor="let d of tipoSubCategoria" [value]="d.codigoSubCategoria">
+                            {{d.nombre}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">Proveedor</label>
+                    <select class="form-select">
+                        <option *ngFor="let d of tipoProveedor" [value]="d.codigoProveedor">
+                            {{d.razonSocial}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">Almacen</label>
+                    <select class="form-select">
+                        <option *ngFor="let d of tipoAlmacen" [value]="d.codigoAlmacenes">
+                            {{d.nombre}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">nombre</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">stock</label>
+                    <input type="number" class="form-control">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">precio</label>
+                    <input type="number" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">imagen</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">descripcion</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for=""></label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <button class="btn btn-primary btn-block">
+                    <i class="fas fa-save"></i>
+                </button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-danger btn-block">
+                    <i class="fas fa-ban"></i>
+                </button>
+            </div>
+        </div>    
+    </form>
+</div>

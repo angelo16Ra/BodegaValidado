@@ -99,6 +99,12 @@ E:\BodegaYani\Repository\obj\Debug\net8.0\refint\Repository.dll
 E:\BodegaYani\Repository\obj\Debug\net8.0\Repository.pdb
 E:\BodegaYani\Repository\obj\Debug\net8.0\Repository.genruntimeconfig.cache
 E:\BodegaYani\Repository\obj\Debug\net8.0\ref\Repository.dll
+E:\BACKYFROM\BodegaYani\Repository\obj\Debug\net8.0\Repository.csproj.AssemblyReference.cache
+E:\BACKYFROM\BodegaYani\Repository\obj\Debug\net8.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+E:\BACKYFROM\BodegaYani\Repository\obj\Debug\net8.0\Repository.AssemblyInfoInputs.cache
+E:\BACKYFROM\BodegaYani\Repository\obj\Debug\net8.0\Repository.AssemblyInfo.cs
+E:\BACKYFROM\BodegaYani\Repository\obj\Debug\net8.0\Repository.csproj.CoreCompileInputs.cache
+E:\BACKYFROM\BodegaYani\Repository\obj\Debug\net8.0\Repository.sourcelink.json
 E:\BACKYFROM\BodegaYani\Repository\bin\Debug\net8.0\Repository.deps.json
 E:\BACKYFROM\BodegaYani\Repository\bin\Debug\net8.0\Repository.runtimeconfig.json
 E:\BACKYFROM\BodegaYani\Repository\bin\Debug\net8.0\Repository.dll
@@ -113,12 +119,6 @@ E:\BACKYFROM\BodegaYani\Repository\bin\Debug\net8.0\Constants.pdb
 E:\BACKYFROM\BodegaYani\Repository\bin\Debug\net8.0\DBBodegaYani.pdb
 E:\BACKYFROM\BodegaYani\Repository\bin\Debug\net8.0\IRepository.pdb
 E:\BACKYFROM\BodegaYani\Repository\bin\Debug\net8.0\RequestResponseModels.pdb
-E:\BACKYFROM\BodegaYani\Repository\obj\Debug\net8.0\Repository.csproj.AssemblyReference.cache
-E:\BACKYFROM\BodegaYani\Repository\obj\Debug\net8.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
-E:\BACKYFROM\BodegaYani\Repository\obj\Debug\net8.0\Repository.AssemblyInfoInputs.cache
-E:\BACKYFROM\BodegaYani\Repository\obj\Debug\net8.0\Repository.AssemblyInfo.cs
-E:\BACKYFROM\BodegaYani\Repository\obj\Debug\net8.0\Repository.csproj.CoreCompileInputs.cache
-E:\BACKYFROM\BodegaYani\Repository\obj\Debug\net8.0\Repository.sourcelink.json
 E:\BACKYFROM\BodegaYani\Repository\obj\Debug\net8.0\Repository.csproj.Up2Date
 E:\BACKYFROM\BodegaYani\Repository\obj\Debug\net8.0\Repository.dll
 E:\BACKYFROM\BodegaYani\Repository\obj\Debug\net8.0\refint\Repository.dll

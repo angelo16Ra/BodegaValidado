@@ -69,5 +69,93 @@ namespace Repository.Almacen
             return res;
 
         }
+
+        public ResponseFilterGeneric<Vproducto> GetByFilterView(RequestFilterGeneric request)
+        {
+            var query = db.Vproductos.Where(x => x.CodigoProducto == x.CodigoProducto);
+            request.Filtros.ForEach(j =>
+            {
+                if (!string.IsNullOrEmpty(j.Value))
+                {
+                    switch (j.Name)
+                    {
+                        case "codigo":
+                            query = query.Where(x => x.CodigoProducto == int.Parse(j.Value));
+                            break;
+                        case "codigoUnidadMedida":
+                            query = query.Where(x => x.CodigoUnidadMedida == int.Parse(j.Value));
+                            break;
+                        case "codigoCategoria":
+                            query = query.Where(x => x.CodigoCategoria == int.Parse(j.Value));
+                            break;
+                        case "codigoSubCategoria":
+                            query = query.Where(x => x.CodigoSubCategoria == int.Parse(j.Value));
+                            break;
+                        case "codigoProveedor":
+                            query = query.Where(x => x.CodigoProveedor == int.Parse(j.Value));
+                            break;
+                        case "codigoAlmacenes":
+                            query = query.Where(x => x.CodigoAlmacenes == int.Parse(j.Value));
+                            break;
+                        case "nombre":
+                            query = query.Where(x => x.NombreProducto.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "stock":
+                            query = query.Where(x => x.StockProducto.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "precio":
+                            query = query.Where(x => x.PrecioProducto == decimal.Parse(j.Value));
+                            break;
+                        case "imagen":
+                            query = query.Where(x => x.ImagenProducto.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "descripcion":
+                            query = query.Where(x => x.DescripcionProducto.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "CodigoUnidadMedida":
+                            query = query.Where(x => x.CodigoUnidadMedida == int.Parse(j.Value));
+                            break;
+                        case "NomnombreMedida":
+                            query = query.Where(x => x.NomnombreMedida.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "CodigoCategoria":
+                            query = query.Where(x => x.CodigoCategoria  == int.Parse(j.Value)); ;
+                            break;
+                        case "NombreCategoria":
+                            query = query.Where(x => x.NombreCategoria.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "CodigoSubCategoria":
+                            query = query.Where(x => x.CodigoSubCategoria == int.Parse(j.Value));
+                            break;
+                        case "NombreSub":
+                            query = query.Where(x => x.NombreSub.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "CodigoProveedor":
+                            query = query.Where(x => x.CodigoProveedor == int.Parse(j.Value));
+                            break;
+                        case "NombreProveedor":
+                            query = query.Where(x => x.NombreProveedor.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "CodigoAlmacenes":
+                            query = query.Where(x => x.CodigoAlmacenes == int.Parse(j.Value));
+                            break;
+                        case "NombreAlmacen":
+                            query = query.Where(x => x.NombreAlmacen.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                    }
+                }
+            });
+
+            ResponseFilterGeneric<Vproducto> res = new ResponseFilterGeneric<Vproducto>();
+
+            res.TotalRegistros = query.Count();
+            res.Lista = query
+                .Skip((request.NumeroPagina - 1) * request.Cantidad).Take(request.Cantidad)
+                .OrderBy(x => x.CodigoProducto)
+                .ToList();
+
+            return res;
+
+        }
     }
 }

@@ -19,10 +19,10 @@ export class ProductoService extends CrudService<RequestProducto,ResponseProduct
   ) 
   {
     super(_http,urlConstans.producto)
-  }
+  } 
 
   genericFilterView(request: RequestFilterGeneric): Observable<ResponseFilterGeneric<Vproducto>>{
-    return this._http.post<ResponseFilterGeneric<Vproducto>>(`${urlConstans.producto}filter- view`,request)
+    return this._http.post<ResponseFilterGeneric<Vproducto>>(`${urlConstans.producto}filter-view`,request)
   }
 }
 

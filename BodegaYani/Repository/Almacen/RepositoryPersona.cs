@@ -12,10 +12,10 @@ namespace Repository.Almacen
 {
     public class RepositoryPersona : RepositoryCrud<Persona>, IRepositoryPersona
     {
-        public List<Persona> GetAutoComplete(string query)
-        {
-            throw new NotImplementedException();
-        }
+        //public List<Persona> GetAutoComplete(string query)
+        //{
+        //    throw new NotImplementedException();
+        //}
         public ResponseFilterGeneric<Persona> GetByFilter(RequestFilterGeneric request)
         {
             var query = dbSet.Where(x => x.CodigoPersona == x.CodigoPersona);

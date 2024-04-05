@@ -367,6 +367,13 @@
             <param name="request"></param>
             <returns></returns>
         </member>
+        <member name="M:ApiWeb.Controllers.Almacen.ProductoController.GetByFilterView(RequestResponseModels.Generic.RequestFilterGeneric)">
+            <summary>
+            RETORNA LA TABLA PRODUCTO EN BASE A PAGINACIÓN Y FILTROS
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
         <member name="M:ApiWeb.Controllers.Almacen.ProductoController.CreateMultiple(System.Collections.Generic.List{RequestResponseModels.Request.Almacen.RequestProducto})">
             <summary>
             RETORNA LA TABLA PRODUCTO EN BASE A PAGINACIÓN Y FILTROS

@@ -100,6 +100,12 @@ namespace Business.Almacen
             return result;
         }
 
+        public ResponseFilterGeneric<Vproducto> GetByFilterView(RequestFilterGeneric request)
+        {
+            ResponseFilterGeneric<Vproducto> result = _mapper.Map<ResponseFilterGeneric<Vproducto>>(_repositoryProducto.GetByFilterView(request));
+            return result;
+        }
+
         #endregion CRUD METHODS
 
     }

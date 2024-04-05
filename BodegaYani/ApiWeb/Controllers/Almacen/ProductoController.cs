@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Business.Almacen;
+using DBBodegaYani.BodegaYani;
 using IBusiness.Almacen;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -82,6 +83,22 @@ namespace ApiWeb.Controllers.Almacen
 
             return Ok(res);
         }
+
+
+        /// <summary>
+        /// RETORNA LA TABLA PRODUCTO EN BASE A PAGINACIÓN Y FILTROS
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost("filter-view")]
+        public IActionResult GetByFilterView([FromBody] RequestFilterGeneric request)
+        {
+            ResponseFilterGeneric<Vproducto> res = _producto.GetByFilterView(request);
+
+            return Ok(res);
+        }
+
+
 
         /// <summary>
         /// RETORNA LA TABLA PRODUCTO EN BASE A PAGINACIÓN Y FILTROS

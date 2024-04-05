@@ -2035,6 +2035,22 @@
   },
   {
     "ContainingType": "ApiWeb.Controllers.Almacen.ProductoController",
+    "Method": "GetByFilterView",
+    "RelativePath": "api/Producto/filter-view",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.ProductoController",
     "Method": "CreateMultiple",
     "RelativePath": "api/Producto/multiple",
     "HttpMethod": "POST",

@@ -1,0 +1,88 @@
+<div class="container-fluid mt-4">
+    <div class="card bg-light bf-3"> 
+        <div class="card-header">
+            <strong>PRODUCTOS</strong>
+        </div>
+        <div class="card-body">
+
+            <!-- TODO: seccion para los filtros  -->
+            <div></div>
+
+            <!-- TODO: tabla de resultados   -->
+            <div class="table table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>codigo del Producto</th>
+                            <!-- <th>cAlmacenes</th>
+                            <th>cCategoria</th>
+                            <th>cProveedor</th>
+                            <th>cSubcategoria</th>
+                            <th>cUnidadmedida</th> -->
+                            <th>nombre del Producto</th>
+                            <th>stock del Producto</th>
+                            <th>precio del Producto</th>
+                            <th>imagen del Producto</th>
+                            <th>descripcion del Producto</th>
+                            <th>codigo - nombre de la Unidad Medida</th>
+                            <th>codigo - nombre de la Categoria</th>
+                            <th>codigo - nombre de la SubCategoria</th>
+                            <th>codigo - nombre del Proveedor</th>
+                            <th>codigo - nombre del Almacen</th>
+                            <th>
+                                <button (click)="nuevoRegistro(modalEdit)" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let d of VProducto ">
+                            <td>{{d.codigoProducto}}</td>
+                            <!-- <td>{{d.cAlmacenes}}</td>
+                            <td>{{d.cCategoria}}</td>
+                            <td>{{d.cProveedor}}</td>
+                            <td>{{d.cSubcategoria}}</td>
+                            <td>{{d.cUnidadmedida}}</td> -->
+                            <td>{{d.nombreProducto}}</td>
+                            <td>{{d.stockProducto}}</td>
+                            <td>{{d.precioProducto}}</td>
+                            <td>{{d.imagenProducto}}</td>
+                            <td>{{d.descripcionProducto}}</td>
+                            <td>{{d.codigoUnidadMedida}} - {{d.nomnombreMedida}}</td>
+                            <td>{{d.codigoCategoria}} - {{d.nombreCategoria}}</td>
+                            <td>{{d.codigoSubCategoria}} - {{d.nombreSub}}</td>
+                            <td>{{d.codigoProveedor}} - {{d.nombreProveedor}}</td>
+                            <td>{{d.codigoAlmacenes}} - {{d.nombreAlmacen}}</td>
+                            <td>
+                                <button (click)="editarRegistro(modalEdit,d)" class="btn btn-warning btn-sm">
+                                    <i class="fas fa-edit"></i>
+                                </button> 
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- TODO: seccion de paginacion  -->
+            <div></div>
+
+
+
+            
+        </div>
+    </div>
+</div>
+
+<ng-template #modalEdit>
+    <app-mant-producto-register
+        [title]="tileModal"
+        [accion]="accionModal"
+        [producto]="productoSelect"
+        [tipoUnidadMedida]="tipoUnidadMedida"
+        [tipoCategoria]="tipoCategoria"
+        [tipoSubCategoria]="tipoSubCategoria"
+        [tipoProveedor]="tipoProveedor"
+        [tipoAlmacen]="tipoAlmacen"
+    ></app-mant-producto-register>
+</ng-template>

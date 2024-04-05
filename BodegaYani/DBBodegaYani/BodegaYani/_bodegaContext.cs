@@ -47,6 +47,8 @@ public partial class _bodegaContext : DbContext
 
     public virtual DbSet<Vpersona> Vpersonas { get; set; }
 
+    public virtual DbSet<Vproducto> Vproductos { get; set; }
+
     public virtual DbSet<Vusuario> Vusuarios { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -215,6 +217,13 @@ public partial class _bodegaContext : DbContext
             entity.ToView("VPERSONA");
 
             entity.Property(e => e.Sexo).IsFixedLength();
+        });
+
+        modelBuilder.Entity<Vproducto>(entity =>
+        {
+            entity.ToView("VProductos");
+
+            entity.Property(e => e.StockProducto).IsFixedLength();
         });
 
         modelBuilder.Entity<Vusuario>(entity =>
