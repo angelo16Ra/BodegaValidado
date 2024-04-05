@@ -1,1 +1,87 @@
-<p>mant-usuario-list works!</p>
+<div class="container-fluid mt-4">
+    <div class="card bg-light bf-3"> 
+        <div class="card-header">
+            <strong>USUARIOS</strong>
+        </div>
+        <div class="card-body">
+
+            <!-- TODO: seccion para los filtros  -->
+            <div></div>
+
+            <!-- TODO: tabla de resultados   -->
+            <div class="table table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>codigoUsuario</th>
+                            <th>username</th>
+                            <th>password</th>
+                            <th>estado</th>
+                            <th>fechaActualizar</th>
+                            <th>fechaRegistro</th>
+                            <th>codigoPersona</th>
+                            <th>numeroDocumento</th>
+                            <th>nombrePersona</th>
+                            <th>apPaterno</th>
+                            <th>apMaterno</th>
+                            <th>sexo</th>
+                            <th>fechaNacimiento</th>
+                            <th>correo</th>
+                            <th>celular</th>
+                            <th>codigoRol</th>
+                            <th>nombre</th>
+                            <th>
+                                <button (click)="nuevoRegistro(modalEdit)" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let d of Vusuario ">
+                            <td>{{d.codigoUsuario}}</td>
+                            <td>{{d.username}}</td>
+                            <td>{{d.password}}</td>
+                            <td>{{d.estado}}</td>
+                            <td>{{d.fechaActualizar}}</td>
+                            <td>{{d.fechaRegistro}}</td>
+                            <td>{{d.codigoPersona}}</td>
+                            <td>{{d.numeroDocumento}}</td>
+                            <td>{{d.nombrePersona}}</td>
+                            <td>{{d.apPaterno}}</td>
+                            <td>{{d.apMaterno}}</td>
+                            <td>{{d.sexo}}</td>
+                            <td>{{d.fechaNacimiento}}</td>
+                            <td>{{d.correo}}</td>
+                            <td>{{d.celular}}</td>
+                            <td>{{d.codigoRol}}</td>
+                            <td>{{d.nombre}}</td>
+                            <td>
+                                <button (click)="editarRegistro(modalEdit,d)" class="btn btn-warning btn-sm">
+                                    <i class="fas fa-edit"></i>
+                                </button> 
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- TODO: seccion de paginacion  -->
+            <div></div>
+
+
+
+            
+        </div>
+    </div>
+</div>
+
+<ng-template #modalEdit>
+    <app-mant-usuario-register
+        [title]="tileModal"
+        [accion]="accionModal"
+        [usuario]="usuarioSelect"
+        [tipoPersona]="tipoPersona"
+        [tipoRol]="tipoRol"
+    ></app-mant-usuario-register>
+</ng-template>

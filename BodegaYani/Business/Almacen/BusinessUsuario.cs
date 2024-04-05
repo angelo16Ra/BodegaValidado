@@ -111,6 +111,13 @@ namespace Business.Almacen
             return _vusuario;
         }
 
+        public ResponseFilterGeneric<Vusuario> GetByFilterView(RequestFilterGeneric request)
+        {
+            ResponseFilterGeneric<Vusuario> result = _mapper.Map<ResponseFilterGeneric<Vusuario>>(_usuario.GetByFilterView(request));
+            return result;
+        }
+        //_mapper.Map<ResponseFilterGeneric<Vproducto>>(_usuario.GetByFilterView(request));
+
 
         #endregion CRUD METHODS
     }

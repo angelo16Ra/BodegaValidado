@@ -6,7 +6,6 @@ export class Vusuario {
     estado: boolean = true;
     fechaActualizar: string = "";
     fechaRegistro: string = "";
-    //PERSONA
     codigoPersona: number = 0;
     numeroDocumento: string = "";
     nombrePersona: string = "";
@@ -16,7 +15,6 @@ export class Vusuario {
     fechaNacimiento: string = "";
     correo: string = "";
     celular: string = "";
-    //ROL
     codigoRol: number = 0;
     nombre: string = "";
 }

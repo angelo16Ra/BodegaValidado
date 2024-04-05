@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 
-
 @NgModule({
   declarations: [],
   imports: [

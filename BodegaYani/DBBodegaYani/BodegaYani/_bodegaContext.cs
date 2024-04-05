@@ -45,7 +45,7 @@ public partial class _bodegaContext : DbContext
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
-    public virtual DbSet<Vpersona> Vpersonas { get; set; }
+    public virtual DbSet<VPersona> Vpersonas { get; set; }
 
     public virtual DbSet<Vproducto> Vproductos { get; set; }
 
@@ -212,7 +212,7 @@ public partial class _bodegaContext : DbContext
                 .HasConstraintName("FK__Usuarios__Codigo__4D94879B");
         });
 
-        modelBuilder.Entity<Vpersona>(entity =>
+        modelBuilder.Entity<VPersona>(entity =>
         {
             entity.ToView("VPERSONA");
 

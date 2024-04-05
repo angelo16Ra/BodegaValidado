@@ -80,8 +80,6 @@ export class MantRolListComponent implements OnInit{
     });
   }
 
-
-
   crearRol(template: TemplateRef<any>)
   {
     this.rolSelected= new ResponseRol();
@@ -89,6 +87,7 @@ export class MantRolListComponent implements OnInit{
     this.accionModal = AccionMantConst.crear;
     this.openModal(template);
   }
+
   editarRol(template: TemplateRef<any>, rol:ResponseRol)
   {
     this.rolSelected = rol;
@@ -96,7 +95,6 @@ export class MantRolListComponent implements OnInit{
     this.accionModal = AccionMantConst.editar;
     this.openModal(template);
   }
-
 
 
   openModal(template: TemplateRef<any>) {

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Business.Almacen;
+using DBBodegaYani.BodegaYani;
 using IBusiness.Almacen;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -29,11 +30,12 @@ namespace ApiWeb.Controllers.Almacen
 
         #region CRUD METHODS
 
+        
         /// <summary>
         /// RETORNA TODOS LOS REGISTROS DE LA TABLA PERSONA
         /// </summary>
         /// <returns>List-PersonaResponse</returns>
-        [HttpGet]
+        [HttpGet()]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<ResponsePersona>))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(GenericResponse))]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError, Type = typeof(GenericResponse))]
@@ -41,6 +43,23 @@ namespace ApiWeb.Controllers.Almacen
         {
             return Ok(_persona.GetAll());
         }
+
+        /// <summary>
+        /// RETORNA LOS DATOS DE UNA PERSONAEN BASE AL DNI
+        /// </summary>
+        /// <returns>List-PersonaResponse</returns>
+        [HttpGet("dni/{tipoDocumento}/{nroDocumento}")]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<ResponsePersona>))]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(GenericResponse))]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError, Type = typeof(GenericResponse))]
+        public IActionResult GetWithDni(string tipoDocumento, string nroDocumento)
+        {
+            VPersona persona = new VPersona();
+            persona = _persona.GetByTipoNroDocumento(tipoDocumento, nroDocumento);
+            return Ok(persona);
+        }
+
+
 
         /// <summary>
         /// RETORNA EL REGISTRO DE LA TABLA FILTRADO POR EL PRIMARY KEY

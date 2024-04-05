@@ -69,6 +69,87 @@ namespace Repository.Almacen
             return res;
 
         }
+
+        public ResponseFilterGeneric<Vusuario> GetByFilterView(RequestFilterGeneric request)
+        {
+            var query = db.Vusuarios.Where(x => x.CodigoUsuario == x.CodigoUsuario);
+            request.Filtros.ForEach(j =>
+            {
+                if (!string.IsNullOrEmpty(j.Value))
+                {
+                    switch (j.Name)
+                    {
+                        case "codigo":
+                            query = query.Where(x => x.CodigoUsuario == int.Parse(j.Value));
+                            break;
+                        case "username":
+                            query = query.Where(x => x.Username.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "password":
+                            query = query.Where(x => x.Password.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "estado":
+                            query = query.Where(x => x.Estado == bool.Parse(j.Value));
+                            break;
+                        case "fechaRegistro":
+                            if (DateTime.TryParse(j.Value, out DateTime fechaRegistro))
+                            {
+                                query = query.Where(x => x.FechaRegistro == fechaRegistro);
+                            }
+                            break;
+                        case "fechaActualizacion":
+                            if (DateTime.TryParse(j.Value, out DateTime fechaActualizacion))
+                            {
+                                query = query.Where(x => x.FechaActualizar == fechaActualizacion);
+                            }
+                            break;
+                        case "CodigoPersona":
+                            query = query.Where(x => x.CodigoPersona == int.Parse(j.Value));
+                            break;
+                        case "NombrePersona":
+                            query = query.Where(x => x.NombrePersona.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "ApPaterno":
+                            query = query.Where(x => x.ApPaterno.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "ApMaterno":
+                            query = query.Where(x => x.ApMaterno.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "Sexo":
+                            query = query.Where(x => x.Sexo.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "FechaNacimiento":
+                            if (DateTime.TryParse(j.Value, out DateTime FechaNacimiento))
+                            {
+                                query = query.Where(x => x.FechaNacimiento == FechaNacimiento);
+                            }
+                            break;
+                        case "Correo":
+                            query = query.Where(x => x.Correo.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "Celular":
+                            query = query.Where(x => x.Celular.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "CodigoRol":
+                            query = query.Where(x => x.CodigoRol == int.Parse(j.Value));
+                            break;
+                        case "Nombre":
+                            query = query.Where(x => x.Nombre.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                    }
+                }
+            });
+
+            ResponseFilterGeneric<Vusuario> res = new ResponseFilterGeneric<Vusuario>();
+
+            res.TotalRegistros = query.Count();
+            res.Lista = query
+                .Skip((request.NumeroPagina - 1) * request.Cantidad).Take(request.Cantidad)
+                .OrderBy(x => x.Username)
+                .ToList();
+
+            return res;
+        }
     }
 }
 

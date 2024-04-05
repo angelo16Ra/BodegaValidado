@@ -73,6 +73,32 @@ namespace Repository.Almacen
             return res;
 
         }
+
+        public VPersona GetByTipoNroDocumento(string tipoDocumento, string nroDocumento)
+        {
+            VPersona vPersona = new VPersona();
+            //tipoDocumento ==> Ruc |
+
+            int tDocumento = 0;
+
+             
+            switch(tipoDocumento.ToLower())
+            {
+                case "dni": tDocumento = 100; break; 
+                case "ruc": tDocumento = 102; break;
+                default:
+                    return vPersona;
+            }
+
+
+            #pragma warning disable CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
+            vPersona = db.Vpersonas
+                .Where(x => x.NombreDocumento == tipoDocumento)
+                .Where(x => x.NumeroDocumento == nroDocumento)
+                .FirstOrDefault()
+                ;
+            return vPersona;
+        }
     }
 
 

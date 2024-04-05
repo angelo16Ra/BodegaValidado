@@ -2,10 +2,13 @@
 using DBBodegaYani.BodegaYani;
 using IBusiness.Almacen;
 using IRepository.Almacen;
+using IServices;
 using Repository.Almacen;
+using RequestResponseModel;
 using RequestResponseModels.Generic;
 using RequestResponseModels.Request.Almacen;
 using RequestResponseModels.Response.Almacen;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,11 +22,12 @@ namespace Business.Almacen
         #region DECLARACIÓN DE VARIABLES Y CONSTRUCTOR / DISPOSE
         private readonly IRepositoryPersona _repositoryPersona;
         private readonly IMapper _mapper;
-
+        private readonly IApisPeruServices _apisPeruServices;
         public BusinessPersona(IMapper mapper)
         {
             _mapper = mapper;
             _repositoryPersona = new RepositoryPersona();
+            _apisPeruServices = new ApisPeruServices();
         }
 
         public void Dispose()
@@ -100,8 +104,44 @@ namespace Business.Almacen
             return result;
         }
 
+
         #endregion CRUD METHODS
 
+        public VPersona GetByTipoNroDocumento(string tipoDocumento, string nroDocumento)
+        {
+            // dni | ruc
+            VPersona vPersona = _repositoryPersona.GetByTipoNroDocumento(tipoDocumento, nroDocumento);
+            
+            if(vPersona == null || vPersona.CodigoPersona == 0)
+            {
+
+                if(tipoDocumento.ToLower() == "dni")
+                {
+                    ApisPeruPersonaResponse pres = _apisPeruServices.PersonaPorDNI(nroDocumento) ;
+                    if(pres.success)
+                    {
+                        vPersona = new VPersona();
+                        vPersona.NumeroDocumento = pres.dni;
+                        vPersona.ApPaterno = pres.apellidoPaterno;
+                        vPersona.ApMaterno = pres.apellidoMaterno;
+                        vPersona.NombrePersona = pres.nombres;
+                    }
+                }
+
+                else
+                {
+                    ApisPeruEmpresaResponse presRuc = _apisPeruServices.EmpresaPorRUC(nroDocumento);
+
+                }
+
+                
+
+                    //tengo que consumir el web service de apisPeru
+
+            }
+
+            return vPersona;
+        }
     }
 
 

@@ -47,7 +47,6 @@ namespace Services
 
             using (HttpClient client = new HttpClient())
             {
-                //con la seguridad de C#
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
                 ServicePointManager.ServerCertificateValidationCallback = delegate
                 (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)

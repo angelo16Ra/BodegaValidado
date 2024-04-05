@@ -1,7 +1,32 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\BACKYFROM\\BodegaYani\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6F168B77-E807-471A-9811-F295FCEE69FB}|Business\\Business.csproj|e:\\backyfrom\\bodegayani\\business\\almacen\\businesspersona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F168B77-E807-471A-9811-F295FCEE69FB}|Business\\Business.csproj|solutionrelative:business\\almacen\\businesspersona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95800F11-C551-4F00-9D97-2B7D442FD5F5}|Repository\\Repository.csproj|e:\\backyfrom\\bodegayani\\repository\\almacen\\repositorypersona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95800F11-C551-4F00-9D97-2B7D442FD5F5}|Repository\\Repository.csproj|solutionrelative:repository\\almacen\\repositorypersona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B0C986E-8D75-481C-9451-06245C4159B0}|IRepository\\IRepository.csproj|e:\\backyfrom\\bodegayani\\irepository\\almacen\\irepositorypersona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B0C986E-8D75-481C-9451-06245C4159B0}|IRepository\\IRepository.csproj|solutionrelative:irepository\\almacen\\irepositorypersona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5240C2C-70F8-417F-8885-682979450AB5}|ApiWeb\\ApiWeb.csproj|e:\\backyfrom\\bodegayani\\apiweb\\controllers\\almacen\\personacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5240C2C-70F8-417F-8885-682979450AB5}|ApiWeb\\ApiWeb.csproj|solutionrelative:apiweb\\controllers\\almacen\\personacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFB900BD-3544-4C09-A97E-0064BD3BEF6C}|IService\\IService.csproj|e:\\backyfrom\\bodegayani\\iservice\\iapisperuservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFB900BD-3544-4C09-A97E-0064BD3BEF6C}|IService\\IService.csproj|solutionrelative:iservice\\iapisperuservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F52AB7F-D93F-4E05-B9A9-24364BFEC5BC}|RequestResponseModels\\RequestResponseModels.csproj|e:\\backyfrom\\bodegayani\\requestresponsemodels\\response\\apisperuempresaresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F52AB7F-D93F-4E05-B9A9-24364BFEC5BC}|RequestResponseModels\\RequestResponseModels.csproj|solutionrelative:requestresponsemodels\\response\\apisperuempresaresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 202,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +43,84 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IRepositoryPersona.cs",
+              "DocumentMoniker": "E:\\BACKYFROM\\BodegaYani\\IRepository\\Almacen\\IRepositoryPersona.cs",
+              "RelativeDocumentMoniker": "IRepository\\Almacen\\IRepositoryPersona.cs",
+              "ToolTip": "E:\\BACKYFROM\\BodegaYani\\IRepository\\Almacen\\IRepositoryPersona.cs",
+              "RelativeToolTip": "IRepository\\Almacen\\IRepositoryPersona.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T13:29:08.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RepositoryPersona.cs",
+              "DocumentMoniker": "E:\\BACKYFROM\\BodegaYani\\Repository\\Almacen\\RepositoryPersona.cs",
+              "RelativeDocumentMoniker": "Repository\\Almacen\\RepositoryPersona.cs",
+              "ToolTip": "E:\\BACKYFROM\\BodegaYani\\Repository\\Almacen\\RepositoryPersona.cs",
+              "RelativeToolTip": "Repository\\Almacen\\RepositoryPersona.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAFAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T13:06:40.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BusinessPersona.cs",
+              "DocumentMoniker": "E:\\BACKYFROM\\BodegaYani\\Business\\Almacen\\BusinessPersona.cs",
+              "RelativeDocumentMoniker": "Business\\Almacen\\BusinessPersona.cs",
+              "ToolTip": "E:\\BACKYFROM\\BodegaYani\\Business\\Almacen\\BusinessPersona.cs",
+              "RelativeToolTip": "Business\\Almacen\\BusinessPersona.cs",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAUwIsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T13:03:52.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PersonaController.cs",
+              "DocumentMoniker": "E:\\BACKYFROM\\BodegaYani\\ApiWeb\\Controllers\\Almacen\\PersonaController.cs",
+              "RelativeDocumentMoniker": "ApiWeb\\Controllers\\Almacen\\PersonaController.cs",
+              "ToolTip": "E:\\BACKYFROM\\BodegaYani\\ApiWeb\\Controllers\\Almacen\\PersonaController.cs",
+              "RelativeToolTip": "ApiWeb\\Controllers\\Almacen\\PersonaController.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAvwDgAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T12:50:00.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IApisPeruServices.cs",
+              "DocumentMoniker": "E:\\BACKYFROM\\BodegaYani\\IService\\IApisPeruServices.cs",
+              "RelativeDocumentMoniker": "IService\\IApisPeruServices.cs",
+              "ToolTip": "E:\\BACKYFROM\\BodegaYani\\IService\\IApisPeruServices.cs",
+              "RelativeToolTip": "IService\\IApisPeruServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T12:40:01.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApisPeruEmpresaResponse.cs",
+              "DocumentMoniker": "E:\\BACKYFROM\\BodegaYani\\RequestResponseModels\\Response\\ApisPeruEmpresaResponse.cs",
+              "RelativeDocumentMoniker": "RequestResponseModels\\Response\\ApisPeruEmpresaResponse.cs",
+              "ToolTip": "E:\\BACKYFROM\\BodegaYani\\RequestResponseModels\\Response\\ApisPeruEmpresaResponse.cs",
+              "RelativeToolTip": "RequestResponseModels\\Response\\ApisPeruEmpresaResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T12:37:13.165Z",
+              "EditorCaption": ""
             }
           ]
         }

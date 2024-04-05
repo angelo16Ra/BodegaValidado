@@ -298,6 +298,12 @@
             </summary>
             <returns>List-PersonaResponse</returns>
         </member>
+        <member name="M:ApiWeb.Controllers.Almacen.PersonaController.GetWithDni(System.String,System.String)">
+            <summary>
+            RETORNA LOS DATOS DE UNA PERSONAEN BASE AL DNI
+            </summary>
+            <returns>List-PersonaResponse</returns>
+        </member>
         <member name="M:ApiWeb.Controllers.Almacen.PersonaController.Get(System.Int32)">
             <summary>
             RETORNA EL REGISTRO DE LA TABLA FILTRADO POR EL PRIMARY KEY
@@ -656,6 +662,13 @@
             <returns>ResponseUsuario</returns>
         </member>
         <member name="M:ApiWeb.Controllers.Almacen.UsuarioController.GetByFilter(RequestResponseModels.Generic.RequestFilterGeneric)">
+            <summary>
+            RETORNA LA TABLA USUARIO EN BASE A PAGINACIÓN Y FILTROS
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiWeb.Controllers.Almacen.UsuarioController.GetByFilterView(RequestResponseModels.Generic.RequestFilterGeneric)">
             <summary>
             RETORNA LA TABLA USUARIO EN BASE A PAGINACIÓN Y FILTROS
             </summary>

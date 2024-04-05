@@ -1,5 +1,6 @@
 ﻿using DBBodegaYani.BodegaYani;
 using IRepository.Generic;
+using RequestResponseModels.Generic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,8 @@ namespace IRepository.Almacen
     {
         Usuario BuscarPorNombreUsuario(string UserName);
         Vusuario GetByVistaUserName(string UserName);
+
+        ResponseFilterGeneric<Vusuario> GetByFilterView(RequestFilterGeneric request);
+
     }
 }

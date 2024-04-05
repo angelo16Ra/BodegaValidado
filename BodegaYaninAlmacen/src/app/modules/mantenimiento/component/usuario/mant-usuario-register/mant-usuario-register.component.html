@@ -1,1 +1,78 @@
-<p>mant-usuario-register works!</p>
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{title}}</h4>
+    <!-- (click)="modalRef?.hide()" -->
+    <button type="button" class="btn-close close pull-right" aria-label="Close" >
+        <span arial-hidden="true" class="visually-hidden">&times;</span>
+    </button> 
+</div>
+<div class="modal-body">
+    
+
+    <form [formGroup]="myForm">
+        
+        <div class="row mt-2">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">codigoUsuario </label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">Nombre</label>
+                    <select class="form-select">
+                        <option *ngFor="let d of tipoPersona" [value]="d.codigoPersona">
+                            {{d.nombre}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">Rol</label>
+                    <select class="form-select">
+                        <option *ngFor="let d of tipoRol" [value]="d.codigoRol">
+                            {{d.nombre}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">userName</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">contraseña</label>
+                    <input type="number" class="form-control">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <select formControlName="estado" class="form-select">
+                        <option value="true">Activo</option>
+                        <option value="false">Inactivo</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-6">
+                <button class="btn btn-primary btn-block">
+                    <i class="fas fa-save"></i>
+                </button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-danger btn-block">
+                    <i class="fas fa-ban"></i>
+                </button>
+            </div>
+        </div>    
+    </form>
+</div>
