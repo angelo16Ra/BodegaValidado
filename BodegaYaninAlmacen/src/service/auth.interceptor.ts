@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from "rxjs";
 import { catchError, retry } from 'rxjs/operators';
 import { Router } from "@angular/router";
-import Swal from 'sweetalert2';
 import { alert_error } from '../app/functions/general.functions';
 
 @Injectable()
@@ -15,7 +14,6 @@ export class authInterceptor implements HttpInterceptor{
   ) { }
 
   intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-
     let token = sessionStorage.getItem("token");
 
     //SIMULAR LOS ERRORES

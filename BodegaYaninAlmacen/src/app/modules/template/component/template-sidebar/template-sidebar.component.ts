@@ -53,21 +53,42 @@ export class TemplateSidebarComponent implements OnInit{
           },
         ]
         break;
+
+
       case "101": //Almacenero
       this.menu= [ 
         {
           name:"Almacen",target:"TargerMantenimiento", icon:"fas fa-trash",
           subMenu:[
-            { name: "Rol", url: "mantenimiento/rol", icon: "fa-solid fa-image-portrait" },
-            { name: "Persona", url: "mantenimiento/persona", icon: "fa-solid fa-user" },
-            // { name: "Categoría", url: "mantenimiento/categoria", icon: "fas fa-dashboard" },
-            // { name: "Tipo Documento", url: "mantenimiento/tipo-documento", icon: "fas fa-file" },
+              { name: "almacen", url: "mantenimiento/almacen", icon: "fas fa-warehouse" },
+              { name: "Categoria", url: "mantenimiento/categoria", icon:"fas fa-list" },
+              { name: "producto", url: "mantenimiento/producto", icon: "fas fa-box" },
+              { name: "sub categoria", url: "mantenimiento/sub-categoria", icon: "fas fa-list-alt" },
+              { name: "Unidad de medida", url: "mantenimiento/unidad-medida", icon: "fas fa-file-alt" },
           ]
         },
       ]
       break;
+
+
       case "102": //Vendedora
-        break;
+      this.menu= [ 
+        {
+          name:"Mantenimiento",target:"TargerMantenimiento", icon:"fas fa-trash",
+          subMenu:[
+            { name: "almacen", url: "mantenimiento/almacen", icon: "fas fa-warehouse" },
+            { name: "Categoria", url: "mantenimiento/categoria", icon:"fas fa-list" },
+            { name: "detalle de pedido", url: "mantenimiento/detalle-pedido", icon: "fas fa-clipboard-list" },
+            { name: "pedido", url: "mantenimiento/pedido", icon: "fas fa-shopping-cart" },
+            { name: "producto", url: "mantenimiento/producto", icon: "fas fa-box" },
+            { name: "sub categoria", url: "mantenimiento/sub-categoria", icon: "fas fa-list-alt" },
+            { name: "Documento", url: "mantenimiento/tipo-documento", icon: "fas fa-file-alt" },
+            { name: "Unidad de medida", url: "mantenimiento/unidad-medida", icon: "fas fa-file-alt" },
+
+          ]
+        },
+      ]
+      break;
       case "103": //otro
         break;
     }

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { LoginResponse } from '../../../../models/login-response.model';
 import { RequestLogin } from '../../models/login-request.models';
 import { AuthService } from '../../service/auth.service';
+import { alert_error } from '../../../../functions/general.functions';
 
 
 @Component({
@@ -47,7 +48,9 @@ export class LoginComponent {
           return;
         }
       },
-      error: (error) => { },
+      error: (error) => { 
+        alert_error("ERROR DE BAD REQUEST","datos incorrectos")
+      },
       complete: () => { },
     });
   }

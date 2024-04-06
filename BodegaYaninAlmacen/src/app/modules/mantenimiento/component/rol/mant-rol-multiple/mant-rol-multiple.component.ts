@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder,FormGroup,ReactiveFormsModule,Validators } from '@angular/forms';
 import { SharedModule } from '../../../../shared/shared.module';
 import { RequestRol } from '../../../models/rol-request.model';
 import { ResponseRol } from '../../../models/rol-response.model';
 import { RolService } from '../../../service/rol.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-mant-rol-multiple',
   standalone: true,
   imports: [
-    SharedModule
+    ReactiveFormsModule,
+    SharedModule,
+    CommonModule
   ],
   templateUrl: './mant-rol-multiple.component.html',
   styleUrl: './mant-rol-multiple.component.css'

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RequestResponseModels")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93b4e8c2540363ebccda05102531aea8536d2952")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3438ee5cfdcdce631037a75fa8fd90ecd1f64b89")]
 [assembly: System.Reflection.AssemblyProductAttribute("RequestResponseModels")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RequestResponseModels")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
