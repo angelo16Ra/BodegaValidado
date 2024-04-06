@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
@@ -18,7 +18,8 @@ import { MantRolRegisterComponent } from '../mant-rol-register/mant-rol-register
   imports: [
     MantRolRegisterComponent,
     CommonModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ],
   templateUrl: './mant-rol-list.component.html',
   styleUrl: './mant-rol-list.component.css'

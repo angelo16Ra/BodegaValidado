@@ -1,15 +1,80 @@
-.divider:after,
-.divider:before {
-content: "";
-flex: 1;
-height: 1px;
-background: #eee;
-}
-.h-custom {
-height: calc(100% - 73px);
-}
-@media (max-width: 450px) {
-.h-custom {
-height: 100%;
-}
-}
+/* Estilos principales */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .login-header {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .login-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-image {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .login-form {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .login-footer {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .social-links a {
+    color: #fff;
+    margin-right: 10px;
+  }
+  
+  /* Estilos para botones de redes sociales */
+  .social-links a i {
+    font-size: 24px;
+  }
+  
+  /* Estilos adicionales */
+  @media (max-width: 450px) {
+    .login-content {
+      flex-direction: column;
+    }
+    .login-image,
+    .login-form {
+      flex-basis: auto;
+      padding: 20px 0;
+    }
+  }
+  
+  /* Estilos personalizados */
+  .login-form-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .forgot-password {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .register-text {
+    font-size: 14px;
+  }
+  
+  .register-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
