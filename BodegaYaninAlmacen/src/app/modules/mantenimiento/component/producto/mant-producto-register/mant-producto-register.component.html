@@ -13,8 +13,8 @@
         <div class="row mt-2">
             <div class="col-4">
                 <div class="form-group">
-                    <label for="">codigoProducto </label>
-                    <input type="text" class="form-control">
+                    <label for="codigoProducto">Codigo</label>
+                    <input formControlName="codigoProducto" type="text" class="form-control" placeholder="ingrese el Codigo">
                 </div>
             </div>
             <div class="col-4">
@@ -62,7 +62,7 @@
             <div class="col-4">
                 <div class="form-group">
                     <label for="">Almacen</label>
-                    <select class="form-select">
+                    <select formControlName="codigoAlmacenes" class="form-select" >
                         <option *ngFor="let d of tipoAlmacen" [value]="d.codigoAlmacenes">
                             {{d.nombre}}
                         </option>
@@ -74,19 +74,19 @@
             <div class="col-4">
                 <div class="form-group">
                     <label for="">nombre</label>
-                    <input type="text" class="form-control">
+                    <input formControlName="nombre" type="text" class="form-control">
                 </div>
             </div>
             <div class="col-4">
                 <div class="form-group">
                     <label for="">stock</label>
-                    <input type="number" class="form-control">
+                    <input formControlName="stock" type="text" class="form-control">
                 </div>
             </div>
             <div class="col-4">
                 <div class="form-group">
                     <label for="">precio</label>
-                    <input type="number" class="form-control">
+                    <input formControlName="precio"  type="number" class="form-control">
                 </div>
             </div>
         </div>
@@ -94,32 +94,28 @@
             <div class="col-4">
                 <div class="form-group">
                     <label for="">imagen</label>
-                    <input type="text" class="form-control">
+                    <input formControlName="imagen" type="text" class="form-control">
                 </div>
             </div>
             <div class="col-4">
                 <div class="form-group">
                     <label for="">descripcion</label>
-                    <input type="text" class="form-control">
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="form-group">
-                    <label for=""></label>
+                    <input formControlName="descripcion" type="text" class="form-control">
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-6">
-                <button class="btn btn-primary btn-block">
-                    <i class="fas fa-save"></i>
-                </button>
+            <div class="col-6 mt-3">
+                <div class="d-grid gap-2">
+                    <button [disabled]="myForm.invalid" (click)="guardar()" class="btn-block btn btn-primary btn-sm">Guardar</button>
+                </div>
             </div>
-            <div class="col-6">
-                <button class="btn btn-danger btn-block">
-                    <i class="fas fa-ban"></i>
-                </button>
-            </div>
+            <div class="col-6 mt-3">
+                <div class="d-grid gap-2">
+                    <!-- (click)="modalRef?.hide()" -->
+                    <button class="btn-block btn btn-danger btn-sm">Cancelar</button>
+                </div>
+            </div>    
         </div>    
     </form>
 </div>

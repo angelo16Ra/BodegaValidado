@@ -10,7 +10,7 @@ namespace IRepository.Almacen
 {
     public interface IRepositoryPersona : IRepositoryCrud<Persona>
     {
-        VPersona GetByTipoNroDocumento(string tipoDocumento, string nroDocumento);
+        Vpersona GetByTipoNroDocumento(string tipoDocumento, string nroDocumento);
     }
 
 }

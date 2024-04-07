@@ -1,1 +1,150 @@
-<p>mant-pedido-list works!</p>
+<div class="container-fluid mt-4">
+    <div class="card bg-light bf-3"> 
+        <div class="card-header text-center">
+            <h1 class="mt-4"> PEDIDOS DE PRODUCTOS</h1>
+        </div>
+        <div class="card-body">
+
+            <!-- TODO: seccion para los filtros  -->
+            <form [formGroup]="myFormFilter">
+                <div class="card bg-light mb-3">
+                    <div class="card-header">BUSQUEDA POR FILTRO</div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="">codigoPedido</label>
+                                <input formControlName="codigoPedido" type="text" class="form-control">   
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="">codigoDetallePedido</label>
+                                <input formControlName="codigoDetallePedido" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="">registroPedido</label>
+                                <input formControlName="registroPedido" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="">entregaPedido</label>
+                                <input formControlName="entregaPedido" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="">nombreUsuario</label>
+                                <input formControlName="nombreUsuario" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="">nombreProducto</label>
+                                <input formControlName="nombreProducto" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <br>
+                                <button (click)="filtrar()" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-broom"></i>
+                                </button>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </form>
+
+            <!-- TODO: tabla de resultados   -->
+            <div class="table table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-center">codigoPedido</th>
+                            <th class="text-center">montoTotal</th>
+                            <th class="text-center">montoPagado</th>
+                            <th class="text-center">vuelto</th>
+                            <th class="text-center">registroPedido</th>
+                            <th class="text-center">entregaPedido</th>
+                            <th class="text-center">nombreUsuario</th>
+                            <th class="text-center">nombreProducto</th>
+                            <th class="text-center">cantidad</th>
+                            <th class="text-center">precioTotal</th>
+                            <th class="text-center">precioUnitario</th>
+                            <th>
+                                <button (click)="nuevoRegistro(modalEdit)" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let d of vPedido ">
+                            <td class="text-center">{{d.codigoPedido}}</td>
+                            <td class="text-center">{{d.montoTotal}}</td>
+                            <td class="text-center">{{d.montoPagado}}</td>
+                            <td class="text-center">{{d.vuelto}}</td>
+                            <td class="text-center">{{d.registroPedido}}</td>
+                            <td class="text-center">{{d.entregaPedido}}</td>
+                            <td class="text-center">{{d.nombreUsuario}}</td>
+                            <td class="text-center">{{d.nombreProducto}}</td>
+                            <td class="text-center">{{d.cantidad}}</td>
+                            <td class="text-center">{{d.precioTotal}}</td>
+                            <td class="text-center">{{d.precioUnitario}}</td>
+                            <td>
+                                <button (click)="editarRegistro(modalEdit,d)" class="btn btn-warning btn-sm">
+                                    <i class="fas fa-edit"></i>
+                                </button> 
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- TODO: seccion de paginacion  -->
+            <div class="row">
+                <div class="col-xs-8 col-8">
+                  <!-- <pagination [totalItems]="66" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)"></pagination> -->
+                    <pagination (pageChanged)="changePage($event)" [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [previousText]="'Anterior'" [nextText]="'Siguiente'"> </pagination>
+                    
+                </div>
+                <div class="col-xs-4 col-4">
+                    <select (change)="changeItemsPerPage()"  [(ngModel)]="itemsPerPage" class="form-select">
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="30">30</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>     
+                </div>
+
+            </div>
+
+
+
+            
+        </div>
+    </div>
+</div>
+
+
+<ng-template #modalEdit>
+    <app-mant-pedido-register
+        [title]="titleModal"
+        [accion]="accionModal"
+        [pedido]="pedidoSelect"
+        [tipoUsuario]="tipoUsuario"
+        [tipoProducto]="tipoProducto"
+        [tipoDetallePedido]="tipoDetallePedido"
+    ></app-mant-pedido-register>
+</ng-template>

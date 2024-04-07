@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace DBBodegaYani.BodegaYani;
 
 [Keyless]
-public partial class VPersona
+public partial class Vpersona
 {
     public int CodigoPersona { get; set; }
 

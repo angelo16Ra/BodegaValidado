@@ -41,7 +41,4 @@ public partial class Usuario
 
     [InverseProperty("CodigoUsuarioNavigation")]
     public virtual ICollection<Error> Errors { get; set; } = new List<Error>();
-
-    [InverseProperty("CodigoUsuarioNavigation")]
-    public virtual ICollection<Pedido> Pedidos { get; set; } = new List<Pedido>();
 }

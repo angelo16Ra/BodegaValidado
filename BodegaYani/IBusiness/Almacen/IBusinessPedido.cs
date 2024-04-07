@@ -1,4 +1,6 @@
-﻿using IBusiness.Generic;
+﻿using DBBodegaYani.BodegaYani;
+using IBusiness.Generic;
+using RequestResponseModels.Generic;
 using RequestResponseModels.Request.Almacen;
 using RequestResponseModels.Response.Almacen;
 using System;
@@ -11,6 +13,7 @@ namespace IBusiness.Almacen
 {
     public interface IBusinessPedido : IBusinessCrud<RequestPedido, ResponsePedido>
     {
+        ResponseFilterGeneric<Vpedido> GetByFilterView(RequestFilterGeneric request);
     }
 
 }

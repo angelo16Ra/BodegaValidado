@@ -107,10 +107,10 @@ namespace Business.Almacen
 
         #endregion CRUD METHODS
 
-        public VPersona GetByTipoNroDocumento(string tipoDocumento, string nroDocumento)
+        public Vpersona GetByTipoNroDocumento(string tipoDocumento, string nroDocumento)
         {
             // dni | ruc
-            VPersona vPersona = _repositoryPersona.GetByTipoNroDocumento(tipoDocumento, nroDocumento);
+            Vpersona vPersona = _repositoryPersona.GetByTipoNroDocumento(tipoDocumento, nroDocumento);
             
             if(vPersona == null || vPersona.CodigoPersona == 0)
             {
@@ -120,7 +120,7 @@ namespace Business.Almacen
                     ApisPeruPersonaResponse pres = _apisPeruServices.PersonaPorDNI(nroDocumento) ;
                     if(pres.success)
                     {
-                        vPersona = new VPersona();
+                        vPersona = new Vpersona();
                         vPersona.NumeroDocumento = pres.dni;
                         vPersona.ApPaterno = pres.apellidoPaterno;
                         vPersona.ApMaterno = pres.apellidoMaterno;

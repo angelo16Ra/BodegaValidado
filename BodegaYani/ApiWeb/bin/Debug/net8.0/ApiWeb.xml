@@ -271,6 +271,13 @@
             <param name="request"></param>
             <returns></returns>
         </member>
+        <member name="M:ApiWeb.Controllers.Almacen.PedidoController.GetByFilterView(RequestResponseModels.Generic.RequestFilterGeneric)">
+            <summary>
+            RETORNA LA TABLA PEDIDO EN BASE A PAGINACIÓN Y FILTROS
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
         <member name="M:ApiWeb.Controllers.Almacen.PedidoController.CreateMultiple(System.Collections.Generic.List{RequestResponseModels.Request.Almacen.RequestPedido})">
             <summary>
             RETORNA LA TABLA PEDIDO EN BASE A PAGINACIÓN Y FILTROS

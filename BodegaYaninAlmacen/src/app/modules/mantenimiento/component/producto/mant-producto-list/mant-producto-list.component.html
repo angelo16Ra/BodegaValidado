@@ -1,88 +1,182 @@
 <div class="container-fluid mt-4">
-    <div class="card bg-light bf-3"> 
-        <div class="card-header">
-            <strong>PRODUCTOS</strong>
-        </div>
-        <div class="card-body">
-
-            <!-- TODO: seccion para los filtros  -->
-            <div></div>
-
-            <!-- TODO: tabla de resultados   -->
-            <div class="table table-responsive">
-                <table class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>codigo del Producto</th>
-                            <!-- <th>cAlmacenes</th>
-                            <th>cCategoria</th>
-                            <th>cProveedor</th>
-                            <th>cSubcategoria</th>
-                            <th>cUnidadmedida</th> -->
-                            <th>nombre del Producto</th>
-                            <th>stock del Producto</th>
-                            <th>precio del Producto</th>
-                            <th>imagen del Producto</th>
-                            <th>descripcion del Producto</th>
-                            <th>codigo - nombre de la Unidad Medida</th>
-                            <th>codigo - nombre de la Categoria</th>
-                            <th>codigo - nombre de la SubCategoria</th>
-                            <th>codigo - nombre del Proveedor</th>
-                            <th>codigo - nombre del Almacen</th>
-                            <th>
-                                <button (click)="nuevoRegistro(modalEdit)" class="btn btn-primary btn-sm">
-                                    <i class="fas fa-plus"></i>
-                                </button>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let d of VProducto ">
-                            <td>{{d.codigoProducto}}</td>
-                            <!-- <td>{{d.cAlmacenes}}</td>
-                            <td>{{d.cCategoria}}</td>
-                            <td>{{d.cProveedor}}</td>
-                            <td>{{d.cSubcategoria}}</td>
-                            <td>{{d.cUnidadmedida}}</td> -->
-                            <td>{{d.nombreProducto}}</td>
-                            <td>{{d.stockProducto}}</td>
-                            <td>{{d.precioProducto}}</td>
-                            <td>{{d.imagenProducto}}</td>
-                            <td>{{d.descripcionProducto}}</td>
-                            <td>{{d.codigoUnidadMedida}} - {{d.nomnombreMedida}}</td>
-                            <td>{{d.codigoCategoria}} - {{d.nombreCategoria}}</td>
-                            <td>{{d.codigoSubCategoria}} - {{d.nombreSub}}</td>
-                            <td>{{d.codigoProveedor}} - {{d.nombreProveedor}}</td>
-                            <td>{{d.codigoAlmacenes}} - {{d.nombreAlmacen}}</td>
-                            <td>
-                                <button (click)="editarRegistro(modalEdit,d)" class="btn btn-warning btn-sm">
-                                    <i class="fas fa-edit"></i>
-                                </button> 
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- TODO: seccion de paginacion  -->
-            <div></div>
-
-
-
-            
-        </div>
+  <div class="card bg-light bf-3">
+    <div class="card-header text-center">
+      <h1 class="mt-4">PRODUCTOS</h1>
     </div>
+    <div class="card-body">
+      <!-- TODO: seccion para los filtros  -->
+      <form [formGroup]="myFormFilter">
+        <div class="card bg-light mb-3">
+          <div class="card-header">BUSQUEDA POR FILTRO</div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="">Código</label>
+                  <input
+                    formControlName="codigoProducto"
+                    type="text"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="">Nombre</label>
+                  <input
+                    formControlName="nombreProducto"
+                    type="text"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="">stock</label>
+                  <input
+                    formControlName="stockProducto"
+                    type="number"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="">precio</label>
+                  <input
+                    formControlName="precioProducto"
+                    type="text"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="">imagen</label>
+                  <input
+                    formControlName="imagenProducto"
+                    type="number"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="">descripcion</label>
+                  <input
+                    formControlName="descripcionProducto"
+                    type="number"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <br />
+                  <button (click)="filtrar()" class="btn btn-primary btn-sm">
+                    <i class="fas fa-search"></i>
+                  </button>
+                  <button class="btn btn-primary btn-sm">
+                    <i class="fas fa-broom"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- TODO: tabla de resultados   -->
+      <div class="table table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th class="text-center">Codigo</th>
+              <th class="text-center">Nombre</th>
+              <th class="text-center">Stock</th>
+              <th class="text-center">Precio</th>
+              <th class="text-center">Imagen</th>
+              <th class="text-center">Descripcion</th>
+              <th class="text-center">Unidad Medida</th>
+              <th class="text-center">Categoria</th>
+              <th class="text-center">SubCategoria</th>
+              <th class="text-center">Proveedor</th>
+              <th class="text-center">Almacen</th>
+              <th>
+                <button
+                  (click)="nuevoRegistro(modalEdit)"
+                  class="btn btn-primary btn-sm"
+                >
+                  <i class="fas fa-plus"></i>
+                </button>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let d of vProducto">
+              <td class="text-center">{{ d.codigoProducto }}</td>
+              <td class="text-center">{{ d.nombre }}</td>
+              <td class="text-center">{{ d.stock }}</td>
+              <td class="text-center">{{ d.precio }}</td>
+              <td class="text-center">{{ d.imagen }}</td>
+              <td class="text-center">{{ d.descripcion }}</td>
+              <td class="text-center">{{ d.nomnombreMedida }}</td>
+              <td class="text-center">{{ d.nombreCategoria }}</td>
+              <td class="text-center">{{ d.nombreSub }}</td>
+              <td class="text-center">{{ d.nombreProveedor }}</td>
+              <td class="text-center">{{ d.nombreAlmacen }}</td>
+              <td>
+                <button (click)="editarRegistro(modalEdit, d)" class="btn btn-warning btn-sm">
+                  <i class="fas fa-edit"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- TODO: seccion de paginacion  -->
+      <div class="row">
+        <div class="col-xs-8 col-8">
+          <pagination
+            (pageChanged)="changePage($event)"
+            [totalItems]="totalItems"
+            [itemsPerPage]="itemsPerPage"
+            [previousText]="'Anterior'"
+            [nextText]="'Siguiente'"
+          >
+          </pagination>
+        </div>
+        <div class="col-xs-4 col-4">
+          <select
+            (change)="changeItemsPerPage()"
+            [(ngModel)]="itemsPerPage"
+            class="form-select"
+          >
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="30">30</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <ng-template #modalEdit>
-    <app-mant-producto-register
-        [title]="tileModal"
-        [accion]="accionModal"
-        [producto]="productoSelect"
-        [tipoUnidadMedida]="tipoUnidadMedida"
-        [tipoCategoria]="tipoCategoria"
-        [tipoSubCategoria]="tipoSubCategoria"
-        [tipoProveedor]="tipoProveedor"
-        [tipoAlmacen]="tipoAlmacen"
-    ></app-mant-producto-register>
+  <app-mant-producto-register
+    [title]="titleModal"
+    [accion]="accionModal"
+    [producto]="productoSelect"
+    [tipoUnidadMedida]="tipoUnidadMedida"
+    [tipoCategoria]="tipoCategoria"
+    [tipoSubCategoria]="tipoSubCategoria"
+    [tipoProveedor]="tipoProveedor"
+    [tipoAlmacen]="tipoAlmacen"
+    (closeModalEmmit)="getCloseModalEmmit($event)"
+  ></app-mant-producto-register>
 </ng-template>

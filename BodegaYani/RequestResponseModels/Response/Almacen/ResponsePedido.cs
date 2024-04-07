@@ -11,6 +11,7 @@ namespace RequestResponseModels.Response.Almacen
         public int CodigoPedido { get; set; }
         public int CodigoUsuario { get; set; }
         public int CodigoProducto { get; set; }
+        public int CodigoDetallePedido { get; set; }
         public decimal MontoTotal { get; set; }
         public decimal MontoPagado { get; set; }
         public decimal Vuelto { get; set; }

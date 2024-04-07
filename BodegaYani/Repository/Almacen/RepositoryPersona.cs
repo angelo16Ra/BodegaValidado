@@ -74,9 +74,9 @@ namespace Repository.Almacen
 
         }
 
-        public VPersona GetByTipoNroDocumento(string tipoDocumento, string nroDocumento)
+        public Vpersona GetByTipoNroDocumento(string tipoDocumento, string nroDocumento)
         {
-            VPersona vPersona = new VPersona();
+            Vpersona vPersona = new Vpersona();
             //tipoDocumento ==> Ruc |
 
             int tDocumento = 0;

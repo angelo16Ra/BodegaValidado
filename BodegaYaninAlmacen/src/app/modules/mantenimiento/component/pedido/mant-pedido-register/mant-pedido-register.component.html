@@ -1,1 +1,125 @@
-<p>mant-pedido-register works!</p>
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{title}}</h4>
+    <!-- (click)="modalRef?.hide()" -->
+    <button type="button" class="btn-close close pull-right" aria-label="Close" >
+        <span arial-hidden="true" class="visually-hidden">&times;</span>
+    </button> 
+</div>
+<div class="modal-body">
+    
+
+    <form [formGroup]="myForm">
+        
+        <div class="row mt-2">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">Codigo del Pedido</label>
+                    <input formControlName="codigoRol" class="form-control" placeholder="ingrese el Codigo">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">Atendio</label>
+                    <select class="form-select">
+                        <option *ngFor="let d of tipoUsuario" [value]="d.codigoUsuario">
+                            {{d.userName}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">Categoria</label>
+                    <select class="form-select">
+                        <option *ngFor="let d of tipoProducto" [value]="d.codigoProducto">
+                            {{d.nombre}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">cantidad</label>
+                    <select class="form-select">
+                        <option *ngFor="let d of tipoDetallePedido" [value]="d.codigoDetallePedido">
+                            {{d.cantidad}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">precio Unitario</label>
+                    <select class="form-select">
+                        <option *ngFor="let d of tipoDetallePedido" [value]="d.codigoDetallePedido">
+                            {{d.precioUnitario}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">precio Total</label>
+                    <select class="form-select">
+                        <option *ngFor="let d of tipoDetallePedido" [value]="d.codigoDetallePedido">
+                            {{d.precioTotal}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">monto Total</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">monto pagado</label>
+                    <input type="number" class="form-control">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">vuelto</label>
+                    <input type="number" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">registro del pedido</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">entrega del pedido</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for=""></label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="d-grid gap-2">
+                    <button [disabled]="myForm.invalid" (click)="guardar()" class="btn-block btn btn-primary btn-sm">Guardar</button>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="d-grid gap-2">
+                    <button class="btn-block btn btn-danger btn-sm">Cancelar</button>
+                </div>
+            </div>
+        </div>    
+    </form>
+</div>

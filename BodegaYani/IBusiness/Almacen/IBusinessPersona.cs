@@ -12,7 +12,7 @@ namespace IBusiness.Almacen
 {
     public interface IBusinessPersona : IBusinessCrud<RequestPersona, ResponsePersona>
     {
-        VPersona GetByTipoNroDocumento(string tipoDocumento, string nroDocumento);
+        Vpersona GetByTipoNroDocumento(string tipoDocumento, string nroDocumento);
     }
 
 }

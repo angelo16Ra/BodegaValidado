@@ -98,46 +98,31 @@ namespace Repository.Almacen
                             query = query.Where(x => x.CodigoAlmacenes == int.Parse(j.Value));
                             break;
                         case "nombre":
-                            query = query.Where(x => x.NombreProducto.ToLower().Contains(j.Value.ToLower()));
+                            query = query.Where(x => x.Nombre.ToLower().Contains(j.Value.ToLower()));
                             break;
                         case "stock":
-                            query = query.Where(x => x.StockProducto.ToLower().Contains(j.Value.ToLower()));
+                            query = query.Where(x => x.Stock.ToLower().Contains(j.Value.ToLower()));
                             break;
                         case "precio":
-                            query = query.Where(x => x.PrecioProducto == decimal.Parse(j.Value));
+                            query = query.Where(x => x.Precio == decimal.Parse(j.Value));
                             break;
                         case "imagen":
-                            query = query.Where(x => x.ImagenProducto.ToLower().Contains(j.Value.ToLower()));
+                            query = query.Where(x => x.Imagen.ToLower().Contains(j.Value.ToLower()));
                             break;
                         case "descripcion":
-                            query = query.Where(x => x.DescripcionProducto.ToLower().Contains(j.Value.ToLower()));
-                            break;
-                        case "CodigoUnidadMedida":
-                            query = query.Where(x => x.CodigoUnidadMedida == int.Parse(j.Value));
+                            query = query.Where(x => x.Descripcion.ToLower().Contains(j.Value.ToLower()));
                             break;
                         case "NomnombreMedida":
                             query = query.Where(x => x.NomnombreMedida.ToLower().Contains(j.Value.ToLower()));
                             break;
-                        case "CodigoCategoria":
-                            query = query.Where(x => x.CodigoCategoria  == int.Parse(j.Value)); ;
-                            break;
                         case "NombreCategoria":
                             query = query.Where(x => x.NombreCategoria.ToLower().Contains(j.Value.ToLower()));
-                            break;
-                        case "CodigoSubCategoria":
-                            query = query.Where(x => x.CodigoSubCategoria == int.Parse(j.Value));
                             break;
                         case "NombreSub":
                             query = query.Where(x => x.NombreSub.ToLower().Contains(j.Value.ToLower()));
                             break;
-                        case "CodigoProveedor":
-                            query = query.Where(x => x.CodigoProveedor == int.Parse(j.Value));
-                            break;
                         case "NombreProveedor":
                             query = query.Where(x => x.NombreProveedor.ToLower().Contains(j.Value.ToLower()));
-                            break;
-                        case "CodigoAlmacenes":
-                            query = query.Where(x => x.CodigoAlmacenes == int.Parse(j.Value));
                             break;
                         case "NombreAlmacen":
                             query = query.Where(x => x.NombreAlmacen.ToLower().Contains(j.Value.ToLower()));

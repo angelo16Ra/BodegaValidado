@@ -11,8 +11,6 @@ public partial class DetallePedido
     [Key]
     public int CodigoDetallePedido { get; set; }
 
-    public int CodigoPedido { get; set; }
-
     [Column(TypeName = "decimal(8, 2)")]
     public decimal Cantidad { get; set; }
 
@@ -23,8 +21,4 @@ public partial class DetallePedido
     public decimal PrecioUnitario { get; set; }
 
     public bool Estado { get; set; }
-
-    [ForeignKey("CodigoPedido")]
-    [InverseProperty("DetallePedidos")]
-    public virtual Pedido CodigoPedidoNavigation { get; set; } = null!;
 }

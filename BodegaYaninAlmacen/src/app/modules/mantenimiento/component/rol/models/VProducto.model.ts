@@ -1,0 +1,23 @@
+export class Vproducto {
+    codigoProducto: number = 0;
+    cAlmacenes: number = 0;
+    cCategoria: number = 0;
+    cProveedor: number = 0;
+    cSubcategoria: number = 0;
+    cUnidadmedida: number = 0;
+    nombreProducto: string = "";
+    stockProducto: string = "";
+    precioProducto: number = 0;
+    imagenProducto: string = "";
+    descripcionProducto: string = "";
+    codigoUnidadMedida: number = 0;
+    nomnombreMedida: string = "";
+    codigoCategoria: number = 0;
+    nombreCategoria: string = "";
+    codigoSubCategoria: number = 0;
+    nombreSub: string = "";
+    codigoProveedor: number = 0;
+    nombreProveedor: string = "";
+    codigoAlmacenes: number = 0;
+    nombreAlmacen: string = "";
+}

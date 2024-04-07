@@ -1,0 +1,14 @@
+- Almacen funciona  perfectamente falta implementar mensajes de error y success
+- Caja falta todo
+- categoria funciona perfectamente falta implementar mensajes de error y success
+- detallePedido viene de pedido
+- Movimiento Caja falta todo
+- Pedido falta boton de guardar y actualizar - falta implementar mensajes de error y success
+- Persona es de usuario
+- Producto agregar producto sale error - se puede editar - lo demas esta todo bien 
+- Proveedor falta todo 
+- Rol arreglar el estado solo trae activo - falta implementar mensajes de error y success
+- SubCategoria falta todo
+- tipoDocumento funciona perfectamente falta implementar mensajes de error y success
+- unidadMedida falta arreglar el estado solo trae activo - falta implementar mensajes de error y success
+- usuario solo trae los datos de vista usuario falta todo lo demas 

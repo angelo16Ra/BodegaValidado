@@ -54,7 +54,7 @@ namespace ApiWeb.Controllers.Almacen
         [ProducesResponseType((int)HttpStatusCode.InternalServerError, Type = typeof(GenericResponse))]
         public IActionResult GetWithDni(string tipoDocumento, string nroDocumento)
         {
-            VPersona persona = new VPersona();
+            Vpersona persona = new Vpersona();
             persona = _persona.GetByTipoNroDocumento(tipoDocumento, nroDocumento);
             return Ok(persona);
         }

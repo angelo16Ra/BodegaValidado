@@ -59,7 +59,4 @@ public partial class Producto
     [ForeignKey("CodigoUnidadMedida")]
     [InverseProperty("Productos")]
     public virtual UnidadMedida CodigoUnidadMedidaNavigation { get; set; } = null!;
-
-    [InverseProperty("CodigoProductoNavigation")]
-    public virtual ICollection<Pedido> Pedidos { get; set; } = new List<Pedido>();
 }

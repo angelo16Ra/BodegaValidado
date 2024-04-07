@@ -1543,6 +1543,22 @@
   },
   {
     "ContainingType": "ApiWeb.Controllers.Almacen.PedidoController",
+    "Method": "GetByFilterView",
+    "RelativePath": "api/Pedido/filter-view",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.PedidoController",
     "Method": "CreateMultiple",
     "RelativePath": "api/Pedido/multiple",
     "HttpMethod": "POST",

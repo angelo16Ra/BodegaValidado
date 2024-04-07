@@ -11,6 +11,9 @@ import { ResponseUnidadMedida } from '../../../models/unidadMedida-response.mode
 import { Vproducto } from '../../../models/VProducto.model';
 import { ProductoService } from '../../../service/producto.service';
 import { MantProductoListComponent } from '../mant-producto-list/mant-producto-list.component';
+import { AccionMantConst } from '../../../../../constans/general.constants';
+import { ResponseProducto } from '../../../models/producto-response.model';
+import { alert_error, alert_success } from '../../../../../functions/general.functions';
 
 @Component({
   selector: 'app-mant-producto-register',
@@ -55,7 +58,7 @@ export class MantProductoRegisterComponent implements OnInit{
   ){
     //nuestro formulario rol request
     this.myForm= this.fb.group({
-      codigoProducto: [null,[Validators.required]],
+      codigoProducto:[{ value: 0, disabled: true }, [Validators.required]],
       codigoUnidadMedida: [null,[Validators.required]],
       codigoCategoria: [null,[Validators.required]],
       codigoSubCategoria: [null,[Validators.required]],
@@ -81,8 +84,57 @@ export class MantProductoRegisterComponent implements OnInit{
 
   guardar()
   {
+    this.productoEnvio= this.myForm.getRawValue();
 
+    switch(this.accion){
+      case AccionMantConst.crear: 
+        // crear nuevo registro
+        this.crearRegistro();
+        break;
+      case AccionMantConst.editar: 
+        // inactivar 
+        this.editarRegistro();
+        break;
+      case AccionMantConst.eliminar:  
+       // eliminar registro  
+        // en el formulario el eliminar no se implementa pero se pone el ejemplo para 
+        //que la lectura de codigo sea mas sencillo
+        break;
+    }
 
+  }
+
+  crearRegistro()
+  {
+    //lamar a nuestro servicio rest ==> crear un nuevo registro en base de datos
+    this._productoService.create(this.productoEnvio).subscribe({
+      next:(data:ResponseProducto)=>{
+        console.log(data);
+        alert_success("EXCELENTE","Se actualizo de manera correcta")
+      },
+      error:()=>{
+        alert_error("ERROR","ocurrio un error la momento de añadir")
+      },
+      complete:()=>{
+        this.cerrarModal(true);
+      },
+    });
+  }
+
+  editarRegistro()
+  {
+
+    this._productoService.update(this.productoEnvio).subscribe({
+      next:(data:ResponseProducto)=>{
+        alert_success("EXCELENTE","Se actualizo de manera correcta")
+      },
+      error:()=>{
+        alert_error("ERROR","ocurrio un error la momento de actualizar")
+      },
+      complete:()=>{
+        this.cerrarModal(true);
+      },
+    });
   }
 
   cerrarModal(res:boolean)

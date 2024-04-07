@@ -45,7 +45,9 @@ public partial class _bodegaContext : DbContext
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
-    public virtual DbSet<VPersona> Vpersonas { get; set; }
+    public virtual DbSet<Vpedido> Vpedidos { get; set; }
+
+    public virtual DbSet<Vpersona> Vpersonas { get; set; }
 
     public virtual DbSet<Vproducto> Vproductos { get; set; }
 
@@ -79,10 +81,6 @@ public partial class _bodegaContext : DbContext
         modelBuilder.Entity<DetallePedido>(entity =>
         {
             entity.HasKey(e => e.CodigoDetallePedido).HasName("PK__DetalleP__8168822DB2CFCC39");
-
-            entity.HasOne(d => d.CodigoPedidoNavigation).WithMany(p => p.DetallePedidos)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__DetallePe__Codig__5EBF139D");
         });
 
         modelBuilder.Entity<Error>(entity =>
@@ -110,14 +108,6 @@ public partial class _bodegaContext : DbContext
         modelBuilder.Entity<Pedido>(entity =>
         {
             entity.HasKey(e => e.CodigoPedido).HasName("PK__Pedidos__72162F0B282ECF4B");
-
-            entity.HasOne(d => d.CodigoProductoNavigation).WithMany(p => p.Pedidos)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Pedidos__CodigoP__5BE2A6F2");
-
-            entity.HasOne(d => d.CodigoUsuarioNavigation).WithMany(p => p.Pedidos)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Pedidos__CodigoU__5AEE82B9");
         });
 
         modelBuilder.Entity<Persona>(entity =>
@@ -212,9 +202,14 @@ public partial class _bodegaContext : DbContext
                 .HasConstraintName("FK__Usuarios__Codigo__4D94879B");
         });
 
-        modelBuilder.Entity<VPersona>(entity =>
+        modelBuilder.Entity<Vpedido>(entity =>
         {
-            entity.ToView("VPERSONA");
+            entity.ToView("VPedido");
+        });
+
+        modelBuilder.Entity<Vpersona>(entity =>
+        {
+            entity.ToView("VPersona");
 
             entity.Property(e => e.Sexo).IsFixedLength();
         });
@@ -223,7 +218,7 @@ public partial class _bodegaContext : DbContext
         {
             entity.ToView("VProductos");
 
-            entity.Property(e => e.StockProducto).IsFixedLength();
+            entity.Property(e => e.Stock).IsFixedLength();
         });
 
         modelBuilder.Entity<Vusuario>(entity =>
