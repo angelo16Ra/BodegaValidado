@@ -48,7 +48,7 @@ export class MantUnidadMedidaListComponent implements OnInit{
       codigoUnidadMedida: ["", []],
       nombre: ["", []],
       descripcion: ["", []],
-      estadoDescripcion: ["", []],
+      estado: ["", []],
     });
   }
 
@@ -138,7 +138,7 @@ export class MantUnidadMedidaListComponent implements OnInit{
     this.request.filtros.push({name:"codigoUnidadMedida", value: valueForm.codigoRol});
     this.request.filtros.push({name:"nombre", value: valueForm.nombre});
     this.request.filtros.push({name:"descripcion", value: valueForm.descripcion});
-    this.request.filtros.push({name:"estadoDescripcion", value: valueForm.estado});
+    this.request.filtros.push({name:"estado", value: valueForm.estado});
 
     this._unidadMedidaService.genericFilter(this.request).subscribe({
       next: (data: ResponseFilterGeneric<ResponseUnidadMedida> ) => {

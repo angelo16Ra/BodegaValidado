@@ -5,7 +5,7 @@ import { SharedModule } from '../../../../shared/shared.module';
 import { RequestUnidadMedida } from '../../../models/unidadMedida-request.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UnidadMedidaService } from '../../../service/unidad-medida.service';
-import { convertToBoolean } from '../../../../../functions/general.functions';
+import { alert_error, alert_success, convertToBoolean } from '../../../../../functions/general.functions';
 import { AccionMantConst } from '../../../../../constans/general.constants';
 import { ResponseUnidadMedida } from '../../../models/unidadMedida-response.model';
 
@@ -113,10 +113,10 @@ export class MantUnidadMedidaRegisterComponent implements OnInit{
 
     this._unidadMedidaService.update(this.unidadMedidaEnvio).subscribe({
       next:(data:ResponseUnidadMedida)=>{
-        alert("actualizado de forma correcta")
+        alert_success("EXCELENTE","Se creo de manera correcta")
       },
       error:()=>{
-        alert("ocurrio un error la momento de actualizar")
+        alert_error("ERROR","ocurrio un error la momento de añadir")
       },
       complete:()=>{
         this.cerrarModal(true);

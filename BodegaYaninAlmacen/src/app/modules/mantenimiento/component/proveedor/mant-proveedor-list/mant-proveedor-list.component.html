@@ -1,0 +1,142 @@
+<div class="container-fluid mt-5">
+    <div class="card">
+        <div class="card-header bg-primary text-white text-center">
+            <h1 class="mt-4"> MANTENIMIENTO DE PROVEEDORES</h1>
+        </div>
+        <div class="card-body">
+
+            <form [formGroup]="myFormFilter" class="mb-3">
+                <div class="card bg-light">
+                    <div class="card-header bg-secondary text-white">BÚSQUEDA POR FILTRO</div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="">Código</label>
+                                <input formControlName="codigoProveedor" type="text" class="form-control">   
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="">ruc</label>
+                                <input formControlName="ruc" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="">razonSocial</label>
+                                <input formControlName="razonSocial" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="">telefono</label>
+                                <input formControlName="telefono" type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="">correo</label>
+                                <input formControlName="correo" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="">fechaActualizacion</label>
+                                <input formControlName="fechaActualizacion" type="datetime" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="">Estado</label>
+                                <select name="" formControlname="estado" class="form-select">
+                                    <option value="">TODO</option>
+                                    <option value="true">Activo</option>
+                                    <option value="false">Inactivo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-end mt-3">
+                            <button (click)="filtrar()" class="btn btn-primary me-2">
+                                <i class="fas fa-search"></i> Buscar
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-broom"></i> Limpiar
+                            </button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </form>
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>codigoProveedor</th>
+                        <th>ruc</th>
+                        <th>razonSocial</th>
+                        <th>telefono </th>
+                        <th>correo</th>
+                        <th>fechaRegistro</th>
+                        <th>fechaActualizacion</th>
+                        <th>estado</th>
+                        <th>
+                            <button (click)="crearProveedor(ModalEdit)" class="btn btn-primary btn-sm">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let proveedor of proveedors">
+                        <td>{{proveedor.codigoProveedor}}</td>
+                        <td>{{proveedor.ruc}}</td>
+                        <td>{{proveedor.razonSocial}}</td>
+                        <td>{{proveedor.telefono}}</td>
+                        <td>{{proveedor.correo}}</td>
+                        <td>{{proveedor.fechaRegistro}}</td>
+                        <td>{{proveedor.fechaActualizacion}}</td>
+                        <td>{{proveedor.estadoDescripcion? 'Activo' : 'Inactivo'}}</td>
+                        <td>
+                            <button (click)="editarAlmacen(ModalEdit, proveedor)" class="btn btn-warning btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button (click)="eliminarRegistro(proveedor.codigoProveedor)" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            
+            <div class="row">
+                <div class="col-xs-8 col-8">
+                    <pagination (pageChanged)="changePage($event)" [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [previousText]="'Anterior'" [nextText]="'Siguiente'"> </pagination>
+                </div>
+                <div class="col-xs-4 col-4">
+                    <select (change)="changeItemsPerPage()"  [(ngModel)]="itemsPerPage" class="form-select">
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="30">30</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>     
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<ng-template #ModalEdit>
+    <app-mant-proveedor-register
+        [title]="titleModal"
+        [proveedor]="proveedorSelect"
+        [accion]="accionModal"
+        (closeModalEmmit)="getCloseModalEmmit($event)"  
+    ></app-mant-proveedor-register>
+
+</ng-template>

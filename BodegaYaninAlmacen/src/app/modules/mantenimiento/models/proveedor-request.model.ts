@@ -7,5 +7,4 @@ export class RequestProveedor {
     fechaRegistro: string = "";
     fechaActualizacion: string = "";
     estado: boolean = false;
-    estadoDescripcion: string = "";
 }

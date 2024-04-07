@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AccionMantConst } from '../../../../../constans/general.constants';
-import { convertToBoolean } from '../../../../../functions/general.functions';
+import { alert_error, alert_success, convertToBoolean } from '../../../../../functions/general.functions';
 import { SharedModule } from '../../../../shared/shared.module';
 import { RequestCategoria } from '../../../models/categoria-request.model';
 import { ResponseCategoria } from '../../../models/categoria-response.model';
@@ -85,10 +85,10 @@ export class MantCategoriaRegisterComponent {
     //lamar a nuestro servicio rest ==> crear un nuevo registro en base de datos
     this._categoriaService.create(this.categoriaEnvio).subscribe({
       next:(data:ResponseCategoria)=>{
-        alert("creado de forma correcta")
+        alert_success("EXCELENTE","Se creo de manera correcta")
       },
       error:()=>{
-        alert("ocurrio un error la momento de crear")
+        alert_error("ERROR","ocurrio un error la momento de añadir")
       },
       complete:()=>{
         this.cerrarModal(true);
@@ -101,10 +101,10 @@ export class MantCategoriaRegisterComponent {
 
     this._categoriaService.update(this.categoriaEnvio).subscribe({
       next:(data:ResponseCategoria)=>{
-        alert("actualizado de forma correcta")
+        alert_success("EXCELENTE","Se actualizo de manera correcta")
       },
       error:()=>{
-        alert("ocurrio un error la momento de actualizar")
+        alert_error("ERROR","ocurrio un error la momento de actualizar")
       },
       complete:()=>{
         this.cerrarModal(true);

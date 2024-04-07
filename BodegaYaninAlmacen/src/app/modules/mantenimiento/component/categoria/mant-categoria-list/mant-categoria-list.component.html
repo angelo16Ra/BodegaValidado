@@ -1,13 +1,13 @@
-<div class="container-fluid px-4 mt-5">
-    <div class="card bg-light mb-3">
-        <div class="card-header text-center">
-            <h1 class="mt-4"> MANTENIMIENTO DE CATEGORIAS DE PRODUCTOS</h1>
+<div class="container-fluid mt-5">
+    <div class="card">
+        <div class="card-header bg-primary text-white text-center">
+            <h1 class="mt-4"> MANTENIMIENTO DE CATEGORIAS</h1>
         </div>
         <div class="card-body">
 
-            <form [formGroup]="myFormFilter">
-                <div class="card bg-light mb-3">
-                    <div class="card-header">BUSQUEDA POR FILTRO</div>
+            <form [formGroup]="myFormFilter" class="mb-3">
+                <div class="card bg-light">
+                    <div class="card-header bg-secondary text-white">BÚSQUEDA POR FILTRO</div>
                     <div class="card-body">
                       <div class="row">
                         <div class="col-3">
@@ -50,17 +50,13 @@
                                 <input formControlName="fechaActualizacion" type="datetime" class="form-control">
                             </div>
                         </div>
-
-                        <div class="col-3">
-                            <div class="form-group">
-                                <br>
-                                <button (click)="filtrar()" class="btn btn-primary btn-sm">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                                <button class="btn btn-primary btn-sm">
-                                    <i class="fas fa-broom"></i>
-                                </button>
-                            </div>
+                        <div class="col-md-12 text-end mt-3">
+                            <button (click)="filtrar()" class="btn btn-primary me-2">
+                                <i class="fas fa-search"></i> Buscar
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-broom"></i> Limpiar
+                            </button>
                         </div>
                       </div>
                     </div>
@@ -90,7 +86,7 @@
                         <td>{{categoria.estado ? 'Activo' : 'Inactivo'}}</td>
                         <td>{{categoria.fechaRegistro | date:"dd/mm/yyy"}} - {{categoria.fechaActualizacion | date:"dd/mm/yyy"}}</td>
                         <td>
-                            <button (click)="editarCategoria(ModalEdit, categoria)" class="btn btn-primary btn-sm">
+                            <button (click)="editarCategoria(ModalEdit, categoria)" class="btn btn-warning btn-sm">
                                 <i class="fas fa-edit"></i>
                             </button>
                             <button (click)="eliminarRegistro(categoria.codigoCategoria)" class="btn btn-danger btn-sm">

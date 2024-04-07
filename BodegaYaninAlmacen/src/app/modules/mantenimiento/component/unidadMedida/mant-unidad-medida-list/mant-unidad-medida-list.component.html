@@ -1,13 +1,13 @@
-<div class="container-fluid px-4 mt-5">
-    <div class="card bg-light mb-3">
-        <div class="card-header text-center">
+<div class="container-fluid mt-5">
+    <div class="card">
+        <div class="card-header bg-primary text-white text-center">
             <h1 class="mt-4"> UNIDAD DE MEDIDA</h1>
         </div>
         <div class="card-body">
 
-            <form [formGroup]="myFormFilter">
-                <div class="card bg-light mb-3">
-                    <div class="card-header">BUSQUEDA POR FILTRO</div>
+            <form [formGroup]="myFormFilter" class="mb-3">
+                <div class="card bg-light">
+                    <div class="card-header bg-secondary text-white">BÚSQUEDA POR FILTRO</div>
                     <div class="card-body">
                       <div class="row">
                         <div class="col-3">
@@ -38,16 +38,13 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                                <br>
-                                <button (click)="filtrar()" class="btn btn-primary btn-sm">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                                <button class="btn btn-primary btn-sm">
-                                    <i class="fas fa-broom"></i>
-                                </button>
-                            </div>
+                        <div class="col-md-12 text-end mt-3">
+                            <button (click)="filtrar()" class="btn btn-primary me-2">
+                                <i class="fas fa-search"></i> Buscar
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-broom"></i> Limpiar
+                            </button>
                         </div>
                       </div>
                     </div>
@@ -73,9 +70,9 @@
                         <td>{{unidadmedida.codigoUnidadMedida}}</td>
                         <td>{{unidadmedida.nombre}}</td>
                         <td>{{unidadmedida.descripcion}}</td>
-                        <td>{{unidadmedida.estadoDescripcion}}</td>
+                        <td>{{unidadmedida.estadoDescripcion? 'Activo' : 'Inactivo'}}</td>
                         <td>
-                            <button (click)="editarUnidadMedida(ModalEdit,unidadmedida)" class="btn btn-primary btn-sm">
+                            <button (click)="editarUnidadMedida(ModalEdit,unidadmedida)" class="btn btn-warning btn-sm">
                                 <i class="fas fa-edit"></i>
                             </button>
                             <button (click)="eliminarRegistro(unidadmedida.codigoUnidadMedida)" class="btn btn-danger btn-sm">

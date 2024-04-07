@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output, output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AccionMantConst } from '../../../../../constans/general.constants';
-import { convertToBoolean } from '../../../../../functions/general.functions';
+import { alert_error, alert_success, convertToBoolean } from '../../../../../functions/general.functions';
 import { SharedModule } from '../../../../shared/shared.module';
 import { RequestRol } from '../../../models/rol-request.model';
 import { ResponseRol } from '../../../models/rol-response.model';
@@ -96,10 +96,10 @@ export class MantRolRegisterComponent implements OnInit {
     //lamar a nuestro servicio rest ==> crear un nuevo registro en base de datos
     this._rolService.create(this.rolEnvio).subscribe({
       next:(data:ResponseRol)=>{
-        alert("creado de forma correcta")
+        alert_success("EXCELENTE","Se creo de manera correcta")
       },
       error:()=>{
-        alert("ocurrio un error la momento de crear")
+        alert_error("ERROR","ocurrio un error la momento de añadir")
       },
       complete:()=>{
         this.cerrarModal(true);
@@ -112,10 +112,10 @@ export class MantRolRegisterComponent implements OnInit {
 
     this._rolService.update(this.rolEnvio).subscribe({
       next:(data:ResponseRol)=>{
-        alert("actualizado de forma correcta")
+        alert_success("EXCELENTE","Se actualizo de manera correcta")
       },
       error:()=>{
-        alert("ocurrio un error la momento de actualizar")
+        alert_error("ERROR","ocurrio un error la momento de actualizar")
       },
       complete:()=>{
         this.cerrarModal(true);

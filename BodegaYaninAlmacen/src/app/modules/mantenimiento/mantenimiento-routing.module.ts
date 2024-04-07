@@ -11,6 +11,7 @@ import { MantSubCategoriaListComponent } from './component/subCategoria/mant-sub
 import { MantTipoDocumentoListComponent } from './component/tipoDocumento/mant-tipo-documento-list/mant-tipo-documento-list.component';
 import { MantUnidadMedidaListComponent } from './component/unidadMedida/mant-unidad-medida-list/mant-unidad-medida-list.component';
 import { MantUsuarioListComponent } from './component/usuario/mant-usuario-list/mant-usuario-list.component';
+import { MantProveedorListComponent } from './component/proveedor/mant-proveedor-list/mant-proveedor-list.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,9 @@ const routes: Routes = [
   },
   {
     path:'pedido',component:MantPedidoListComponent 
+  },
+  {
+    path:'proveedor',component:MantProveedorListComponent 
   },
   {
     path:'producto',component:MantProductoListComponent 

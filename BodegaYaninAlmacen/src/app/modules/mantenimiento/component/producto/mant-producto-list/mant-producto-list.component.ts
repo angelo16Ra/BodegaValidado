@@ -77,9 +77,9 @@ export class MantProductoListComponent implements OnInit{
   {
     this.myFormFilter= this.fb.group({
       codigoProducto: ["", []],
-      nombreProducto: ["", []],
-      stockProducto: ["", []],
-      precioProducto: ["", []],
+      nombre: ["", []],
+      stock: ["", []],
+      precio: ["", []],
       nomnombreMedida: ["", []],
       nombreCategoria: ["", []],
       nombreSub: ["", []],
@@ -174,9 +174,9 @@ export class MantProductoListComponent implements OnInit{
     let valueForm = this.myFormFilter.getRawValue();
 
     this.request.filtros.push({name:"codigoProducto:", value: valueForm.codigoProducto});
-    this.request.filtros.push({name:"nombreProducto:", value: valueForm.nombreProducto});
-    this.request.filtros.push({name:"stockProducto:", value: valueForm.stockProducto});
-    this.request.filtros.push({name:"precioProducto:", value: valueForm.precioProducto});
+    this.request.filtros.push({name:"nombre:", value: valueForm.nombre});
+    this.request.filtros.push({name:"stock:", value: valueForm.stock});
+    this.request.filtros.push({name:"precio:", value: valueForm.precio});
     this.request.filtros.push({name:"nomnombreMedida:", value: valueForm.nomnombreMedida});
     this.request.filtros.push({name:"nombreCategoria:", value: valueForm.nombreCategoria});
     this.request.filtros.push({name:"nombreSub:", value: valueForm.nombreSub});

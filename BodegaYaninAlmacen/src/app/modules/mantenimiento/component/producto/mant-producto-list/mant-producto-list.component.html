@@ -1,13 +1,13 @@
-<div class="container-fluid mt-4">
-  <div class="card bg-light bf-3">
-    <div class="card-header text-center">
+<div class="container-fluid mt-5">
+  <div class="card">
+      <div class="card-header bg-primary text-white text-center">
       <h1 class="mt-4">PRODUCTOS</h1>
     </div>
     <div class="card-body">
       <!-- TODO: seccion para los filtros  -->
-      <form [formGroup]="myFormFilter">
-        <div class="card bg-light mb-3">
-          <div class="card-header">BUSQUEDA POR FILTRO</div>
+      <form [formGroup]="myFormFilter" class="mb-3">
+        <div class="card bg-light">
+            <div class="card-header bg-secondary text-white">BÚSQUEDA POR FILTRO</div>
           <div class="card-body">
             <div class="row">
               <div class="col-3">
@@ -24,7 +24,7 @@
                 <div class="form-group">
                   <label for="">Nombre</label>
                   <input
-                    formControlName="nombreProducto"
+                    formControlName="nombre"
                     type="text"
                     class="form-control"
                   />
@@ -34,7 +34,7 @@
                 <div class="form-group">
                   <label for="">stock</label>
                   <input
-                    formControlName="stockProducto"
+                    formControlName="stock"
                     type="number"
                     class="form-control"
                   />
@@ -44,18 +44,8 @@
                 <div class="form-group">
                   <label for="">precio</label>
                   <input
-                    formControlName="precioProducto"
+                    formControlName="precio"
                     type="text"
-                    class="form-control"
-                  />
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="form-group">
-                  <label for="">imagen</label>
-                  <input
-                    formControlName="imagenProducto"
-                    type="number"
                     class="form-control"
                   />
                 </div>
@@ -64,23 +54,20 @@
                 <div class="form-group">
                   <label for="">descripcion</label>
                   <input
-                    formControlName="descripcionProducto"
-                    type="number"
+                    formControlName="descripcion"
+                    type="text"
                     class="form-control"
                   />
                 </div>
               </div>
-              <div class="col-3">
-                <div class="form-group">
-                  <br />
-                  <button (click)="filtrar()" class="btn btn-primary btn-sm">
-                    <i class="fas fa-search"></i>
-                  </button>
-                  <button class="btn btn-primary btn-sm">
-                    <i class="fas fa-broom"></i>
-                  </button>
-                </div>
-              </div>
+              <div class="col-md-12 text-end mt-3">
+                <button (click)="filtrar()" class="btn btn-primary me-2">
+                    <i class="fas fa-search"></i> Buscar
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-broom"></i> Limpiar
+                </button>
+            </div>
             </div>
           </div>
         </div>

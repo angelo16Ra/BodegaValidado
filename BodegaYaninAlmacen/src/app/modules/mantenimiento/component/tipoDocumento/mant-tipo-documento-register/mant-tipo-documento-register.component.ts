@@ -7,6 +7,7 @@ import { ResponseTipoDocumento } from '../../../models/tipoDocumento-response.mo
 import { MantTipoDocumentoListComponent } from '../mant-tipo-documento-list/mant-tipo-documento-list.component';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../../../shared/shared.module';
+import { alert_error, alert_success } from '../../../../../functions/general.functions';
 
 @Component({
   selector: 'app-mant-tipo-documento-register',
@@ -90,10 +91,10 @@ export class MantTipoDocumentoRegisterComponent implements OnInit {
     //lamar a nuestro servicio rest ==> crear un nuevo registro en base de datos
     this._documentoService.create(this.documentoEnvio).subscribe({
       next:(data:ResponseTipoDocumento)=>{
-        alert("creado de forma correcta")
+        alert_success("EXCELENTE","Se creo de manera correcta")
       },
       error:()=>{
-        alert("ocurrio un error la momento de crear")
+        alert_error("ERROR","ocurrio un error la momento de añadir")
       },
       complete:()=>{
         this.cerrarModal(true);
@@ -106,10 +107,10 @@ export class MantTipoDocumentoRegisterComponent implements OnInit {
 
     this._documentoService.update(this.documentoEnvio).subscribe({
       next:(data:ResponseTipoDocumento)=>{
-        alert("actualizado de forma correcta")
+        alert_success("EXCELENTE","Se actualizo de manera correcta")
       },
       error:()=>{
-        alert("ocurrio un error la momento de actualizar")
+        alert_error("ERROR","ocurrio un error la momento de actualizar")
       },
       complete:()=>{
         this.cerrarModal(true);

@@ -11,12 +11,13 @@ import { ResponseFilterGeneric } from '../../../../../models/response-filter-gen
 import { SharedModule } from '../../../../shared/shared.module';
 import { ResponseCaja } from '../../../models/caja-response.model';
 import { CajaService } from '../../../service/caja.service';
+import { MantCajaRegisterComponent } from '../mant-caja-register/mant-caja-register.component';
 
 @Component({
   selector: 'app-mant-caja-list',
   standalone: true,
   imports: [
-    MantCajaListComponent,
+    MantCajaRegisterComponent,
     CommonModule,
     SharedModule
   ],
@@ -46,9 +47,6 @@ export class MantCajaListComponent {
       usuarioApertura: ["", []],
       usuarioCierre: ["", []],
       estado: ["", []],
-      montoApertura: ["", []],
-      montoCierre: ["", []],
-      montoAdicional: ["", []],
     });
   }
 
@@ -75,14 +73,14 @@ export class MantCajaListComponent {
 
   crearCaja(template: TemplateRef<any>) {
     this.cajaSelect = new ResponseCaja();
-    this.titleModal = "Crear un Almacén";
+    this.titleModal = "agregar caja";
     this.accionModal = AccionMantConst.crear;
     this.openModal(template);
   }
 
   editarCaja(template: TemplateRef<any>, caja: ResponseCaja) {
     this.cajaSelect = caja;
-    this.titleModal = "Modificar Almacén";
+    this.titleModal = "Modificar caja";
     this.accionModal = AccionMantConst.editar;
     this.openModal(template);
   }
@@ -123,9 +121,10 @@ export class MantCajaListComponent {
     let request: RequestFilterGeneric = new RequestFilterGeneric(); 
     let valueForm = this.myFormFilter.getRawValue();
 
-    this.request.filtros.push({name:"codigocajas", value: valueForm.codigocajas});
-    this.request.filtros.push({name:"nombre", value: valueForm.nombre});
-    this.request.filtros.push({name:"capacidadLimite", value: valueForm.capacidadLimite});
+    this.request.filtros.push({name:"codigoCaja", value: valueForm.codigoCaja});
+    this.request.filtros.push({name:"fecha", value: valueForm.fecha});
+    this.request.filtros.push({name:"usuarioApertura", value: valueForm.usuarioApertura});
+    this.request.filtros.push({name:"usuarioCierre", value: valueForm.usuarioCierre});
     this.request.filtros.push({name:"estado", value: valueForm.estado});
 
     this._cajaService.genericFilter(this.request).subscribe({

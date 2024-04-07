@@ -10,6 +10,7 @@ import { ResponseDetallePedido } from '../../../models/detallePedido-response.mo
 import { PedidoService } from '../../../service/pedido.service';
 import { AccionMantConst } from '../../../../../constans/general.constants';
 import { ResponsePedido } from '../../../models/pedido-response.model';
+import { alert_error, alert_success } from '../../../../../functions/general.functions';
 
 @Component({
   selector: 'app-mant-pedido-register',
@@ -91,10 +92,10 @@ export class MantPedidoRegisterComponent implements OnInit{
     //lamar a nuestro servicio rest ==> crear un nuevo registro en base de datos
     this._pedidoService.create(this.pedidoEnvio).subscribe({
       next:(data:ResponsePedido)=>{
-        alert("creado de forma correcta")
+        alert_success("EXCELENTE","Se creo de manera correcta")
       },
       error:()=>{
-        alert("ocurrio un error la momento de crear")
+        alert_error("ERROR","ocurrio un error la momento de añadir")
       },
       complete:()=>{
         this.cerrarModal(true);
@@ -107,10 +108,10 @@ export class MantPedidoRegisterComponent implements OnInit{
     //lamar a nuestro servicio rest ==> crear un nuevo registro en base de datos
     this._pedidoService.update(this.pedidoEnvio).subscribe({
       next:(data:ResponsePedido)=>{
-        alert("creado de forma correcta")
+        alert_success("EXCELENTE","Se actualizo de manera correcta")
       },
       error:()=>{
-        alert("ocurrio un error la momento de crear")
+        alert_error("ERROR","ocurrio un error la momento de actualizar")
       },
       complete:()=>{
         this.cerrarModal(true);
