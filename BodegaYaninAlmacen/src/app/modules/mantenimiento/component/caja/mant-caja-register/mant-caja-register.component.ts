@@ -39,7 +39,7 @@ export class MantCajaRegisterComponent implements OnInit{
 
     this.myForm = this.fb.group({
       codigoCaja: [{ value: 0, disabled: true }, [Validators.required]],
-      fecha: [null, [Validators.required]],
+      fecha: [{value:true, disabled: true} , [Validators.required]],
       usuarioApertura: [null, [Validators.required]],
       usuarioCierre: [null, [Validators.required]],
       estado: [null, [Validators.required]],

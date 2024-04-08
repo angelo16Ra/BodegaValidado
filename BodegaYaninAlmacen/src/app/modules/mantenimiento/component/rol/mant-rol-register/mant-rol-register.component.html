@@ -41,8 +41,8 @@
                 <div class="form-group">
                     <label for="">Estado</label>
                     <select formControlName="estado" name="form-select">
-                        <option value="true">Activo</option>
-                        <option value="true">Inactivo</option>
+                        <option [ngValue]="true">Activo</option>
+                        <option [ngValue]="false">Inactivo</option>
                     </select>
                 </div>
             </div>

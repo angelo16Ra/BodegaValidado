@@ -48,7 +48,7 @@ export class MantRolListComponent implements OnInit{
       codigoRol: ["", []],
       nombre: ["", []],
       descripcion: ["", []],
-      estadoDescripcion: ["", []],
+      estado: ["", []],
     });
   }
 
@@ -138,7 +138,7 @@ export class MantRolListComponent implements OnInit{
     this.request.filtros.push({name:"codigoRol", value: valueForm.codigoRol});
     this.request.filtros.push({name:"nombre", value: valueForm.nombre});
     this.request.filtros.push({name:"descripcion", value: valueForm.descripcion});
-    this.request.filtros.push({name:"estadoDescripcion", value: valueForm.estado});
+    this.request.filtros.push({name:"estado", value: valueForm.estado});
 
     this._rolService.genericFilter(this.request).subscribe({
       next: (data: ResponseFilterGeneric<ResponseRol> ) => {

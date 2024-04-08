@@ -20,8 +20,8 @@
             <div class="col-4">
                 <div class="form-group">
                     <label for="">Unidad Medida</label>
-                    <select class="form-select">
-                        <option *ngFor="let d of tipoUnidadMedida" [value]="d.codigoUnidadMedida">
+                    <select formControlName="codigoUnidadMedida" class="form-select">
+                        <option *ngFor="let d of tipoUnidadMedida" [ngValue]="d.codigoUnidadMedida">
                             {{d.nombre}}
                         </option>
                     </select>
@@ -30,8 +30,8 @@
             <div class="col-4">
                 <div class="form-group">
                     <label for="">Categoria</label>
-                    <select class="form-select">
-                        <option *ngFor="let d of tipoCategoria" [value]="d.codigoCategoria">
+                    <select formControlName="codigoCategoria"  class="form-select">
+                        <option *ngFor="let d of tipoCategoria" [ngValue]="d.codigoCategoria">
                             {{d.nombre}}
                         </option>
                     </select>
@@ -42,8 +42,8 @@
             <div class="col-4">
                 <div class="form-group">
                     <label for="">Sub Categoria</label>
-                    <select class="form-select">
-                        <option *ngFor="let d of tipoSubCategoria" [value]="d.codigoSubCategoria">
+                    <select formControlName="codigoSubCategoria" class="form-select">
+                        <option *ngFor="let d of tipoSubCategoria" [ngValue]="d.codigoSubCategoria">
                             {{d.nombre}}
                         </option>
                     </select>
@@ -52,8 +52,8 @@
             <div class="col-4">
                 <div class="form-group">
                     <label for="">Proveedor</label>
-                    <select class="form-select">
-                        <option *ngFor="let d of tipoProveedor" [value]="d.codigoProveedor">
+                    <select formControlName="codigoProveedor" class="form-select">
+                        <option *ngFor="let d of tipoProveedor" [ngValue]="d.codigoProveedor">
                             {{d.razonSocial}}
                         </option>
                     </select>
@@ -63,7 +63,7 @@
                 <div class="form-group">
                     <label for="">Almacen</label>
                     <select formControlName="codigoAlmacenes" class="form-select" >
-                        <option *ngFor="let d of tipoAlmacen" [value]="d.codigoAlmacenes">
+                        <option *ngFor="let d of tipoAlmacen" [ngValue]="d.codigoAlmacenes">
                             {{d.nombre}}
                         </option>
                     </select>

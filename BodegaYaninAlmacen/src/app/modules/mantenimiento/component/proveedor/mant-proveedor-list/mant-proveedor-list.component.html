@@ -12,43 +12,43 @@
                       <div class="row">
                         <div class="col-3">
                             <div class="form-group">
-                                <label for="">Código</label>
+                                <label for="codigoProveedor">Código</label>
                                 <input formControlName="codigoProveedor" type="text" class="form-control">   
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="form-group">
-                                <label for="">ruc</label>
+                                <label for="ruc">ruc</label>
                                 <input formControlName="ruc" type="text" class="form-control">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="form-group">
-                                <label for="">razonSocial</label>
+                                <label for="razonSocial">razonSocial</label>
                                 <input formControlName="razonSocial" type="text" class="form-control">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="form-group">
-                                <label for="">telefono</label>
+                                <label for="telefono">telefono</label>
                                 <input formControlName="telefono" type="number" class="form-control">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="form-group">
-                                <label for="">correo</label>
+                                <label for="correo">correo</label>
                                 <input formControlName="correo" type="text" class="form-control">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="form-group">
-                                <label for="">fechaActualizacion</label>
+                                <label for="fechaActualizacion">fecha de actualizacion</label>
                                 <input formControlName="fechaActualizacion" type="datetime" class="form-control">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="form-group">
-                                <label for="">Estado</label>
+                                <label for="estado">Estado</label>
                                 <select name="" formControlname="estado" class="form-select">
                                     <option value="">TODO</option>
                                     <option value="true">Activo</option>
@@ -77,8 +77,7 @@
                         <th>razonSocial</th>
                         <th>telefono </th>
                         <th>correo</th>
-                        <th>fechaRegistro</th>
-                        <th>fechaActualizacion</th>
+                        <th>fecha de registro - fecha de actualizacion</th>
                         <th>estado</th>
                         <th>
                             <button (click)="crearProveedor(ModalEdit)" class="btn btn-primary btn-sm">
@@ -94,13 +93,12 @@
                         <td>{{proveedor.razonSocial}}</td>
                         <td>{{proveedor.telefono}}</td>
                         <td>{{proveedor.correo}}</td>
-                        <td>{{proveedor.fechaRegistro}}</td>
-                        <td>{{proveedor.fechaActualizacion}}</td>
+                        <td>{{proveedor.fechaRegistro | date}} - {{proveedor.fechaActualizacion | date}}</td>
                         <td>{{proveedor.estadoDescripcion? 'Activo' : 'Inactivo'}}</td>
                         <td>
                             <button (click)="editarAlmacen(ModalEdit, proveedor)" class="btn btn-warning btn-sm">
                                 <i class="fas fa-edit"></i>
-                            </button>
+                            </button> &nbsp; 
                             <button (click)="eliminarRegistro(proveedor.codigoProveedor)" class="btn btn-danger btn-sm">
                                 <i class="fas fa-trash"></i>
                             </button>

@@ -13,15 +13,15 @@
         <div class="row mt-2">
             <div class="col-4">
                 <div class="form-group">
-                    <label for="">codigoUsuario </label>
-                    <input type="text" class="form-control">
+                    <label for="codigoUsuario">codigoUsuario </label>
+                    <input formControlName="codigoUsuario" type="text" class="form-control" placeholder="ingrese el Codigo">
                 </div>
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label for="">Nombre</label>
-                    <select class="form-select">
-                        <option *ngFor="let d of tipoPersona" [value]="d.codigoPersona">
+                    <label for="codigoPersona">Nombre</label>
+                    <select formControlName="codigoPersona" class="form-select">
+                        <option *ngFor="let d of tipoPersona" [ngValue]="d.codigoPersona">
                             {{d.nombre}}
                         </option>
                     </select>
@@ -29,9 +29,9 @@
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label for="">Rol</label>
-                    <select class="form-select">
-                        <option *ngFor="let d of tipoRol" [value]="d.codigoRol">
+                    <label for="codigoRol">Rol</label>
+                    <select formControlName="codigoRol" class="form-select">
+                        <option *ngFor="let d of tipoRol" [ngValue]="d.codigoRol">
                             {{d.nombre}}
                         </option>
                     </select>
@@ -41,14 +41,14 @@
         <div class="row">
             <div class="col-4">
                 <div class="form-group">
-                    <label for="">userName</label>
-                    <input type="text" class="form-control">
+                    <label for="username">Usuario</label>
+                    <input formControlName="username" type="text" class="form-control">
                 </div>
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label for="">contraseña</label>
-                    <input type="number" class="form-control">
+                    <label for="password">contraseña</label>
+                    <input formControlName="password" type="text" class="form-control">
                 </div>
             </div>
             <div class="col-4">
@@ -61,17 +61,32 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="fechaRegistro">fecha de Registro</label>
+                    <input formControlName="fechaRegistro" type="datetime" class="form-control">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="fechaActualizar">fecha de Actualizar</label>
+                    <input formControlName="fechaActualizar" type="datetime" class="form-control">
+                </div>
+            </div>
+        </div>
         
         <div class="row">
-            <div class="col-6">
-                <button class="btn btn-primary btn-block">
-                    <i class="fas fa-save"></i>
-                </button>
+            <div class="col-6 mt-3">
+                <div class="d-grid gap-2">
+                    <button [disabled]="myForm.invalid" (click)="guardar()" class="btn-block btn btn-primary btn-sm">Guardar</button>
+                </div>
             </div>
-            <div class="col-6">
-                <button class="btn btn-danger btn-block">
-                    <i class="fas fa-ban"></i>
-                </button>
+            <div class="col-6 mt-3">
+                <div class="d-grid gap-2">
+                    <!-- (click)="modalRef?.hide()" -->
+                    <button class="btn-block btn btn-danger btn-sm">Cancelar</button>
+                </div>
             </div>
         </div>    
     </form>

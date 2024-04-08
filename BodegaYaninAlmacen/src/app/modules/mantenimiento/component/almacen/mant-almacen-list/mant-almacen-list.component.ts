@@ -24,6 +24,11 @@ import { MantAlmacenRegisterComponent } from '../mant-almacen-register/mant-alma
   styleUrl: './mant-almacen-list.component.css'
 })
 export class MantAlmacenListComponent {
+  config  = {
+    backdrop: true,
+    ignoreBackdropClick: true
+  };
+
   almacenes: ResponseAlmacene[] = [];
   modalRef?: BsModalRef;
   almacenSelect: ResponseAlmacene = new  ResponseAlmacene();
@@ -84,7 +89,7 @@ export class MantAlmacenListComponent {
   }
 
   openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+    this.modalRef = this.modalService.show(template, Object.assign({},{class: "gray modal-lg"},this.config));
   }
 
   getCloseModalEmmit(res:boolean){

@@ -1,35 +1,165 @@
-<div class="container-fluid mt-4">
-    <div class="card bg-light bf-3"> 
-        <div class="card-header">
-            <strong>USUARIOS</strong>
-        </div>
+<div class="container-fluid mt-5">
+    <div class="card">
+        <div class="card-header bg-primary text-white text-center">
+        <h1 class="mt-4">USUARIOS</h1>
+      </div>
         <div class="card-body">
 
             <!-- TODO: seccion para los filtros  -->
-            <div></div>
+            <form [formGroup]="myFormFilter" class="mb-3">
+                <div class="card bg-light">
+                    <div class="card-header bg-secondary text-white">BÚSQUEDA POR FILTRO</div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-3">
+                        <div class="form-group">
+                          <label for="">Código</label>
+                          <input
+                            formControlName="codigoUsuario"
+                            type="text"
+                            class="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="form-group">
+                          <label for="username">Usuario</label>
+                          <input
+                            formControlName="username"
+                            type="text"
+                            class="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="form-group">
+                          <label for="password">Contraseña</label>
+                          <input
+                            formControlName="password"
+                            type="text"
+                            class="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <select formControlname="estado" class="form-select" id="estado">
+                                <option value="">TODO</option>
+                                <option value="true">Activo</option>
+                                <option value="false">Inactivo</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="form-group">
+                            <label for="fechaActualizar">Fecha de Actualizacion</label>
+                            <input formControlName="fechaActualizar" type="datetime" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label for="fechaRegistro">Fecha de Registro</label>
+                            <input formControlName="fechaRegistro" type="datetime" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                          <label for="numeroDocumento">Numero de documento</label>
+                          <input
+                            formControlName="numeroDocumento"
+                            type="text"
+                            class="form-control"
+                          />
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                          <label for="nombrePersona">Nombre</label>
+                          <input
+                            formControlName="nombrePersona"
+                            type="text"
+                            class="form-control"
+                          />
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                          <label for="sexo">Genero</label>
+                          <input
+                            formControlName="sexo"
+                            type="text"
+                            class="form-control"
+                          />
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label for="fechaNacimiento">fecha de Nacimiento</label>
+                            <input formControlName="fechaNacimiento" type="datetime-local" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                          <label for="correo">Correo</label>
+                          <input
+                            formControlName="correo"
+                            type="text"
+                            class="form-control"
+                          />
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="form-group">
+                          <label for="celular">Celular</label>
+                          <input
+                            formControlName="celular"
+                            type="text"
+                            class="form-control"
+                          />
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                          <label for="nombre">Rol</label>
+                          <input
+                            formControlName="nombre"
+                            type="text"
+                            class="form-control"
+                          />
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-end mt-3">
+                        <button (click)="filtrar()" class="btn btn-primary me-2">
+                            <i class="fas fa-search"></i> Buscar
+                        </button>
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-broom"></i> Limpiar
+                        </button>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
 
             <!-- TODO: tabla de resultados   -->
             <div class="table table-responsive">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>codigoUsuario</th>
-                            <th>username</th>
-                            <th>password</th>
-                            <th>estado</th>
-                            <th>fechaActualizar</th>
-                            <th>fechaRegistro</th>
-                            <th>codigoPersona</th>
-                            <th>numeroDocumento</th>
-                            <th>nombrePersona</th>
-                            <th>apPaterno</th>
-                            <th>apMaterno</th>
-                            <th>sexo</th>
-                            <th>fechaNacimiento</th>
-                            <th>correo</th>
-                            <th>celular</th>
-                            <th>codigoRol</th>
-                            <th>nombre</th>
+                            <th>codigo</th>
+                            <th>Usuario</th>
+                            <th>Contraseña</th>
+                            <th>Estado</th>
+                            <th>Fecha de actualicion y Registro</th>
+                            <th>Numero - documento</th>
+                            <th>Nombre completo</th>
+                            <th>Genero</th>
+                            <th>Fecha de Nacimiento</th>
+                            <th>Correo</th>
+                            <th>Celular</th>
+                            <th>Rol</th>
                             <th>
                                 <button (click)="nuevoRegistro(modalEdit)" class="btn btn-primary btn-sm">
                                     <i class="fas fa-plus"></i>
@@ -42,19 +172,14 @@
                             <td>{{d.codigoUsuario}}</td>
                             <td>{{d.username}}</td>
                             <td>{{d.password}}</td>
-                            <td>{{d.estado}}</td>
-                            <td>{{d.fechaActualizar}}</td>
-                            <td>{{d.fechaRegistro}}</td>
-                            <td>{{d.codigoPersona}}</td>
+                            <td>{{d.estado? 'Activo' : 'Inactivo'}}</td>
+                            <td>{{d.fechaActualizar | date}} - {{d.fechaRegistro | date}}</td>
                             <td>{{d.numeroDocumento}}</td>
-                            <td>{{d.nombrePersona}}</td>
-                            <td>{{d.apPaterno}}</td>
-                            <td>{{d.apMaterno}}</td>
+                            <td>{{d.nombrePersona}}  {{d.apPaterno}}  {{d.apMaterno}}</td>
                             <td>{{d.sexo}}</td>
-                            <td>{{d.fechaNacimiento}}</td>
+                            <td>{{d.fechaNacimiento | date}}</td>
                             <td>{{d.correo}}</td>
                             <td>{{d.celular}}</td>
-                            <td>{{d.codigoRol}}</td>
                             <td>{{d.nombre}}</td>
                             <td>
                                 <button (click)="editarRegistro(modalEdit,d)" class="btn btn-warning btn-sm">
@@ -67,21 +192,44 @@
             </div>
 
             <!-- TODO: seccion de paginacion  -->
-            <div></div>
-
-
-
-            
+            <div class="row">
+                <div class="col-xs-8 col-8">
+                  <pagination
+                    (pageChanged)="changePage($event)"
+                    [totalItems]="totalItems"
+                    [itemsPerPage]="itemsPerPage"
+                    [previousText]="'Anterior'"
+                    [nextText]="'Siguiente'"
+                  >
+                  </pagination>
+                </div>
+                <div class="col-xs-4 col-4">
+                  <select
+                    (change)="changeItemsPerPage()"
+                    [(ngModel)]="itemsPerPage"
+                    class="form-select"
+                  >
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+              </div>
         </div>
     </div>
 </div>
 
 <ng-template #modalEdit>
     <app-mant-usuario-register
-        [title]="tileModal"
+        [title]="titleModal"
         [accion]="accionModal"
         [usuario]="usuarioSelect"
         [tipoPersona]="tipoPersona"
         [tipoRol]="tipoRol"
+        (closeModalEmmit)="getCloseModalEmmit($event)"
     ></app-mant-usuario-register>
 </ng-template>

@@ -17,7 +17,6 @@ import { ResponseFilterGeneric } from '../../../../../models/response-filter-gen
 import { forkJoin } from 'rxjs';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ResponsePedido } from '../../../models/pedido-response.model';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 
 @Component({
@@ -101,29 +100,11 @@ export class MantPedidoListComponent implements OnInit{
     });
   }
 
-  crearPedido(template: TemplateRef<any>)
-  {
-    this.pedidoSelect= new Vpedido();
-    this.titleModal="Crear un Pedido";
-    this.accionModal = AccionMantConst.crear;
-    this.openModal(template);
-  }
-
-
-  editarPedido(template: TemplateRef<any>, pedido:Vpedido)
-  {
-    this.pedidoSelect= new Vpedido();
-    this.titleModal="Editar un Pedido";
-    this.accionModal = AccionMantConst.crear;
-    this.openModal(template);
-  }
-
-
   nuevoRegistro(template: TemplateRef<any>)
   {
     this.pedidoSelect = new Vpedido();
     this.titleModal = "Nuevo Pedido";
-    this.accionModal = AccionMantConst.editar;
+    this.accionModal = AccionMantConst.crear;
     this.openModal(template);
     
   }
@@ -137,18 +118,6 @@ export class MantPedidoListComponent implements OnInit{
     
   }
   
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template, Object.assign({},{class: "gray modal-lg"},this.config));
-  }
-
-  getCloseModalEmmit(res:boolean){
-    this.modalRef?.hide();
-    if(res)
-    {
-      this.listarPedido();
-    }
-  }
-
   obtenerListas()
   {
     forkJoin([
@@ -171,6 +140,20 @@ export class MantPedidoListComponent implements OnInit{
 
   }
 
+  
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, Object.assign({},{class: "gray modal-lg"},this.config));
+  }
+
+  getCloseModalEmmit(res:boolean){
+    this.modalRef?.hide();
+    if(res)
+    {
+      this.listarPedido();
+    }
+  }
+
+  
   filtrar()
   {
     let request: RequestFilterGeneric = new RequestFilterGeneric(); 

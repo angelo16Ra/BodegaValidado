@@ -13,12 +13,12 @@ namespace RequestResponseModels.Response.Almacen
         public string Descripcion { get; set; } = "";
         public bool Estado { get; set; } = false;
 
-        public string EstadoDescripcion
-        {
-            get
-            {
-                return Estado ? "Activo" : "Inactivo";
-            }
-        }
+        //public string EstadoDescripcion
+        //{
+        //    get
+        //    {
+        //        return Estado? "Activo" : "Inactivo";
+        //    }
+        //}
     }
 }

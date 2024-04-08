@@ -70,7 +70,7 @@
                         <th>nombre</th>
                         <th>descripcion</th>
                         <th>estado</th>
-                        <th>fechaRegistro - fechaActualizacion</th>
+                        <th>fecha de registro - fecha de actualizacion</th>
                         <th>
                             <button (click)="crearCategoria(ModalEdit)" class="btn btn-primary btn-sm">
                                 <i class="fas fa-plus"></i>
@@ -84,7 +84,7 @@
                         <td>{{categoria.nombre}}</td>
                         <td>{{categoria.descripcion}}</td>
                         <td>{{categoria.estado ? 'Activo' : 'Inactivo'}}</td>
-                        <td>{{categoria.fechaRegistro | date:"dd/mm/yyy"}} - {{categoria.fechaActualizacion | date:"dd/mm/yyy"}}</td>
+                        <td>{{categoria.fechaRegistro | date}} - {{categoria.fechaActualizacion | date}}</td>
                         <td>
                             <button (click)="editarCategoria(ModalEdit, categoria)" class="btn btn-warning btn-sm">
                                 <i class="fas fa-edit"></i>

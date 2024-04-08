@@ -3,5 +3,4 @@ export class ResponseUnidadMedida {
     nombre: string = "";
     descripcion: string = "";
     estado: boolean = false;
-    estadoDescripcion: string = "";
 }

@@ -2,12 +2,15 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SharedModule } from '../../../../shared/shared.module';
+import { UsuarioService } from '../../../service/usuario.service';
+import { MantUsuarioListComponent } from '../mant-usuario-list/mant-usuario-list.component';
+import { AccionMantConst } from '../../../../../constans/general.constants';
+import { alert_error, alert_success } from '../../../../../functions/general.functions';
+import { Vusuario } from '../../../models/VUsuario.model';
 import { ResponsePersona } from '../../../models/persona-response.model';
 import { ResponseRol } from '../../../models/rol-response.model';
 import { RequestUsuario } from '../../../models/usuario-request.model';
-import { Vusuario } from '../../../models/VUsuario.model';
-import { UsuarioService } from '../../../service/usuario.service';
-import { MantUsuarioListComponent } from '../mant-usuario-list/mant-usuario-list.component';
+import { ResponseUsuario } from '../../../models/usuario.response.model';
 
 @Component({
   selector: 'app-mant-usuario-register',
@@ -44,10 +47,9 @@ export class MantUsuarioRegisterComponent {
       codigoUsuario: [null,[Validators.required]],
       codigoRol: [null,[Validators.required]],
       codigoPersona: [null,[Validators.required]],
-      userName: [null,[Validators.required]],
+      username: [null,[Validators.required]],
       password: [null,[Validators.required]],
       estado: [null,[Validators.required]],
-      estadoDescripcion: [null,[Validators.required]],
       fechaRegistro: [null,[Validators.required]],
       fechaActualizar: [null,[Validators.required]],
     });
@@ -62,9 +64,59 @@ export class MantUsuarioRegisterComponent {
 
   guardar()
   {
+    this.usuarioEnvio= this.myForm.getRawValue();
 
-
+    switch(this.accion){
+      case AccionMantConst.crear: 
+        // crear nuevo registro
+        this.crearRegistro();
+        break;
+      case AccionMantConst.editar: 
+        // inactivar 
+        this.editarRegistro();
+        break;
+      case AccionMantConst.eliminar:  
+       // eliminar registro  
+        // en el formulario el eliminar no se implementa pero se pone el ejemplo para 
+        //que la lectura de codigo sea mas sencillo
+        break;
+    }
   }
+
+  crearRegistro()
+  {
+    //lamar a nuestro servicio rest ==> crear un nuevo registro en base de datos
+    this._usuarioService.create(this.usuarioEnvio).subscribe({
+      next:(data:ResponseUsuario)=>{
+        console.log(data);
+        alert_success("EXCELENTE","Se actualizo de manera correcta")
+      },
+      error:()=>{
+        alert_error("ERROR","ocurrio un error la momento de añadir")
+      },
+      complete:()=>{
+        this.cerrarModal(true);
+      },
+    });
+  }
+
+  editarRegistro()
+  {
+
+    this._usuarioService.update(this.usuarioEnvio).subscribe({
+      next:(data:ResponseUsuario)=>{
+        alert_success("EXCELENTE","Se actualizo de manera correcta")
+      },
+      error:()=>{
+        alert_error("ERROR","ocurrio un error la momento de actualizar")
+      },
+      complete:()=>{
+        this.cerrarModal(true);
+      },
+    });
+  }
+
+
 
   cerrarModal(res:boolean)
   {

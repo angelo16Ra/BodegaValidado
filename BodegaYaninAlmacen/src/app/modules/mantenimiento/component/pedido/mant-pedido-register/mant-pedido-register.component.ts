@@ -64,10 +64,7 @@ export class MantPedidoRegisterComponent implements OnInit{
   }
 
   ngOnInit(): void {
-
-    console.log("title ==>", this.title);
-    console.log("rol ==>", this.pedido);
-
+    
     this.myForm.patchValue(this.pedido);
   }
   

@@ -10,10 +10,12 @@ import { ResponsePersona } from '../../../models/persona-response.model';
 import { ResponseRol } from '../../../models/rol-response.model';
 import { Vusuario } from '../../../models/VUsuario.model';
 import { PersonaService } from '../../../service/persona.service';
-import { ProductoService } from '../../../service/producto.service';
 import { RolService } from '../../../service/rol.service';
 import { UsuarioService } from '../../../service/usuario.service';
 import { MantUsuarioRegisterComponent } from '../mant-usuario-register/mant-usuario-register.component';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 
 @Component({
   selector: 'app-mant-usuario-list',
@@ -36,8 +38,12 @@ export class MantUsuarioListComponent implements OnInit {
   Vusuario:Vusuario[] = [];
   modalRef?: BsModalRef;
   usuarioSelect: Vusuario = new Vusuario();
-  tileModal = "Editar Usuario";
-  accionModal = AccionMantConst.editar;
+  titleModal: string = "";
+  accionModal: number = 0;
+  myFormFilter:FormGroup;
+  totalItems: number = 0;
+  itemsPerPage: number = 3;
+  request:RequestFilterGeneric = new RequestFilterGeneric();
   //
   tipoPersona: ResponsePersona[] = [];
   tipoRol: ResponseRol[] = [];
@@ -49,12 +55,29 @@ export class MantUsuarioListComponent implements OnInit {
     private _personaService: PersonaService,
     private _rolService: RolService,
     
+    private _route:Router,
+    private fb: FormBuilder,
   )
   {
-
+    this.myFormFilter= this.fb.group({
+      codigoUsuario: ["", []],
+      username: ["", []],
+      password: ["", []],
+      estado: ["", []],
+      fechaActualizar: ["", []],
+      fechaRegistro: ["", []],
+      numeroDocumento: ["", []],
+      nombrePersona: ["", []],
+      sexo: ["", []],
+      fechaNacimiento: ["", []],
+      correo: ["", []],
+      celular: ["", []],
+      nombre: ["", []],
+    });
   }
 
   ngOnInit(): void {
+    this.filtrar();
     this.listarUsuario();
     this.obtenerListas();
   }
@@ -82,8 +105,8 @@ export class MantUsuarioListComponent implements OnInit {
   nuevoRegistro(template: TemplateRef<any>)
   {
     this.usuarioSelect = new Vusuario();
-    this.tileModal = "Nuevo Usuario";
-    this.accionModal = AccionMantConst.editar;
+    this.titleModal = "Nuevo Usuario";
+    this.accionModal = AccionMantConst.crear;
     this.openModal(template);
     
   }
@@ -91,23 +114,12 @@ export class MantUsuarioListComponent implements OnInit {
   editarRegistro(template: TemplateRef<any>, usuario: Vusuario )
   {
     this.usuarioSelect = usuario;
-    this.tileModal = "Editar Usuario";
+    this.titleModal = "Editar Usuario";
     this.accionModal = AccionMantConst.editar;
     this.openModal(template);
     
   }
 
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template, Object.assign({},{class: "gray modal-lg"},this.config));
-  }
-
-  getCloseModalEmmit(res:boolean){
-    this.modalRef?.hide();
-    if(res)
-    {
-      this.listarUsuario();
-    }
-  }
 
   obtenerListas(){
     forkJoin([
@@ -127,6 +139,65 @@ export class MantUsuarioListComponent implements OnInit {
     })
   };
 
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, Object.assign({},{class: "gray modal-lg"},this.config));
+  }
 
+  getCloseModalEmmit(res:boolean){
+    this.modalRef?.hide();
+    if(res)
+    {
+      this.listarUsuario();
+    }
+  }
+
+  filtrar()
+  {
+    let request: RequestFilterGeneric = new RequestFilterGeneric(); 
+    let valueForm = this.myFormFilter.getRawValue();
+
+    this.request.filtros.push({name:"codigoUsuario:", value: valueForm.codigoUsuario});
+    this.request.filtros.push({name:"username:", value: valueForm.username});
+    this.request.filtros.push({name:"password:", value: valueForm.password});
+    this.request.filtros.push({name:"estado:", value: valueForm.estado});
+    this.request.filtros.push({name:"fechaActualizar:", value: valueForm.fechaActualizar});
+    this.request.filtros.push({name:"fechaRegistro:", value: valueForm.fechaRegistro});
+    this.request.filtros.push({name:"numeroDocumento:", value: valueForm.numeroDocumento});
+    this.request.filtros.push({name:"nombrePersona:", value: valueForm.nombrePersona});
+    this.request.filtros.push({name:"apPaterno:", value: valueForm.apPaterno});
+    this.request.filtros.push({name:"apMaterno:", value: valueForm.apMaterno});
+    this.request.filtros.push({name:"sexo:", value: valueForm.sexo});
+    this.request.filtros.push({name:"fechaNacimiento:", value: valueForm.fechaNacimiento});
+    this.request.filtros.push({name:"correo:", value: valueForm.correo});
+    this.request.filtros.push({name:"celular:", value: valueForm.celular});
+    this.request.filtros.push({name:"nombre:", value: valueForm.nombre});
+
+    this._usuarioService.genericFilterView(this.request).subscribe({
+      next: (data: ResponseFilterGeneric<Vusuario> ) => {
+        console.log(data);
+        this.Vusuario = data.lista;
+        this.totalItems = data.totalRegistros;
+      },
+      error: ( ) => {
+        console.log("error");
+      },
+      complete: ( ) => {
+        console.log("completo");
+      },
+    });
+  }
+
+  changePage(event: PageChangedEvent){
+    this.request.numeroPagina = event.page;
+    // let numeroPagina = event.page;
+    // console.log(numeroPagina);
+    this.filtrar();
+  }
+
+  changeItemsPerPage()
+  {
+    this.request.cantidad = this.itemsPerPage;
+    this.filtrar();
+  }
 
 }

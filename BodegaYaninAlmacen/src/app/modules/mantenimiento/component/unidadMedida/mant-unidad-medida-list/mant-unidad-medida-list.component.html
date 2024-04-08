@@ -31,11 +31,11 @@
                         <div class="col-3">
                             <div class="form-group">
                                 <label for="">Estado</label>
-                                <select name="" formControlName="estadoDescripcion" class="form-select">
-                                    <option value="">TODO</option>
-                                    <option value="1">Activo</option>
-                                    <option value="0">Inactivo</option>
-                                </select>
+                                    <select name="" formControlName="estado" class="form-select">
+                                        <option value="">TODO</option>
+                                        <option value="1">Activo</option>
+                                        <option value="0">Inactivo</option>
+                                    </select>
                             </div>
                         </div>
                         <div class="col-md-12 text-end mt-3">
@@ -70,11 +70,11 @@
                         <td>{{unidadmedida.codigoUnidadMedida}}</td>
                         <td>{{unidadmedida.nombre}}</td>
                         <td>{{unidadmedida.descripcion}}</td>
-                        <td>{{unidadmedida.estadoDescripcion? 'Activo' : 'Inactivo'}}</td>
+                        <td>{{unidadmedida.estado? 'Activo' : 'Inactivo'}}</td>
                         <td>
                             <button (click)="editarUnidadMedida(ModalEdit,unidadmedida)" class="btn btn-warning btn-sm">
                                 <i class="fas fa-edit"></i>
-                            </button>
+                            </button> &nbsp; 
                             <button (click)="eliminarRegistro(unidadmedida.codigoUnidadMedida)" class="btn btn-danger btn-sm">
                                 <i class="fas fa-trash"></i>
                             </button>

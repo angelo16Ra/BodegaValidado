@@ -68,7 +68,7 @@ export class MantProductoRegisterComponent implements OnInit{
       stock: [null,[Validators.required]],
       precio: [null,[Validators.required]],
       imagen: [null,[Validators.required]],
-      descripcion: [null,[Validators.required]],
+      descripcion: ["",[Validators.required]],
     });
   }
 
