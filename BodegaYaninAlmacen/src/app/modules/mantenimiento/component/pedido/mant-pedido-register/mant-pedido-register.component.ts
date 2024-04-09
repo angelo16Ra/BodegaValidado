@@ -45,10 +45,10 @@ export class MantPedidoRegisterComponent implements OnInit{
   )
   {
     this.myForm = this.fb.group({
-      codigoPedido: [{value:0,disabled: true},[Validators.required]],
-      codigoUsuario: [{value:0,disabled: true},[Validators.required]],
-      codigoProducto: [{value:0,disabled: true},[Validators.required]],
-      codigoDetallePedido: [{value:0,disabled: true},[Validators.required]],
+      codigoPedido: [null,[Validators.required]],
+      codigoUsuario: [null,[Validators.required]],
+      codigoProducto: [null,[Validators.required]],
+      codigoDetallePedido: [null,[Validators.required]],
       montoTotal: [null,[Validators.required]],
       montoPagado: [null,[Validators.required]],
       vuelto: [null,[Validators.required]],

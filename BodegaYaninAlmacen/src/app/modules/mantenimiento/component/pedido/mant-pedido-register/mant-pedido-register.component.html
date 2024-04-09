@@ -13,14 +13,14 @@
         <div class="row mt-2">
             <div class="col-4">
                 <div class="form-group">
-                    <label for="">Codigo del Pedido</label>
-                    <input formControlName="codigoRol" class="form-control" placeholder="ingrese el Codigo">
+                    <label for="CodigoPedido">Codigo del Pedido</label>
+                    <input formControlName="CodigoPedido" class="form-control" placeholder="ingrese el Codigo">
                 </div>
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label for="">Atendio</label>
-                    <select class="form-select">
+                    <label for="codigoUsuario">Atendio</label>
+                    <select formControlName="codigoUsuario" class="form-select">
                         <option *ngFor="let d of tipoUsuario" [value]="d.codigoUsuario">
                             {{d.userName}}
                         </option>
@@ -29,8 +29,8 @@
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label for="">Categoria</label>
-                    <select class="form-select">
+                    <label for="codigoProducto">Nombre</label>
+                    <select formControlName="codigoProducto" class="form-select">
                         <option *ngFor="let d of tipoProducto" [value]="d.codigoProducto">
                             {{d.nombre}}
                         </option>
@@ -41,8 +41,8 @@
         <div class="row mt-2">
             <div class="col-4">
                 <div class="form-group">
-                    <label for="">cantidad</label>
-                    <select class="form-select">
+                    <label for="codigoDetallePedido">cantidad</label>
+                    <select formControlName="codigoDetallePedido" class="form-select">
                         <option *ngFor="let d of tipoDetallePedido" [value]="d.codigoDetallePedido">
                             {{d.cantidad}}
                         </option>
@@ -51,8 +51,8 @@
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label for="">precio Unitario</label>
-                    <select class="form-select">
+                    <label for="codigoDetallePedido">precio Unitario</label>
+                    <select formControlName="codigoDetallePedido" class="form-select">
                         <option *ngFor="let d of tipoDetallePedido" [value]="d.codigoDetallePedido">
                             {{d.precioUnitario}}
                         </option>
@@ -61,8 +61,8 @@
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label for="">precio Total</label>
-                    <select class="form-select">
+                    <label for="codigoDetallePedido">precio Total</label>
+                    <select formControlName="codigoDetallePedido" class="form-select">
                         <option *ngFor="let d of tipoDetallePedido" [value]="d.codigoDetallePedido">
                             {{d.precioTotal}}
                         </option>
@@ -73,39 +73,34 @@
         <div class="row">
             <div class="col-4">
                 <div class="form-group">
-                    <label for="">monto Total</label>
-                    <input type="text" class="form-control">
+                    <label for="montoTotal">monto Total</label>
+                    <input formControlName="montoTotal" type="text" class="form-control">
                 </div>
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label for="">monto pagado</label>
-                    <input type="number" class="form-control">
+                    <label for="montoPagado">monto pagado</label>
+                    <input formControlName="montoPagado" type="number" class="form-control">
                 </div>
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label for="">vuelto</label>
-                    <input type="number" class="form-control">
+                    <label for="vuelto">vuelto</label>
+                    <input formControlName="vuelto" type="number" class="form-control">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-4">
                 <div class="form-group">
-                    <label for="">registro del pedido</label>
-                    <input type="text" class="form-control">
+                    <label for="registroPedido">registro del pedido</label>
+                    <input formControlName="registroPedido" type="text" class="form-control">
                 </div>
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label for="">entrega del pedido</label>
-                    <input type="text" class="form-control">
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="form-group">
-                    <label for=""></label>
+                    <label for="entregaPedido">entrega del pedido</label>
+                    <input formControlName="entregaPedido" type="text" class="form-control">
                 </div>
             </div>
         </div>

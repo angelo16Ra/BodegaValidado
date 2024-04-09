@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DBBodegaYani")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f4ee54ed48fdf48a17ed0f1e89db3222658ea4e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54ee0dbe048dc0fc08046c75678fda587b936982")]
 [assembly: System.Reflection.AssemblyProductAttribute("DBBodegaYani")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DBBodegaYani")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -21,4 +21,7 @@ public partial class DetallePedido
     public decimal PrecioUnitario { get; set; }
 
     public bool Estado { get; set; }
+
+    [InverseProperty("CodigoDetallePedidoNavigation")]
+    public virtual ICollection<Pedido> Pedidos { get; set; } = new List<Pedido>();
 }
