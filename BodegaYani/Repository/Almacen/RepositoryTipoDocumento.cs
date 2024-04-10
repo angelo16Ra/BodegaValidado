@@ -30,6 +30,9 @@ namespace Repository.Almacen
                         case "descripcion":
                             query = query.Where(x => x.Descripcion.ToLower().Contains(j.Value.ToLower()));
                             break;
+                        case "estado":
+                            query = query.Where(x => x.Estado == bool.Parse(j.Value));
+                            break;
                     }
                 }
             });

@@ -68,7 +68,7 @@ export class MantUsuarioListComponent implements OnInit {
       fechaRegistro: ["", []],
       numeroDocumento: ["", []],
       nombrePersona: ["", []],
-      sexo: ["", []],
+      genero: ["", []],
       fechaNacimiento: ["", []],
       correo: ["", []],
       celular: ["", []],
@@ -157,20 +157,20 @@ export class MantUsuarioListComponent implements OnInit {
     let valueForm = this.myFormFilter.getRawValue();
 
     this.request.filtros.push({name:"codigoUsuario:", value: valueForm.codigoUsuario});
-    this.request.filtros.push({name:"username:", value: valueForm.username});
+    this.request.filtros.push({name:"userName:", value: valueForm.userName});
     this.request.filtros.push({name:"password:", value: valueForm.password});
     this.request.filtros.push({name:"estado:", value: valueForm.estado});
     this.request.filtros.push({name:"fechaActualizar:", value: valueForm.fechaActualizar});
     this.request.filtros.push({name:"fechaRegistro:", value: valueForm.fechaRegistro});
     this.request.filtros.push({name:"numeroDocumento:", value: valueForm.numeroDocumento});
     this.request.filtros.push({name:"nombrePersona:", value: valueForm.nombrePersona});
-    this.request.filtros.push({name:"apPaterno:", value: valueForm.apPaterno});
-    this.request.filtros.push({name:"apMaterno:", value: valueForm.apMaterno});
-    this.request.filtros.push({name:"sexo:", value: valueForm.sexo});
+    this.request.filtros.push({name:"apellidoPaterno:", value: valueForm.apellidoPaterno});
+    this.request.filtros.push({name:"apellidoMaterno:", value: valueForm.apellidoMaterno});
+    this.request.filtros.push({name:"genero:", value: valueForm.genero});
     this.request.filtros.push({name:"fechaNacimiento:", value: valueForm.fechaNacimiento});
     this.request.filtros.push({name:"correo:", value: valueForm.correo});
     this.request.filtros.push({name:"celular:", value: valueForm.celular});
-    this.request.filtros.push({name:"nombre:", value: valueForm.nombre});
+    this.request.filtros.push({name:"nombreRol:", value: valueForm.nombreRol});
 
     this._usuarioService.genericFilterView(this.request).subscribe({
       next: (data: ResponseFilterGeneric<Vusuario> ) => {

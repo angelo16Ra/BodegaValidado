@@ -11,8 +11,6 @@ public partial class Vpersona
 {
     public int CodigoPersona { get; set; }
 
-    public int CodigoRol { get; set; }
-
     [StringLength(15)]
     [Unicode(false)]
     public string NumeroDocumento { get; set; } = null!;

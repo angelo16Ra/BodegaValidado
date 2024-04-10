@@ -19,6 +19,8 @@ public partial class TipoDocumento
     [Unicode(false)]
     public string Descripcion { get; set; } = null!;
 
+    public bool Estado { get; set; }
+
     [InverseProperty("CodigoDocumentoNavigation")]
     public virtual ICollection<Persona> Personas { get; set; } = new List<Persona>();
 }

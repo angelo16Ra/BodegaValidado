@@ -13,7 +13,7 @@ public partial class Vusuario
 
     [StringLength(50)]
     [Unicode(false)]
-    public string Username { get; set; } = null!;
+    public string UserName { get; set; } = null!;
 
     [StringLength(50)]
     [Unicode(false)]
@@ -33,21 +33,25 @@ public partial class Vusuario
     [Unicode(false)]
     public string NumeroDocumento { get; set; } = null!;
 
+    [Column("nombrePersona")]
     [StringLength(50)]
     [Unicode(false)]
     public string NombrePersona { get; set; } = null!;
 
+    [Column("apellidoPaterno")]
     [StringLength(60)]
     [Unicode(false)]
-    public string ApPaterno { get; set; } = null!;
+    public string ApellidoPaterno { get; set; } = null!;
 
+    [Column("apellidoMaterno")]
     [StringLength(60)]
     [Unicode(false)]
-    public string ApMaterno { get; set; } = null!;
+    public string ApellidoMaterno { get; set; } = null!;
 
+    [Column("genero")]
     [StringLength(1)]
     [Unicode(false)]
-    public string Sexo { get; set; } = null!;
+    public string Genero { get; set; } = null!;
 
     [Column(TypeName = "datetime")]
     public DateTime FechaNacimiento { get; set; }
@@ -62,7 +66,8 @@ public partial class Vusuario
 
     public int CodigoRol { get; set; }
 
+    [Column("nombreRol")]
     [StringLength(70)]
     [Unicode(false)]
-    public string Nombre { get; set; } = null!;
+    public string NombreRol { get; set; } = null!;
 }

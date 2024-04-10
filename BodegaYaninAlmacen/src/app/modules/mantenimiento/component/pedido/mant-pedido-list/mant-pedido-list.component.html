@@ -1,7 +1,7 @@
 <div class="container-fluid mt-5">
     <div class="card">
         <div class="card-header bg-primary text-white text-center">
-            <h1 class="mt-4"> PEDIDOS DE PRODUCTOS</h1>
+            <h1 class="mt-4"> PEDIDOS</h1>
         </div>
         <div class="card-body">
 
@@ -86,7 +86,7 @@
                     <tbody>
                         <tr *ngFor="let d of vPedido ">
                             <td class="text-center">{{d.codigoPedido}}</td>
-                            <td class="text-center">{{d.montoTotal}}</td>
+                            <td class="text-center">{{d.montoTotalPedido}}</td>
                             <td class="text-center">{{d.montoPagado}}</td>
                             <td class="text-center">{{d.vuelto}}</td>
                             <td class="text-center">{{d.registroPedido}}</td>
@@ -143,5 +143,6 @@
         [tipoUsuario]="tipoUsuario"
         [tipoProducto]="tipoProducto"
         [tipoDetallePedido]="tipoDetallePedido"
+        (closeModalEmmit)="getCloseModalEmmit($event)"
     ></app-mant-pedido-register>
 </ng-template>

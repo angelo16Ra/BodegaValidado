@@ -25,9 +25,8 @@ public partial class Vproducto
     [Unicode(false)]
     public string Nombre { get; set; } = null!;
 
-    [StringLength(4)]
-    [Unicode(false)]
-    public string Stock { get; set; } = null!;
+    [Column(TypeName = "decimal(8, 2)")]
+    public decimal Stock { get; set; }
 
     [Column(TypeName = "decimal(8, 2)")]
     public decimal Precio { get; set; }

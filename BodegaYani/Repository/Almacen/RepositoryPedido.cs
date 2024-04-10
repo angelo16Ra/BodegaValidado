@@ -30,11 +30,8 @@ namespace Repository.Almacen
                         case "codigoProducto":
                             query = query.Where(x => x.CodigoProducto == int.Parse(j.Value));
                             break;
-                        case "CodigoDetallePedido":
-                            query = query.Where(x => x.CodigoDetallePedido == int.Parse(j.Value));
-                            break;
-                        case "montoTotal":
-                            query = query.Where(x => x.MontoTotal == decimal.Parse(j.Value));
+                        case "MontoTotalPedido":
+                            query = query.Where(x => x.MontoTotalPedido == decimal.Parse(j.Value));
                             break;
                         case "montoPagado":
                             query = query.Where(x => x.MontoPagado == decimal.Parse(j.Value));
@@ -47,6 +44,9 @@ namespace Repository.Almacen
                             break;
                         case "entregaPedido":
                             query = query.Where(x => x.EntregaPedido == DateTime.Parse(j.Value));
+                            break;
+                        case "estado":
+                            query = query.Where(x => x.Estado == bool.Parse(j.Value));
                             break;
                     }
                 }
@@ -82,11 +82,8 @@ namespace Repository.Almacen
                         case "codigoProducto":
                             query = query.Where(x => x.CodigoProducto == int.Parse(j.Value));
                             break;
-                        case "CodigoDetallePedido":
-                            query = query.Where(x => x.CodigoDetallePedido == int.Parse(j.Value));
-                            break;
-                        case "montoTotal":
-                            query = query.Where(x => x.MontoTotal == decimal.Parse(j.Value));
+                        case "MontoTotalPedido":
+                            query = query.Where(x => x.MontoTotalPedido == decimal.Parse(j.Value));
                             break;
                         case "montoPagado":
                             query = query.Where(x => x.MontoPagado == decimal.Parse(j.Value));

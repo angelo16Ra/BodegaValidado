@@ -12,7 +12,6 @@ namespace RequestResponseModels.Request.Almacen
     {
         public int CodigoPersona { get; set; }
         public int CodigoDocumento { get; set; }
-        public int CodigoRol { get; set; }
         public string NumeroDocumento { get; set; } = null!;
         public string Nombre { get; set; } = null!;
         public string ApPaterno { get; set; } = null!;
@@ -21,5 +20,6 @@ namespace RequestResponseModels.Request.Almacen
         public DateTime FechaNacimiento { get; set; }
         public string Correo { get; set; } = null!;
         public string? Celular { get; set; }
+        public bool Estado { get; set; } = false;
     }
 }

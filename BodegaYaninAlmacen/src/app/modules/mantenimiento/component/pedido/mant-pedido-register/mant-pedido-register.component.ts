@@ -1,16 +1,18 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { MantPedidoListComponent } from '../mant-pedido-list/mant-pedido-list.component';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { SharedModule } from '../../../../shared/shared.module';
+
+
 import { CommonModule } from '@angular/common';
+import { alert_error, alert_success } from '../../../../../functions/general.functions';
+import { MantPedidoListComponent } from '../mant-pedido-list/mant-pedido-list.component';
+import { SharedModule } from '../../../../shared/shared.module';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Vpedido } from '../../../models/VPedido.model';
 import { ResponseUsuario } from '../../../models/usuario.response.model';
 import { ResponseProducto } from '../../../models/producto-response.model';
 import { ResponseDetallePedido } from '../../../models/detallePedido-response.model';
+import { ResponsePedido } from '../../../models/pedido-response.model';
 import { PedidoService } from '../../../service/pedido.service';
 import { AccionMantConst } from '../../../../../constans/general.constants';
-import { ResponsePedido } from '../../../models/pedido-response.model';
-import { alert_error, alert_success } from '../../../../../functions/general.functions';
 
 @Component({
   selector: 'app-mant-pedido-register',
@@ -49,16 +51,11 @@ export class MantPedidoRegisterComponent implements OnInit{
       codigoUsuario: [null,[Validators.required]],
       codigoProducto: [null,[Validators.required]],
       codigoDetallePedido: [null,[Validators.required]],
-      montoTotal: [null,[Validators.required]],
+      montoTotalPedido: [null,[Validators.required]],
       montoPagado: [null,[Validators.required]],
       vuelto: [null,[Validators.required]],
       registroPedido: [null,[Validators.required]],
       entregaPedido: [null,[Validators.required]],
-      nombreUsuario: [null,[Validators.required]],
-      nombreProducto: [null,[Validators.required]],
-      cantidad: [null,[Validators.required]],
-      precioTotal: [null,[Validators.required]],
-      precioUnitario: [null,[Validators.required]]
     })
     
   }

@@ -24,6 +24,9 @@ namespace Repository.Almacen
                         case "codigo":
                             query = query.Where(x => x.CodigoCaja == int.Parse(j.Value));
                             break;
+                        case "CodigoUsuario":
+                            query = query.Where(x => x.CodigoUsuario == int.Parse(j.Value));
+                            break;
                         case "fecha":
                             if (DateTime.TryParse(j.Value, out DateTime fecha))
                             {

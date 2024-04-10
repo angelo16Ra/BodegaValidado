@@ -2,8 +2,8 @@ export class Vpedido {
     codigoPedido: number = 0;
     codigoUsuario: number = 0;
     codigoProducto: number = 0;
-    codigoDetallePedido: number= 0;
-    montoTotal: number = 0;
+    codigoDetallePedido: number = 0;
+    montoTotalPedido: number = 0;
     montoPagado: number = 0;
     vuelto: number = 0;
     registroPedido: string = "";

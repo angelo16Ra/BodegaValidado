@@ -4,8 +4,7 @@ export class ResponseUsuario {
     codigoPersona: number = 0;
     userName: string = "";
     password: string = "";
-    estado: boolean = true;
-    estadoDescripcion: string = "";
-    fechaRegistro: string = "";
-    fechaActualizar: string = "";
+    estado: boolean = false;
+    fechaRegistro: Date = new Date();
+    fechaActualizar: Date = new Date();
 }

@@ -1,5 +1,6 @@
 export class RequestCaja {
     codigoCaja: number = 0;
+    codigoUsuario: number = 0;
     fecha: Date = new Date();
     usuarioApertura: string = "";
     usuarioCierre: string = "";

@@ -15,10 +15,8 @@ public partial class Vpedido
 
     public int CodigoProducto { get; set; }
 
-    public int? CodigoDetallePedido { get; set; }
-
     [Column(TypeName = "decimal(8, 2)")]
-    public decimal MontoTotal { get; set; }
+    public decimal MontoTotalPedido { get; set; }
 
     [Column(TypeName = "decimal(8, 2)")]
     public decimal MontoPagado { get; set; }

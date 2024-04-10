@@ -10,4 +10,5 @@ export class RequestProducto {
     precio: number = 0;
     imagen: string = "";
     descripcion: string = "";
+    estado: boolean = false;
 }

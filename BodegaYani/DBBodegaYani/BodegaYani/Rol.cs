@@ -23,7 +23,7 @@ public partial class Rol
     public bool Estado { get; set; }
 
     [InverseProperty("CodigoRolNavigation")]
-    public virtual ICollection<Persona> Personas { get; set; } = new List<Persona>();
+    public virtual ICollection<MenuRol> MenuRols { get; set; } = new List<MenuRol>();
 
     [InverseProperty("CodigoRolNavigation")]
     public virtual ICollection<Usuario> Usuarios { get; set; } = new List<Usuario>();

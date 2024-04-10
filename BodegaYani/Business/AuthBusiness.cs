@@ -61,37 +61,24 @@ namespace Business
 
             result.Success = true;
             result.Mensaje = "LOGIN CORRECTO";
-
             result.Usuario = new UsuarioLoginResponse();
             result.Usuario.CodigoUsuario = usuario.CodigoUsuario;
-            result.Usuario.Username = usuario.Username;
+            result.Usuario.Username = usuario.UserName;
             result.Usuario.Password = usuario.Password;
-
 
             result.Rol = new ResponseRol();
             result.Rol.CodigoRol = usuario.CodigoRol;
-            result.Rol.Nombre = usuario.Nombre;
+            result.Rol.Nombre = usuario.NombreRol;
             result.Rol.Estado = usuario.Estado;
-
 
             result.Persona = new ResponsePersona();
             result.Persona.CodigoPersona = usuario.CodigoPersona;
             result.Persona.NumeroDocumento = usuario.NumeroDocumento;
             result.Persona.Nombre = usuario.NombrePersona;
-            result.Persona.ApMaterno = usuario.ApMaterno;
-            result.Persona.ApPaterno = usuario.ApPaterno;
-            result.Persona.Sexo = usuario.Sexo;
+            result.Persona.ApMaterno = usuario.ApellidoMaterno;
+            result.Persona.ApPaterno = usuario.ApellidoPaterno;
+            result.Persona.Sexo = usuario.Genero;
 
-
-            // ESTE TIPO DE IMPLEMENTACIÓN NO ES LA MAS OPTIMA//
-            /*
-             * VAMOS A REALIZAR CONSULTAS INDEPENDIENTES
-             * _rolBussnies
-             * _personaBussnies
-             */
-
-            //busqueda del usuario
-            //busqueda del rol
             return result;
         }
 

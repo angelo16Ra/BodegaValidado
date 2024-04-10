@@ -31,6 +31,9 @@ public partial class Usuario
     [Column(TypeName = "datetime")]
     public DateTime FechaActualizar { get; set; }
 
+    [InverseProperty("CodigoUsuarioNavigation")]
+    public virtual ICollection<Caja> Cajas { get; set; } = new List<Caja>();
+
     [ForeignKey("CodigoPersona")]
     [InverseProperty("Usuarios")]
     public virtual Persona CodigoPersonaNavigation { get; set; } = null!;

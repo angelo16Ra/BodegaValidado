@@ -15,7 +15,7 @@ namespace RequestResponseModels.Request.Almacen
         public int CodigoPersona { get; set; }
         public string UserName { get; set; } = null!;
         public string Password { get; set; } = null!;
-        public bool Estado { get; set; }
+        public bool Estado { get; set; } = false;
         public DateTime FechaRegistro { get; set; }
         public DateTime FechaActualizar { get; set; }
     }

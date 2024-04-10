@@ -15,10 +15,8 @@ public partial class Pedido
 
     public int CodigoProducto { get; set; }
 
-    public int CodigoDetallePedido { get; set; }
-
     [Column(TypeName = "decimal(8, 2)")]
-    public decimal MontoTotal { get; set; }
+    public decimal MontoTotalPedido { get; set; }
 
     [Column(TypeName = "decimal(8, 2)")]
     public decimal MontoPagado { get; set; }
@@ -32,9 +30,7 @@ public partial class Pedido
     [Column(TypeName = "datetime")]
     public DateTime EntregaPedido { get; set; }
 
-    [ForeignKey("CodigoDetallePedido")]
-    [InverseProperty("Pedidos")]
-    public virtual DetallePedido CodigoDetallePedidoNavigation { get; set; } = null!;
+    public bool Estado { get; set; }
 
     [ForeignKey("CodigoProducto")]
     [InverseProperty("Pedidos")]
@@ -43,6 +39,9 @@ public partial class Pedido
     [ForeignKey("CodigoUsuario")]
     [InverseProperty("Pedidos")]
     public virtual Usuario CodigoUsuarioNavigation { get; set; } = null!;
+
+    [InverseProperty("CodigoPedidoNavigation")]
+    public virtual ICollection<DetallePedido> DetallePedidos { get; set; } = new List<DetallePedido>();
 
     [InverseProperty("CodigoPedidoNavigation")]
     public virtual ICollection<MovimientoCaja> MovimientoCajas { get; set; } = new List<MovimientoCaja>();

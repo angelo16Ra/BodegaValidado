@@ -94,7 +94,7 @@
                         <td>{{proveedor.telefono}}</td>
                         <td>{{proveedor.correo}}</td>
                         <td>{{proveedor.fechaRegistro | date}} - {{proveedor.fechaActualizacion | date}}</td>
-                        <td>{{proveedor.estadoDescripcion? 'Activo' : 'Inactivo'}}</td>
+                        <td>{{proveedor.estado? 'Activo' : 'Inactivo'}}</td>
                         <td>
                             <button (click)="editarAlmacen(ModalEdit, proveedor)" class="btn btn-warning btn-sm">
                                 <i class="fas fa-edit"></i>

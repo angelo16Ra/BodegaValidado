@@ -28,9 +28,6 @@ import { alert_error, alert_success } from '../../../../../functions/general.fun
   styleUrl: './mant-producto-register.component.css'
 })
 export class MantProductoRegisterComponent implements OnInit{
-  
-
-  /** TODO: DECLARANDO  VARIABLES DE ENTRADA */
   @Input() title:string = "";
   @Input() producto:Vproducto = new  Vproducto();
   @Input() accion:number = 0;
@@ -68,7 +65,7 @@ export class MantProductoRegisterComponent implements OnInit{
       stock: [null,[Validators.required]],
       precio: [null,[Validators.required]],
       imagen: [null,[Validators.required]],
-      descripcion: ["",[Validators.required]],
+      descripcion: [null,[Validators.required]],
     });
   }
 

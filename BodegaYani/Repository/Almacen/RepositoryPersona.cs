@@ -31,9 +31,6 @@ namespace Repository.Almacen
                         case "codigoDocumento":
                             query = query.Where(x => x.CodigoDocumento == int.Parse(j.Value));
                             break;
-                        case "codigoRol":
-                            query = query.Where(x => x.CodigoRol == int.Parse(j.Value));
-                            break;
                         case "numeroDocumento":
                             query = query.Where(x => x.NumeroDocumento.ToLower().Contains(j.Value.ToLower()));
                             break;
@@ -57,6 +54,9 @@ namespace Repository.Almacen
                             break;
                         case "celular":
                             query = query.Where(x => x.Celular.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "estado":
+                            query = query.Where(x => x.Estado == bool.Parse(j.Value));
                             break;
                     }
                 }

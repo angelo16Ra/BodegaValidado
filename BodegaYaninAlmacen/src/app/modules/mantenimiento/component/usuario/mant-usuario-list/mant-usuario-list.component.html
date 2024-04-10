@@ -23,7 +23,7 @@
                       </div>
                       <div class="col-3">
                         <div class="form-group">
-                          <label for="username">Usuario</label>
+                          <label for="">Usuario</label>
                           <input
                             formControlName="username"
                             type="text"
@@ -33,7 +33,7 @@
                       </div>
                       <div class="col-3">
                         <div class="form-group">
-                          <label for="password">Contraseña</label>
+                          <label for="">Contraseña</label>
                           <input
                             formControlName="password"
                             type="text"
@@ -43,7 +43,7 @@
                       </div>
                       <div class="col-3">
                         <div class="form-group">
-                            <label for="estado">Estado</label>
+                            <label for="">Estado</label>
                             <select formControlname="estado" class="form-select" id="estado">
                                 <option value="">TODO</option>
                                 <option value="true">Activo</option>
@@ -53,19 +53,19 @@
                       </div>
                       <div class="col-3">
                         <div class="form-group">
-                            <label for="fechaActualizar">Fecha de Actualizacion</label>
+                            <label for="">Fecha de Actualizacion</label>
                             <input formControlName="fechaActualizar" type="datetime" class="form-control">
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="form-group">
-                            <label for="fechaRegistro">Fecha de Registro</label>
+                            <label for="">Fecha de Registro</label>
                             <input formControlName="fechaRegistro" type="datetime" class="form-control">
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="form-group">
-                          <label for="numeroDocumento">Numero de documento</label>
+                          <label for="">Numero de documento</label>
                           <input
                             formControlName="numeroDocumento"
                             type="text"
@@ -75,7 +75,7 @@
                     </div>
                     <div class="col-3">
                         <div class="form-group">
-                          <label for="nombrePersona">Nombre</label>
+                          <label for="">Nombre</label>
                           <input
                             formControlName="nombrePersona"
                             type="text"
@@ -85,9 +85,9 @@
                     </div>
                     <div class="col-3">
                         <div class="form-group">
-                          <label for="sexo">Genero</label>
+                          <label for="">Genero</label>
                           <input
-                            formControlName="sexo"
+                            formControlName="genero"
                             type="text"
                             class="form-control"
                           />
@@ -95,13 +95,13 @@
                     </div>
                     <div class="col-3">
                         <div class="form-group">
-                            <label for="fechaNacimiento">fecha de Nacimiento</label>
+                            <label for="">fecha de Nacimiento</label>
                             <input formControlName="fechaNacimiento" type="datetime-local" class="form-control">
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="form-group">
-                          <label for="correo">Correo</label>
+                          <label for="">Correo</label>
                           <input
                             formControlName="correo"
                             type="text"
@@ -112,7 +112,7 @@
 
                     <div class="col-3">
                         <div class="form-group">
-                          <label for="celular">Celular</label>
+                          <label for="">Celular</label>
                           <input
                             formControlName="celular"
                             type="text"
@@ -122,7 +122,7 @@
                     </div>
                     <div class="col-3">
                         <div class="form-group">
-                          <label for="nombre">Rol</label>
+                          <label for="">Rol</label>
                           <input
                             formControlName="nombre"
                             type="text"
@@ -170,17 +170,17 @@
                     <tbody>
                         <tr *ngFor="let d of Vusuario ">
                             <td>{{d.codigoUsuario}}</td>
-                            <td>{{d.username}}</td>
+                            <td>{{d.userName}}</td>
                             <td>{{d.password}}</td>
                             <td>{{d.estado? 'Activo' : 'Inactivo'}}</td>
                             <td>{{d.fechaActualizar | date}} - {{d.fechaRegistro | date}}</td>
                             <td>{{d.numeroDocumento}}</td>
-                            <td>{{d.nombrePersona}}  {{d.apPaterno}}  {{d.apMaterno}}</td>
-                            <td>{{d.sexo}}</td>
+                            <td>{{d.nombrePersona}}  {{d.apellidoPaterno}}  {{d.apellidoMaterno}}</td>
+                            <td>{{d.genero}}</td>
                             <td>{{d.fechaNacimiento | date}}</td>
                             <td>{{d.correo}}</td>
                             <td>{{d.celular}}</td>
-                            <td>{{d.nombre}}</td>
+                            <td>{{d.nombreRol}}</td>
                             <td>
                                 <button (click)="editarRegistro(modalEdit,d)" class="btn btn-warning btn-sm">
                                     <i class="fas fa-edit"></i>

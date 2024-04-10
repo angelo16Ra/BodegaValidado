@@ -44,10 +44,10 @@ export class MantUsuarioRegisterComponent {
   ){
     //nuestro formulario rol request
     this.myForm= this.fb.group({
-      codigoUsuario: [null,[Validators.required]],
+      codigoUsuario: [{ value: 0, disabled: true }, [Validators.required]],
       codigoRol: [null,[Validators.required]],
       codigoPersona: [null,[Validators.required]],
-      username: [null,[Validators.required]],
+      userName: [null,[Validators.required]],
       password: [null,[Validators.required]],
       estado: [null,[Validators.required]],
       fechaRegistro: [null,[Validators.required]],

@@ -29,7 +29,7 @@ namespace Repository.Almacen
         public Vusuario GetByVistaUserName(string UserName)
         {
             Vusuario _vusuario = db.Vusuarios.Where(x =>
-            x.Username.ToLower() == UserName.ToLower()).FirstOrDefault();
+            x.UserName.ToLower() == UserName.ToLower()).FirstOrDefault();
             return _vusuario;
         }
 
@@ -53,6 +53,18 @@ namespace Repository.Almacen
                             break;
                         case "estado":
                             query = query.Where(x => x.Estado == bool.Parse(j.Value));
+                            break;
+                        case "fechaRegistro":
+                            if (DateTime.TryParse(j.Value, out DateTime fechaRegistro))
+                            {
+                                query = query.Where(x => x.FechaRegistro == fechaRegistro);
+                            }
+                            break;
+                        case "fechaActualizacion":
+                            if (DateTime.TryParse(j.Value, out DateTime fechaActualizacion))
+                            {
+                                query = query.Where(x => x.FechaActualizar == fechaActualizacion);
+                            }
                             break;
                     }
                 }
@@ -83,7 +95,7 @@ namespace Repository.Almacen
                             query = query.Where(x => x.CodigoUsuario == int.Parse(j.Value));
                             break;
                         case "username":
-                            query = query.Where(x => x.Username.ToLower().Contains(j.Value.ToLower()));
+                            query = query.Where(x => x.UserName.ToLower().Contains(j.Value.ToLower()));
                             break;
                         case "password":
                             query = query.Where(x => x.Password.ToLower().Contains(j.Value.ToLower()));
@@ -106,17 +118,20 @@ namespace Repository.Almacen
                         case "CodigoPersona":
                             query = query.Where(x => x.CodigoPersona == int.Parse(j.Value));
                             break;
+                        case "NumeroDocumento":
+                            query = query.Where(x => x.NumeroDocumento.ToLower().Contains(j.Value.ToLower()));
+                            break;
                         case "NombrePersona":
                             query = query.Where(x => x.NombrePersona.ToLower().Contains(j.Value.ToLower()));
                             break;
                         case "ApPaterno":
-                            query = query.Where(x => x.ApPaterno.ToLower().Contains(j.Value.ToLower()));
+                            query = query.Where(x => x.ApellidoPaterno.ToLower().Contains(j.Value.ToLower()));
                             break;
                         case "ApMaterno":
-                            query = query.Where(x => x.ApMaterno.ToLower().Contains(j.Value.ToLower()));
+                            query = query.Where(x => x.ApellidoMaterno.ToLower().Contains(j.Value.ToLower()));
                             break;
                         case "Sexo":
-                            query = query.Where(x => x.Sexo.ToLower().Contains(j.Value.ToLower()));
+                            query = query.Where(x => x.Genero.ToLower().Contains(j.Value.ToLower()));
                             break;
                         case "FechaNacimiento":
                             if (DateTime.TryParse(j.Value, out DateTime FechaNacimiento))
@@ -134,7 +149,7 @@ namespace Repository.Almacen
                             query = query.Where(x => x.CodigoRol == int.Parse(j.Value));
                             break;
                         case "Nombre":
-                            query = query.Where(x => x.Nombre.ToLower().Contains(j.Value.ToLower()));
+                            query = query.Where(x => x.NombreRol.ToLower().Contains(j.Value.ToLower()));
                             break;
                     }
                 }
@@ -145,7 +160,7 @@ namespace Repository.Almacen
             res.TotalRegistros = query.Count();
             res.Lista = query
                 .Skip((request.NumeroPagina - 1) * request.Cantidad).Take(request.Cantidad)
-                .OrderBy(x => x.Username)
+                .OrderBy(x => x.UserName)
                 .ToList();
 
             return res;

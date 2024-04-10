@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +12,6 @@ namespace RequestResponseModels.Response.Almacen
     {
         public int CodigoPersona { get; set; }
         public int CodigoDocumento { get; set; }
-        public int CodigoRol { get; set; }
         public string NumeroDocumento { get; set; } = null!;
         public string Nombre { get; set; } = null!;
         public string ApPaterno { get; set; } = null!;
@@ -19,5 +20,6 @@ namespace RequestResponseModels.Response.Almacen
         public DateTime FechaNacimiento { get; set; }
         public string Correo { get; set; } = null!;
         public string? Celular { get; set; }
+        public bool Estado { get; set; }
     }
 }

@@ -1,67 +1,83 @@
 <div class="container-fluid mt-5">
-  <div class="card">
-      <div class="card-header bg-primary text-white text-center">
-      <h1 class="mt-4">PRODUCTOS</h1>
-    </div>
+    <div class="card">
+        <div class="card-header bg-primary text-white text-center">
+            <h1 class="mt-4">PRODUCTOS</h1>
+        </div>
     <div class="card-body">
       <!-- TODO: seccion para los filtros  -->
-      <form [formGroup]="myFormFilter" class="mb-3">
-        <div class="card bg-light">
-            <div class="card-header bg-secondary text-white">BÚSQUEDA POR FILTRO</div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-3">
-                <div class="form-group">
-                  <label for="">Código</label>
-                  <input
-                    formControlName="codigoProducto"
-                    type="text"
-                    class="form-control"
-                  />
+        <form [formGroup]="myFormFilter" class="mb-3">
+            <div class="card bg-light">
+                <div class="card-header bg-secondary text-white">
+                    BÚSQUEDA POR FILTRO
                 </div>
-              </div>
-              <div class="col-3">
-                <div class="form-group">
-                  <label for="">Nombre</label>
-                  <input
-                    formControlName="nombre"
-                    type="text"
-                    class="form-control"
-                  />
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="codigoProducto">Código</label>
+                                <input formControlName="codigoProducto" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input formControlName="nombre" type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="stock">stock</label>
+                                <input formControlName="stock" type="number" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="precio">precio</label>
+                                <input formControlName="precio" type="number" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="nomnombreMedida">UnidadMedida</label>
+                                <input formControlName="nomnombreMedida" type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="nombreCategoria">Categoria</label>
+                                <input formControlName="nombreCategoria" type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="nombreSub"> SubCategoria</label>
+                                <input formControlName="nombreSub" type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="nombreProveedor">Proveedor</label>
+                                <input formControlName="nombreProveedor" type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="nombreAlmacen">Almacen</label>
+                                <input formControlName="nombreAlmacen" type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-end mt-3">
+                            <button (click)="filtrar()" class="btn btn-primary me-2">
+                                <i class="fas fa-search"></i> Buscar
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-broom"></i> Limpiar
+                            </button>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-3">
-                <div class="form-group">
-                  <label for="">stock</label>
-                  <input
-                    formControlName="stock"
-                    type="number"
-                    class="form-control"
-                  />
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="form-group">
-                  <label for="">precio</label>
-                  <input
-                    formControlName="precio"
-                    type="text"
-                    class="form-control"
-                  />
-                </div>
-              </div>
-              <div class="col-md-12 text-end mt-3">
-                <button (click)="filtrar()" class="btn btn-primary me-2">
-                    <i class="fas fa-search"></i> Buscar
-                </button>
-                <button class="btn btn-secondary">
-                    <i class="fas fa-broom"></i> Limpiar
-                </button>
             </div>
-            </div>
-          </div>
-        </div>
-      </form>
+        </form>
 
       <!-- TODO: tabla de resultados   -->
       <div class="table table-responsive">
@@ -103,7 +119,10 @@
               <td class="text-center">{{ d.nombreProveedor }}</td>
               <td class="text-center">{{ d.nombreAlmacen }}</td>
               <td>
-                <button (click)="editarRegistro(modalEdit, d)" class="btn btn-warning btn-sm">
+                <button
+                  (click)="editarRegistro(modalEdit, d)"
+                  class="btn btn-warning btn-sm"
+                >
                   <i class="fas fa-edit"></i>
                 </button>
               </td>

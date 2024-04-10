@@ -13,8 +13,6 @@ public partial class Persona
 
     public int CodigoDocumento { get; set; }
 
-    public int CodigoRol { get; set; }
-
     [StringLength(15)]
     [Unicode(false)]
     public string NumeroDocumento { get; set; } = null!;
@@ -46,13 +44,11 @@ public partial class Persona
     [Unicode(false)]
     public string? Celular { get; set; }
 
+    public bool Estado { get; set; }
+
     [ForeignKey("CodigoDocumento")]
     [InverseProperty("Personas")]
     public virtual TipoDocumento CodigoDocumentoNavigation { get; set; } = null!;
-
-    [ForeignKey("CodigoRol")]
-    [InverseProperty("Personas")]
-    public virtual Rol CodigoRolNavigation { get; set; } = null!;
 
     [InverseProperty("CodigoPersonaNavigation")]
     public virtual ICollection<Error> Errors { get; set; } = new List<Error>();

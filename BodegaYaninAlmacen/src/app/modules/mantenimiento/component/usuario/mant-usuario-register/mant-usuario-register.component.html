@@ -19,38 +19,18 @@
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label for="codigoPersona">Nombre</label>
-                    <select formControlName="codigoPersona" class="form-select">
-                        <option *ngFor="let d of tipoPersona" [ngValue]="d.codigoPersona">
-                            {{d.nombre}}
-                        </option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="form-group">
-                    <label for="codigoRol">Rol</label>
-                    <select formControlName="codigoRol" class="form-select">
-                        <option *ngFor="let d of tipoRol" [ngValue]="d.codigoRol">
-                            {{d.nombre}}
-                        </option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4">
-                <div class="form-group">
-                    <label for="username">Usuario</label>
-                    <input formControlName="username" type="text" class="form-control">
+                    <label for="userName">Usuario</label>
+                    <input formControlName="userName" type="text" class="form-control" placeholder="ingrese el Codigo">
                 </div>
             </div>
             <div class="col-4">
                 <div class="form-group">
                     <label for="password">contraseña</label>
-                    <input formControlName="password" type="text" class="form-control">
+                    <input formControlName="password" type="text" class="form-control" placeholder="ingrese el Codigo">
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col-4">
                 <div class="form-group">
                     <label for="estado">Estado</label>
@@ -60,18 +40,112 @@
                     </select>
                 </div>
             </div>
-        </div>
-        <div class="row">
             <div class="col-4">
                 <div class="form-group">
                     <label for="fechaRegistro">fecha de Registro</label>
-                    <input formControlName="fechaRegistro" type="datetime" class="form-control">
+                    <input formControlName="fechaRegistro" type="datetime-local" class="form-control">
                 </div>
             </div>
             <div class="col-4">
                 <div class="form-group">
                     <label for="fechaActualizar">fecha de Actualizar</label>
-                    <input formControlName="fechaActualizar" type="datetime" class="form-control">
+                    <input formControlName="fechaActualizar" type="datetime-local" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">numero de Documento</label>
+                    <select formControlName="codigoPersona"  class="form-select">
+                        <option *ngFor="let d of tipoPersona" [ngValue]="d.codigoPersona">
+                            {{d.numeroDocumento}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">Nombre</label>
+                    <select formControlName="codigoPersona"  class="form-select">
+                        <option *ngFor="let d of tipoPersona" [ngValue]="d.codigoPersona">
+                            {{d.nombre}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">apellido Paterno</label>
+                    <select formControlName="codigoPersona"  class="form-select">
+                        <option *ngFor="let d of tipoPersona" [ngValue]="d.codigoPersona">
+                            {{d.apPaterno}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">apellido Materno</label>
+                    <select formControlName="codigoPersona"  class="form-select">
+                        <option *ngFor="let d of tipoPersona" [ngValue]="d.codigoPersona">
+                            {{d.apMaterno}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">Genero</label>
+                    <select formControlName="codigoPersona"  class="form-select">
+                        <option *ngFor="let d of tipoPersona" [ngValue]="d.codigoPersona">
+                            {{d.sexo}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">Fecha Nacimiento</label>
+                    <select formControlName="codigoPersona"  class="form-select">
+                        <option *ngFor="let d of tipoPersona" [ngValue]="d.codigoPersona">
+                            {{d.fechaNacimiento}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">Correo</label>
+                    <select formControlName="codigoPersona"  class="form-select">
+                        <option *ngFor="let d of tipoPersona" [ngValue]="d.codigoPersona">
+                            {{d.correo}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">Celular</label>
+                    <select formControlName="codigoPersona"  class="form-select">
+                        <option *ngFor="let d of tipoPersona" [ngValue]="d.codigoPersona">
+                            {{d.celular}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">nombre</label>
+                    <select formControlName="codigoRol"  class="form-select">
+                        <option *ngFor="let d of tipoRol" [ngValue]="d.codigoRol">
+                            {{d.nombre}}
+                        </option>
+                    </select>
                 </div>
             </div>
         </div>

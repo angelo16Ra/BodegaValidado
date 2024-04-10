@@ -1,120 +1,158 @@
 <div class="modal-header">
-    <h4 class="modal-title pull-left">{{title}}</h4>
-    <!-- (click)="modalRef?.hide()" -->
-    <button type="button" class="btn-close close pull-right" aria-label="Close" >
-        <span arial-hidden="true" class="visually-hidden">&times;</span>
-    </button> 
+  <h4 class="modal-title pull-left">{{ title }}</h4>
+  <!-- (click)="modalRef?.hide()" -->
+  <button type="button" class="btn-close close pull-right" aria-label="Close">
+    <span arial-hidden="true" class="visually-hidden">&times;</span>
+  </button>
 </div>
 <div class="modal-body">
-    
-
-    <form [formGroup]="myForm">
-        
-        <div class="row mt-2">
-            <div class="col-4">
-                <div class="form-group">
-                    <label for="CodigoPedido">Codigo del Pedido</label>
-                    <input formControlName="CodigoPedido" class="form-control" placeholder="ingrese el Codigo">
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="form-group">
-                    <label for="codigoUsuario">Atendio</label>
-                    <select formControlName="codigoUsuario" class="form-select">
-                        <option *ngFor="let d of tipoUsuario" [value]="d.codigoUsuario">
-                            {{d.userName}}
-                        </option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="form-group">
-                    <label for="codigoProducto">Nombre</label>
-                    <select formControlName="codigoProducto" class="form-select">
-                        <option *ngFor="let d of tipoProducto" [value]="d.codigoProducto">
-                            {{d.nombre}}
-                        </option>
-                    </select>
-                </div>
-            </div>
+  <form [formGroup]="myForm">
+    <div class="row mt-2">
+      <div class="col-4">
+        <div class="form-group">
+          <label for="codigoPedido">Codigo del Pedido</label>
+          <input
+            formControlName="codigoPedido"
+            class="form-control"
+            placeholder="ingrese el Codigo"
+          />
         </div>
-        <div class="row mt-2">
-            <div class="col-4">
-                <div class="form-group">
-                    <label for="codigoDetallePedido">cantidad</label>
-                    <select formControlName="codigoDetallePedido" class="form-select">
-                        <option *ngFor="let d of tipoDetallePedido" [value]="d.codigoDetallePedido">
-                            {{d.cantidad}}
-                        </option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="form-group">
-                    <label for="codigoDetallePedido">precio Unitario</label>
-                    <select formControlName="codigoDetallePedido" class="form-select">
-                        <option *ngFor="let d of tipoDetallePedido" [value]="d.codigoDetallePedido">
-                            {{d.precioUnitario}}
-                        </option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="form-group">
-                    <label for="codigoDetallePedido">precio Total</label>
-                    <select formControlName="codigoDetallePedido" class="form-select">
-                        <option *ngFor="let d of tipoDetallePedido" [value]="d.codigoDetallePedido">
-                            {{d.precioTotal}}
-                        </option>
-                    </select>
-                </div>
-            </div>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <label for="montoTotalPedido">Monto Total del pedido</label>
+          <input
+            formControlName="montoTotalPedido"
+            class="form-control"
+            placeholder="ingrese el Codigo"
+          />
         </div>
-        <div class="row">
-            <div class="col-4">
-                <div class="form-group">
-                    <label for="montoTotal">monto Total</label>
-                    <input formControlName="montoTotal" type="text" class="form-control">
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="form-group">
-                    <label for="montoPagado">monto pagado</label>
-                    <input formControlName="montoPagado" type="number" class="form-control">
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="form-group">
-                    <label for="vuelto">vuelto</label>
-                    <input formControlName="vuelto" type="number" class="form-control">
-                </div>
-            </div>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <label for="montoPagado">Monto Pagado</label>
+          <input
+            formControlName="montoPagado"
+            class="form-control"
+            placeholder="ingrese el Codigo"
+          />
         </div>
-        <div class="row">
-            <div class="col-4">
-                <div class="form-group">
-                    <label for="registroPedido">registro del pedido</label>
-                    <input formControlName="registroPedido" type="text" class="form-control">
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="form-group">
-                    <label for="entregaPedido">entrega del pedido</label>
-                    <input formControlName="entregaPedido" type="text" class="form-control">
-                </div>
-            </div>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-4">
+        <div class="form-group">
+          <label for="vuelto">vuelto</label>
+          <input
+            formControlName="vuelto"
+            class="form-control"
+            placeholder="ingrese el Codigo"
+          />
         </div>
-        <div class="row">
-            <div class="col-6">
-                <div class="d-grid gap-2">
-                    <button [disabled]="myForm.invalid" (click)="guardar()" class="btn-block btn btn-primary btn-sm">Guardar</button>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="d-grid gap-2">
-                    <button class="btn-block btn btn-danger btn-sm">Cancelar</button>
-                </div>
-            </div>
-        </div>    
-    </form>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <label for="registroPedido">registro del Pedido</label>
+          <input
+            formControlName="registroPedido"
+            type="datetime-local"
+            class="form-control"
+            placeholder="ingrese el Codigo"
+          />
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <label for="entregaPedido">entrega del Pedido</label>
+          <input
+            formControlName="entregaPedido"
+            type="datetime-local"
+            class="form-control"
+            placeholder="ingrese el Codigo"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-4">
+        <div class="form-group">
+          <label for="">Nombre</label>
+          <select formControlName="codigoUsuario" class="form-select">
+            <option *ngFor="let d of tipoUsuario" [ngValue]="d.codigoUsuario">
+              {{ d.userName }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <label for="">Producto</label>
+          <select formControlName="codigoProducto" class="form-select">
+            <option *ngFor="let d of tipoProducto" [ngValue]="d.codigoProducto">
+              {{ d.nombre }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <label for="">cantidad</label>
+          <select formControlName="codigoDetallePedido" class="form-select">
+            <option
+              *ngFor="let d of tipoDetallePedido"
+              [ngValue]="d.codigoDetallePedido"
+            >
+              {{ d.cantidad }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-4">
+        <div class="form-group">
+          <label for="">precio Total</label>
+          <select formControlName="codigoDetallePedido" class="form-select">
+            <option
+              *ngFor="let d of tipoDetallePedido"
+              [ngValue]="d.codigoDetallePedido"
+            >
+              {{ d.precioTotal }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <label for="">precio Unitario</label>
+          <select formControlName="codigoDetallePedido" class="form-select">
+            <option
+              *ngFor="let d of tipoDetallePedido"
+              [ngValue]="d.codigoDetallePedido"
+            >
+              {{ d.precioUnitario }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="d-grid gap-2">
+          <button
+            [disabled]="myForm.invalid"
+            (click)="guardar()"
+            class="btn-block btn btn-primary btn-sm"
+          >
+            Guardar
+          </button>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="d-grid gap-2">
+          <button class="btn-block btn btn-danger btn-sm">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </form>
 </div>

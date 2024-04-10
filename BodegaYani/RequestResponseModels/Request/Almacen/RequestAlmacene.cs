@@ -13,6 +13,6 @@ namespace RequestResponseModels.Request.Almacen
         public int CodigoAlmacenes { get; set; }
         public string Nombre { get; set; } = null!;
         public int CapacidadLimite { get; set; }
-        public bool Estado { get; set; }
+        public bool Estado { get; set; } = false;
     }
 }

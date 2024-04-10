@@ -43,7 +43,7 @@ namespace Repository.Almacen
                             query = query.Where(x => x.Nombre.ToLower().Contains(j.Value.ToLower()));
                             break;
                         case "stock":
-                            query = query.Where(x => x.Stock.ToLower().Contains(j.Value.ToLower()));
+                            query = query.Where(x => x.Stock == decimal.Parse(j.Value));
                             break;
                         case "precio":
                             query = query.Where(x => x.Precio == decimal.Parse(j.Value));
@@ -53,6 +53,9 @@ namespace Repository.Almacen
                             break;
                         case "descripcion":
                             query = query.Where(x => x.Descripcion.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "estado":
+                            query = query.Where(x => x.Estado == bool.Parse(j.Value));
                             break;
                     }
                 }
@@ -101,7 +104,7 @@ namespace Repository.Almacen
                             query = query.Where(x => x.Nombre.ToLower().Contains(j.Value.ToLower()));
                             break;
                         case "stock":
-                            query = query.Where(x => x.Stock.ToLower().Contains(j.Value.ToLower()));
+                            query = query.Where(x => x.Stock == decimal.Parse(j.Value));
                             break;
                         case "precio":
                             query = query.Where(x => x.Precio == decimal.Parse(j.Value));

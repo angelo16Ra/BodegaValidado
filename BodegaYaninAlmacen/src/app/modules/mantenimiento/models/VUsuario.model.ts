@@ -1,20 +1,19 @@
 export class Vusuario {
-    //USUARIO
     codigoUsuario: number = 0;
-    username: string = "";
+    userName: string = "";
     password: string = "";
-    estado: boolean = true;
+    estado: boolean = false;
     fechaActualizar: string = "";
     fechaRegistro: string = "";
     codigoPersona: number = 0;
     numeroDocumento: string = "";
     nombrePersona: string = "";
-    apPaterno: string = "";
-    apMaterno: string = "";
-    sexo: string = "";
+    apellidoPaterno: string = "";
+    apellidoMaterno: string = "";
+    genero: string = "";
     fechaNacimiento: string = "";
     correo: string = "";
     celular: string = "";
     codigoRol: number = 0;
-    nombre: string = "";
+    nombreRol: string = "";
 }

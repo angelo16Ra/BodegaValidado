@@ -3,6 +3,6 @@ export class ResponseCategoria {
     nombre: string = "";
     descripcion: string = "";
     estado: boolean = false;
-    fechaRegistro: string = "";
-    fechaActualizacion: string = "";
+    fechaRegistro: Date = new Date();
+    fechaActualizacion: Date = new Date();
 }

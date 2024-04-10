@@ -24,6 +24,9 @@ namespace Repository.Almacen
                         case "codigo":
                             query = query.Where(x => x.CodigoDetallePedido == int.Parse(j.Value));
                             break;
+                        case "CodigoPedido":
+                            query = query.Where(x => x.CodigoPedido == int.Parse(j.Value));
+                            break;
                         case "cantidad":
                             query = query.Where(x => x.Cantidad == decimal.Parse(j.Value));
                             break;

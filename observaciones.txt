@@ -12,3 +12,18 @@ XXXX SubCategoria falta todo
 //// tipoDocumento funciona todo
 //// unidadMedida funciona todo
 //// usuario funciona 
+
+
+se cambio
+caja 
+pedido
+proveedor
+
+
+
+TIPO DOCUMENTO ESTA BIEN
+ROL ESTA BIEN
+ALMACEN ESTA BIEN
+CATEGORIA ESTA BIEN
+PRODUCTO ESTA BIEN
+UNIDAD MEDIDA ESTA BIEN FALTA ESTILO DE MENSAJE

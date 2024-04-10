@@ -11,6 +11,8 @@ public partial class Caja
     [Key]
     public int CodigoCaja { get; set; }
 
+    public int CodigoUsuario { get; set; }
+
     [Column(TypeName = "datetime")]
     public DateTime? Fecha { get; set; }
 
@@ -32,6 +34,10 @@ public partial class Caja
 
     [Column(TypeName = "decimal(10, 2)")]
     public decimal? MontoAdicional { get; set; }
+
+    [ForeignKey("CodigoUsuario")]
+    [InverseProperty("Cajas")]
+    public virtual Usuario CodigoUsuarioNavigation { get; set; } = null!;
 
     [InverseProperty("CodigoCajaNavigation")]
     public virtual ICollection<MovimientoCaja> MovimientoCajas { get; set; } = new List<MovimientoCaja>();
