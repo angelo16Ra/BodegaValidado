@@ -9,4 +9,5 @@ export class ResponsePersona {
     fechaNacimiento: Date = new Date();
     correo: string = "";
     celular: string = "";
+    estado: boolean = false;
 }

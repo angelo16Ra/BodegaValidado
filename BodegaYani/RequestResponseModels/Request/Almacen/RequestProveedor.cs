@@ -18,6 +18,6 @@ namespace RequestResponseModels.Request.Almacen
         public string Correo { get; set; } = null!;
         public DateTime FechaRegistro { get; set; }
         public DateTime FechaActualizacion { get; set; }
-        public bool Estado { get; set; } = false;
+        public bool Estado { get; set; }
     }
 }

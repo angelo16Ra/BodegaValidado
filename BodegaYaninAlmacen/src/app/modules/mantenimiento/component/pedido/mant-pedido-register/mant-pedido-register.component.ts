@@ -13,6 +13,7 @@ import { ResponseDetallePedido } from '../../../models/detallePedido-response.mo
 import { ResponsePedido } from '../../../models/pedido-response.model';
 import { PedidoService } from '../../../service/pedido.service';
 import { AccionMantConst } from '../../../../../constans/general.constants';
+import { RequestPedido } from '../../../models/pedido-request.model';
 
 @Component({
   selector: 'app-mant-pedido-register',
@@ -38,7 +39,7 @@ export class MantPedidoRegisterComponent implements OnInit{
   @Output() closeModalEmmit = new EventEmitter<boolean>();
 
   myForm:FormGroup;
-  pedidoEnvio: ResponsePedido = new ResponsePedido(); 
+  pedidoEnvio: RequestPedido = new RequestPedido(); 
 
   constructor(
     private fb:FormBuilder,
@@ -47,7 +48,7 @@ export class MantPedidoRegisterComponent implements OnInit{
   )
   {
     this.myForm = this.fb.group({
-      codigoPedido: [null,[Validators.required]],
+      codigoPedido: [{ value: 0, disabled: true }, [Validators.required]],
       codigoUsuario: [null,[Validators.required]],
       codigoProducto: [null,[Validators.required]],
       codigoDetallePedido: [null,[Validators.required]],
@@ -86,6 +87,7 @@ export class MantPedidoRegisterComponent implements OnInit{
     //lamar a nuestro servicio rest ==> crear un nuevo registro en base de datos
     this._pedidoService.create(this.pedidoEnvio).subscribe({
       next:(data:ResponsePedido)=>{
+        console.log(data);
         alert_success("EXCELENTE","Se creo de manera correcta")
       },
       error:()=>{

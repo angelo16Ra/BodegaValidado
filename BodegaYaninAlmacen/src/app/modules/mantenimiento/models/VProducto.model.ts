@@ -5,14 +5,14 @@ export class Vproducto {
   codigoProveedor: number = 0;
   codigoSubCategoria: number = 0;
   codigoUnidadMedida: number = 0;
-  nombre: string = '';
-  stock: string = '';
+  nombre: string = "";
+  stock: number = 0;
   precio: number = 0;
-  imagen: string = '';
-  descripcion: string = '';
-  nomnombreMedida: string = '';
-  nombreCategoria: string = '';
-  nombreSub: string = '';
-  nombreProveedor: string = '';
-  nombreAlmacen: string = '';
+  imagen: string = "";
+  descripcion: string = "";
+  nomnombreMedida: string = "";
+  nombreCategoria: string = "";
+  nombreSub: string = "";
+  nombreProveedor: string = "";
+  nombreAlmacen: string = "";
 }

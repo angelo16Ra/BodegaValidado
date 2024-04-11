@@ -1,5 +1,6 @@
 ﻿using DBBodegaYani.BodegaYani;
 using IRepository.Generic;
+using RequestResponseModels.Generic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace IRepository.Almacen
 {
     public interface IRepositoryMovimientoCaja : IRepositoryCrud<MovimientoCaja>
     {
+        ResponseFilterGeneric<VmovimientoCaja> GetByFilterView(RequestFilterGeneric request);
     }
 
 }

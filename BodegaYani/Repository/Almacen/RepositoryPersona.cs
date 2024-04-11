@@ -74,6 +74,63 @@ namespace Repository.Almacen
 
         }
 
+        public ResponseFilterGeneric<Vpersona> GetByFilterView(RequestFilterGeneric request)
+        {
+            var query = db.Vpersonas.Where(x => x.CodigoPersona == x.CodigoPersona);
+            request.Filtros.ForEach(j =>
+            {
+                if (!string.IsNullOrEmpty(j.Value))
+                {
+                    switch (j.Name)
+                    {
+                        case "codigo":
+                            query = query.Where(x => x.CodigoPersona == int.Parse(j.Value));
+                            break;
+                        case "numeroDocumento":
+                            query = query.Where(x => x.NumeroDocumento.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "nombre":
+                            query = query.Where(x => x.Nombre.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "apPaterno":
+                            query = query.Where(x => x.ApPaterno.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "apMaterno":
+                            query = query.Where(x => x.ApMaterno.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "sexo":
+                            query = query.Where(x => x.Sexo.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "fechaNacimiento":
+                            query = query.Where(x => x.FechaNacimiento == DateTime.Parse(j.Value));
+                            break;
+                        case "correo":
+                            query = query.Where(x => x.Correo.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "celular":
+                            query = query.Where(x => x.Celular.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "codigoDocumento":
+                            query = query.Where(x => x.CodigoDocumento == int.Parse(j.Value));
+                            break;
+                        case "nombreDocumento":
+                            query = query.Where(x => x.NombreDocumento.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                    }
+                }
+            });
+
+            ResponseFilterGeneric<Vpersona> res = new ResponseFilterGeneric<Vpersona>();
+
+            res.TotalRegistros = query.Count();
+            res.Lista = query
+                .Skip((request.NumeroPagina - 1) * request.Cantidad).Take(request.Cantidad)
+                .OrderBy(x => x.CodigoPersona)
+                .ToList();
+
+            return res;
+        }
+
         public Vpersona GetByTipoNroDocumento(string tipoDocumento, string nroDocumento)
         {
             Vpersona vPersona = new Vpersona();

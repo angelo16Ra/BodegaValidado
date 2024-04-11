@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "E:\\BACKYFROM\\BodegaYani\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A5240C2C-70F8-417F-8885-682979450AB5}|ApiWeb\\ApiWeb.csproj|e:\\backyfrom\\bodegayani\\apiweb\\apiweb.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A5240C2C-70F8-417F-8885-682979450AB5}|ApiWeb\\ApiWeb.csproj|solutionrelative:apiweb\\apiweb.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{8BC0CF40-6159-430D-A71F-7EA7470554C1}|DBBodegaYani\\DBBodegaYani.csproj|e:\\backyfrom\\bodegayani\\dbbodegayani\\bodegayani\\caja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BC0CF40-6159-430D-A71F-7EA7470554C1}|DBBodegaYani\\DBBodegaYani.csproj|solutionrelative:dbbodegayani\\bodegayani\\caja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,14 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ApiWeb",
-              "DocumentMoniker": "E:\\BACKYFROM\\BodegaYani\\ApiWeb\\ApiWeb.csproj",
-              "RelativeDocumentMoniker": "ApiWeb\\ApiWeb.csproj",
-              "ToolTip": "E:\\BACKYFROM\\BodegaYani\\ApiWeb\\ApiWeb.csproj",
-              "RelativeToolTip": "ApiWeb\\ApiWeb.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-10T06:21:20.004Z",
+              "Title": "Caja.cs",
+              "DocumentMoniker": "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\BodegaYani\\Caja.cs",
+              "RelativeDocumentMoniker": "DBBodegaYani\\BodegaYani\\Caja.cs",
+              "ToolTip": "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\BodegaYani\\Caja.cs",
+              "RelativeToolTip": "DBBodegaYani\\BodegaYani\\Caja.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T09:58:10.833Z",
               "EditorCaption": ""
             }
           ]

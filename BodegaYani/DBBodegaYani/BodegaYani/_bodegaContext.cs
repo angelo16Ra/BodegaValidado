@@ -49,6 +49,10 @@ public partial class _bodegaContext : DbContext
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
+    public virtual DbSet<Vcaja> Vcajas { get; set; }
+
+    public virtual DbSet<VmovimientoCaja> VmovimientoCajas { get; set; }
+
     public virtual DbSet<Vpedido> Vpedidos { get; set; }
 
     public virtual DbSet<Vpersona> Vpersonas { get; set; }
@@ -245,6 +249,16 @@ public partial class _bodegaContext : DbContext
             entity.HasOne(d => d.CodigoRolNavigation).WithMany(p => p.Usuarios)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Usuarios__Codigo__4F7CD00D");
+        });
+
+        modelBuilder.Entity<Vcaja>(entity =>
+        {
+            entity.ToView("VCaja");
+        });
+
+        modelBuilder.Entity<VmovimientoCaja>(entity =>
+        {
+            entity.ToView("VMovimientoCaja");
         });
 
         modelBuilder.Entity<Vpedido>(entity =>

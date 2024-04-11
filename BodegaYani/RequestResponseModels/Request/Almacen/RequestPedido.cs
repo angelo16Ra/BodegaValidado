@@ -18,6 +18,6 @@ namespace RequestResponseModels.Request.Almacen
         public decimal Vuelto { get; set; }
         public DateTime RegistroPedido { get; set; }
         public DateTime EntregaPedido { get; set; }
-        public bool Estado { get; set; } = false;
+        public bool Estado { get; set; }
     }
 }

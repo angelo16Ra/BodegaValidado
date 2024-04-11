@@ -15,6 +15,6 @@ namespace RequestResponseModels.Request.Almacen
         public decimal Cantidad { get; set; }
         public decimal PrecioTotal { get; set; }
         public decimal PrecioUnitario { get; set; }
-        public bool Estado { get; set; } = false;
+        public bool Estado { get; set; }
     }
 }

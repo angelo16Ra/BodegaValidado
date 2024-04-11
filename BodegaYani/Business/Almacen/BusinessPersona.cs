@@ -104,6 +104,11 @@ namespace Business.Almacen
             return result;
         }
 
+        public ResponseFilterGeneric<Vpersona> GetByFilterView(RequestFilterGeneric request)
+        {
+            ResponseFilterGeneric<Vpersona> result = _mapper.Map<ResponseFilterGeneric<Vpersona>>(_repositoryPersona.GetByFilterView(request));
+            return result;
+        }
 
         #endregion CRUD METHODS
 
@@ -124,7 +129,7 @@ namespace Business.Almacen
                         vPersona.NumeroDocumento = pres.dni;
                         vPersona.ApPaterno = pres.apellidoPaterno;
                         vPersona.ApMaterno = pres.apellidoMaterno;
-                        vPersona.NombrePersona = pres.nombres;
+                        vPersona.Nombre = pres.nombres;
                     }
                 }
 
@@ -142,6 +147,8 @@ namespace Business.Almacen
 
             return vPersona;
         }
+
+        
     }
 
 

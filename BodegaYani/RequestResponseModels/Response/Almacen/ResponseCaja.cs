@@ -11,8 +11,6 @@ namespace RequestResponseModels.Response.Almacen
         public int CodigoCaja { get; set; }
         public int CodigoUsuario { get; set; }
         public DateTime? Fecha { get; set; }
-        public string? UsuarioApertura { get; set; }
-        public string? UsuarioCierre { get; set; }
         public bool Estado { get; set; }
         public decimal? MontoApertura { get; set; }
         public decimal? MontoCierre { get; set; }

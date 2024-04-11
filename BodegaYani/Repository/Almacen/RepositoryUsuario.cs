@@ -94,7 +94,7 @@ namespace Repository.Almacen
                         case "codigo":
                             query = query.Where(x => x.CodigoUsuario == int.Parse(j.Value));
                             break;
-                        case "username":
+                        case "userName":
                             query = query.Where(x => x.UserName.ToLower().Contains(j.Value.ToLower()));
                             break;
                         case "password":
@@ -115,40 +115,40 @@ namespace Repository.Almacen
                                 query = query.Where(x => x.FechaActualizar == fechaActualizacion);
                             }
                             break;
-                        case "CodigoPersona":
+                        case "codigoPersona":
                             query = query.Where(x => x.CodigoPersona == int.Parse(j.Value));
                             break;
-                        case "NumeroDocumento":
+                        case "numeroDocumento":
                             query = query.Where(x => x.NumeroDocumento.ToLower().Contains(j.Value.ToLower()));
                             break;
-                        case "NombrePersona":
+                        case "nombrePersona":
                             query = query.Where(x => x.NombrePersona.ToLower().Contains(j.Value.ToLower()));
                             break;
-                        case "ApPaterno":
+                        case "apPaterno":
                             query = query.Where(x => x.ApellidoPaterno.ToLower().Contains(j.Value.ToLower()));
                             break;
-                        case "ApMaterno":
+                        case "apMaterno":
                             query = query.Where(x => x.ApellidoMaterno.ToLower().Contains(j.Value.ToLower()));
                             break;
-                        case "Sexo":
+                        case "sexo":
                             query = query.Where(x => x.Genero.ToLower().Contains(j.Value.ToLower()));
                             break;
-                        case "FechaNacimiento":
+                        case "fechaNacimiento":
                             if (DateTime.TryParse(j.Value, out DateTime FechaNacimiento))
                             {
                                 query = query.Where(x => x.FechaNacimiento == FechaNacimiento);
                             }
                             break;
-                        case "Correo":
+                        case "correo":
                             query = query.Where(x => x.Correo.ToLower().Contains(j.Value.ToLower()));
                             break;
-                        case "Celular":
+                        case "celular":
                             query = query.Where(x => x.Celular.ToLower().Contains(j.Value.ToLower()));
                             break;
-                        case "CodigoRol":
+                        case "codigoRol":
                             query = query.Where(x => x.CodigoRol == int.Parse(j.Value));
                             break;
-                        case "Nombre":
+                        case "nombreRol":
                             query = query.Where(x => x.NombreRol.ToLower().Contains(j.Value.ToLower()));
                             break;
                     }

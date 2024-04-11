@@ -559,6 +559,22 @@
   },
   {
     "ContainingType": "ApiWeb.Controllers.Almacen.CajaController",
+    "Method": "GetByFilterView",
+    "RelativePath": "api/Caja/filter-view",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.CajaController",
     "Method": "CreateMultiple",
     "RelativePath": "api/Caja/multiple",
     "HttpMethod": "POST",
@@ -1297,6 +1313,22 @@
   },
   {
     "ContainingType": "ApiWeb.Controllers.Almacen.MovimientoCajaController",
+    "Method": "GetByFilterView",
+    "RelativePath": "api/MovimientoCaja/filter-view",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.MovimientoCajaController",
     "Method": "CreateMultiple",
     "RelativePath": "api/MovimientoCaja/multiple",
     "HttpMethod": "POST",
@@ -1840,6 +1872,22 @@
     "ContainingType": "ApiWeb.Controllers.Almacen.PersonaController",
     "Method": "GetByFilter",
     "RelativePath": "api/Persona/filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.PersonaController",
+    "Method": "GetByFilterView",
+    "RelativePath": "api/Persona/filter-view",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

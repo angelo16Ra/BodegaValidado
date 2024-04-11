@@ -17,7 +17,7 @@ public partial class Vpersona
 
     [StringLength(50)]
     [Unicode(false)]
-    public string NombrePersona { get; set; } = null!;
+    public string Nombre { get; set; } = null!;
 
     [StringLength(60)]
     [Unicode(false)]

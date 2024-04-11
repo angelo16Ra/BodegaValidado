@@ -1,29 +1,15 @@
-//// Almacen funciona todo
-//// Caja funciona todo
-//// categoria funciona todo
----- detallePedido viene de pedido
-XXXX Movimiento Caja falta todo
-FFFF Pedido falta boton de guardar y actualizar
----- Persona es de usuario
-FFFF Producto funciona todo
-//// Proveedor funciona todo arreglar fecha
-//// Rol funciona todo
-XXXX SubCategoria falta todo
-//// tipoDocumento funciona todo
-//// unidadMedida funciona todo
-//// usuario funciona 
+ALMACEN --> esta funcionando todo bien ✔
+CAJA --> hacer de nuevo ❎
+CATEGORIA--> esta funcionando todo bien ✔
+DETALLEPEDIDO--> falta todo ❎
+MOVIMIENTOCAJA--> falta todo ❎
+PEDIDO--> hacer de nuevo no agrega ❎
+PERSONA--> falta todo ❎
+PRODUCTO--> falta filtro ❔
+PROVEEDOR--> falta agregar y editar ❔
+ROL--> esta funcionando todo bien ✔
+SUBCATEGORIA--> falta todo ❎
+TIPODOCUMENTO--> esta funcionando todo bien ✔
+UNIDADMEDIDA--> esta funcionando todo bien ✔
+USUARIO--> falta agregar y editar ❎
 
-
-se cambio
-caja 
-pedido
-proveedor
-
-
-
-TIPO DOCUMENTO ESTA BIEN
-ROL ESTA BIEN
-ALMACEN ESTA BIEN
-CATEGORIA ESTA BIEN
-PRODUCTO ESTA BIEN
-UNIDAD MEDIDA ESTA BIEN FALTA ESTILO DE MENSAJE

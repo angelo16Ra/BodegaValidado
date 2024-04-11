@@ -21,6 +21,6 @@ namespace RequestResponseModels.Request.Almacen
         public decimal Precio { get; set; }
         public string Imagen { get; set; } = null!;
         public string Descripcion { get; set; } = null!;
-        public bool Estado { get; set; } = false;
+        public bool Estado { get; set; }
     }
 }

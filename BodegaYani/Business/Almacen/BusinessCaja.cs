@@ -100,6 +100,12 @@ namespace Business.Almacen
             return result;
         }
 
+        public ResponseFilterGeneric<Vcaja> GetByFilterView(RequestFilterGeneric request)
+        {
+            ResponseFilterGeneric<Vcaja> result = _mapper.Map<ResponseFilterGeneric<Vcaja>>(_cajaRepository.GetByFilterView(request));
+            return result;
+        }
+
         #endregion CRUD METHODS
 
     }

@@ -8,6 +8,8 @@ import { RequestCaja } from '../../../models/caja-request.model';
 import { ResponseCaja } from '../../../models/caja-response.model';
 import { CajaService } from '../../../service/caja.service';
 import { MantCajaListComponent } from '../mant-caja-list/mant-caja-list.component';
+import { ResponseUsuario } from '../../../models/usuario.response.model';
+import { Vcaja } from '../../../models/VCaja.model';
 
 @Component({
   selector: 'app-mant-caja-register',
@@ -22,8 +24,10 @@ import { MantCajaListComponent } from '../mant-caja-list/mant-caja-list.componen
 })
 export class MantCajaRegisterComponent implements OnInit{
   @Input() title:string = "";
-  @Input() cajas:RequestCaja = new RequestCaja();
+  @Input() cajas:Vcaja = new Vcaja();
   @Input() accion:number = 0;
+
+  @Input() tipoUsuario:ResponseUsuario[]=[];
 
   @Output() closeModalEmmit = new EventEmitter<boolean>();
 
@@ -39,9 +43,8 @@ export class MantCajaRegisterComponent implements OnInit{
 
     this.myForm = this.fb.group({
       codigoCaja: [{ value: 0, disabled: true }, [Validators.required]],
-      fecha: [{value:true, disabled: true} , [Validators.required]],
-      usuarioApertura: [null, [Validators.required]],
-      usuarioCierre: [null, [Validators.required]],
+      codigoUsuario: [null, [Validators.required]],
+      fecha: [null, [Validators.required]],
       estado: [null, [Validators.required]],
       montoApertura: [null, [Validators.required]],
       montoCierre: [null, [Validators.required]],
@@ -51,20 +54,15 @@ export class MantCajaRegisterComponent implements OnInit{
 
 
   ngOnInit(): void {
-
-    console.log("title ==>", this.title);
-    console.log("cajas ==>", this.cajas);
-
     this.myForm.patchValue(this.cajas)
+
   }
 
   guardar()
   {
-
     this.cajaEnvio= this.myForm.getRawValue();
 
     this.cajaEnvio.estado = convertToBoolean(this.cajaEnvio.estado.toString());
-
     switch(this.accion){
       case AccionMantConst.crear: 
         // crear nuevo registro
@@ -80,14 +78,17 @@ export class MantCajaRegisterComponent implements OnInit{
         //que la lectura de codigo sea mas sencillo
         break;
     }
+
   }
 
   crearRegistro()
   {
+    debugger;
     //lamar a nuestro servicio rest ==> crear un nuevo registro en base de datos
     this._cajaService.create(this.cajaEnvio).subscribe({
       next:(data:ResponseCaja)=>{
-        alert_success("EXCELENTE","Se creo de manera correcta")
+        console.log(data);
+        alert_success("EXCELENTE","Se actualizo de manera correcta")
       },
       error:()=>{
         alert_error("ERROR","ocurrio un error la momento de añadir")

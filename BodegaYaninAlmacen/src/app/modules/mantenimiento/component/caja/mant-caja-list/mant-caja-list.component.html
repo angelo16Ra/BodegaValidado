@@ -18,20 +18,20 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="fecha">Fecha</label>
-                                    <input formControlName="fecha" type="datetime-local" class="form-control" id="fecha">
+                                    <label   for="usuario">Usuario</label>
+                                    <input  formControlName="usuario" type="text" class="form-control" id="fecha">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="usuarioApertura">Usuario de Apertura</label>
-                                    <input formControlName="usuarioApertura" type="text" class="form-control" id="usuarioApertura">
+                                    <label for="fecha">fecha</label>
+                                    <input formControlName="fecha" type="datetime" class="form-control" id="usuarioApertura">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="usuarioCierre">Usuario de Cierre</label>
-                                    <input formControlName="usuarioCierre" type="text" class="form-control" id="usuarioCierre">
+                                    <label for="montoApertura">monto de Apertura</label>
+                                    <input formControlName="montoApertura" type="number" class="form-control" id="usuarioCierre">
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -42,6 +42,18 @@
                                         <option value="true">Activo</option>
                                         <option value="false">Inactivo</option>
                                     </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="montoCierre">monto de Cierre</label>
+                                    <input formControlName="montoCierre" type="number" class="form-control" id="usuarioCierre">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="montoAdicional">monto Adicional</label>
+                                    <input formControlName="montoAdicional" type="number" class="form-control" id="usuarioCierre">
                                 </div>
                             </div>
                             <div class="col-md-12 text-end mt-3">
@@ -57,45 +69,47 @@
                 </div>
             </form>
 
-            <table class="table table-bordered table-striped">
-                <thead>
+            
+            <div class="table table-responsive">
+                <table class="table table-bordered table-striped">
+                  <thead>
                     <tr>
-                        <th>Código</th>
-                        <th>Fecha</th>
-                        <th>Usuario de Apertura</th>
-                        <th>Usuario de Cierre</th>
-                        <th>Estado</th>
-                        <th>Monto de Apertura</th>
-                        <th>Monto de Cierre</th>
-                        <th>Monto Adicional</th>
-                        <th>
-                            <button (click)="crearCaja(ModalEdit)" class="btn btn-primary btn-sm">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </th>
+                      <th class="text-center">codigoCaja</th>
+                      <th class="text-center">fecha</th>
+                      <th class="text-center">estado</th>
+                      <th class="text-center">montoApertura</th>
+                      <th class="text-center">montoCierre</th>
+                      <th class="text-center">montoAdicional</th>
+                      <th class="text-center">usuario</th>
+                      <th>
+                        <button (click)="nuevoRegistro(modalEdit)" class="btn btn-primary btn-sm">
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </th>
                     </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let caja of cajas">
-                        <td>{{caja.codigoCaja}}</td>
-                        <td>{{caja.fecha | date}}</td>
-                        <td>{{caja.usuarioApertura}}</td>
-                        <td>{{caja.usuarioCierre}}</td>
-                        <td>{{caja.estado ? 'Activo' : 'Inactivo'}}</td>
-                        <td>{{caja.montoApertura}}</td>
-                        <td>{{caja.montoCierre}}</td>
-                        <td>{{caja.montoAdicional}}</td>
-                        <td>
-                            <button (click)="editarCaja(ModalEdit, caja)" class="btn btn-warning btn-sm me-2">
-                                <i class="fas fa-edit"></i>
-                            </button>  &nbsp;
-                            <button (click)="eliminarRegistro(caja.codigoCaja)" class="btn btn-danger btn-sm">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let d of vCaja">
+                      <td class="text-center">{{ d.codigoCaja }}</td>
+                      <td class="text-center">{{ d.fecha |date}}</td>
+                      <td class="text-center">{{ d.estado ? 'Activo' : 'Inactivo' }}</td>
+                      <td class="text-center">{{ d.montoApertura }}</td>
+                      <td class="text-center">{{ d.montoCierre }}</td>
+                      <td class="text-center">{{ d.montoAdicional }}</td>
+                      <td class="text-center">{{ d.usuario }}</td>
+                      <td>
+                        <button
+                          (click)="editarRegistro(modalEdit, d)"
+                          class="btn btn-warning btn-sm"
+                        >
+                          <i class="fas fa-edit"></i>
+                        </button>
+                      </td>
                     </tr>
-                </tbody>
-            </table>
+                  </tbody>
+                </table>
+              </div>
+        
 
             <div class="row">
                 <div class="col-md-8">
@@ -118,11 +132,12 @@
     </div>
 </div>
 
-<ng-template #ModalEdit>
+<ng-template #modalEdit>
     <app-mant-caja-register
         [title]="titleModal"
-        [cajas]="cajaSelect"
         [accion]="accionModal"
+        [cajas]="cajaSelect"
+        [tipoUsuario]="tipoUsuario"
         (closeModalEmmit)="getCloseModalEmmit($event)"
     ></app-mant-caja-register>
 </ng-template>

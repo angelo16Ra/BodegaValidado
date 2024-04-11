@@ -89,6 +89,21 @@ namespace ApiWeb.Controllers.Almacen
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
+        [HttpPost("filter-view")]
+        public IActionResult GetByFilterView([FromBody] RequestFilterGeneric request)
+        {
+            ResponseFilterGeneric<Vcaja> res = _caja.GetByFilterView(request);
+
+            return Ok(res);
+        }
+
+
+
+        /// <summary>
+        /// RETORNA LA TABLA CAJA EN BASE A PAGINACIÓN Y FILTROS
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost("multiple")]
         public IActionResult CreateMultiple([FromBody] List<RequestCaja> request)
         {

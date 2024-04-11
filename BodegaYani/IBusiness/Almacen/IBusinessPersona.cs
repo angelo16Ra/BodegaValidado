@@ -1,5 +1,6 @@
 ﻿using DBBodegaYani.BodegaYani;
 using IBusiness.Generic;
+using RequestResponseModels.Generic;
 using RequestResponseModels.Request.Almacen;
 using RequestResponseModels.Response.Almacen;
 using System;
@@ -13,6 +14,7 @@ namespace IBusiness.Almacen
     public interface IBusinessPersona : IBusinessCrud<RequestPersona, ResponsePersona>
     {
         Vpersona GetByTipoNroDocumento(string tipoDocumento, string nroDocumento);
+        ResponseFilterGeneric<Vpersona> GetByFilterView(RequestFilterGeneric request);
     }
 
 }

@@ -13,7 +13,7 @@ namespace RequestResponseModels.Request.Almacen
         public int CodigoDocumento { get; set; }
         public string Nombre { get; set; } = null!;
         public string Descripcion { get; set; } = null!;
-        public bool Estado { get; set; } = false;
+        public bool Estado { get; set; }
 
     }
 }

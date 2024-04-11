@@ -82,7 +82,7 @@ namespace Repository.Almacen
                         case "codigoProducto":
                             query = query.Where(x => x.CodigoProducto == int.Parse(j.Value));
                             break;
-                        case "MontoTotalPedido":
+                        case "montoTotalPedido":
                             query = query.Where(x => x.MontoTotalPedido == decimal.Parse(j.Value));
                             break;
                         case "montoPagado":
@@ -97,19 +97,19 @@ namespace Repository.Almacen
                         case "entregaPedido":
                             query = query.Where(x => x.EntregaPedido == DateTime.Parse(j.Value));
                             break;
-                        case "NombreUsuario":
+                        case "nombreUsuario":
                             query = query.Where(x => x.NombreUsuario.ToLower().Contains(j.Value.ToLower()));
                             break;
-                        case "NombreProducto":
+                        case "nombreProducto":
                             query = query.Where(x => x.NombreProducto.ToLower().Contains(j.Value.ToLower()));
                             break;
-                        case "Cantidad":
+                        case "cantidad":
                             query = query.Where(x => x.Cantidad == decimal.Parse(j.Value));
                             break;
-                        case "PrecioTotal":
+                        case "precioTotal":
                             query = query.Where(x => x.PrecioTotal == decimal.Parse(j.Value));
                             break;
-                        case "PrecioUnitario":
+                        case "precioUnitario":
                             query = query.Where(x => x.PrecioUnitario == decimal.Parse(j.Value));
                             break;
 

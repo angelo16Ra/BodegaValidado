@@ -79,6 +79,13 @@
             <param name="request"></param>
             <returns></returns>
         </member>
+        <member name="M:ApiWeb.Controllers.Almacen.CajaController.GetByFilterView(RequestResponseModels.Generic.RequestFilterGeneric)">
+            <summary>
+            RETORNA LA TABLA CAJA EN BASE A PAGINACIÓN Y FILTROS
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
         <member name="M:ApiWeb.Controllers.Almacen.CajaController.CreateMultiple(System.Collections.Generic.List{RequestResponseModels.Request.Almacen.RequestCaja})">
             <summary>
             RETORNA LA TABLA CAJA EN BASE A PAGINACIÓN Y FILTROS
@@ -223,6 +230,13 @@
             <param name="request"></param>
             <returns></returns>
         </member>
+        <member name="M:ApiWeb.Controllers.Almacen.MovimientoCajaController.GetByFilterView(RequestResponseModels.Generic.RequestFilterGeneric)">
+            <summary>
+            RETORNA LA TABLA MOVIMIENTO CAJA EN BASE A PAGINACIÓN Y FILTROS
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
         <member name="M:ApiWeb.Controllers.Almacen.MovimientoCajaController.CreateMultiple(System.Collections.Generic.List{RequestResponseModels.Request.Almacen.RequestMovimientoCaja})">
             <summary>
             RETORNA LA TABLA MOVIMIENTO CAJA EN BASE A PAGINACIÓN Y FILTROS
@@ -326,6 +340,13 @@
             <returns>ResponsePersona</returns>
         </member>
         <member name="M:ApiWeb.Controllers.Almacen.PersonaController.GetByFilter(RequestResponseModels.Generic.RequestFilterGeneric)">
+            <summary>
+            RETORNA LA TABLA PERSONA EN BASE A PAGINACIÓN Y FILTROS
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiWeb.Controllers.Almacen.PersonaController.GetByFilterView(RequestResponseModels.Generic.RequestFilterGeneric)">
             <summary>
             RETORNA LA TABLA PERSONA EN BASE A PAGINACIÓN Y FILTROS
             </summary>

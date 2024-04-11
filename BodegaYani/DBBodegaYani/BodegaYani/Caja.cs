@@ -16,14 +16,6 @@ public partial class Caja
     [Column(TypeName = "datetime")]
     public DateTime? Fecha { get; set; }
 
-    [StringLength(50)]
-    [Unicode(false)]
-    public string? UsuarioApertura { get; set; }
-
-    [StringLength(50)]
-    [Unicode(false)]
-    public string? UsuarioCierre { get; set; }
-
     public bool Estado { get; set; }
 
     [Column(TypeName = "decimal(10, 2)")]

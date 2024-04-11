@@ -51,6 +51,56 @@ namespace Repository.Almacen
             return res;
 
         }
+
+        public ResponseFilterGeneric<VmovimientoCaja> GetByFilterView(RequestFilterGeneric request)
+        {
+            var query = db.VmovimientoCajas.Where(x => x.CodigoMovimientoCaja == x.CodigoMovimientoCaja);
+            request.Filtros.ForEach(j =>
+            {
+                if (!string.IsNullOrEmpty(j.Value))
+                {
+                    switch (j.Name)
+                    {
+                        case "codigo":
+                            query = query.Where(x => x.CodigoMovimientoCaja == int.Parse(j.Value));
+                            break;
+                        case "tipo":
+                            query = query.Where(x => x.Tipo.ToLower().Contains(j.Value.ToLower()));
+                            break;
+                        case "monto":
+                            query = query.Where(x => x.Monto == decimal.Parse(j.Value));
+                            break;
+                        case "FechaCaja":
+                            if (DateTime.TryParse(j.Value, out DateTime FechaCaja))
+                            {
+                                query = query.Where(x => x.FechaCaja == FechaCaja);
+                            }
+                            break;
+                        case "montoInicial":
+                            query = query.Where(x => x.MontoInicial == decimal.Parse(j.Value));
+                            break;
+                        case "montoFinal":
+                            query = query.Where(x => x.MontoFinal == decimal.Parse(j.Value));
+                            break;
+                        case "montoAdicional":
+                            query = query.Where(x => x.MontoAdicional == decimal.Parse(j.Value));
+                            break;
+
+                    }
+                }
+            });
+
+            ResponseFilterGeneric<VmovimientoCaja> res = new ResponseFilterGeneric<VmovimientoCaja>();
+
+            res.TotalRegistros = query.Count();
+            res.Lista = query
+                .Skip((request.NumeroPagina - 1) * request.Cantidad).Take(request.Cantidad)
+                .OrderBy(x => x.CodigoMovimientoCaja)
+                .ToList();
+
+            return res;
+
+        }
     }
 
 }

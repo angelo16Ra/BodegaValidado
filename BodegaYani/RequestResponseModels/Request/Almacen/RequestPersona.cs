@@ -20,6 +20,6 @@ namespace RequestResponseModels.Request.Almacen
         public DateTime FechaNacimiento { get; set; }
         public string Correo { get; set; } = null!;
         public string? Celular { get; set; }
-        public bool Estado { get; set; } = false;
+        public bool Estado { get; set; }
     }
 }

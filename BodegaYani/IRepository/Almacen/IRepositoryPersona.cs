@@ -1,5 +1,6 @@
 ﻿using DBBodegaYani.BodegaYani;
 using IRepository.Generic;
+using RequestResponseModels.Generic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace IRepository.Almacen
     public interface IRepositoryPersona : IRepositoryCrud<Persona>
     {
         Vpersona GetByTipoNroDocumento(string tipoDocumento, string nroDocumento);
+        ResponseFilterGeneric<Vpersona> GetByFilterView(RequestFilterGeneric request);
     }
 
 }

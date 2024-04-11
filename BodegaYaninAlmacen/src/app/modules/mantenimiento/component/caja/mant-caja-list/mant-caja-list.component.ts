@@ -1,6 +1,6 @@
 
 import { CommonModule } from '@angular/common';
-import { Component, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
@@ -12,6 +12,10 @@ import { SharedModule } from '../../../../shared/shared.module';
 import { ResponseCaja } from '../../../models/caja-response.model';
 import { CajaService } from '../../../service/caja.service';
 import { MantCajaRegisterComponent } from '../mant-caja-register/mant-caja-register.component';
+import { Vcaja } from '../../../models/VCaja.model';
+import { ResponseUsuario } from '../../../models/usuario.response.model';
+import { UsuarioService } from '../../../service/usuario.service';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-mant-caja-list',
@@ -24,65 +28,101 @@ import { MantCajaRegisterComponent } from '../mant-caja-register/mant-caja-regis
   templateUrl: './mant-caja-list.component.html',
   styleUrl: './mant-caja-list.component.css'
 })
-export class MantCajaListComponent {
-  cajas: ResponseCaja[] = [];
+export class MantCajaListComponent implements OnInit{
+  config  = {
+    backdrop: true,
+    ignoreBackdropClick: true
+  };
+  
+  requestFilterGeneric: RequestFilterGeneric = new RequestFilterGeneric();
+  vCaja:Vcaja[]= [];
   modalRef?: BsModalRef;
-  cajaSelect: ResponseCaja = new  ResponseCaja();
+  cajaSelect: Vcaja = new  Vcaja();
   titleModal: string = "";
-  accionModal: number = 0; //1 crea, 2 edita, 3 eliminar
+  accionModal: number = 0;
   myFormFilter: FormGroup;
   totalItems: number = 0;
   itemsPerPage: number = 3;
   request: RequestFilterGeneric = new RequestFilterGeneric();
 
+  tipoUsuario: ResponseUsuario[]=[];
+
   constructor(
+    private _cajaService: CajaService, 
+    private modalService: BsModalService,
+    private _usuarioService: UsuarioService,
+
     private _route:Router,
     private fb: FormBuilder,
-    private modalService: BsModalService,
-    private _cajaService: CajaService
+    
+    
   ){
     this.myFormFilter= this.fb.group({
       codigoCaja: ["", []],
+      usuario: ["", []],
       fecha: ["", []],
-      usuarioApertura: ["", []],
-      usuarioCierre: ["", []],
       estado: ["", []],
+      montoApertura: ["", []],
+      montoCierre: ["", []],
+      montoAdicional: ["", []],
     });
   }
 
   ngOnInit(): void {
-    
     this.filtrar();
+    this.listarCajas();
+    this.obtenerListas();
 
   }
 
-  listarcajas() {
-    this._cajaService.getAll().subscribe({
-      next: (data: ResponseCaja[]) => {
-        console.log("Data", data);
-        this.cajas = data;
+  listarCajas() {
+    this._cajaService.genericFilterView(this.requestFilterGeneric).subscribe({
+      next: (data:ResponseFilterGeneric<Vcaja>) => {
+
+        this.vCaja = data.lista;
+
+        console.log(data);
       },
+
       error: (err) => {
-        console.log("error ", err);
+        console.log(err);
       },
-      complete: () => {
-        //algo
-      },
+
+      complete: ()=>{
+      }
     });
   }
 
-  crearCaja(template: TemplateRef<any>) {
-    this.cajaSelect = new ResponseCaja();
-    this.titleModal = "agregar caja";
+  nuevoRegistro(template: TemplateRef<any>) {
+    this.cajaSelect = new Vcaja();
+    this.titleModal = "Nuevo caja";
     this.accionModal = AccionMantConst.crear;
     this.openModal(template);
   }
 
-  editarCaja(template: TemplateRef<any>, caja: ResponseCaja) {
+  editarRegistro(template: TemplateRef<any>, caja: Vcaja) {
     this.cajaSelect = caja;
-    this.titleModal = "Modificar caja";
+    this.titleModal = "Editar caja";
     this.accionModal = AccionMantConst.editar;
     this.openModal(template);
+  }
+
+  obtenerListas()
+  {
+    forkJoin([
+      this._usuarioService.getAll(),
+
+    ]).subscribe({
+      next:(data:any) => {
+        this.tipoUsuario = data[0];
+      },
+      error:(err) => {
+        
+      },
+      complete:() => {
+        
+      }
+    })
   }
 
   openModal(template: TemplateRef<any>) {
@@ -93,26 +133,7 @@ export class MantCajaListComponent {
     this.modalRef?.hide();
     if(res)
     {
-      this.listarcajas();
-    }
-  }
-
-
-  eliminarRegistro(codigocajas:number)
-  {
-    let result = confirm("¿Estas seguro de eliminar el registro?")
-
-    if(result)
-    {
-      this._cajaService.delete(codigocajas).subscribe({
-        next:(data:number) => {
-          alert("El registro fue eliminado de manera correcta");
-        },
-        error:() => {},
-        complete:() => {
-          this.listarcajas();
-        }
-      })
+      this.listarCajas();
     }
   }
 
@@ -122,15 +143,17 @@ export class MantCajaListComponent {
     let valueForm = this.myFormFilter.getRawValue();
 
     this.request.filtros.push({name:"codigoCaja", value: valueForm.codigoCaja});
+    this.request.filtros.push({name:"usuario", value: valueForm.usuario});
     this.request.filtros.push({name:"fecha", value: valueForm.fecha});
-    this.request.filtros.push({name:"usuarioApertura", value: valueForm.usuarioApertura});
-    this.request.filtros.push({name:"usuarioCierre", value: valueForm.usuarioCierre});
     this.request.filtros.push({name:"estado", value: valueForm.estado});
+    this.request.filtros.push({name:"montoApertura", value: valueForm.montoApertura});
+    this.request.filtros.push({name:"montoCierre", value: valueForm.montoCierre});
+    this.request.filtros.push({name:"montoAdicional", value: valueForm.montoAdicional});
 
-    this._cajaService.genericFilter(this.request).subscribe({
-      next: (data: ResponseFilterGeneric<ResponseCaja> ) => {
+    this._cajaService.genericFilterView(this.request).subscribe({
+      next: (data: ResponseFilterGeneric<Vcaja> ) => {
         console.log(data);
-        this.cajas = data.lista;
+        this.vCaja = data.lista;
         this.totalItems = data.totalRegistros;
       },
       error: ( ) => {
