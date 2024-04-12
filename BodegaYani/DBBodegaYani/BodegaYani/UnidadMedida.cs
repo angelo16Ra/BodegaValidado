@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DBBodegaYani.BodegaYani;
 
-[Index("Nombre", Name = "UQ__UnidadMe__75E3EFCF184F9E6C", IsUnique = true)]
+[Index("Nombre", Name = "UQ__UnidadMe__75E3EFCF0FA050EC", IsUnique = true)]
 public partial class UnidadMedida
 {
     [Key]

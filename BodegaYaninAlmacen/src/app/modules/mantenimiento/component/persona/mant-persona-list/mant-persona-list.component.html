@@ -1,0 +1,174 @@
+<div class="container-fluid mt-5">
+    <div class="card">
+        <div class="card-header bg-primary text-white text-center">
+            <h1 class="mt-4">PRODUCTOS</h1>
+        </div>
+    <div class="card-body">
+      <!-- TODO: seccion para los filtros  -->
+        <form [formGroup]="myFormFilter" class="mb-3">
+            <div class="card bg-light">
+                <div class="card-header bg-secondary text-white">
+                    BÚSQUEDA POR FILTRO
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="codigoPersona">Código</label>
+                                <input formControlName="codigoPersona" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="nombre">nombre</label>
+                                <input formControlName="nombre" type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="apPaterno">apellido Paterno</label>
+                                <input formControlName="apPaterno" type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="apMaterno">apellido Materno</label>
+                                <input formControlName="apMaterno" type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="sexo">genero</label>
+                                <input formControlName="sexo" type="text" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="fechaNacimiento">fecha de Nacimiento</label>
+                                <input formControlName="fechaNacimiento" type="datetime" class="form-control" id="usuarioApertura">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="correo">correo</label>
+                                <input formControlName="correo" type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="celular">celular</label>
+                                <input formControlName="celular" type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="nombreDocumento">tipo de documento</label>
+                                <input formControlName="nombreDocumento" type="text" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 text-end mt-3">
+                            <button (click)="filtrar()" class="btn btn-primary me-2">
+                                <i class="fas fa-search"></i> Buscar
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-broom"></i> Limpiar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+      <!-- TODO: tabla de resultados   -->
+      <div class="table table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th class="text-center">codigoPersona</th>
+              <th class="text-center">numeroDocumento</th>
+              <th class="text-center">nombre</th>
+              <th class="text-center">apPaterno</th>
+              <th class="text-center">apMaterno</th>
+              <th class="text-center">sexo</th>
+              <th class="text-center">fechaNacimiento Medida</th>
+              <th class="text-center">correo</th>
+              <th class="text-center">celular</th>
+              <th class="text-center">nombreDocumento</th>
+              <th>
+                <button
+                  (click)="nuevoRegistro(modalEdit)"
+                  class="btn btn-primary btn-sm"
+                >
+                  <i class="fas fa-plus"></i>
+                </button>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let d of Vpersona">
+              <td class="text-center">{{ d.codigoPersona }}</td>
+              <td class="text-center">{{ d.numeroDocumento }}</td>
+              <td class="text-center">{{ d.nombre }}</td>
+              <td class="text-center">{{ d.apPaterno }}</td>
+              <td class="text-center">{{ d.apMaterno }}</td>
+              <td class="text-center">{{ d.sexo }}</td>
+              <td class="text-center">{{ d.fechaNacimiento }}</td>
+              <td class="text-center">{{ d.correo }}</td>
+              <td class="text-center">{{ d.celular }}</td>
+              <td class="text-center">{{ d.nombreDocumento }}</td>
+              <td>
+                <button
+                  (click)="editarRegistro(modalEdit, d)"
+                  class="btn btn-warning btn-sm"
+                >
+                  <i class="fas fa-edit"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- TODO: seccion de paginacion  -->
+      <div class="row">
+        <div class="col-xs-8 col-8">
+          <pagination
+            (pageChanged)="changePage($event)"
+            [totalItems]="totalItems"
+            [itemsPerPage]="itemsPerPage"
+            [previousText]="'Anterior'"
+            [nextText]="'Siguiente'"
+          >
+          </pagination>
+        </div>
+        <div class="col-xs-4 col-4">
+          <select
+            (change)="changeItemsPerPage()"
+            [(ngModel)]="itemsPerPage"
+            class="form-select"
+          >
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="30">30</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #modalEdit>
+  <app-mant-persona-register
+    [title]="titleModal"
+    [accion]="accionModal"
+    [persona]="personaSelect"
+    [tipoDocumento]="tipoDocumento"
+    (closeModalEmmit)="getCloseModalEmmit($event)"
+  ></app-mant-persona-register>
+</ng-template>

@@ -66,7 +66,6 @@ export class MantPedidoListComponent implements OnInit{
   {
     this.myFormFilter= this.fb.group({
       codigoPedido: ["", []],
-      codigoDetallePedido: ["", []],
       registroPedido: ["", []],
       entregaPedido: ["", []],
       nombreUsuario: ["", []],
@@ -160,7 +159,6 @@ export class MantPedidoListComponent implements OnInit{
     let valueForm = this.myFormFilter.getRawValue();
 
     this.request.filtros.push({name:"codigoPedido", value: valueForm.codigoPedido});
-    this.request.filtros.push({name:"codigoDetallePedido", value: valueForm.codigoDetallePedido});
     this.request.filtros.push({name:"registroPedido", value: valueForm.registroPedido});
     this.request.filtros.push({name:"entregaPedido", value: valueForm.entregaPedido});
     this.request.filtros.push({name:"nombreUsuario", value: valueForm.nombreUsuario});

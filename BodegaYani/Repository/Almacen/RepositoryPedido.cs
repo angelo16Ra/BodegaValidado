@@ -30,6 +30,9 @@ namespace Repository.Almacen
                         case "codigoProducto":
                             query = query.Where(x => x.CodigoProducto == int.Parse(j.Value));
                             break;
+                        case "CodigoDetallePedido":
+                            query = query.Where(x => x.CodigoDetallePedido == int.Parse(j.Value));
+                            break;
                         case "MontoTotalPedido":
                             query = query.Where(x => x.MontoTotalPedido == decimal.Parse(j.Value));
                             break;
@@ -81,6 +84,9 @@ namespace Repository.Almacen
                             break;
                         case "codigoProducto":
                             query = query.Where(x => x.CodigoProducto == int.Parse(j.Value));
+                            break;
+                        case "CodigoDetallePedido":
+                            query = query.Where(x => x.CodigoDetallePedido == int.Parse(j.Value));
                             break;
                         case "montoTotalPedido":
                             query = query.Where(x => x.MontoTotalPedido == decimal.Parse(j.Value));

@@ -12,6 +12,7 @@ import { MantTipoDocumentoListComponent } from './component/tipoDocumento/mant-t
 import { MantUnidadMedidaListComponent } from './component/unidadMedida/mant-unidad-medida-list/mant-unidad-medida-list.component';
 import { MantUsuarioListComponent } from './component/usuario/mant-usuario-list/mant-usuario-list.component';
 import { MantProveedorListComponent } from './component/proveedor/mant-proveedor-list/mant-proveedor-list.component';
+import { MantPersonaListComponent } from './component/persona/mant-persona-list/mant-persona-list.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,9 @@ const routes: Routes = [
   },
   {
     path:'proveedor',component:MantProveedorListComponent 
+  },
+  {
+    path:'persona',component:MantPersonaListComponent 
   },
   {
     path:'producto',component:MantProductoListComponent 

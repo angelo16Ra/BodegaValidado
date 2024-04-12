@@ -69,14 +69,14 @@ public partial class _bodegaContext : DbContext
     {
         modelBuilder.Entity<Almacene>(entity =>
         {
-            entity.HasKey(e => e.CodigoAlmacenes).HasName("PK__Almacene__6E0B9BCCC054FE1D");
+            entity.HasKey(e => e.CodigoAlmacenes).HasName("PK__Almacene__6E0B9BCCECB8805E");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
         });
 
         modelBuilder.Entity<Caja>(entity =>
         {
-            entity.HasKey(e => e.CodigoCaja).HasName("PK__Cajas__D33367CFDCF49CAB");
+            entity.HasKey(e => e.CodigoCaja).HasName("PK__Cajas__D33367CF0AC641D3");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
 
@@ -87,20 +87,16 @@ public partial class _bodegaContext : DbContext
 
         modelBuilder.Entity<Categoria>(entity =>
         {
-            entity.HasKey(e => e.CodigoCategoria).HasName("PK__Categori__3CEE2F4C4E2AD64E");
+            entity.HasKey(e => e.CodigoCategoria).HasName("PK__Categori__3CEE2F4C1EBB6E8B");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
         });
 
         modelBuilder.Entity<DetallePedido>(entity =>
         {
-            entity.HasKey(e => e.CodigoDetallePedido).HasName("PK__DetalleP__8168822DD24B7BE1");
+            entity.HasKey(e => e.CodigoDetallePedido).HasName("PK__DetalleP__8168822D0C097BD0");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
-
-            entity.HasOne(d => d.CodigoPedidoNavigation).WithMany(p => p.DetallePedidos)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__DetallePe__Estad__6383C8BA");
         });
 
         modelBuilder.Entity<Error>(entity =>
@@ -114,12 +110,12 @@ public partial class _bodegaContext : DbContext
 
         modelBuilder.Entity<Menu>(entity =>
         {
-            entity.HasKey(e => e.CodigoMenus).HasName("PK__Menus__167FD37B899B08B6");
+            entity.HasKey(e => e.CodigoMenus).HasName("PK__Menus__167FD37BAF323483");
         });
 
         modelBuilder.Entity<MenuRol>(entity =>
         {
-            entity.HasKey(e => e.CodigoMenuRol).HasName("PK__MenuRol__1386FD861D5E7AD7");
+            entity.HasKey(e => e.CodigoMenuRol).HasName("PK__MenuRol__1386FD862CF70B64");
 
             entity.HasOne(d => d.CodigoMenusNavigation).WithMany(p => p.MenuRols)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -132,7 +128,7 @@ public partial class _bodegaContext : DbContext
 
         modelBuilder.Entity<MovimientoCaja>(entity =>
         {
-            entity.HasKey(e => e.CodigoMovimientoCaja).HasName("PK__Movimien__53FB280F0362ADCC");
+            entity.HasKey(e => e.CodigoMovimientoCaja).HasName("PK__Movimien__53FB280FEF7DA339");
 
             entity.HasOne(d => d.CodigoCajaNavigation).WithMany(p => p.MovimientoCajas)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -145,22 +141,26 @@ public partial class _bodegaContext : DbContext
 
         modelBuilder.Entity<Pedido>(entity =>
         {
-            entity.HasKey(e => e.CodigoPedido).HasName("PK__Pedidos__72162F0B1C935302");
+            entity.HasKey(e => e.CodigoPedido).HasName("PK__Pedidos__72162F0BEDF97EAD");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
 
+            entity.HasOne(d => d.CodigoDetallePedidoNavigation).WithMany(p => p.Pedidos)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Pedidos__CodigoD__6383C8BA");
+
             entity.HasOne(d => d.CodigoProductoNavigation).WithMany(p => p.Pedidos)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Pedidos__CodigoP__5FB337D6");
+                .HasConstraintName("FK__Pedidos__CodigoP__628FA481");
 
             entity.HasOne(d => d.CodigoUsuarioNavigation).WithMany(p => p.Pedidos)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Pedidos__CodigoU__5EBF139D");
+                .HasConstraintName("FK__Pedidos__CodigoU__619B8048");
         });
 
         modelBuilder.Entity<Persona>(entity =>
         {
-            entity.HasKey(e => e.CodigoPersona).HasName("PK__Personas__E60E3544473B3241");
+            entity.HasKey(e => e.CodigoPersona).HasName("PK__Personas__E60E3544F168FE9F");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
             entity.Property(e => e.Sexo).IsFixedLength();
@@ -172,7 +172,7 @@ public partial class _bodegaContext : DbContext
 
         modelBuilder.Entity<Producto>(entity =>
         {
-            entity.HasKey(e => e.CodigoProducto).HasName("PK__Producto__785B009E18C7131C");
+            entity.HasKey(e => e.CodigoProducto).HasName("PK__Producto__785B009EDB0586C6");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
 
@@ -199,21 +199,21 @@ public partial class _bodegaContext : DbContext
 
         modelBuilder.Entity<Proveedore>(entity =>
         {
-            entity.HasKey(e => e.CodigoProveedor).HasName("PK__Proveedo__137549F53754A886");
+            entity.HasKey(e => e.CodigoProveedor).HasName("PK__Proveedo__137549F5DCD14E58");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
         });
 
         modelBuilder.Entity<Rol>(entity =>
         {
-            entity.HasKey(e => e.CodigoRol).HasName("PK__Rol__F0D13057D058759A");
+            entity.HasKey(e => e.CodigoRol).HasName("PK__Rol__F0D13057ED85E3C1");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
         });
 
         modelBuilder.Entity<SubCategoria>(entity =>
         {
-            entity.HasKey(e => e.CodigoSubCategoria).HasName("PK__SubCateg__CAF55A55AC4860AC");
+            entity.HasKey(e => e.CodigoSubCategoria).HasName("PK__SubCateg__CAF55A552C956E2F");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
 
@@ -224,21 +224,21 @@ public partial class _bodegaContext : DbContext
 
         modelBuilder.Entity<TipoDocumento>(entity =>
         {
-            entity.HasKey(e => e.CodigoDocumento).HasName("PK__TipoDocu__46955BB3DC010CC5");
+            entity.HasKey(e => e.CodigoDocumento).HasName("PK__TipoDocu__46955BB399BDDC63");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
         });
 
         modelBuilder.Entity<UnidadMedida>(entity =>
         {
-            entity.HasKey(e => e.CodigoUnidadMedida).HasName("PK__UnidadMe__9F32DF2EDBF0FCB5");
+            entity.HasKey(e => e.CodigoUnidadMedida).HasName("PK__UnidadMe__9F32DF2E6C2417ED");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
         });
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.CodigoUsuario).HasName("PK__Usuarios__F0C18F588167DEE0");
+            entity.HasKey(e => e.CodigoUsuario).HasName("PK__Usuarios__F0C18F583896BC63");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
 

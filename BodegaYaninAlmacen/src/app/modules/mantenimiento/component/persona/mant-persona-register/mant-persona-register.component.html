@@ -1,0 +1,106 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{title}}</h4>
+    <!-- (click)="modalRef?.hide()" -->
+    <button type="button" class="btn-close close pull-right" aria-label="Close" >
+        <span arial-hidden="true" class="visually-hidden">&times;</span>
+    </button> 
+</div>
+
+<div class="modal-body">
+
+    <form [formGroup]="myForm">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="codigoPersona">Código</label>
+                    <input formControlName="codigoPersona" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="numeroDocumento">numero de Documento</label>
+                    <input formControlName="numeroDocumento" type="text" class="form-control">
+                </div>
+            </div>
+            
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="nombre">nombre</label>
+                    <input formControlName="nombre" type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="apPaterno">apellido Paterno</label>
+                    <input formControlName="apPaterno" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="apMaterno">apellido Materno</label>
+                    <input formControlName="apMaterno" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="sexo">Genero</label>
+                    <input formControlName="sexo" type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="fechaNacimiento">fechaNacimiento</label>
+                    <input formControlName="fechaNacimiento" type="datetime-local" class="form-control">
+                </div>
+            </div>
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="correo">correo</label>
+                    <input formControlName="correo" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="celular">celular</label>
+                    <input formControlName="celular" type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">nombre</label>
+                    <select formControlName="codigoDocumento" class="form-select">
+                        <option *ngFor="let d of tipoDocumento" [ngValue]="d.codigoDocumento">
+                            {{d.nombre}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 mt-3">
+                <div class="d-grid gap-2">
+                    <button [disabled]="myForm.invalid" (click)="guardar()" class="btn-block btn btn-primary btn-sm">Guardar</button>
+                </div>
+            </div>
+            <div class="col-6 mt-3">
+                <div class="d-grid gap-2">
+                    <!-- (click)="modalRef?.hide()" -->
+                    <button class="btn-block btn btn-danger btn-sm">Cancelar</button>
+                </div>
+            </div>  
+        </div>
+    </form>
+</div>
+

@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "E:\\BACKYFROM\\BodegaYani\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8BC0CF40-6159-430D-A71F-7EA7470554C1}|DBBodegaYani\\DBBodegaYani.csproj|e:\\backyfrom\\bodegayani\\dbbodegayani\\bodegayani\\caja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8BC0CF40-6159-430D-A71F-7EA7470554C1}|DBBodegaYani\\DBBodegaYani.csproj|solutionrelative:dbbodegayani\\bodegayani\\caja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8BC0CF40-6159-430D-A71F-7EA7470554C1}|DBBodegaYani\\DBBodegaYani.csproj|e:\\backyfrom\\bodegayani\\dbbodegayani\\bodegayani\\vpersona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BC0CF40-6159-430D-A71F-7EA7470554C1}|DBBodegaYani\\DBBodegaYani.csproj|solutionrelative:dbbodegayani\\bodegayani\\vpersona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BC0CF40-6159-430D-A71F-7EA7470554C1}|DBBodegaYani\\DBBodegaYani.csproj|e:\\backyfrom\\bodegayani\\dbbodegayani\\bodegayani\\vpedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BC0CF40-6159-430D-A71F-7EA7470554C1}|DBBodegaYani\\DBBodegaYani.csproj|solutionrelative:dbbodegayani\\bodegayani\\vpedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BC0CF40-6159-430D-A71F-7EA7470554C1}|DBBodegaYani\\DBBodegaYani.csproj|e:\\backyfrom\\bodegayani\\dbbodegayani\\bodegayani\\vcaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BC0CF40-6159-430D-A71F-7EA7470554C1}|DBBodegaYani\\DBBodegaYani.csproj|solutionrelative:dbbodegayani\\bodegayani\\vcaja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95800F11-C551-4F00-9D97-2B7D442FD5F5}|Repository\\Repository.csproj|e:\\backyfrom\\bodegayani\\repository\\almacen\\repositorydetallepedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95800F11-C551-4F00-9D97-2B7D442FD5F5}|Repository\\Repository.csproj|solutionrelative:repository\\almacen\\repositorydetallepedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95800F11-C551-4F00-9D97-2B7D442FD5F5}|Repository\\Repository.csproj|e:\\backyfrom\\bodegayani\\repository\\almacen\\repositorypedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95800F11-C551-4F00-9D97-2B7D442FD5F5}|Repository\\Repository.csproj|solutionrelative:repository\\almacen\\repositorypedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BC0CF40-6159-430D-A71F-7EA7470554C1}|DBBodegaYani\\DBBodegaYani.csproj|e:\\backyfrom\\bodegayani\\dbbodegayani\\bodegayani\\vusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BC0CF40-6159-430D-A71F-7EA7470554C1}|DBBodegaYani\\DBBodegaYani.csproj|solutionrelative:dbbodegayani\\bodegayani\\vusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,14 +47,79 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Caja.cs",
-              "DocumentMoniker": "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\BodegaYani\\Caja.cs",
-              "RelativeDocumentMoniker": "DBBodegaYani\\BodegaYani\\Caja.cs",
-              "ToolTip": "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\BodegaYani\\Caja.cs",
-              "RelativeToolTip": "DBBodegaYani\\BodegaYani\\Caja.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "Vpersona.cs",
+              "DocumentMoniker": "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\BodegaYani\\Vpersona.cs",
+              "RelativeDocumentMoniker": "DBBodegaYani\\BodegaYani\\Vpersona.cs",
+              "ToolTip": "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\BodegaYani\\Vpersona.cs",
+              "RelativeToolTip": "DBBodegaYani\\BodegaYani\\Vpersona.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAcwCgAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T09:58:10.833Z",
+              "WhenOpened": "2024-04-12T01:33:33.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Vcaja.cs",
+              "DocumentMoniker": "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\BodegaYani\\Vcaja.cs",
+              "RelativeDocumentMoniker": "DBBodegaYani\\BodegaYani\\Vcaja.cs",
+              "ToolTip": "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\BodegaYani\\Vcaja.cs",
+              "RelativeToolTip": "DBBodegaYani\\BodegaYani\\Vcaja.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABIAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T23:51:22.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Vpedido.cs",
+              "DocumentMoniker": "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\BodegaYani\\Vpedido.cs",
+              "RelativeDocumentMoniker": "DBBodegaYani\\BodegaYani\\Vpedido.cs",
+              "ToolTip": "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\BodegaYani\\Vpedido.cs",
+              "RelativeToolTip": "DBBodegaYani\\BodegaYani\\Vpedido.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAAwBEAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T23:36:18.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Vusuario.cs",
+              "DocumentMoniker": "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\BodegaYani\\Vusuario.cs",
+              "RelativeDocumentMoniker": "DBBodegaYani\\BodegaYani\\Vusuario.cs",
+              "ToolTip": "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\BodegaYani\\Vusuario.cs",
+              "RelativeToolTip": "DBBodegaYani\\BodegaYani\\Vusuario.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T23:36:12.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RepositoryPedido.cs",
+              "DocumentMoniker": "E:\\BACKYFROM\\BodegaYani\\Repository\\Almacen\\RepositoryPedido.cs",
+              "RelativeDocumentMoniker": "Repository\\Almacen\\RepositoryPedido.cs",
+              "ToolTip": "E:\\BACKYFROM\\BodegaYani\\Repository\\Almacen\\RepositoryPedido.cs",
+              "RelativeToolTip": "Repository\\Almacen\\RepositoryPedido.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwIgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T23:35:03.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RepositoryDetallePedido.cs",
+              "DocumentMoniker": "E:\\BACKYFROM\\BodegaYani\\Repository\\Almacen\\RepositoryDetallePedido.cs",
+              "RelativeDocumentMoniker": "Repository\\Almacen\\RepositoryDetallePedido.cs",
+              "ToolTip": "E:\\BACKYFROM\\BodegaYani\\Repository\\Almacen\\RepositoryDetallePedido.cs",
+              "RelativeToolTip": "Repository\\Almacen\\RepositoryDetallePedido.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwB8AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T23:34:36.286Z",
               "EditorCaption": ""
             }
           ]

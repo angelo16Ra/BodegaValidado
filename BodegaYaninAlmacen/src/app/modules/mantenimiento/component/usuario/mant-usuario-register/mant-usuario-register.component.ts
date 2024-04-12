@@ -5,7 +5,7 @@ import { SharedModule } from '../../../../shared/shared.module';
 import { UsuarioService } from '../../../service/usuario.service';
 import { MantUsuarioListComponent } from '../mant-usuario-list/mant-usuario-list.component';
 import { AccionMantConst } from '../../../../../constans/general.constants';
-import { alert_error, alert_success } from '../../../../../functions/general.functions';
+import { alert_error, alert_success, convertToBoolean } from '../../../../../functions/general.functions';
 import { Vusuario } from '../../../models/VUsuario.model';
 import { ResponsePersona } from '../../../models/persona-response.model';
 import { ResponseRol } from '../../../models/rol-response.model';
@@ -65,6 +65,7 @@ export class MantUsuarioRegisterComponent {
   guardar()
   {
     this.usuarioEnvio= this.myForm.getRawValue();
+    this.usuarioEnvio.estado = convertToBoolean(this.usuarioEnvio.estado.toString());
 
     switch(this.accion){
       case AccionMantConst.crear: 

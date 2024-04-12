@@ -1,7 +1,7 @@
 
 
 import { CommonModule } from '@angular/common';
-import { alert_error, alert_success } from '../../../../../functions/general.functions';
+import { alert_error, alert_success, convertToBoolean } from '../../../../../functions/general.functions';
 import { MantPedidoListComponent } from '../mant-pedido-list/mant-pedido-list.component';
 import { SharedModule } from '../../../../shared/shared.module';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -70,6 +70,7 @@ export class MantPedidoRegisterComponent implements OnInit{
   {
     this.pedidoEnvio= this.myForm.getRawValue();
 
+    this.pedidoEnvio.estado = convertToBoolean(this.pedidoEnvio.estado.toString());
     switch(this.accion){
       case AccionMantConst.crear: 
         // crear nuevo registro
@@ -79,6 +80,11 @@ export class MantPedidoRegisterComponent implements OnInit{
         // inactivar 
         this.editarRegistro();
         break;
+      case AccionMantConst.eliminar:  
+        // eliminar registro  
+         // en el formulario el eliminar no se implementa pero se pone el ejemplo para 
+         //que la lectura de codigo sea mas sencillo
+         break;
     }
     
   }

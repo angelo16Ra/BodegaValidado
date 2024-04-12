@@ -98,10 +98,7 @@
         <div class="form-group">
           <label for="">cantidad</label>
           <select formControlName="codigoDetallePedido" class="form-select">
-            <option
-              *ngFor="let d of tipoDetallePedido"
-              [ngValue]="d.codigoDetallePedido"
-            >
+            <option *ngFor="let d of tipoDetallePedido" [ngValue]="d.codigoDetallePedido">
               {{ d.cantidad }}
             </option>
           </select>

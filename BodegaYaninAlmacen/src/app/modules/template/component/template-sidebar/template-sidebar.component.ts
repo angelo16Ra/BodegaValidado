@@ -38,6 +38,7 @@ export class TemplateSidebarComponent implements OnInit{
             name:"Administracion",target:"TargerMantenimiento", icon:"fas fa-trash",
             subMenu:[
               { name: "rol", url: "mantenimiento/rol", icon:"fas fa-user-lock" },
+              { name: "persona", url: "mantenimiento/persona", icon:"fas fa-user-lock" },
               { name: "usuario", url: "mantenimiento/usuario", icon:"fas fa-user" },
               { name: "Tipo Documento", url: "mantenimiento/tipo-documento", icon:"fas fa-address-card" },
               { name: "Proveedor", url: "mantenimiento/proveedor", icon: "fas fa-file-alt" },
