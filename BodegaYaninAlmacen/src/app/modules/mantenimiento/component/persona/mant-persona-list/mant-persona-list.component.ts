@@ -144,17 +144,17 @@ export class MantPersonaListComponent {
     let request: RequestFilterGeneric = new RequestFilterGeneric(); 
     let valueForm = this.myFormFilter.getRawValue();
 
-    this.request.filtros.push({name:"codigoPersona:", value: valueForm.codigoPersona});
-    this.request.filtros.push({name:"numeroDocumento:", value: valueForm.numeroDocumento});
-    this.request.filtros.push({name:"nombre:", value: valueForm.nombre});
-    this.request.filtros.push({name:"apPaterno:", value: valueForm.apPaterno});
-    this.request.filtros.push({name:"apMaterno:", value: valueForm.apMaterno});
-    this.request.filtros.push({name:"sexo:", value: valueForm.sexo});
-    this.request.filtros.push({name:"fechaNacimiento:", value: valueForm.fechaNacimiento});
-    this.request.filtros.push({name:"correo:", value: valueForm.correo});
-    this.request.filtros.push({name:"celular:", value: valueForm.celular});
-    this.request.filtros.push({name:"estado:", value: valueForm.estado});
-    this.request.filtros.push({name:"nombreDocumento:", value: valueForm.nombreDocumento});
+    this.request.filtros.push({name:"codigoPersona", value: valueForm.codigoPersona});
+    this.request.filtros.push({name:"numeroDocumento", value: valueForm.numeroDocumento});
+    this.request.filtros.push({name:"nombre", value: valueForm.nombre});
+    this.request.filtros.push({name:"apPaterno", value: valueForm.apPaterno});
+    this.request.filtros.push({name:"apMaterno", value: valueForm.apMaterno});
+    this.request.filtros.push({name:"sexo", value: valueForm.sexo});
+    this.request.filtros.push({name:"fechaNacimiento", value: valueForm.fechaNacimiento});
+    this.request.filtros.push({name:"correo", value: valueForm.correo});
+    this.request.filtros.push({name:"celular", value: valueForm.celular});
+    this.request.filtros.push({name:"estado", value: valueForm.estado});
+    this.request.filtros.push({name:"nombreDocumento", value: valueForm.nombreDocumento});
 
     this._personaService.genericFilterView(this.request).subscribe({
       next: (data: ResponseFilterGeneric<Vpersona> ) => {

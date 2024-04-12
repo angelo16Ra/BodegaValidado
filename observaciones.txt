@@ -4,11 +4,11 @@ CATEGORIA--> esta funcionando todo bien ✔
 DETALLEPEDIDO--> falta filtro ❔
 MOVIMIENTOCAJA--> falta todo ❎
 PEDIDO--> esta funcionando todo bien ✔
-PERSONA--> falta filtro ❔
-PRODUCTO--> falta filtro ❔	
+PERSONA--> esta funcionando todo bien ✔
+PRODUCTO--> esta funcionando todo bien ✔
 PROVEEDOR--> esta funcionando todo bien ✔
 ROL--> esta funcionando todo bien ✔
 SUBCATEGORIA--> esta funcionando todo bien ✔
 TIPODOCUMENTO--> esta funcionando todo bien ✔
 UNIDADMEDIDA--> esta funcionando todo bien ✔
-USUARIO--> falta filtro ❔
+USUARIO--> esta funcionando todo bien ✔

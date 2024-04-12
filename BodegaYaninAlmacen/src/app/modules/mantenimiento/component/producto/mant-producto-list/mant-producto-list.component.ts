@@ -174,17 +174,17 @@ export class MantProductoListComponent implements OnInit{
     let request: RequestFilterGeneric = new RequestFilterGeneric(); 
     let valueForm = this.myFormFilter.getRawValue();
 
-    this.request.filtros.push({name:"codigoProducto:", value: valueForm.codigoProducto});
-    this.request.filtros.push({name:"nombre:", value: valueForm.nombre});
-    this.request.filtros.push({name:"stock:", value: valueForm.stock});
-    this.request.filtros.push({name:"precio:", value: valueForm.precio});
-    this.request.filtros.push({name:"imagen:", value: valueForm.imagen});
-    this.request.filtros.push({name:"descripcion:", value: valueForm.descripcion});
-    this.request.filtros.push({name:"nomnombreMedida:", value: valueForm.nomnombreMedida});
-    this.request.filtros.push({name:"nombreCategoria:", value: valueForm.nombreCategoria});
-    this.request.filtros.push({name:"nombreSub:", value: valueForm.nombreSub});
-    this.request.filtros.push({name:"nombreProveedor:", value: valueForm.nombreProveedor});
-    this.request.filtros.push({name:"nombreAlmacen:", value: valueForm.nombreAlmacen});
+    this.request.filtros.push({name:"codigoProducto", value: valueForm.codigoProducto});
+    this.request.filtros.push({name:"nombre", value: valueForm.nombre});
+    this.request.filtros.push({name:"stock", value: valueForm.stock});
+    this.request.filtros.push({name:"precio", value: valueForm.precio});
+    this.request.filtros.push({name:"imagen", value: valueForm.imagen});
+    this.request.filtros.push({name:"descripcion", value: valueForm.descripcion});
+    this.request.filtros.push({name:"nomnombreMedida", value: valueForm.nomnombreMedida});
+    this.request.filtros.push({name:"nombreCategoria", value: valueForm.nombreCategoria});
+    this.request.filtros.push({name:"nombreSub", value: valueForm.nombreSub});
+    this.request.filtros.push({name:"nombreProveedor", value: valueForm.nombreProveedor});
+    this.request.filtros.push({name:"nombreAlmacen", value: valueForm.nombreAlmacen});
 
     this._productoService.genericFilterView(this.request).subscribe({
       next: (data: ResponseFilterGeneric<Vproducto> ) => {

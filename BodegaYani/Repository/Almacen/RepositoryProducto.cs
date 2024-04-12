@@ -115,19 +115,19 @@ namespace Repository.Almacen
                         case "descripcion":
                             query = query.Where(x => x.Descripcion.ToLower().Contains(j.Value.ToLower()));
                             break;
-                        case "NomnombreMedida":
+                        case "nomnombreMedida":
                             query = query.Where(x => x.NomnombreMedida.ToLower().Contains(j.Value.ToLower()));
                             break;
-                        case "NombreCategoria":
+                        case "nombreCategoria":
                             query = query.Where(x => x.NombreCategoria.ToLower().Contains(j.Value.ToLower()));
                             break;
-                        case "NombreSub":
+                        case "nombreSub":
                             query = query.Where(x => x.NombreSub.ToLower().Contains(j.Value.ToLower()));
                             break;
-                        case "NombreProveedor":
+                        case "nombreProveedor":
                             query = query.Where(x => x.NombreProveedor.ToLower().Contains(j.Value.ToLower()));
                             break;
-                        case "NombreAlmacen":
+                        case "nombreAlmacen":
                             query = query.Where(x => x.NombreAlmacen.ToLower().Contains(j.Value.ToLower()));
                             break;
                     }
