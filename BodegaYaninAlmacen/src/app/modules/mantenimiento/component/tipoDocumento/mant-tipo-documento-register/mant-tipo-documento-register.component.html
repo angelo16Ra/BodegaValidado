@@ -12,8 +12,8 @@
         <div class="row">
             <div class="col-12 mt-3">
                 <div class="form-group">
-                    <label for="codigoRol">Codigo del documento</label>
-                    <input formControlName="codigoDocumentogoRol" type="text" class="form-control" placeholder="ingrese el Codigo">
+                    <label for="codigoDocumento">Codigo del documento</label>
+                    <input formControlName="codigoDocumento" type="text" class="form-control" placeholder="ingrese el Codigo">
                 </div>
                 
 
@@ -37,6 +37,13 @@
                     <small class="text-danger" *ngIf="myForm.get('descripcion')?.hasError('required')">Campo requerido</small>
                     
                 </div>
+            </div>
+            <div class="col-md-12 mt-3">
+                <label for="estado" class="form-label">Estado</label>
+                <select formControlName="estado" class="form-select" id="estado">
+                    <option value="true">Activo</option>
+                    <option value="false">Inactivo</option>
+                </select>
             </div>
             <div class="col-6 mt-3">
                 <div class="d-grid gap-2">

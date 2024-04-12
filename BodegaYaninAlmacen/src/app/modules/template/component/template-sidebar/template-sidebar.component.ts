@@ -35,7 +35,7 @@ export class TemplateSidebarComponent implements OnInit{
       case "100": //Administrador
         this.menu= [ 
           {
-            name:"Administracion",target:"TargerMantenimiento", icon:"fas fa-trash",
+            name:"Administracion",target:"TargerMantenimiento", icon:"fas fa-cogs",
             subMenu:[
               { name: "rol", url: "mantenimiento/rol", icon:"fas fa-user-lock" },
               { name: "persona", url: "mantenimiento/persona", icon:"fas fa-user-lock" },
@@ -45,7 +45,7 @@ export class TemplateSidebarComponent implements OnInit{
             ]
           },
           {
-            name:"Almacen",target:"TargerMantenimiento", icon:"fas fa-trash",
+            name:"Almacen",target:"TargerMantenimiento", icon:"fas fa-warehouse",
             subMenu:[
               { name: "almacen", url: "mantenimiento/almacen", icon: "fas fa-warehouse" },
               { name: "Categoria", url: "mantenimiento/categoria", icon:"fas fa-list" },
@@ -56,7 +56,7 @@ export class TemplateSidebarComponent implements OnInit{
             ]
           },
           {
-            name:"Ventas",target:"TargerMantenimiento", icon:"fas fa-trash",
+            name:"Ventas",target:"TargerMantenimiento", icon:"fas fa-cash-register",
             subMenu:[
               { name: "caja", url: "mantenimiento/caja", icon: "fas fa-cash-register" },
               { name: "detalle de pedido", url: "mantenimiento/detalle-pedido", icon: "fas fa-clipboard-list" },
@@ -70,13 +70,19 @@ export class TemplateSidebarComponent implements OnInit{
       case "101": //Almacenero
       this.menu= [ 
         {
-          name:"Almacen",target:"TargerMantenimiento", icon:"fas fa-trash",
+          name:"Almacen",target:"TargerMantenimiento", icon:"fas fa-warehouse",
           subMenu:[
             { name: "almacen", url: "mantenimiento/almacen", icon: "fas fa-warehouse" },
             { name: "Categoria", url: "mantenimiento/categoria", icon:"fas fa-list" },
             { name: "producto", url: "mantenimiento/producto", icon: "fas fa-box" },
             { name: "sub categoria", url: "mantenimiento/sub-categoria", icon: "fas fa-list-alt" },
             { name: "Unidad Medida", url: "mantenimiento/unidad-medida", icon: "fas fa-file-alt" },
+          ]
+        },
+        {
+          name:"Toma de Pedidos",target:"TargerMantenimiento", icon:"fas fa-cash-register",
+          subMenu:[
+            { name: "pedido", url: "mantenimiento/pedido", icon: "fas fa-shopping-cart" },
           ]
         },
       ]
@@ -86,8 +92,9 @@ export class TemplateSidebarComponent implements OnInit{
       case "102": //Vendedora
       this.menu= [ 
         {
-          name:"Mantenimiento",target:"TargerMantenimiento", icon:"fas fa-trash",
+          name:"Mantenimiento",target:"TargerMantenimiento", icon:"fas fa-cash-register",
           subMenu:[
+            { name: "producto", url: "mantenimiento/producto", icon: "fas fa-box" },
             { name: "caja", url: "mantenimiento/caja", icon: "fas fa-cash-register" },
             { name: "detalle de pedido", url: "mantenimiento/detalle-pedido", icon: "fas fa-clipboard-list" },
             { name: "pedido", url: "mantenimiento/pedido", icon: "fas fa-shopping-cart" },

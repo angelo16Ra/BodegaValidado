@@ -6,7 +6,7 @@ export class RequestPersona {
     apPaterno: string = "";
     apMaterno: string = "";
     sexo: string = "";
-    fechaNacimiento: Date = new Date();
+    fechaNacimiento: string = "";
     correo: string = "";
     celular: string = "";
     estado: boolean = false;

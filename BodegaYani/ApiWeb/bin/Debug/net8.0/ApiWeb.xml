@@ -552,6 +552,13 @@
             <param name="request"></param>
             <returns></returns>
         </member>
+        <member name="M:ApiWeb.Controllers.Almacen.SubCategoriaController.GetByFilterView(RequestResponseModels.Generic.RequestFilterGeneric)">
+            <summary>
+            RETORNA LA TABLA SUBCATEGORÍA EN BASE A PAGINACIÓN Y FILTROS
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
         <member name="M:ApiWeb.Controllers.Almacen.SubCategoriaController.CreateMultiple(System.Collections.Generic.List{RequestResponseModels.Request.Almacen.RequestSubCategoria})">
             <summary>
             RETORNA LA TABLA SUBCATEGORÍA EN BASE A PAGINACIÓN Y FILTROS

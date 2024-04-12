@@ -41,6 +41,7 @@ export class MantPersonaRegisterComponent {
   {
     this.myForm = this.fb.group({
       codigoPersona: [{ value: 0, disabled: true }, [Validators.required]],
+      codigoDocumento: [null, [Validators.required]],
       numeroDocumento: [null, [Validators.required]],
       nombre: [null, [Validators.required]],
       apPaterno: [null, [Validators.required]],
@@ -50,8 +51,6 @@ export class MantPersonaRegisterComponent {
       correo: [null, [Validators.required]],
       celular: [null, [Validators.required]],
       estado: [null, [Validators.required]],
-      codigoDocumento: [null, [Validators.required]],
-      nombreDocumento: [null, [Validators.required]],
     });
   }
 
@@ -63,6 +62,7 @@ export class MantPersonaRegisterComponent {
   guardar()
   {
     this.personaEnvio= this.myForm.getRawValue();
+    
     this.personaEnvio.estado = convertToBoolean(this.personaEnvio.estado.toString());
     switch(this.accion){
       case AccionMantConst.crear: 

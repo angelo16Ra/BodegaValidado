@@ -41,3 +41,20 @@ export function alert_error(title: string, text: string){
         showConfirmButton: false,
     });
 }
+
+export function alert_delete(title: string, text: string){
+    Swal.fire({
+        title: "estas seguro que deseas eliminar",
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: "Confirmar",
+        denyButtonText: `No eliminar`
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          Swal.fire("confirmar", "", "success");
+        } else if (result.isDenied) {
+          Swal.fire("no confirmar", "", "info");
+        }
+      });
+}

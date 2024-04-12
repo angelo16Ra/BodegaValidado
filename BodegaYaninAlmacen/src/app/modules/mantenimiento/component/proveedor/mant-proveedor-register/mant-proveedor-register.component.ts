@@ -40,6 +40,7 @@ export class MantProveedorRegisterComponent implements OnInit{
 
     this.myForm = this.fb.group({
       codigoProveedor: [{ value: 0, disabled: true }, [Validators.required]],
+      nombre: [null, [Validators.required]],
       ruc: [null, [Validators.required]],
       razonSocial: [null, [Validators.required]],
       telefono: [null, [Validators.required]],

@@ -1,6 +1,6 @@
 export class RequestProveedor {
     codigoProveedor: number = 0;
-    Nombre: string = "";
+    nombre: string = "";
     ruc: string = "";
     razonSocial: string = "";
     telefono: string = "";

@@ -1,4 +1,6 @@
-﻿using IBusiness.Generic;
+﻿using DBBodegaYani.BodegaYani;
+using IBusiness.Generic;
+using RequestResponseModels.Generic;
 using RequestResponseModels.Request.Almacen;
 using RequestResponseModels.Response.Almacen;
 using System;
@@ -11,5 +13,6 @@ namespace IBusiness.Almacen
 {
     public interface IBusinessSubCategoria : IBusinessCrud<RequestSubCategoria, ResponseSubCategoria>
     {
+        ResponseFilterGeneric<VsubCategoria> GetByFilterView(RequestFilterGeneric request);
     }
 }

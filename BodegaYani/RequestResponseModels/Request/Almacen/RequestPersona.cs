@@ -16,7 +16,7 @@ namespace RequestResponseModels.Request.Almacen
         public string Nombre { get; set; } = null!;
         public string ApPaterno { get; set; } = null!;
         public string ApMaterno { get; set; } = null!;
-        public string Sexo { get; set; } = null!;
+        public string? Sexo { get; set; } = null!;
         public DateTime FechaNacimiento { get; set; }
         public string Correo { get; set; } = null!;
         public string? Celular { get; set; }

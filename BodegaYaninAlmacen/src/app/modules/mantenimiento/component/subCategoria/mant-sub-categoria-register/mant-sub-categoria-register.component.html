@@ -1,1 +1,84 @@
-<p>mant-sub-categoria-register works!</p>
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{title}}</h4>
+    <!-- (click)="modalRef?.hide()" -->
+    <button type="button" class="btn-close close pull-right" aria-label="Close" >
+        <span arial-hidden="true" class="visually-hidden">&times;</span>
+    </button> 
+</div>
+
+<div class="modal-body">
+
+    <form [formGroup]="myForm">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="codigoSubCategoria">Código</label>
+                    <input formControlName="codigoSubCategoria" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="">nombre</label>
+                    <select formControlName="codigoCategoria" class="form-select">
+                        <option *ngFor="let d of tipoCategoria" [ngValue]="d.codigoCategoria">
+                            {{d.nombre}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="nombre">nombre</label>
+                    <input formControlName="nombre" type="text" class="form-control">
+                </div>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="descripcion">descripcion</label>
+                    <input formControlName="descripcion" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="fechaRegistro">fecha de Registro</label>
+                    <input formControlName="fechaRegistro" type="datetime-local" class="form-control">
+                </div>
+            </div>
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="fechaActualizacion">fecha de actualizacion</label>
+                    <input formControlName="fechaActualizacion" type="datetime-local" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mt-3">
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <select formControlName="estado" class="form-select">
+                        <option value="true">Activo</option>
+                        <option value="false">Inactivo</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 mt-3">
+                <div class="d-grid gap-2">
+                    <button [disabled]="myForm.invalid" (click)="guardar()" class="btn-block btn btn-primary btn-sm">Guardar</button>
+                </div>
+            </div>
+            <div class="col-6 mt-3">
+                <div class="d-grid gap-2">
+                    <!-- (click)="modalRef?.hide()" -->
+                    <button class="btn-block btn btn-danger btn-sm">Cancelar</button>
+                </div>
+            </div>  
+        </div>
+    </form>
+</div>
+
+

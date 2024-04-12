@@ -7,7 +7,7 @@ import { ResponseTipoDocumento } from '../../../models/tipoDocumento-response.mo
 import { MantTipoDocumentoListComponent } from '../mant-tipo-documento-list/mant-tipo-documento-list.component';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../../../shared/shared.module';
-import { alert_error, alert_success } from '../../../../../functions/general.functions';
+import { alert_error, alert_success, convertToBoolean } from '../../../../../functions/general.functions';
 
 @Component({
   selector: 'app-mant-tipo-documento-register',
@@ -48,6 +48,7 @@ export class MantTipoDocumentoRegisterComponent implements OnInit {
       codigoDocumento: [{value:0,disabled: true},[Validators.required]],
       nombre:  [null,[Validators.required]],
       descripcion:  [null,[Validators.required]],
+      estado: [null,[Validators.required]],
     });
   }
 
@@ -57,7 +58,7 @@ export class MantTipoDocumentoRegisterComponent implements OnInit {
   ngOnInit(): void {
 
     console.log("title ==>", this.title);
-    console.log("rol ==>", this.documento);
+    console.log("documento ==>", this.documento);
 
     this.myForm.patchValue(this.documento)
 
@@ -68,7 +69,8 @@ export class MantTipoDocumentoRegisterComponent implements OnInit {
   {
 
     this.documentoEnvio= this.myForm.getRawValue();
-    
+    this.documentoEnvio.estado = convertToBoolean(this.documentoEnvio.estado.toString());
+
     switch(this.accion){
       case AccionMantConst.crear: 
         // crear nuevo registro

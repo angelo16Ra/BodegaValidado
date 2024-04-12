@@ -1,1 +1,110 @@
-<p>catalogo works!</p>
+<header>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="https://img.freepik.com/vector-premium/logotipo-supermercado_23-2148459011.jpg" alt="Logo de la empresa" width="50" height="50">
+        BodegaYanin
+      </a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/prueba']">
+            <i class="fa-solid fa-book"></i> prueba
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/informacion']">
+            <i class="fa-solid fa-book"></i> sobre nosotros
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/catalogo']">
+            <i class="fa-solid fa-bottle-water"></i> productos
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/servicios']">
+            <i class="fa-solid fa-screwdriver-wrench"></i> servicios
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/comunidad']">
+            <i class="fa-solid fa-users"></i> comunidad
+          </a>
+        </li>
+        <li class="nav-item">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/auth']">
+            <i class="fas fa-user"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<body>
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th class="text-center">Codigo</th>
+            <th class="text-center">Unidad Medida</th>
+            <th class="text-center">Categoria</th>
+            <th class="text-center">SubCategoria</th>
+            <th class="text-center">Proveedor</th>
+            <th class="text-center">Almacen</th>
+            <th class="text-center">Nombre</th>
+            <th class="text-center">Stock</th>
+            <th class="text-center">Precio</th>
+            <th class="text-center">Descripcion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let d of vProducto">
+            <td class="text-center">{{ d.codigoProducto }}</td>
+            <td class="text-center">{{ d.nomnombreMedida }}</td>
+            <td class="text-center">{{ d.nombreCategoria }}</td>
+            <td class="text-center">{{ d.nombreSub }}</td>
+            <td class="text-center">{{ d.nombreProveedor }}</td>
+            <td class="text-center">{{ d.nombreAlmacen }}</td>
+            <td class="text-center">{{ d.nombre }}</td>
+            <td class="text-center">{{ d.stock }}</td>
+            <td class="text-center">{{ d.precio }}</td>
+            <td class="text-center">{{ d.descripcion }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-8 col-8">
+        <pagination
+          (pageChanged)="changePage($event)"
+          [totalItems]="totalItems"
+          [itemsPerPage]="itemsPerPage"
+          [previousText]="'Anterior'"
+          [nextText]="'Siguiente'"
+        >
+        </pagination>
+      </div>
+      <div class="col-xs-4 col-4">
+        <select
+          (change)="changeItemsPerPage()"
+          [(ngModel)]="itemsPerPage"
+          class="form-select"
+        >
+          <option value="3">3</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="30">30</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</body>

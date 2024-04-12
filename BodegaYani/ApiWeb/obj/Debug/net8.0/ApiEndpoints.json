@@ -2902,6 +2902,22 @@
   },
   {
     "ContainingType": "ApiWeb.Controllers.Almacen.SubCategoriaController",
+    "Method": "GetByFilterView",
+    "RelativePath": "api/SubCategoria/filter-view",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RequestResponseModels.Generic.RequestFilterGeneric",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiWeb.Controllers.Almacen.SubCategoriaController",
     "Method": "CreateMultiple",
     "RelativePath": "api/SubCategoria/multiple",
     "HttpMethod": "POST",

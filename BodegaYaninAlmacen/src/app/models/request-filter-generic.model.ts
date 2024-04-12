@@ -1,6 +1,6 @@
 export class RequestFilterGeneric {
     numeroPagina: number = 1;
-    cantidad: number = 3;
+    cantidad: number = 5;
     filtros: ItemFilter[] = [];
 }
 

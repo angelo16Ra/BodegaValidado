@@ -11,6 +11,7 @@ import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 import { MantUnidadMedidaRegisterComponent } from '../mant-unidad-medida-register/mant-unidad-medida-register.component';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../../../shared/shared.module';
+import { alert_delete, alert_success } from '../../../../../functions/general.functions';
 
 @Component({
   selector: 'app-mant-unidad-medida-list',
@@ -33,7 +34,7 @@ export class MantUnidadMedidaListComponent implements OnInit{
   accionModal: number = 0; //1 crea, 2 edita, 3 eliminar
   myFormFilter:FormGroup;
   totalItems: number = 0;
-  itemsPerPage: number = 3;
+  itemsPerPage: number = 5;
   request: RequestFilterGeneric = new RequestFilterGeneric();
 
 
@@ -112,13 +113,13 @@ export class MantUnidadMedidaListComponent implements OnInit{
 
   eliminarRegistro(codigoRol:number)
   {
-    let result = confirm("¿Estas seguro de eliminar el registro?")
+    let result = confirm();
 
     if(result)
     {
       this._unidadMedidaService.delete(codigoRol).subscribe({
         next:(data:number) => {
-          alert("El registro fue eliminado de manera correcta");
+          alert_success("EXCELENTE","Se borro el registro de manera correcta")
         },
         error:() => {},
         complete:() => {

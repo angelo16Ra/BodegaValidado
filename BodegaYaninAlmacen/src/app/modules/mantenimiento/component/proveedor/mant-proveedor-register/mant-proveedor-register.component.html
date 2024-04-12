@@ -20,6 +20,17 @@
 
             <div class="col-12 mt-3">
                 <div class="form-group">
+                    <label for="nombre">nombre</label>
+                    <input formControlName="nombre" type="text" class="form-control" placeholder="Ingrese el nombre">
+                </div>
+
+                <div *ngIf="myForm.get('nombre')?.errors && myForm.touched">
+                    <small class="text-danger" *ngIf="myForm.get('nombre')?.hasError('required')">Campo requerido</small>
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <div class="form-group">
                     <label for="ruc">ruc</label>
                     <input formControlName="ruc" type="text" class="form-control" placeholder="Ingrese el nombre del almacén">
                 </div>
@@ -28,6 +39,7 @@
                     <small class="text-danger" *ngIf="myForm.get('ruc')?.hasError('required')">Campo requerido</small>
                 </div>
             </div>
+
 
             <div class="col-12 mt-3">
                 <div class="form-group">

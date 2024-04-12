@@ -44,7 +44,7 @@ export class MantPedidoListComponent implements OnInit{
   accionModal: number = 0;
   myFormFilter:FormGroup;
   totalItems: number = 0;
-  itemsPerPage: number = 3;
+  itemsPerPage: number = 5;
   request: RequestFilterGeneric = new RequestFilterGeneric();
 
   

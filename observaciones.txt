@@ -1,15 +1,14 @@
 ALMACEN --> esta funcionando todo bien ✔
-CAJA --> ❔
+CAJA --> esta funcionando todo bien ✔
 CATEGORIA--> esta funcionando todo bien ✔
-DETALLEPEDIDO--> falta todo ❎
+DETALLEPEDIDO--> falta filtro ❔
 MOVIMIENTOCAJA--> falta todo ❎
-PEDIDO--> ❔
-PERSONA--> falta todo ❎
+PEDIDO--> esta funcionando todo bien ✔
+PERSONA--> falta filtro ❔
 PRODUCTO--> falta filtro ❔	
-PROVEEDOR--> falta agregar y editar ❔
+PROVEEDOR--> esta funcionando todo bien ✔
 ROL--> esta funcionando todo bien ✔
-SUBCATEGORIA--> falta todo ❎
+SUBCATEGORIA--> esta funcionando todo bien ✔
 TIPODOCUMENTO--> esta funcionando todo bien ✔
 UNIDADMEDIDA--> esta funcionando todo bien ✔
-USUARIO--> ❔
-
+USUARIO--> falta filtro ❔

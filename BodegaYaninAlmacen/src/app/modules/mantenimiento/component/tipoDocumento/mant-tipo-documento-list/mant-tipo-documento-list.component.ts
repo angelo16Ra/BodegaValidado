@@ -33,7 +33,7 @@ export class MantTipoDocumentoListComponent implements OnInit {
   accionModal: number = 0; //1 crea, 2 edita, 3 eliminar
   myFormFilter:FormGroup;
   totalItems: number = 0;
-  itemsPerPage: number = 3;
+  itemsPerPage: number = 5;
   request: RequestFilterGeneric = new RequestFilterGeneric();
 
 

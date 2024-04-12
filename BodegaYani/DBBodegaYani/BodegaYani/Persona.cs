@@ -29,9 +29,9 @@ public partial class Persona
     [Unicode(false)]
     public string ApMaterno { get; set; } = null!;
 
-    [StringLength(1)]
+    [StringLength(20)]
     [Unicode(false)]
-    public string Sexo { get; set; } = null!;
+    public string? Sexo { get; set; }
 
     [Column(TypeName = "datetime")]
     public DateTime FechaNacimiento { get; set; }

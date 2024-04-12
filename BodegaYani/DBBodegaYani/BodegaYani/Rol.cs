@@ -16,9 +16,9 @@ public partial class Rol
     [Unicode(false)]
     public string Nombre { get; set; } = null!;
 
-    [StringLength(70)]
+    [StringLength(250)]
     [Unicode(false)]
-    public string Descripcion { get; set; } = null!;
+    public string? Descripcion { get; set; }
 
     public bool Estado { get; set; }
 

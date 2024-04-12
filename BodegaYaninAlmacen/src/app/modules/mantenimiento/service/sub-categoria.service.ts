@@ -4,6 +4,10 @@ import { urlConstans } from '../../../constans/url.constans';
 import { CrudService } from '../../shared/services/crud.service';
 import { RequestSubCategoria } from '../models/subCategoria-request.model';
 import { ResponseSubCategoria } from '../models/subCategoria-response.model';
+import { RequestFilterGeneric } from '../../../models/request-filter-generic.model';
+import { ResponseFilterGeneric } from '../../../models/response-filter-generic.model';
+import { VsubCategoria } from '../models/VSubCategoria.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +19,10 @@ export class SubCategoriaService extends CrudService<RequestSubCategoria,Respons
   ) 
   {
     super(_http,urlConstans.subCategoria)
+  } 
+
+  genericFilterView(request: RequestFilterGeneric): Observable<ResponseFilterGeneric<VsubCategoria>>{
+    return this._http.post<ResponseFilterGeneric<VsubCategoria>>(`${urlConstans.subCategoria}filter-view`,request)
   }
 }
+

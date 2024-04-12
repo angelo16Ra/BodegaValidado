@@ -97,10 +97,10 @@ export class MantUnidadMedidaRegisterComponent implements OnInit{
     //lamar a nuestro servicio rest ==> crear un nuevo registro en base de datos
     this._unidadMedidaService.create(this.unidadMedidaEnvio).subscribe({
       next:(data:ResponseUnidadMedida)=>{
-        alert("creado de forma correcta")
+        alert_success("EXCELENTE","Se creo de manera correcta")
       },
       error:()=>{
-        alert("ocurrio un error la momento de crear")
+        alert_error("ERROR","ocurrio un error la momento de añadir")
       },
       complete:()=>{
         this.cerrarModal(true);

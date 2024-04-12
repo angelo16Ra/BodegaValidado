@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { LoginResponse } from '../../../../models/login-response.model';
 import { RequestLogin } from '../../models/login-request.models';
 import { AuthService } from '../../service/auth.service';
-import { alert_error } from '../../../../functions/general.functions';
+import { alert_error, alert_success } from '../../../../functions/general.functions';
 
 
 @Component({
@@ -36,7 +36,7 @@ export class LoginComponent {
     this._authService.login(this.requestLogin).subscribe({
       next: (data: LoginResponse) => {
         console.log(data);
-        alert("login correcto");
+        alert_success("Correcto","El login Correcto")
         this._router.navigate(['dashboard']);
         if (data.success) {
           sessionStorage.setItem('token', data.token);
@@ -49,7 +49,7 @@ export class LoginComponent {
         }
       },
       error: (error) => { 
-        alert_error("ERROR DE BAD REQUEST","datos incorrectos")
+        alert_error("INCORRECTO","Los datos incorrectos")
       },
       complete: () => { },
     });

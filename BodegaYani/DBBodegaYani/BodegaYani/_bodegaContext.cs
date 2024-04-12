@@ -59,6 +59,8 @@ public partial class _bodegaContext : DbContext
 
     public virtual DbSet<Vproducto> Vproductos { get; set; }
 
+    public virtual DbSet<VsubCategoria> VsubCategorias { get; set; }
+
     public virtual DbSet<Vusuario> Vusuarios { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -69,14 +71,14 @@ public partial class _bodegaContext : DbContext
     {
         modelBuilder.Entity<Almacene>(entity =>
         {
-            entity.HasKey(e => e.CodigoAlmacenes).HasName("PK__Almacene__6E0B9BCCECB8805E");
+            entity.HasKey(e => e.CodigoAlmacenes).HasName("PK__Almacene__6E0B9BCCD88E58EF");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
         });
 
         modelBuilder.Entity<Caja>(entity =>
         {
-            entity.HasKey(e => e.CodigoCaja).HasName("PK__Cajas__D33367CF0AC641D3");
+            entity.HasKey(e => e.CodigoCaja).HasName("PK__Cajas__D33367CFB4BD7DB5");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
 
@@ -87,14 +89,14 @@ public partial class _bodegaContext : DbContext
 
         modelBuilder.Entity<Categoria>(entity =>
         {
-            entity.HasKey(e => e.CodigoCategoria).HasName("PK__Categori__3CEE2F4C1EBB6E8B");
+            entity.HasKey(e => e.CodigoCategoria).HasName("PK__Categori__3CEE2F4C70B65F42");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
         });
 
         modelBuilder.Entity<DetallePedido>(entity =>
         {
-            entity.HasKey(e => e.CodigoDetallePedido).HasName("PK__DetalleP__8168822D0C097BD0");
+            entity.HasKey(e => e.CodigoDetallePedido).HasName("PK__DetalleP__8168822D1FBF70B2");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
         });
@@ -110,12 +112,12 @@ public partial class _bodegaContext : DbContext
 
         modelBuilder.Entity<Menu>(entity =>
         {
-            entity.HasKey(e => e.CodigoMenus).HasName("PK__Menus__167FD37BAF323483");
+            entity.HasKey(e => e.CodigoMenus).HasName("PK__Menus__167FD37B7D41AE27");
         });
 
         modelBuilder.Entity<MenuRol>(entity =>
         {
-            entity.HasKey(e => e.CodigoMenuRol).HasName("PK__MenuRol__1386FD862CF70B64");
+            entity.HasKey(e => e.CodigoMenuRol).HasName("PK__MenuRol__1386FD8671B2CC6D");
 
             entity.HasOne(d => d.CodigoMenusNavigation).WithMany(p => p.MenuRols)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -128,7 +130,7 @@ public partial class _bodegaContext : DbContext
 
         modelBuilder.Entity<MovimientoCaja>(entity =>
         {
-            entity.HasKey(e => e.CodigoMovimientoCaja).HasName("PK__Movimien__53FB280FEF7DA339");
+            entity.HasKey(e => e.CodigoMovimientoCaja).HasName("PK__Movimien__53FB280F4D877865");
 
             entity.HasOne(d => d.CodigoCajaNavigation).WithMany(p => p.MovimientoCajas)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -141,7 +143,7 @@ public partial class _bodegaContext : DbContext
 
         modelBuilder.Entity<Pedido>(entity =>
         {
-            entity.HasKey(e => e.CodigoPedido).HasName("PK__Pedidos__72162F0BEDF97EAD");
+            entity.HasKey(e => e.CodigoPedido).HasName("PK__Pedidos__72162F0B627BA733");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
 
@@ -160,10 +162,9 @@ public partial class _bodegaContext : DbContext
 
         modelBuilder.Entity<Persona>(entity =>
         {
-            entity.HasKey(e => e.CodigoPersona).HasName("PK__Personas__E60E3544F168FE9F");
+            entity.HasKey(e => e.CodigoPersona).HasName("PK__Personas__E60E35448398A555");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
-            entity.Property(e => e.Sexo).IsFixedLength();
 
             entity.HasOne(d => d.CodigoDocumentoNavigation).WithMany(p => p.Personas)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -172,7 +173,7 @@ public partial class _bodegaContext : DbContext
 
         modelBuilder.Entity<Producto>(entity =>
         {
-            entity.HasKey(e => e.CodigoProducto).HasName("PK__Producto__785B009EDB0586C6");
+            entity.HasKey(e => e.CodigoProducto).HasName("PK__Producto__785B009E8E9C5BF6");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
 
@@ -199,21 +200,21 @@ public partial class _bodegaContext : DbContext
 
         modelBuilder.Entity<Proveedore>(entity =>
         {
-            entity.HasKey(e => e.CodigoProveedor).HasName("PK__Proveedo__137549F5DCD14E58");
+            entity.HasKey(e => e.CodigoProveedor).HasName("PK__Proveedo__137549F5938AC87A");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
         });
 
         modelBuilder.Entity<Rol>(entity =>
         {
-            entity.HasKey(e => e.CodigoRol).HasName("PK__Rol__F0D13057ED85E3C1");
+            entity.HasKey(e => e.CodigoRol).HasName("PK__Rol__F0D130573C88B2A8");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
         });
 
         modelBuilder.Entity<SubCategoria>(entity =>
         {
-            entity.HasKey(e => e.CodigoSubCategoria).HasName("PK__SubCateg__CAF55A552C956E2F");
+            entity.HasKey(e => e.CodigoSubCategoria).HasName("PK__SubCateg__CAF55A55024260C6");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
 
@@ -224,21 +225,21 @@ public partial class _bodegaContext : DbContext
 
         modelBuilder.Entity<TipoDocumento>(entity =>
         {
-            entity.HasKey(e => e.CodigoDocumento).HasName("PK__TipoDocu__46955BB399BDDC63");
+            entity.HasKey(e => e.CodigoDocumento).HasName("PK__TipoDocu__46955BB32B37E48C");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
         });
 
         modelBuilder.Entity<UnidadMedida>(entity =>
         {
-            entity.HasKey(e => e.CodigoUnidadMedida).HasName("PK__UnidadMe__9F32DF2E6C2417ED");
+            entity.HasKey(e => e.CodigoUnidadMedida).HasName("PK__UnidadMe__9F32DF2E04CA66A7");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
         });
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.CodigoUsuario).HasName("PK__Usuarios__F0C18F583896BC63");
+            entity.HasKey(e => e.CodigoUsuario).HasName("PK__Usuarios__F0C18F582283D2CA");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
 
@@ -276,6 +277,11 @@ public partial class _bodegaContext : DbContext
         modelBuilder.Entity<Vproducto>(entity =>
         {
             entity.ToView("VProductos");
+        });
+
+        modelBuilder.Entity<VsubCategoria>(entity =>
+        {
+            entity.ToView("VSubCategorias");
         });
 
         modelBuilder.Entity<Vusuario>(entity =>
