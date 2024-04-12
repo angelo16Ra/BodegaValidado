@@ -42,6 +42,8 @@ public partial class Vpersona
     [Unicode(false)]
     public string? Celular { get; set; }
 
+    public bool Estado { get; set; }
+
     public int CodigoDocumento { get; set; }
 
     [StringLength(30)]

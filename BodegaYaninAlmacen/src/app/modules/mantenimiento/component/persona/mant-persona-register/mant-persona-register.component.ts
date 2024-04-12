@@ -49,6 +49,7 @@ export class MantPersonaRegisterComponent {
       fechaNacimiento: [null, [Validators.required]],
       correo: [null, [Validators.required]],
       celular: [null, [Validators.required]],
+      estado: [null, [Validators.required]],
       codigoDocumento: [null, [Validators.required]],
       nombreDocumento: [null, [Validators.required]],
     });
@@ -62,7 +63,7 @@ export class MantPersonaRegisterComponent {
   guardar()
   {
     this.personaEnvio= this.myForm.getRawValue();
-
+    this.personaEnvio.estado = convertToBoolean(this.personaEnvio.estado.toString());
     switch(this.accion){
       case AccionMantConst.crear: 
         // crear nuevo registro

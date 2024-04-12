@@ -13,6 +13,9 @@ const routes: Routes = [
       {
         path:'reportes',loadChildren:() => import("./../mantenimiento/mantenimiento.module").then( x => x.MantenimientoModule)
       },
+      // {
+      //   path:'',loadChildren: () => import().then(x => x.MantenimientoModule)
+      // }
     ] 
   },
   

@@ -61,6 +61,16 @@
                                 <input formControlName="celular" type="text" class="form-control" />
                             </div>
                         </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                              <label for="estado">Estado</label>
+                              <select formControlName="estado" class="form-select" id="estado">
+                                  <option value="">TODO</option>
+                                  <option value="true">Activo</option>
+                                  <option value="false">Inactivo</option>
+                              </select>
+                          </div>
+                        </div>
                         <div class="col-3">
                             <div class="form-group">
                                 <label for="nombreDocumento">tipo de documento</label>
@@ -95,6 +105,7 @@
               <th class="text-center">fechaNacimiento Medida</th>
               <th class="text-center">correo</th>
               <th class="text-center">celular</th>
+              <th class="text-center">estado</th>
               <th class="text-center">nombreDocumento</th>
               <th>
                 <button
@@ -117,6 +128,7 @@
               <td class="text-center">{{ d.fechaNacimiento }}</td>
               <td class="text-center">{{ d.correo }}</td>
               <td class="text-center">{{ d.celular }}</td>
+              <td class="text-center">{{ d.estado? 'Activo' : 'Inactivo'}}</td>
               <td class="text-center">{{ d.nombreDocumento }}</td>
               <td>
                 <button

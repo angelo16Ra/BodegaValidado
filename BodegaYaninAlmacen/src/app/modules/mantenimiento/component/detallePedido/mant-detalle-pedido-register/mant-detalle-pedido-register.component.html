@@ -1,1 +1,57 @@
-<p>mant-detalle-pedido-register works!</p>
+<div class="modal-header">
+    <h4 class="modal-title">{{title}}</h4>
+    <button type="button" class="btn-close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button> 
+</div>
+
+<div class="modal-body">
+    <form [formGroup]="myForm" class="row g-3">
+
+        <div class="col-md-12 mt-3">
+            <label for="codigoDetallePedido" class="form-label">Código</label>
+            <input formControlName="codigoDetallePedido" type="text" class="form-control" id="codigoDetallePedido" placeholder="Ingrese el Código">
+        </div>
+
+        <div class="col-md-12 mt-3">
+            <label for="cantidad" class="form-label">cantidad</label>
+            <input formControlName="cantidad" type="number" class="form-control" id="cantidad" placeholder="Ingrese la cantidad">
+            <div *ngIf="myForm.get('cantidad')?.errors && myForm.touched">
+                <small class="text-danger">Campo requerido</small>
+            </div>
+        </div>
+
+        <div class="col-md-12 mt-3">
+            <label for="precioTotal" class="form-label">precio Total</label>
+            <input formControlName="precioTotal" type="number" class="form-control" id="precioTotal" placeholder="Ingrese el precio total">
+            <div *ngIf="myForm.get('precioTotal')?.errors && myForm.touched">
+                <small class="text-danger">Campo requerido</small>
+            </div>
+        </div>
+
+        <div class="col-md-12 mt-3">
+            <label for="precioUnitario" class="form-label">precio Unitario</label>
+            <input formControlName="precioUnitario" type="number" class="form-control" id="precioUnitario" placeholder="Ingrese el precio Unitario">
+            <div *ngIf="myForm.get('precioUnitario')?.errors && myForm.touched">
+                <small class="text-danger">Campo requerido</small>
+            </div>
+        </div>
+
+        <div class="col-md-12 mt-3">
+            <label for="estado" class="form-label">Estado</label>
+            <select formControlName="estado" class="form-select" id="estado">
+                <option value="true">Activo</option>
+                <option value="false">Inactivo</option>
+            </select>
+        </div>
+
+        <div class="col-md-6 mt-3">
+            <button [disabled]="myForm.invalid" (click)="guardar()" class="btn btn-primary btn-block" type="button">Guardar</button>
+        </div>
+
+        <div class="col-md-6 mt-3">
+            <button class="btn btn-danger btn-block" type="button">Cancelar</button>
+        </div>
+
+    </form>
+</div>

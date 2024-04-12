@@ -10,4 +10,5 @@ export class Vpersona {
     celular: string = "";
     codigoDocumento: number = 0;
     nombreDocumento: string = "";
+    estado: boolean = false;
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { TemplateRoutingModule } from './template-routing.module';
@@ -13,7 +13,7 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     TemplateRoutingModule,
     RouterModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class TemplateModule { }

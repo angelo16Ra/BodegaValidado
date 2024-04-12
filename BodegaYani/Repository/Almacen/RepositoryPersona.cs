@@ -116,6 +116,9 @@ namespace Repository.Almacen
                         case "nombreDocumento":
                             query = query.Where(x => x.NombreDocumento.ToLower().Contains(j.Value.ToLower()));
                             break;
+                        case "estado":
+                            query = query.Where(x => x.Estado == bool.Parse(j.Value));
+                            break;
                     }
                 }
             });

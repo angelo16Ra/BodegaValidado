@@ -150,7 +150,6 @@
                         <tr>
                             <th>codigo</th>
                             <th>Usuario</th>
-                            <th>Contraseña</th>
                             <th>Estado</th>
                             <th>Fecha de actualicion y Registro</th>
                             <th>Numero - documento</th>
@@ -171,7 +170,6 @@
                         <tr *ngFor="let d of Vusuario ">
                             <td>{{d.codigoUsuario}}</td>
                             <td>{{d.userName}}</td>
-                            <td>{{d.password}}</td>
                             <td>{{d.estado? 'Activo' : 'Inactivo'}}</td>
                             <td>{{d.fechaActualizar | date}} - {{d.fechaRegistro | date}}</td>
                             <td>{{d.numeroDocumento}}</td>

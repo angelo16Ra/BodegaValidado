@@ -65,6 +65,7 @@ export class MantPersonaListComponent {
       fechaNacimiento: ["", []],
       correo: ["", []],
       celular: ["", []],
+      estado: ["", []],
       nombreDocumento: ["", []],
     });
   }
@@ -152,6 +153,7 @@ export class MantPersonaListComponent {
     this.request.filtros.push({name:"fechaNacimiento:", value: valueForm.fechaNacimiento});
     this.request.filtros.push({name:"correo:", value: valueForm.correo});
     this.request.filtros.push({name:"celular:", value: valueForm.celular});
+    this.request.filtros.push({name:"estado:", value: valueForm.estado});
     this.request.filtros.push({name:"nombreDocumento:", value: valueForm.nombreDocumento});
 
     this._personaService.genericFilterView(this.request).subscribe({

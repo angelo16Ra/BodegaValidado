@@ -69,8 +69,6 @@ export class MantPedidoRegisterComponent implements OnInit{
   guardar()
   {
     this.pedidoEnvio= this.myForm.getRawValue();
-
-    this.pedidoEnvio.estado = convertToBoolean(this.pedidoEnvio.estado.toString());
     switch(this.accion){
       case AccionMantConst.crear: 
         // crear nuevo registro

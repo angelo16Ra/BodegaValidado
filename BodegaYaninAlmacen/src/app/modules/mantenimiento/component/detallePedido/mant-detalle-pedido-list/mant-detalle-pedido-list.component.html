@@ -1,1 +1,122 @@
-<p>mant-detalle-pedido-list works!</p>
+<div class="container-fluid mt-5">
+    <div class="card">
+        <div class="card-header bg-primary text-white text-center">
+            <h1 class="mt-4">MANTENIMIENTO DE ALMACÉN</h1>
+        </div>
+        <div class="card-body">
+
+            <form [formGroup]="myFormFilter" class="mb-3">
+                <div class="card bg-light">
+                    <div class="card-header bg-secondary text-white">BÚSQUEDA POR FILTRO</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="codigoDetallePedido">Código</label>
+                                    <input formControlName="codigoDetallePedido" id="codigoDetallePedido" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="cantidad">cantidad</label>
+                                    <input formControlName="cantidad" id="cantidad" type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="precioTotal">precio Total</label>
+                                    <input formControlName="precioTotal" id="precioTotal" type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="precioUnitario">precio Unitario</label>
+                                    <input formControlName="precioUnitario" id="precioUnitario" type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="estado">Estado</label>
+                                    <select formControlName="estado" id="estado" class="form-select">
+                                        <option value="">TODO</option>
+                                        <option value="true">Activo</option>
+                                        <option value="false">Inactivo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-end mt-3">
+                                <button (click)="filtrar()" class="btn btn-primary me-2">
+                                    <i class="fas fa-search"></i> Buscar
+                                </button> 
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-broom"></i> Limpiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>codigoDetallePedido</th>
+                        <th>cantidad</th>
+                        <th>precioTotal Límite</th>
+                        <th>precioUnitario</th>
+                        <th>estado</th>
+                        <th>
+                            <button (click)="crearDetallePedido(ModalEdit)" class="btn btn-primary btn-sm">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let d of detallePedido">
+                        <td>{{d.codigoDetallePedido}}</td>
+                        <td>{{d.cantidad}}</td>
+                        <td>{{d.precioTotal}}</td>
+                        <td>{{d.precioUnitario}}</td>
+                        <td>{{d.estado ? 'Activo' : 'Inactivo'}}</td>
+                        <td>
+                            <button (click)="editarDetallePedido(ModalEdit, d)" class="btn btn-warning btn-sm me-2">
+                                <i class="fas fa-edit"></i>
+                            </button> &nbsp;
+                            <button (click)="eliminarRegistro(d.codigoDetallePedido)" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <pagination (pageChanged)="changePage($event)" [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [previousText]="'Anterior'" [nextText]="'Siguiente'"></pagination>
+                </div>
+                <div class="col-md-4">
+                    <select (change)="changeItemsPerPage()" [(ngModel)]="itemsPerPage" class="form-select">
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="30">30</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<ng-template #ModalEdit>
+    <app-mant-detalle-pedido-register
+        [title]="titleModal"
+        [detallePedido]="detallePedidoSelect"
+        [accion]="accionModal"
+        (closeModalEmmit)="getCloseModalEmmit($event)"
+    ></app-mant-detalle-pedido-register>
+</ng-template>

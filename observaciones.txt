@@ -5,7 +5,7 @@ DETALLEPEDIDO--> falta todo ❎
 MOVIMIENTOCAJA--> falta todo ❎
 PEDIDO--> ❔
 PERSONA--> falta todo ❎
-PRODUCTO--> falta filtro ❔
+PRODUCTO--> falta filtro ❔	
 PROVEEDOR--> falta agregar y editar ❔
 ROL--> esta funcionando todo bien ✔
 SUBCATEGORIA--> falta todo ❎

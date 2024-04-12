@@ -46,4 +46,14 @@ export class AuthService {
   getUserDataSync(): LoginResponse {
     return this.userData;
   }
+
+
+  getUsername(): string | null {
+    const userData = sessionStorage.getItem('userData');
+    if (userData) {
+      const userDataObj: LoginResponse = JSON.parse(userData);
+      return userDataObj.usuario.username;
+    }
+    return null;
+  }
 }
