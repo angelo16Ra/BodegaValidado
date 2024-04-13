@@ -1,0 +1,13 @@
+E:\BACKYFROM\BodegaYani\Security\bin\Release\net8.0\Security.deps.json
+E:\BACKYFROM\BodegaYani\Security\bin\Release\net8.0\Security.dll
+E:\BACKYFROM\BodegaYani\Security\bin\Release\net8.0\Security.pdb
+E:\BACKYFROM\BodegaYani\Security\obj\Release\net8.0\Security.csproj.AssemblyReference.cache
+E:\BACKYFROM\BodegaYani\Security\obj\Release\net8.0\Security.GeneratedMSBuildEditorConfig.editorconfig
+E:\BACKYFROM\BodegaYani\Security\obj\Release\net8.0\Security.AssemblyInfoInputs.cache
+E:\BACKYFROM\BodegaYani\Security\obj\Release\net8.0\Security.AssemblyInfo.cs
+E:\BACKYFROM\BodegaYani\Security\obj\Release\net8.0\Security.csproj.CoreCompileInputs.cache
+E:\BACKYFROM\BodegaYani\Security\obj\Release\net8.0\Security.sourcelink.json
+E:\BACKYFROM\BodegaYani\Security\obj\Release\net8.0\Security.dll
+E:\BACKYFROM\BodegaYani\Security\obj\Release\net8.0\refint\Security.dll
+E:\BACKYFROM\BodegaYani\Security\obj\Release\net8.0\Security.pdb
+E:\BACKYFROM\BodegaYani\Security\obj\Release\net8.0\ref\Security.dll

@@ -1,1 +1,71 @@
-<p>informacion works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container px-5">
+      <a class="navbar-brand" href="#">
+          <img id="Logo" src="https://img.freepik.com/vector-premium/logotipo-supermercado_23-2148459011.jpg" alt="Logo de la empresa" width="50" height="50">
+          BodegaYanin
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/informacion']">
+                    <i class="fa-solid fa-book"></i> sobre nosotros
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/catalogo']">
+                    <i class="fa-solid fa-bottle-water"></i> productos
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/comunidad']">
+                    <i class="fa-solid fa-users"></i> comunidad
+                  </a>
+                </li>
+                <li class="nav-item">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/auth']">
+                    <i class="fas fa-user"></i>
+                  </a>
+                </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+  <!-- Header-->
+  <header class="bg-dark py-5">
+    <div class="container px-5">
+      <div class="row gx-5 justify-content-center">
+        <div class="col-lg-12"> <!-- Modificado para ocupar todo el ancho -->
+          <div class="text-center my-5">
+            <h1 class="display-5 fw-bolder text-white mb-2">Bienvenidos a <br> "BODEGA YANIN"</h1>
+            <!-- Descripción de la bodega -->
+            <p class="text-white-50">
+              El desarrollo del software se enfoca en la creación de una página web destinada a optimizar los procesos operativos de la empresa "Bodega Yanin" en Huancayo, para abordar el problema general de su dependencia en procesos manuales en todas sus áreas operativas. Esta situación ha generado desafíos que impactan negativamente en su eficiencia, productividad y competitividad en el mercado. El proyecto, titulado "Implementación de un sistema multiplataforma de almacén y registro de ventas para la empresa Bodega Yanin - Huancayo-2024", tiene como objetivo general modernizar y automatizar los procedimientos de la bodega, eliminando la dependencia de métodos manuales y mejorando la eficiencia en la gestión de inventario y ventas. Esta iniciativa surge con el propósito de cumplir con los objetivos estratégicos de la empresa, los cuales se centran en alcanzar una posición de liderazgo en el mercado mediante la mejora del servicio y la agilización de los procesos para satisfacer las necesidades de los clientes de manera más rápida y eficiente.
+  
+              Los objetivos específicos del proyecto incluyen: trabajar en estrategias para aumentar la cuota de mercado de la empresa, identificando nuevas oportunidades y penetrando en segmentos clave; implementar acciones de marketing y ventas dirigidas a atraer nuevos clientes, así como programas de fidelización para retener a los clientes existentes; e invertir en el desarrollo profesional del equipo, proporcionando formación y recursos para potenciar sus habilidades y competencias. Estos objetivos se diseñan con el fin de apoyar la meta general de la empresa de alcanzar una posición destacada en el mercado y mejorar la calidad de sus servicios.
+  
+              Para llevar a cabo este proyecto, hemos optado por la metodología ágil de SCRUM, reconocida por su capacidad para gestionar proyectos de desarrollo de software de manera flexible y adaptativa. SCRUM se caracteriza por su enfoque iterativo e incremental, que permite una entrega continua de valor al cliente y una rápida respuesta a los cambios en los requisitos del proyecto. En el marco de SCRUM, el trabajo se organiza en sprints, periodos de tiempo cortos y definidos durante los cuales se desarrollan y entregan incrementos de funcionalidad del producto. Estos sprints son supervisados por un Scrum Master, cuya función es garantizar la correcta aplicación de la metodología y facilitar la colaboración entre los miembros del equipo. Además, se realizan reuniones diarias de seguimiento (stand-ups) para mantener a todos los miembros del equipo informados sobre el progreso y los posibles obstáculos. La adopción de SCRUM nos permite mantenernos ágiles y centrados en el cliente, asegurando así la entrega oportuna de un producto de alta calidad que satisfaga las necesidades de Bodega Yanin y sus clientes.
+  
+              El documento se divide en cuatro secciones fundamentales que exploran diferentes aspectos del proyecto en profundidad. En el "Marco Metodológico", se realiza un análisis exhaustivo de la empresa, Bodega Yanin, donde se presentan detalles sobre sus actividades comerciales, su misión, visión, objetivos y una descripción detallada de cada área funcional. Esto proporciona un contexto esencial para comprender cómo se integra el proyecto en la estructura y los objetivos de la empresa. Por otro lado, en el "Marco Teórico", se revisan proyectos similares previos, brindando una perspectiva histórica y contextual sobre iniciativas afines que pueden arrojar luz sobre los desafíos y oportunidades que enfrenta el presente proyecto. En la sección de "Propuesta Técnica y Operativa", se profundiza en la descripción de los artefactos utilizados en la implementación del sistema multiplataforma, así como en los detalles de los presupuestos asociados y las evaluaciones de viabilidad técnica y operativa. Esta sección proporciona una visión clara de cómo se planificó y ejecutó el proyecto desde el punto de vista técnico y operativo. Finalmente, en "Resultados e Impacto del Proyecto", se analiza en detalle la ejecución técnica y operativa del proyecto, junto con una evaluación del impacto que ha tenido en las operaciones diarias de la bodega. Aquí se destacan los cambios y mejoras específicas experimentadas como resultado directo de la implementación del sistema multiplataforma. Este análisis proporciona una visión holística de cómo el proyecto ha contribuido al crecimiento y la eficiencia de Bodega Yanin.
+  
+              En conclusión, la culminación exitosa de este proyecto marca un hito significativo en el camino de Bodega Yanin hacia la excelencia y la innovación en su sector. La implementación del sistema multiplataforma de almacén y registro de ventas ha sido posible gracias al arduo trabajo, la dedicación y el apoyo de muchas personas. Nos gustaría expresar nuestro más sincero agradecimiento a nuestros familiares, cuyo apoyo incondicional y comprensión han sido fundamentales durante todo el proceso. También queremos extender nuestro agradecimiento a nuestros estimados maestros y mentores, cuya guía experta y sabios consejos nos han inspirado y fortalecido en cada paso del camino. Su contribución ha sido invaluable para nuestro crecimiento personal y profesional. Finalmente, queremos agradecer a todo el equipo de Bodega Yanin por su colaboración y confianza en este proyecto. Esperamos que los frutos de nuestro trabajo conjunto sirvan como un testimonio duradero de nuestro compromiso compartido con la excelencia y la innovación.
+            </p>
+            <!-- Fin de la descripción de la bodega -->
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+              <a class="btn btn-primary btn-lg px-4 me-sm-3" [routerLink]="['/auth']">Iniciar sesión</a>
+              <a class="btn btn-outline-light btn-lg px-4"[routerLink]="['/catalogo']">Ver productos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  
+  
+  <section class="py-5 border-bottom" id="features">
+    
+  </section>

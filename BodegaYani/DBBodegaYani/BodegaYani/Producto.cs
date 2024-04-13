@@ -31,9 +31,9 @@ public partial class Producto
     [Column(TypeName = "decimal(8, 2)")]
     public decimal Precio { get; set; }
 
-    [StringLength(50)]
+    [StringLength(400)]
     [Unicode(false)]
-    public string Imagen { get; set; } = null!;
+    public string? Imagen { get; set; }
 
     [StringLength(200)]
     [Unicode(false)]

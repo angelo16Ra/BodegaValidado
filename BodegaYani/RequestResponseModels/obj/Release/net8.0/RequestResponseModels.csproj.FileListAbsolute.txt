@@ -1,0 +1,13 @@
+E:\BACKYFROM\BodegaYani\RequestResponseModels\bin\Release\net8.0\RequestResponseModels.deps.json
+E:\BACKYFROM\BodegaYani\RequestResponseModels\bin\Release\net8.0\RequestResponseModels.dll
+E:\BACKYFROM\BodegaYani\RequestResponseModels\bin\Release\net8.0\RequestResponseModels.pdb
+E:\BACKYFROM\BodegaYani\RequestResponseModels\obj\Release\net8.0\RequestResponseModels.csproj.AssemblyReference.cache
+E:\BACKYFROM\BodegaYani\RequestResponseModels\obj\Release\net8.0\RequestResponseModels.GeneratedMSBuildEditorConfig.editorconfig
+E:\BACKYFROM\BodegaYani\RequestResponseModels\obj\Release\net8.0\RequestResponseModels.AssemblyInfoInputs.cache
+E:\BACKYFROM\BodegaYani\RequestResponseModels\obj\Release\net8.0\RequestResponseModels.AssemblyInfo.cs
+E:\BACKYFROM\BodegaYani\RequestResponseModels\obj\Release\net8.0\RequestResponseModels.csproj.CoreCompileInputs.cache
+E:\BACKYFROM\BodegaYani\RequestResponseModels\obj\Release\net8.0\RequestResponseModels.sourcelink.json
+E:\BACKYFROM\BodegaYani\RequestResponseModels\obj\Release\net8.0\RequestResponseModels.dll
+E:\BACKYFROM\BodegaYani\RequestResponseModels\obj\Release\net8.0\refint\RequestResponseModels.dll
+E:\BACKYFROM\BodegaYani\RequestResponseModels\obj\Release\net8.0\RequestResponseModels.pdb
+E:\BACKYFROM\BodegaYani\RequestResponseModels\obj\Release\net8.0\ref\RequestResponseModels.dll

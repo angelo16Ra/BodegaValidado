@@ -25,6 +25,10 @@ import { SharedModule } from '../../../../shared/shared.module';
   styleUrl: './mant-tipo-documento-list.component.css'
 })
 export class MantTipoDocumentoListComponent implements OnInit {
+  config  = {
+    backdrop: true,
+    ignoreBackdropClick: true
+  };
 
   tipoDocumentos: ResponseTipoDocumento[] = [];
   modalRef?: BsModalRef;
@@ -93,7 +97,7 @@ export class MantTipoDocumentoListComponent implements OnInit {
 
 
   openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+    this.modalRef = this.modalService.show(template, Object.assign({},{class: "gray modal-lg"},this.config));
   }
 
   getCloseModalEmmit(res:boolean){

@@ -65,10 +65,12 @@ public partial class _bodegaContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-3SJ3EOR;Initial Catalog=BodegaYaninAlmacen;Trusted_Connection=True;Trust Server Certificate=true");
+        => optionsBuilder.UseSqlServer("Data Source=BodegaYaninAlmacen.mssql.somee.com;Initial Catalog=BodegaYaninAlmacen;User ID=	AngeloJoseph_SQLLogin_1;pwd=sqsy78dmd2;Trust Server Certificate=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.UseCollation("Latin1_General_CI_AI");
+
         modelBuilder.Entity<Almacene>(entity =>
         {
             entity.HasKey(e => e.CodigoAlmacenes).HasName("PK__Almacene__6E0B9BCCD88E58EF");

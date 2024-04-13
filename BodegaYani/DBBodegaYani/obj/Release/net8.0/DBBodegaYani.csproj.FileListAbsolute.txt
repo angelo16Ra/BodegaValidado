@@ -1,0 +1,15 @@
+E:\BACKYFROM\BodegaYani\DBBodegaYani\bin\Release\net8.0\DBBodegaYani.deps.json
+E:\BACKYFROM\BodegaYani\DBBodegaYani\bin\Release\net8.0\DBBodegaYani.runtimeconfig.json
+E:\BACKYFROM\BodegaYani\DBBodegaYani\bin\Release\net8.0\DBBodegaYani.dll
+E:\BACKYFROM\BodegaYani\DBBodegaYani\bin\Release\net8.0\DBBodegaYani.pdb
+E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Release\net8.0\DBBodegaYani.csproj.AssemblyReference.cache
+E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Release\net8.0\DBBodegaYani.GeneratedMSBuildEditorConfig.editorconfig
+E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Release\net8.0\DBBodegaYani.AssemblyInfoInputs.cache
+E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Release\net8.0\DBBodegaYani.AssemblyInfo.cs
+E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Release\net8.0\DBBodegaYani.csproj.CoreCompileInputs.cache
+E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Release\net8.0\DBBodegaYani.sourcelink.json
+E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Release\net8.0\DBBodegaYani.dll
+E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Release\net8.0\refint\DBBodegaYani.dll
+E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Release\net8.0\DBBodegaYani.pdb
+E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Release\net8.0\DBBodegaYani.genruntimeconfig.cache
+E:\BACKYFROM\BodegaYani\DBBodegaYani\obj\Release\net8.0\ref\DBBodegaYani.dll

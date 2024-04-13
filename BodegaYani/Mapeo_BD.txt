@@ -1,1 +1,7 @@
 Scaffold-DbContext "Data Source=DESKTOP-3SJ3EOR;Initial Catalog=BodegaYaninAlmacen;Trusted_Connection=True;Trust Server Certificate=true" Microsoft.EntityFrameworkCore.SqlServer -DataAnnotations -Context _bodegaContext -OutputDir BodegaYani -Force
+
+
+
+
+conexion somee:
+Scaffold-DbContext "Data Source=BodegaYaninAlmacen.mssql.somee.com;Initial Catalog=BodegaYaninAlmacen;User ID=	AngeloJoseph_SQLLogin_1;pwd=sqsy78dmd2;Trust Server Certificate=true" Microsoft.EntityFrameworkCore.SqlServer -DataAnnotations -Context _bodegaContext -Force -OutputDir BodegaYani

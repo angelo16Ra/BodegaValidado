@@ -24,7 +24,12 @@ import { MantCategoriaRegisterComponent } from '../mant-categoria-register/mant-
   styleUrl: './mant-categoria-list.component.css'
 })
 export class MantCategoriaListComponent {
-  
+  config  = {
+    backdrop: true,
+    ignoreBackdropClick: true
+  };
+
+
   categorias: ResponseCategoria[] = [];
   modalRef?: BsModalRef;
   categoriaSelect: ResponseCategoria = new  ResponseCategoria();
@@ -87,7 +92,7 @@ export class MantCategoriaListComponent {
   }
 
   openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+    this.modalRef = this.modalService.show(template, Object.assign({},{class: "gray modal-lg"},this.config));
   }
 
   getCloseModalEmmit(res:boolean){

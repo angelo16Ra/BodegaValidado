@@ -83,7 +83,8 @@ export class CatalogoComponent implements OnInit{
       next: (data:ResponseFilterGeneric<Vproducto>) => {
 
         this.vProducto = data.lista;
-        this.totalItems = data.totalRegistros;
+
+        console.log(data);
       },
 
       error: (err) => {
@@ -129,17 +130,49 @@ export class CatalogoComponent implements OnInit{
     })
   }
 
+  filtrar()
+  {
+    let request: RequestFilterGeneric = new RequestFilterGeneric(); 
+    let valueForm = this.myFormFilter.getRawValue();
+
+    this.request.filtros.push({name:"codigoProducto", value: valueForm.codigoProducto});
+    this.request.filtros.push({name:"nombre", value: valueForm.nombre});
+    this.request.filtros.push({name:"stock", value: valueForm.stock});
+    this.request.filtros.push({name:"precio", value: valueForm.precio});
+    this.request.filtros.push({name:"imagen", value: valueForm.imagen});
+    this.request.filtros.push({name:"descripcion", value: valueForm.descripcion});
+    this.request.filtros.push({name:"nomnombreMedida", value: valueForm.nomnombreMedida});
+    this.request.filtros.push({name:"nombreCategoria", value: valueForm.nombreCategoria});
+    this.request.filtros.push({name:"nombreSub", value: valueForm.nombreSub});
+    this.request.filtros.push({name:"nombreProveedor", value: valueForm.nombreProveedor});
+    this.request.filtros.push({name:"nombreAlmacen", value: valueForm.nombreAlmacen});
+
+    this._productoService.genericFilterView(this.request).subscribe({
+      next: (data: ResponseFilterGeneric<Vproducto> ) => {
+        console.log(data);
+        this.vProducto = data.lista;
+        this.totalItems = data.totalRegistros;
+      },
+      error: ( ) => {
+        console.log("error");
+      },
+      complete: ( ) => {
+        console.log("completo");
+      },
+    });
+  }
+
   changePage(event: PageChangedEvent){
     this.request.numeroPagina = event.page;
-    this.listarProducto;
     // let numeroPagina = event.page;
     // console.log(numeroPagina);
+    this.filtrar();
   }
 
   changeItemsPerPage()
   {
     this.request.cantidad = this.itemsPerPage;
-    this.listarProducto;
+    this.filtrar();
   }
 
 

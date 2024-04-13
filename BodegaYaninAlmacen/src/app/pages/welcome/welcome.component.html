@@ -1,84 +1,58 @@
-<header>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="https://img.freepik.com/vector-premium/logotipo-supermercado_23-2148459011.jpg" alt="Logo de la empresa" width="50" height="50">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container px-5">
+      <a class="navbar-brand" href="#">
+          <img id="Logo" src="https://img.freepik.com/vector-premium/logotipo-supermercado_23-2148459011.jpg" alt="Logo de la empresa" width="50" height="50">
           BodegaYanin
-        </a>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/prueba']">
-              <i class="fa-solid fa-book"></i> prueba
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/informacion']">
-              <i class="fa-solid fa-book"></i> sobre nosotros
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/catalogo']">
-              <i class="fa-solid fa-bottle-water"></i> productos
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/servicios']">
-              <i class="fa-solid fa-screwdriver-wrench"></i> servicios
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/comunidad']">
-              <i class="fa-solid fa-users"></i> comunidad
-            </a>
-          </li>
-          <li class="nav-item">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/auth']">
-              <i class="fas fa-user"></i>
-            </a>
-          </li>
-        </ul>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/informacion']">
+                    <i class="fa-solid fa-book"></i> sobre nosotros
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/catalogo']">
+                    <i class="fa-solid fa-bottle-water"></i> productos
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/comunidad']">
+                    <i class="fa-solid fa-users"></i> comunidad
+                  </a>
+                </li>
+                <li class="nav-item">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/auth']">
+                    <i class="fas fa-user"></i>
+                  </a>
+                </li>
+          </ul>
       </div>
-    </nav>
-  </header>
-  
-  <div id="layoutSidenav" class="d-flex justify-content-center align-items-center" style="height: 80vh;">
-    <div id="contentContainer" class="text-center">
-        <h1>Bienvenido a la Empresa <br> BODEGA YANIN</h1>
-        <br>
-        <div>
-            En este lugar, cada uno de ustedes es más que un empleado; son parte fundamental de nuestro éxito. Los desafíos que enfrentamos son oportunidades para crecer y aprender juntos. Su compromiso y dedicación son el motor que impulsa nuestra empresa hacia adelante. Juntos, podemos lograr grandes cosas y alcanzar nuevas alturas. ¡Bienvenidos a esta emocionante aventura!
-        </div>
-    </div>
   </div>
-  
-  <footer>
-    <div class="container-fluid">
-      <div class="d-flex align-items-center justify-content-between small ">
-        <div class="row">
-            <div>
-                <p>
-                    Derechos de autor © 2024 BodegaYanin. Todos los derechos reservados.
-                </p>
-                <p>
-                    <a href="">terminos y condiciones</a>
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div>
-                <p>
-                    <i class="fa-solid fa-phone"></i>      : 945346416
-                </p>
-                <p>
-                    <i class="fa-brands fa-facebook"></i>   : en proceso
-                </p>
-            </div>
-        </div>
-        
+</nav>
+<!-- Header-->
+<header class="bg-dark py-5">
+  <div class="container px-5">
+      <div class="row gx-5 justify-content-center">
+          <div class="col-lg-6">
+              <div class="text-center my-5">
+                  <h1 class="display-5 fw-bolder text-white mb-2">Bienvenidos a <br> "BODEGA YANIN"</h1>
+                  <p class="text-white-50 ">¡Bienvenidos a nuestra tienda de abarrotes! Encontrarás una amplia selección de productos frescos, alimentos básicos y artículos esenciales para tu hogar. Nuestro compromiso es brindarte calidad, conveniencia y un servicio amigable. ¡Gracias por elegirnos como tu tienda de confianza para todas tus necesidades diarias!</p>
+                  <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                      <a class="btn btn-primary btn-lg px-4 me-sm-3" [routerLink]="['/auth']">iniciar sesion</a>
+                      <a class="btn btn-outline-light btn-lg px-4"[routerLink]="['/catalogo']">Ver productos</a>
+                  </div>
+              </div>
+          </div>
       </div>
-    </div>
-  </footer>
+  </div>
+</header>
+
+
+<section class="py-5 border-bottom" id="features">
   
+</section>

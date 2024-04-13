@@ -130,7 +130,7 @@ namespace Repository.Almacen
                         case "apMaterno":
                             query = query.Where(x => x.ApellidoMaterno.ToLower().Contains(j.Value.ToLower()));
                             break;
-                        case "sexo":
+                        case "genero":
                             query = query.Where(x => x.Genero.ToLower().Contains(j.Value.ToLower()));
                             break;
                         case "fechaNacimiento":

@@ -1,8 +1,36 @@
-.navbar {
-    background-color: #408cff;
+.logo 
+{
+    width: 100px; /* Tamaño cuadrado deseado */
+    height: 100px; /* Tamaño cuadrado deseado */
+    object-fit: cover;
 }
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+  }
   
-.navbar-brand,
-.navbar-nav .nav-link {
-    color: #fff;
-}
+  .product-info, .product-image {
+    width: 50%;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+  }
+  
+  .product-info {
+    border-right: 1px solid #ccc; /* Separador entre las celdas */
+  }
+  
+  .product-info strong {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .product-info span {
+    display: block;
+  }
+  
+  .img-fluid {
+    max-width: 100%;
+    max-height: 100%;
+  }

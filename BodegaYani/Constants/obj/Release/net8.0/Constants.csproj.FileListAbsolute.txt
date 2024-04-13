@@ -1,0 +1,12 @@
+E:\BACKYFROM\BodegaYani\Constants\bin\Release\net8.0\Constants.deps.json
+E:\BACKYFROM\BodegaYani\Constants\bin\Release\net8.0\Constants.dll
+E:\BACKYFROM\BodegaYani\Constants\bin\Release\net8.0\Constants.pdb
+E:\BACKYFROM\BodegaYani\Constants\obj\Release\net8.0\Constants.GeneratedMSBuildEditorConfig.editorconfig
+E:\BACKYFROM\BodegaYani\Constants\obj\Release\net8.0\Constants.AssemblyInfoInputs.cache
+E:\BACKYFROM\BodegaYani\Constants\obj\Release\net8.0\Constants.AssemblyInfo.cs
+E:\BACKYFROM\BodegaYani\Constants\obj\Release\net8.0\Constants.csproj.CoreCompileInputs.cache
+E:\BACKYFROM\BodegaYani\Constants\obj\Release\net8.0\Constants.sourcelink.json
+E:\BACKYFROM\BodegaYani\Constants\obj\Release\net8.0\Constants.dll
+E:\BACKYFROM\BodegaYani\Constants\obj\Release\net8.0\refint\Constants.dll
+E:\BACKYFROM\BodegaYani\Constants\obj\Release\net8.0\Constants.pdb
+E:\BACKYFROM\BodegaYani\Constants\obj\Release\net8.0\ref\Constants.dll
