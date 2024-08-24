@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "./dist/bodega-yanin-almacen/browser",
+    "public": "dist\\bodega-yanin-almacen\\browser",
     "ignore": [
       "firebase.json",
       "**/.*",
