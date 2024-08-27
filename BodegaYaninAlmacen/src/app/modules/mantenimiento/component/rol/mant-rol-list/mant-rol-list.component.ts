@@ -173,5 +173,13 @@ export class MantRolListComponent implements OnInit{
     this.filtrar();
   }
 
-
+limpiar() {
+    this.myFormFilter.reset({
+      "codigoRol": '',
+      "nombre": '',
+      "descripcion": '',
+      "estado": '',
+    });
+    this.filtrar();
+  }
 }

@@ -173,6 +173,14 @@ export class MantUnidadMedidaListComponent implements OnInit{
     this.request.cantidad = this.itemsPerPage;
     this.filtrar();
   }
-
+  limpiar() {
+    this.myFormFilter.reset({
+      "codigoUnidadMedida": '',
+      "nombre": '',
+      "descripcion": '',
+      "estado": '',
+    });
+    this.filtrar();
+  }
 
 }

@@ -156,5 +156,16 @@ export class MantAlmacenListComponent {
     this.request.cantidad = this.itemsPerPage;
     this.filtrar();
   }
+  
+  limpiar() {
+    this.myFormFilter.reset({
+      "codigoAlmacenes": '',
+      "nombre": '',
+      "capacidadLimite": '',
+      "estado": '',
+
+    });
+    this.filtrar();
+  }
 
 }

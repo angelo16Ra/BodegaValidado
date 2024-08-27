@@ -176,4 +176,18 @@ export class MantSubCategoriaListComponent implements OnInit{
     this.request.cantidad = this.itemsPerPage;
     this.filtrar();
   }
+  
+  limpiar() {
+    this.myFormFilter.reset({
+      "codigoSubCategoria": '',
+      "nombre": '',
+      "descripcion": '',
+      "estado": '',
+      "fechaRegistro": '',
+      "fechaActualizacion": '',
+      "nombreCategoria": '',
+      
+    });
+    this.filtrar();
+  }
 }

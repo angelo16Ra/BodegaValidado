@@ -22,6 +22,7 @@ export class ListPedidosComponent {
     { number: '1025501531351', status: 'pending' },
     { number: '1025501531351', status: 'pending' }
   ];
+  modalRef: any;
 
   constructor(private router: Router) {}
 
@@ -29,4 +30,6 @@ export class ListPedidosComponent {
     order.status = 'in-process';
     this.router.navigate(['/list-productos']);
   }
+
+  
 }

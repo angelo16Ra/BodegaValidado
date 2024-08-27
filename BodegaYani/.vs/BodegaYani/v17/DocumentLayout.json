@@ -1,7 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\BACKYFROM\\BodegaYani\\",
-  "Documents": [],
+  "WorkspaceRootPath": "F:\\BodegaValidado\\BodegaYani\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A5240C2C-70F8-417F-8885-682979450AB5}|ApiWeb\\ApiWeb.csproj|f:\\bodegavalidado\\bodegayani\\apiweb\\controllers\\almacen\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5240C2C-70F8-417F-8885-682979450AB5}|ApiWeb\\ApiWeb.csproj|solutionrelative:apiweb\\controllers\\almacen\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,15 +14,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductoController.cs",
+              "DocumentMoniker": "F:\\BodegaValidado\\BodegaYani\\ApiWeb\\Controllers\\Almacen\\ProductoController.cs",
+              "RelativeDocumentMoniker": "ApiWeb\\Controllers\\Almacen\\ProductoController.cs",
+              "ToolTip": "F:\\BodegaValidado\\BodegaYani\\ApiWeb\\Controllers\\Almacen\\ProductoController.cs",
+              "RelativeToolTip": "ApiWeb\\Controllers\\Almacen\\ProductoController.cs",
+              "ViewState": "AQIAAAkAAAAAnZmZmRkWwJMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T19:43:30.144Z",
+              "EditorCaption": ""
             }
           ]
         }

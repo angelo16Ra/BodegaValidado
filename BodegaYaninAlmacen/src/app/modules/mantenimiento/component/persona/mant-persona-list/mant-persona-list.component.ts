@@ -183,5 +183,22 @@ export class MantPersonaListComponent {
     this.request.cantidad = this.itemsPerPage;
     this.filtrar();
   }
+
+  limpiar() {
+    this.myFormFilter.reset({
+      "codigoPersona" : '',
+      "numeroDocumento" : '',
+      "nombre" : '',
+      "apPaterno" : '',
+      "apMaterno" : '',
+      "sexo" : '',
+      "fechaNacimiento" : '',
+      "correo" : '',
+      "celular" : '',
+      "estado" : '',
+      "nombreDocumento" : ''
+    });
+    this.filtrar();
+  }
   
 }

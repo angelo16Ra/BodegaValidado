@@ -126,12 +126,12 @@ export class MantCategoriaListComponent {
     let request: RequestFilterGeneric = new RequestFilterGeneric(); 
     let valueForm = this.myFormFilter.getRawValue();
 
-    this.request.filtros.push({name:"codigocajas", value: valueForm.codigocajas});
+    this.request.filtros.push({name:"codigoCategoria", value: valueForm.codigocajas});
     this.request.filtros.push({name:"nombre", value: valueForm.nombre});
-    this.request.filtros.push({name:"capacidadLimite", value: valueForm.capacidadLimite});
+    this.request.filtros.push({name:"descripcion", value: valueForm.capacidadLimite});
     this.request.filtros.push({name:"estado", value: valueForm.estado});
-    this.request.filtros.push({name:"capacidadLimite", value: valueForm.capacidadLimite});
-    this.request.filtros.push({name:"estado", value: valueForm.estado});
+    this.request.filtros.push({name:"fechaRegistro", value: valueForm.capacidadLimite});
+    this.request.filtros.push({name:"fechaActualizacion", value: valueForm.estado}); 
 
     this._categoriaService.genericFilter(this.request).subscribe({
       next: (data: ResponseFilterGeneric<ResponseCategoria> ) => {
@@ -160,5 +160,17 @@ export class MantCategoriaListComponent {
     this.request.cantidad = this.itemsPerPage;
     this.filtrar();
   }
+  limpiar() {
+    this.myFormFilter.reset({
+      "codigoCategoria": '',
+      "nombre": '',
+      "descripcion": '',
+      "estado": '',
+      "fechaRegistro": '',
+      "fechaActualizacion": '',
+    });
+    this.filtrar();
+  }
+
 
 }

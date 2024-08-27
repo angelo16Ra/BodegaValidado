@@ -36,6 +36,7 @@ import { PageChangedEvent } from 'ngx-bootstrap/pagination';
   styleUrl: './mant-producto-list.component.css'
 })
 export class MantProductoListComponent implements OnInit{
+
   config  = {
     backdrop: true,
     ignoreBackdropClick: true
@@ -214,4 +215,20 @@ export class MantProductoListComponent implements OnInit{
     this.filtrar();
   }
 
+  limpiar() {
+    this.myFormFilter.reset({
+      "codigoProducto": '',
+      "nombre": '',
+      "stock": '',
+      "precio": '',
+      "imagen": '',
+      "descripcion": '',
+      "nomnombreMedida": '',
+      "nombreCategoria": '',
+      "nombreSub": '',
+      "nombreProveedor": '',
+      "nombreAlmacen": ''
+    });
+    this.filtrar();
+  }
 }

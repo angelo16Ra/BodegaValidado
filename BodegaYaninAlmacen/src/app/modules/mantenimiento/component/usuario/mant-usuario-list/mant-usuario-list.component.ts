@@ -199,5 +199,25 @@ export class MantUsuarioListComponent implements OnInit {
     this.request.cantidad = this.itemsPerPage;
     this.filtrar();
   }
-
+  limpiar() {
+    this.myFormFilter.reset({
+      "codigoUsuario": '',
+      "userName": '',
+      "password": '',
+      "estado": '',
+      "fechaActualizar": '',
+      "fechaRegistro": '',
+      "numeroDocumento": '',
+      "nombrePersona": '',
+      "apellidoPaterno": '',
+      "apellidoMaterno": '',
+      "genero": '',
+      "fechaNacimiento": '',
+      "correo": '',
+      "celular": '',
+      "nombreRol": ''
+    });
+    this.filtrar();
+  }
+  
 }

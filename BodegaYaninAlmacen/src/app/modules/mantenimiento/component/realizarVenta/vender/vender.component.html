@@ -1,14 +1,16 @@
 <div class="container">
-  <!-- Sección izquierda con fondo naranja -->
   <div class="left-section">
     <h1 class="text-center">Venta de productos</h1>
     <div class="products-container">
-      <div class="search-bar">
-        <input type="text" placeholder="Buscar productos" />
-        <button class="search-button">
-          <i class="bi bi-search"></i> <!-- Ícono de la lupa -->
+      <form [formGroup]="myFormFilter">
+        <div class="search-bar">
+          <input formControlName="codigoProducto" type="text" class="form-control" id="codigoProducto">
+          <button (click)="filtrar()" class="btn btn-primary me-2">
+            <i class="fas fa-search"></i>
         </button>
-      </div>
+        </div>
+      </form>
+      
 
       <table class="table">
         <thead>
@@ -24,22 +26,45 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="text-center">##Código##</td>
-            <td class="text-center">##Nombre##</td>
-            <td class="text-center">##Unidad Medida##</td>
-            <td class="text-center">##Categoria##</td>
-            <td class="text-center">##Almacen##</td>
-            <td class="text-center">##Stock##</td>
-            <td class="text-center">##Precio##</td>
+          <tr *ngFor="let d of vProducto">
+            <td class="text-center">{{ d.codigoProducto }}</td>
+            <td class="text-center">{{ d.nombre }}</td>
+            <td class="text-center">{{ d.nomnombreMedida }}</td>
+            <td class="text-center">{{ d.nombreCategoria }}</td>
+            <td class="text-center">{{ d.nombreAlmacen }}</td>
+            <td class="text-center">{{ d.stock }}</td>
+            <td class="text-center">{{ d.precio }}</td>
             <td class="text-center">
               <button class="btn btn-success btn-sm">
-                <i class="bi bi-plus-circle"></i> Agregar
+                <i class="bi bi-plus-circle"></i> Seleccionar
               </button>
             </td>
           </tr>
         </tbody>
       </table>
+      <!-- TODO: seccion de paginacion  -->
+      <div class="row">
+        <div class="col-xs-8 col-8">
+          <pagination
+            (pageChanged)="changePage($event)"
+            [totalItems]="totalItems"
+            [itemsPerPage]="itemsPerPage"
+            [previousText]="'Anterior'"
+            [nextText]="'Siguiente'"
+          >
+          </pagination>
+        </div>
+        <div class="col-xs-4 col-4">
+          <select
+            (change)="changeItemsPerPage()"
+            [(ngModel)]="itemsPerPage"
+            class="form-select"
+          >
+            <option value="3">3</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -59,3 +84,4 @@
       </div>
   </div>
 </div>
+

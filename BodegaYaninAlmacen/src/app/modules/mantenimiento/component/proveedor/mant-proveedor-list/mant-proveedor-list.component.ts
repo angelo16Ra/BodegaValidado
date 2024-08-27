@@ -159,4 +159,18 @@ export class MantProveedorListComponent {
     this.request.cantidad = this.itemsPerPage;
     this.filtrar();
   }
+  limpiar() {
+    this.myFormFilter.reset({
+      "codigoProveedor": '',
+      "ruc": '',
+      "razonSocial": '',
+      "telefono": '',
+      "correo": '',
+      "fechaRegistro": '',
+      "fechaActualizacion": '',
+      "estado": '',
+     
+    });
+    this.filtrar();
+  }
 }

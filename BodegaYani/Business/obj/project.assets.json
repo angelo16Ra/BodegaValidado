@@ -3472,23 +3472,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ELYCOM\\.nuget\\packages\\": {},
+    "C:\\Users\\Joseph16ra\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\BACKYFROM\\BodegaYani\\Business\\Business.csproj",
+      "projectUniqueName": "F:\\BodegaValidado\\BodegaYani\\Business\\Business.csproj",
       "projectName": "Business",
-      "projectPath": "E:\\BACKYFROM\\BodegaYani\\Business\\Business.csproj",
-      "packagesPath": "C:\\Users\\ELYCOM\\.nuget\\packages\\",
-      "outputPath": "E:\\BACKYFROM\\BodegaYani\\Business\\obj\\",
+      "projectPath": "F:\\BodegaValidado\\BodegaYani\\Business\\Business.csproj",
+      "packagesPath": "C:\\Users\\Joseph16ra\\.nuget\\packages\\",
+      "outputPath": "F:\\BodegaValidado\\BodegaYani\\Business\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ELYCOM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Joseph16ra\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3497,47 +3497,48 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "E:\\BACKYFROM\\BodegaYani\\CommonModels\\CommonModels.csproj": {
-              "projectPath": "E:\\BACKYFROM\\BodegaYani\\CommonModels\\CommonModels.csproj"
+            "F:\\BodegaValidado\\BodegaYani\\CommonModels\\CommonModels.csproj": {
+              "projectPath": "F:\\BodegaValidado\\BodegaYani\\CommonModels\\CommonModels.csproj"
             },
-            "E:\\BACKYFROM\\BodegaYani\\Constants\\Constants.csproj": {
-              "projectPath": "E:\\BACKYFROM\\BodegaYani\\Constants\\Constants.csproj"
+            "F:\\BodegaValidado\\BodegaYani\\Constants\\Constants.csproj": {
+              "projectPath": "F:\\BodegaValidado\\BodegaYani\\Constants\\Constants.csproj"
             },
-            "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\DBBodegaYani.csproj": {
-              "projectPath": "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\DBBodegaYani.csproj"
+            "F:\\BodegaValidado\\BodegaYani\\DBBodegaYani\\DBBodegaYani.csproj": {
+              "projectPath": "F:\\BodegaValidado\\BodegaYani\\DBBodegaYani\\DBBodegaYani.csproj"
             },
-            "E:\\BACKYFROM\\BodegaYani\\IBusiness\\IBusiness.csproj": {
-              "projectPath": "E:\\BACKYFROM\\BodegaYani\\IBusiness\\IBusiness.csproj"
+            "F:\\BodegaValidado\\BodegaYani\\IBusiness\\IBusiness.csproj": {
+              "projectPath": "F:\\BodegaValidado\\BodegaYani\\IBusiness\\IBusiness.csproj"
             },
-            "E:\\BACKYFROM\\BodegaYani\\IRepository\\IRepository.csproj": {
-              "projectPath": "E:\\BACKYFROM\\BodegaYani\\IRepository\\IRepository.csproj"
+            "F:\\BodegaValidado\\BodegaYani\\IRepository\\IRepository.csproj": {
+              "projectPath": "F:\\BodegaValidado\\BodegaYani\\IRepository\\IRepository.csproj"
             },
-            "E:\\BACKYFROM\\BodegaYani\\IService\\IService.csproj": {
-              "projectPath": "E:\\BACKYFROM\\BodegaYani\\IService\\IService.csproj"
+            "F:\\BodegaValidado\\BodegaYani\\IService\\IService.csproj": {
+              "projectPath": "F:\\BodegaValidado\\BodegaYani\\IService\\IService.csproj"
             },
-            "E:\\BACKYFROM\\BodegaYani\\Mapper\\Mapper.csproj": {
-              "projectPath": "E:\\BACKYFROM\\BodegaYani\\Mapper\\Mapper.csproj"
+            "F:\\BodegaValidado\\BodegaYani\\Mapper\\Mapper.csproj": {
+              "projectPath": "F:\\BodegaValidado\\BodegaYani\\Mapper\\Mapper.csproj"
             },
-            "E:\\BACKYFROM\\BodegaYani\\PDF\\PDF.csproj": {
-              "projectPath": "E:\\BACKYFROM\\BodegaYani\\PDF\\PDF.csproj"
+            "F:\\BodegaValidado\\BodegaYani\\PDF\\PDF.csproj": {
+              "projectPath": "F:\\BodegaValidado\\BodegaYani\\PDF\\PDF.csproj"
             },
-            "E:\\BACKYFROM\\BodegaYani\\Repository\\Repository.csproj": {
-              "projectPath": "E:\\BACKYFROM\\BodegaYani\\Repository\\Repository.csproj"
+            "F:\\BodegaValidado\\BodegaYani\\Repository\\Repository.csproj": {
+              "projectPath": "F:\\BodegaValidado\\BodegaYani\\Repository\\Repository.csproj"
             },
-            "E:\\BACKYFROM\\BodegaYani\\RequestResponseModels\\RequestResponseModels.csproj": {
-              "projectPath": "E:\\BACKYFROM\\BodegaYani\\RequestResponseModels\\RequestResponseModels.csproj"
+            "F:\\BodegaValidado\\BodegaYani\\RequestResponseModels\\RequestResponseModels.csproj": {
+              "projectPath": "F:\\BodegaValidado\\BodegaYani\\RequestResponseModels\\RequestResponseModels.csproj"
             },
-            "E:\\BACKYFROM\\BodegaYani\\Security\\Security.csproj": {
-              "projectPath": "E:\\BACKYFROM\\BodegaYani\\Security\\Security.csproj"
+            "F:\\BodegaValidado\\BodegaYani\\Security\\Security.csproj": {
+              "projectPath": "F:\\BodegaValidado\\BodegaYani\\Security\\Security.csproj"
             },
-            "E:\\BACKYFROM\\BodegaYani\\Service\\Service.csproj": {
-              "projectPath": "E:\\BACKYFROM\\BodegaYani\\Service\\Service.csproj"
+            "F:\\BodegaValidado\\BodegaYani\\Service\\Service.csproj": {
+              "projectPath": "F:\\BodegaValidado\\BodegaYani\\Service\\Service.csproj"
             }
           }
         }
@@ -3582,7 +3583,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

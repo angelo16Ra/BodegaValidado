@@ -1,4 +1,4 @@
-// export const dominio = "https://localhost:7055/";
+//export const dominio = "https://localhost:7055/";
 export const dominio = "https://bodegayani.somee.com/";
 
 export const urlConstans = {

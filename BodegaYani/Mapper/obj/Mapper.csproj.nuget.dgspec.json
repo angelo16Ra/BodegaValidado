@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\BACKYFROM\\BodegaYani\\Mapper\\Mapper.csproj": {}
+    "F:\\BodegaValidado\\BodegaYani\\Mapper\\Mapper.csproj": {}
   },
   "projects": {
-    "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\DBBodegaYani.csproj": {
+    "F:\\BodegaValidado\\BodegaYani\\DBBodegaYani\\DBBodegaYani.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\DBBodegaYani.csproj",
+        "projectUniqueName": "F:\\BodegaValidado\\BodegaYani\\DBBodegaYani\\DBBodegaYani.csproj",
         "projectName": "DBBodegaYani",
-        "projectPath": "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\DBBodegaYani.csproj",
-        "packagesPath": "C:\\Users\\ELYCOM\\.nuget\\packages\\",
-        "outputPath": "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\obj\\",
+        "projectPath": "F:\\BodegaValidado\\BodegaYani\\DBBodegaYani\\DBBodegaYani.csproj",
+        "packagesPath": "C:\\Users\\Joseph16ra\\.nuget\\packages\\",
+        "outputPath": "F:\\BodegaValidado\\BodegaYani\\DBBodegaYani\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ELYCOM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Joseph16ra\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -98,24 +99,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\BACKYFROM\\BodegaYani\\Mapper\\Mapper.csproj": {
+    "F:\\BodegaValidado\\BodegaYani\\Mapper\\Mapper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\BACKYFROM\\BodegaYani\\Mapper\\Mapper.csproj",
+        "projectUniqueName": "F:\\BodegaValidado\\BodegaYani\\Mapper\\Mapper.csproj",
         "projectName": "Mapper",
-        "projectPath": "E:\\BACKYFROM\\BodegaYani\\Mapper\\Mapper.csproj",
-        "packagesPath": "C:\\Users\\ELYCOM\\.nuget\\packages\\",
-        "outputPath": "E:\\BACKYFROM\\BodegaYani\\Mapper\\obj\\",
+        "projectPath": "F:\\BodegaValidado\\BodegaYani\\Mapper\\Mapper.csproj",
+        "packagesPath": "C:\\Users\\Joseph16ra\\.nuget\\packages\\",
+        "outputPath": "F:\\BodegaValidado\\BodegaYani\\Mapper\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ELYCOM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Joseph16ra\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -124,17 +125,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\DBBodegaYani.csproj": {
-                "projectPath": "E:\\BACKYFROM\\BodegaYani\\DBBodegaYani\\DBBodegaYani.csproj"
+              "F:\\BodegaValidado\\BodegaYani\\DBBodegaYani\\DBBodegaYani.csproj": {
+                "projectPath": "F:\\BodegaValidado\\BodegaYani\\DBBodegaYani\\DBBodegaYani.csproj"
               },
-              "E:\\BACKYFROM\\BodegaYani\\RequestResponseModels\\RequestResponseModels.csproj": {
-                "projectPath": "E:\\BACKYFROM\\BodegaYani\\RequestResponseModels\\RequestResponseModels.csproj"
+              "F:\\BodegaValidado\\BodegaYani\\RequestResponseModels\\RequestResponseModels.csproj": {
+                "projectPath": "F:\\BodegaValidado\\BodegaYani\\RequestResponseModels\\RequestResponseModels.csproj"
               }
             }
           }
@@ -175,24 +177,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\BACKYFROM\\BodegaYani\\RequestResponseModels\\RequestResponseModels.csproj": {
+    "F:\\BodegaValidado\\BodegaYani\\RequestResponseModels\\RequestResponseModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\BACKYFROM\\BodegaYani\\RequestResponseModels\\RequestResponseModels.csproj",
+        "projectUniqueName": "F:\\BodegaValidado\\BodegaYani\\RequestResponseModels\\RequestResponseModels.csproj",
         "projectName": "RequestResponseModels",
-        "projectPath": "E:\\BACKYFROM\\BodegaYani\\RequestResponseModels\\RequestResponseModels.csproj",
-        "packagesPath": "C:\\Users\\ELYCOM\\.nuget\\packages\\",
-        "outputPath": "E:\\BACKYFROM\\BodegaYani\\RequestResponseModels\\obj\\",
+        "projectPath": "F:\\BodegaValidado\\BodegaYani\\RequestResponseModels\\RequestResponseModels.csproj",
+        "packagesPath": "C:\\Users\\Joseph16ra\\.nuget\\packages\\",
+        "outputPath": "F:\\BodegaValidado\\BodegaYani\\RequestResponseModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ELYCOM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Joseph16ra\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -201,6 +203,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -249,7 +252,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

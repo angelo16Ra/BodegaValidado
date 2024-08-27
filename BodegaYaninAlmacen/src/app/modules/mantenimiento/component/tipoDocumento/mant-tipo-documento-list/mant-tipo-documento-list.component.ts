@@ -165,7 +165,14 @@ export class MantTipoDocumentoListComponent implements OnInit {
     this.request.cantidad = this.itemsPerPage;
     this.filtrar();
   }
-
+  limpiar() {
+    this.myFormFilter.reset({
+      "codigoDocumento": '',
+      "nombre": '',
+      "descripcion": '',
+    });
+    this.filtrar();
+  }
 
 
 
