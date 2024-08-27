@@ -1,0 +1,61 @@
+<div class="container">
+  <!-- Sección izquierda con fondo naranja -->
+  <div class="left-section">
+    <h1 class="text-center">Venta de productos</h1>
+    <div class="products-container">
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar productos" />
+        <button class="search-button">
+          <i class="bi bi-search"></i> <!-- Ícono de la lupa -->
+        </button>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="text-center">Código</th>
+            <th class="text-center">Nombre</th>
+            <th class="text-center">Unidad Medida</th>
+            <th class="text-center">Categoría</th>
+            <th class="text-center">Almacén</th>
+            <th class="text-center">Stock</th>
+            <th class="text-center">Precio</th>
+            <th class="text-center">Seleccionar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-center">##Código##</td>
+            <td class="text-center">##Nombre##</td>
+            <td class="text-center">##Unidad Medida##</td>
+            <td class="text-center">##Categoria##</td>
+            <td class="text-center">##Almacen##</td>
+            <td class="text-center">##Stock##</td>
+            <td class="text-center">##Precio##</td>
+            <td class="text-center">
+              <button class="btn btn-success btn-sm">
+                <i class="bi bi-plus-circle"></i> Agregar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <div class="selected-products">
+      <div class="product-image">
+        <i class="bi bi-card-image" style="font-size: 5rem;"></i>
+      </div>
+
+      <div class="quantity-input">
+        <label for="quantity">Agregar cantidad:</label>
+        <input id="quantity" type="number" min="1" value="1" />
+      </div>
+        <button class="btn btn-warning btn-lg">
+          <i class="bi bi-cart-plus"></i> Agregar producto seleccionado
+        </button>
+      </div>
+  </div>
+</div>

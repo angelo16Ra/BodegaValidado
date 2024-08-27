@@ -1,0 +1,21 @@
+<div class="order-list">
+  <h2>Lista de pedidos</h2>
+  <div *ngFor="let order of orders" class="order-item">
+    <div class="order-info" [ngClass]="order.status === 'in-process' ? 'in-process' : 'pending'">
+      PEDIDO N° {{ order.number }}
+    </div>
+    <div *ngIf="order.status === 'pending'">
+      <button (click)="takeOrder(order)" class="take-order-button">
+        tomar pedido
+      </button>
+    </div>
+    <div *ngIf="order.status === 'in-process'" class="in-process-text">
+      pedido en proceso
+    </div>
+  </div>
+</div>
+
+<ng-template #modalEdit>
+  <app-list-productos
+  ></app-list-productos>
+</ng-template>

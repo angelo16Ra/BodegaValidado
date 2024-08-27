@@ -1,0 +1,52 @@
+.order-list {
+  margin-top: 20px;
+  border: 2px solid black;
+  padding: 20px;
+  }
+  
+  .order-list h2 {
+    text-align: center;
+  }
+  
+  .order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .order-info {
+    flex-grow: 1;
+    padding: 10px;
+    border: 2px solid black;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .pending {
+    background-color: green;
+  }
+  
+  .in-process {
+    background-color: yellow;
+    color: black;
+  }
+  
+  .take-order-button, .in-process-text {
+    margin-left: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    font-weight: bold;
+  }
+  
+  .take-order-button {
+    background-color: green;
+    color: white;
+  }
+  
+  .in-process-text {
+    background-color: yellow;
+    color: black;
+    text-align: center;
+    width: 120px;
+  }
+  

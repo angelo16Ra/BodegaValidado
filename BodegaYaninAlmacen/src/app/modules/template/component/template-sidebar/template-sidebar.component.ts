@@ -52,15 +52,17 @@ export class TemplateSidebarComponent implements OnInit{
               { name: "producto", url: "mantenimiento/producto", icon: "fas fa-box" },
               { name: "sub categoria", url: "mantenimiento/sub-categoria", icon: "fas fa-list-alt" },
               { name: "Unidad Medida", url: "mantenimiento/unidad-medida", icon: "fas fa-file-alt" },
+              { name: "TomarPedido", url: "mantenimiento/tomarPedido", icon: "fas fa-shopping-cart" },
 
             ]
           },
           {
             name:"Ventas",target:"TargerMantenimiento", icon:"fas fa-cash-register",
             subMenu:[
-              { name: "caja", url: "mantenimiento/caja", icon: "fas fa-cash-register" },
+              { name: "caja", url: "mantenimiento/caja", icon: "fa  s fa-cash-register" },
               { name: "detalle de pedido", url: "mantenimiento/detalle-pedido", icon: "fas fa-clipboard-list" },
               { name: "pedido", url: "mantenimiento/pedido", icon: "fas fa-shopping-cart" },
+              { name: "RealizarVenta", url: "mantenimiento/realizarVenta", icon: "fas fa-shopping-cart" },
             ]
           },
         ]

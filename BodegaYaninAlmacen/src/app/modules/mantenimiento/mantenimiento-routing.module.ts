@@ -13,6 +13,8 @@ import { MantUnidadMedidaListComponent } from './component/unidadMedida/mant-uni
 import { MantUsuarioListComponent } from './component/usuario/mant-usuario-list/mant-usuario-list.component';
 import { MantProveedorListComponent } from './component/proveedor/mant-proveedor-list/mant-proveedor-list.component';
 import { MantPersonaListComponent } from './component/persona/mant-persona-list/mant-persona-list.component';
+import { VenderComponent } from './component/realizarVenta/vender/vender.component';
+import { ListPedidosComponent } from './component/tomarPedido/list-pedidos/list-pedidos.component';
 
 const routes: Routes = [
   {
@@ -53,8 +55,13 @@ const routes: Routes = [
   },
   {
     path:'usuario',component:MantUsuarioListComponent 
+  },
+  {
+    path:'realizarVenta',component:VenderComponent 
+  },
+  {
+    path:'tomarPedido',component:ListPedidosComponent
   }
-  
 
   
 ];
