@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "F:\\BodegaValidado\\BodegaYani\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{95800F11-C551-4F00-9D97-2B7D442FD5F5}|Repository\\Repository.csproj|f:\\bodegavalidado\\bodegayani\\repository\\almacen\\repositorypedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95800F11-C551-4F00-9D97-2B7D442FD5F5}|Repository\\Repository.csproj|solutionrelative:repository\\almacen\\repositorypedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B0C986E-8D75-481C-9451-06245C4159B0}|IRepository\\IRepository.csproj|f:\\bodegavalidado\\bodegayani\\irepository\\almacen\\irepositorypedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B0C986E-8D75-481C-9451-06245C4159B0}|IRepository\\IRepository.csproj|solutionrelative:irepository\\almacen\\irepositorypedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F168B77-E807-471A-9811-F295FCEE69FB}|Business\\Business.csproj|f:\\bodegavalidado\\bodegayani\\business\\almacen\\businesspedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F168B77-E807-471A-9811-F295FCEE69FB}|Business\\Business.csproj|solutionrelative:business\\almacen\\businesspedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9298D45-AC82-4564-A130-2A36D2A5F4F7}|IBusiness\\IBusiness.csproj|f:\\bodegavalidado\\bodegayani\\ibusiness\\almacen\\ibusinesspedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9298D45-AC82-4564-A130-2A36D2A5F4F7}|IBusiness\\IBusiness.csproj|solutionrelative:ibusiness\\almacen\\ibusinesspedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5240C2C-70F8-417F-8885-682979450AB5}|ApiWeb\\ApiWeb.csproj|f:\\bodegavalidado\\bodegayani\\apiweb\\controllers\\almacen\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5240C2C-70F8-417F-8885-682979450AB5}|ApiWeb\\ApiWeb.csproj|solutionrelative:apiweb\\controllers\\almacen\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5240C2C-70F8-417F-8885-682979450AB5}|ApiWeb\\ApiWeb.csproj|f:\\bodegavalidado\\bodegayani\\apiweb\\controllers\\almacen\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5240C2C-70F8-417F-8885-682979450AB5}|ApiWeb\\ApiWeb.csproj|solutionrelative:apiweb\\controllers\\almacen\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BC0CF40-6159-430D-A71F-7EA7470554C1}|DBBodegaYani\\DBBodegaYani.csproj|f:\\bodegavalidado\\bodegayani\\dbbodegayani\\bodegayani\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BC0CF40-6159-430D-A71F-7EA7470554C1}|DBBodegaYani\\DBBodegaYani.csproj|solutionrelative:dbbodegayani\\bodegayani\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A5240C2C-70F8-417F-8885-682979450AB5}|ApiWeb\\ApiWeb.csproj|f:\\bodegavalidado\\bodegayani\\apiweb\\controllers\\almacen\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A5240C2C-70F8-417F-8885-682979450AB5}|ApiWeb\\ApiWeb.csproj|solutionrelative:apiweb\\controllers\\almacen\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,12 +47,103 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "RepositoryPedido.cs",
+              "DocumentMoniker": "F:\\BodegaValidado\\BodegaYani\\Repository\\Almacen\\RepositoryPedido.cs",
+              "RelativeDocumentMoniker": "Repository\\Almacen\\RepositoryPedido.cs",
+              "ToolTip": "F:\\BodegaValidado\\BodegaYani\\Repository\\Almacen\\RepositoryPedido.cs",
+              "RelativeToolTip": "Repository\\Almacen\\RepositoryPedido.cs",
+              "ViewState": "AQIAAEsAAAAANTMzMzMuwE4AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T23:47:17.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IRepositoryPedido.cs",
+              "DocumentMoniker": "F:\\BodegaValidado\\BodegaYani\\IRepository\\Almacen\\IRepositoryPedido.cs",
+              "RelativeDocumentMoniker": "IRepository\\Almacen\\IRepositoryPedido.cs",
+              "ToolTip": "F:\\BodegaValidado\\BodegaYani\\IRepository\\Almacen\\IRepositoryPedido.cs",
+              "RelativeToolTip": "IRepository\\Almacen\\IRepositoryPedido.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T23:47:08.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BusinessPedido.cs",
+              "DocumentMoniker": "F:\\BodegaValidado\\BodegaYani\\Business\\Almacen\\BusinessPedido.cs",
+              "RelativeDocumentMoniker": "Business\\Almacen\\BusinessPedido.cs",
+              "ToolTip": "F:\\BodegaValidado\\BodegaYani\\Business\\Almacen\\BusinessPedido.cs",
+              "RelativeToolTip": "Business\\Almacen\\BusinessPedido.cs",
+              "ViewState": "AQIAAE4AAAAAMzMzM3MjwGgAAACBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T23:46:19.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IBusinessPedido.cs",
+              "DocumentMoniker": "F:\\BodegaValidado\\BodegaYani\\IBusiness\\Almacen\\IBusinessPedido.cs",
+              "RelativeDocumentMoniker": "IBusiness\\Almacen\\IBusinessPedido.cs",
+              "ToolTip": "F:\\BodegaValidado\\BodegaYani\\IBusiness\\Almacen\\IBusinessPedido.cs",
+              "RelativeToolTip": "IBusiness\\Almacen\\IBusinessPedido.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T23:46:01.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "F:\\BodegaValidado\\BodegaYani\\ApiWeb\\Controllers\\Almacen\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "ApiWeb\\Controllers\\Almacen\\UsuarioController.cs",
+              "ToolTip": "F:\\BodegaValidado\\BodegaYani\\ApiWeb\\Controllers\\Almacen\\UsuarioController.cs",
+              "RelativeToolTip": "ApiWeb\\Controllers\\Almacen\\UsuarioController.cs",
+              "ViewState": "AQIAAEYAAAAAyMzMzMz4v14AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T23:41:08.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "F:\\BodegaValidado\\BodegaYani\\DBBodegaYani\\BodegaYani\\Usuario.cs",
+              "RelativeDocumentMoniker": "DBBodegaYani\\BodegaYani\\Usuario.cs",
+              "ToolTip": "F:\\BodegaValidado\\BodegaYani\\DBBodegaYani\\BodegaYani\\Usuario.cs",
+              "RelativeToolTip": "DBBodegaYani\\BodegaYani\\Usuario.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T23:40:26.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PedidoController.cs",
+              "DocumentMoniker": "F:\\BodegaValidado\\BodegaYani\\ApiWeb\\Controllers\\Almacen\\PedidoController.cs",
+              "RelativeDocumentMoniker": "ApiWeb\\Controllers\\Almacen\\PedidoController.cs",
+              "ToolTip": "F:\\BodegaValidado\\BodegaYani\\ApiWeb\\Controllers\\Almacen\\PedidoController.cs",
+              "RelativeToolTip": "ApiWeb\\Controllers\\Almacen\\PedidoController.cs",
+              "ViewState": "AQIAAAYAAABAaGZmZmYEwF8AAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T23:14:22.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ProductoController.cs",
               "DocumentMoniker": "F:\\BodegaValidado\\BodegaYani\\ApiWeb\\Controllers\\Almacen\\ProductoController.cs",
               "RelativeDocumentMoniker": "ApiWeb\\Controllers\\Almacen\\ProductoController.cs",
               "ToolTip": "F:\\BodegaValidado\\BodegaYani\\ApiWeb\\Controllers\\Almacen\\ProductoController.cs",
               "RelativeToolTip": "ApiWeb\\Controllers\\Almacen\\ProductoController.cs",
-              "ViewState": "AQIAAAkAAAAAnZmZmRkWwJMAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-27T19:43:30.144Z",
               "EditorCaption": ""

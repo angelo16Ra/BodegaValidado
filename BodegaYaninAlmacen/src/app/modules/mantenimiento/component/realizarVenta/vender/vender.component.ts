@@ -4,7 +4,7 @@ import { SharedModule } from '../../../../shared/shared.module';
 import { RequestFilterGeneric } from '../../../../../models/request-filter-generic.model';
 import { Vproducto } from '../../../models/VProducto.model';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResponseUnidadMedida } from '../../../models/unidadMedida-response.model';
 import { ResponseCategoria } from '../../../models/categoria-response.model';
 import { ResponseSubCategoria } from '../../../models/subCategoria-response.model';
@@ -27,22 +27,18 @@ import { PageChangedEvent } from 'ngx-bootstrap/pagination';
   standalone: true,
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   templateUrl: './vender.component.html',
   styleUrl: './vender.component.css'
 })
 export class VenderComponent implements OnInit{
 
-  config  = {
-    backdrop: true,
-    ignoreBackdropClick: true
-  };
-
 
   requestFilterGeneric:RequestFilterGeneric = new RequestFilterGeneric();
   vProducto:Vproducto[] = [];
-  modalRef?: BsModalRef;
   productoSelect: Vproducto = new Vproducto();
   titleModal: string = "";
   accionModal: number = 0;
@@ -50,7 +46,8 @@ export class VenderComponent implements OnInit{
   totalItems: number = 0;
   itemsPerPage: number = 5;
   request: RequestFilterGeneric = new RequestFilterGeneric();
-  
+  cantidad: number = 1;
+  productosAgregados: Vproducto[] = [];
   //
   tipoUnidadMedida: ResponseUnidadMedida[] = [];
   tipoCategoria: ResponseCategoria[] = [];
@@ -92,6 +89,10 @@ export class VenderComponent implements OnInit{
     this.filtrar();
     this.listarProducto();
     this.obtenerListas();
+  
+    this.myFormFilter.valueChanges.subscribe(() => {
+      this.filtrar();
+    });
   }
 
   listarProducto()
@@ -112,27 +113,8 @@ export class VenderComponent implements OnInit{
       }
     });
   }
-
-  nuevoRegistro(template: TemplateRef<any>)
-  {
-    this.productoSelect = new Vproducto();
-    this.titleModal = "Nuevo Producto";
-    this.accionModal = AccionMantConst.crear;
-    this.openModal(template);
-    
-  }
-
-  editarRegistro(template: TemplateRef<any>, producto: Vproducto )
-  {
-    this.productoSelect = producto;
-    this.titleModal = "Editar Producto";
-    this.accionModal = AccionMantConst.editar;
-    this.openModal(template);
-    
-  }
-
-  obtenerListas()
-  {
+  
+  obtenerListas() {
     forkJoin([
       this._unidadMedidaService.getAll(),
       this._categoriaService.getAll(),
@@ -140,60 +122,44 @@ export class VenderComponent implements OnInit{
       this._proveedorService.getAll(),
       this._almacenService.getAll(),
     ]).subscribe({
-      next:(data:any) => {
+      next: (data: any) => {
         this.tipoUnidadMedida = data[0];
         this.tipoCategoria = data[1];
         this.tipoSubCategoria = data[2];
         this.tipoProveedor = data[3];
         this.tipoAlmacen = data[4];
       },
-      error:(err) => {
-        
+      error: (err) => {
+        console.error("Error al obtener las listas:", err);
       },
-      complete:() => {
-        
+      complete: () => {
+        console.log("Listas obtenidas correctamente");
       }
-    })
+    });
   }
+  
+  filtrar() {
+    this.request.filtros = [];
 
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template, Object.assign({},{class: "gray modal-lg"},this.config));
-  }
-
-  getCloseModalEmmit(res:boolean){
-    this.modalRef?.hide();
-    if(res)
-    {
-      this.listarProducto();
-    }
-  }
-  filtrar()
-  {
-    let request: RequestFilterGeneric = new RequestFilterGeneric(); 
     let valueForm = this.myFormFilter.getRawValue();
-
-    this.request.filtros.push({name:"codigoProducto", value: valueForm.codigoProducto});
-    this.request.filtros.push({name:"nombre", value: valueForm.nombre});
-    this.request.filtros.push({name:"stock", value: valueForm.stock});
-    this.request.filtros.push({name:"precio", value: valueForm.precio});
-    this.request.filtros.push({name:"imagen", value: valueForm.imagen});
-    this.request.filtros.push({name:"descripcion", value: valueForm.descripcion});
-    this.request.filtros.push({name:"nomnombreMedida", value: valueForm.nomnombreMedida});
-    this.request.filtros.push({name:"nombreCategoria", value: valueForm.nombreCategoria});
-    this.request.filtros.push({name:"nombreSub", value: valueForm.nombreSub});
-    this.request.filtros.push({name:"nombreProveedor", value: valueForm.nombreProveedor});
-    this.request.filtros.push({name:"nombreAlmacen", value: valueForm.nombreAlmacen});
-
+  
+    if (valueForm.codigoProducto) {
+      this.request.filtros.push({ name: "codigoProducto", value: valueForm.codigoProducto });
+    }
+  
+    if (valueForm.nombre) {
+      this.request.filtros.push({ name: "nombre", value: valueForm.nombre });
+    }
+  
     this._productoService.genericFilterView(this.request).subscribe({
-      next: (data: ResponseFilterGeneric<Vproducto> ) => {
-        console.log(data);
+      next: (data: ResponseFilterGeneric<Vproducto>) => {
         this.vProducto = data.lista;
         this.totalItems = data.totalRegistros;
       },
-      error: ( ) => {
+      error: () => {
         console.log("error");
       },
-      complete: ( ) => {
+      complete: () => {
         console.log("completo");
       },
     });
@@ -228,4 +194,18 @@ export class VenderComponent implements OnInit{
     });
     this.filtrar();
   }
+  
+  seleccionarProducto(producto: Vproducto) {
+    this.productoSelect = producto;
+  }
+
+  agregarProducto() {
+    const productoAgregado = { ...this.productoSelect, cantidad: this.cantidad };
+    this.productosAgregados.push(productoAgregado);
+
+    this._route.navigate(['/realizarventa/list-productos'], {
+      state: { productos: this.productosAgregados }
+    });
+  }
+  
 }

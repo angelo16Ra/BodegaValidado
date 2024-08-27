@@ -4,13 +4,13 @@
     <div class="products-container">
       <form [formGroup]="myFormFilter">
         <div class="search-bar">
-          <input formControlName="codigoProducto" type="text" class="form-control" id="codigoProducto">
-          <button (click)="filtrar()" class="btn btn-primary me-2">
-            <i class="fas fa-search"></i>
-        </button>
+          <input formControlName="nombre" type="text" class="form-control" id="nombreProducto" placeholder="Buscar por nombre">
+          <button (click)="limpiar()" class="btn btn-secondary me-2">
+            <i class="fas fa-times"></i>
+          </button>
         </div>
+        
       </form>
-      
 
       <table class="table">
         <thead>
@@ -35,7 +35,8 @@
             <td class="text-center">{{ d.stock }}</td>
             <td class="text-center">{{ d.precio }}</td>
             <td class="text-center">
-              <button class="btn btn-success btn-sm">
+              <!-- Se agrega la función seleccionarProducto -->
+              <button class="btn btn-success btn-sm" (click)="seleccionarProducto(d)">
                 <i class="bi bi-plus-circle"></i> Seleccionar
               </button>
             </td>
@@ -69,19 +70,17 @@
   </div>
 
   <div class="right-section">
-    <div class="selected-products">
+    <div *ngIf="productoSelect" class="selected-products">
       <div class="product-image">
-        <i class="bi bi-card-image" style="font-size: 5rem;"></i>
+        <img [src]="productoSelect.imagen" alt="{{ productoSelect.nombre }}" style="width: 100%; max-height: 200px; object-fit: cover;">
       </div>
-
       <div class="quantity-input">
         <label for="quantity">Agregar cantidad:</label>
-        <input id="quantity" type="number" min="1" value="1" />
+        <input id="quantity" type="number" min="1" [(ngModel)]="cantidad" />
       </div>
-        <button class="btn btn-warning btn-lg">
-          <i class="bi bi-cart-plus"></i> Agregar producto seleccionado
-        </button>
-      </div>
+      <button class="btn btn-warning btn-lg" (click)="agregarProducto()">
+        <i class="bi bi-cart-plus"></i> Agregar producto seleccionado
+      </button>
+    </div>
   </div>
 </div>
-
