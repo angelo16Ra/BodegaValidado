@@ -1,0 +1,73 @@
+
+
+ENtonces tienes que modificar la tabla y agregar esos campos que te dije
+
+tengo una duda la tabla que se debe relacionar producto es a pedido de frente o a detalle pedido
+
+Defrente a detallepedidos, en pedido solo va inforamción del pedido, monto total, monto pagado, vuelto
+
+aya y crearia una vista o como 
+
+La vista VPedidos donde la usas?
+
+pense se necesitaba para hacer la venta o para hacer la venta soolo se necesita esa tabla?
+
+La vista si te sirve para jalar información de la venta, de todas formas va la vista
+
+la vista la necesitaria para que el del almacen lleve los productos ya que almacen si necesita ver todo eso
+
+Si, pero que controller usa la vista?
+
+para los controllers no hice de vistas solo de tablas tambien se necesita?
+
+Si, porque de nada sirve crear una vista, si no se va consultar desde el front
+
+las vistas lo hacia directo en el front no lo use en el backend
+
+Y como lo consumes?
+
+aca llamo los request y response en caso de las vistas es vpedido sin request ni response
+
+Cual es el servicio para jalar la vista?
+
+para las vistas lo hago diferente 
+
+usuario y productos lo hice con vistas
+
+le agrego estas lineas
+
+Y esto no pasa por el back?
+
+no yaque solo lo uso  para que se vea la informacion
+
+Este api/Usuario/ en donde esta implementado?
+
+aca lo uso
+
+Pero si esta en el back
+
+aya si pero no le creo un controoller solo lo pongo como un link o una extencion del 
+
+La vista te puede servir para obtener información
+
+Esta bien, la vista queda igual
+
+entonces solo modifico las 2 tablas que me dijiste? o ya no?
+
+Si de todas formas modifica
+
+eesta bien se me complicara un poco ya que la base de datos no lo tengo local ya que lo formarteado mi compu y el archivo no tienes los datos de cada tabla
+
+entonces ya lo hago ya se masomenos como hacer para recuperar yy te aviso 
+
+Modificas la tabla, y tmb debes modificar el back
+
+si esta bien eso si se como hacer
+
+Ok, asi quedamos, me avisas
+ya
+
+
+
+
+
