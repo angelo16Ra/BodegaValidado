@@ -160,7 +160,10 @@
           "RequestResponseModels": "1.0.0"
         },
         "runtime": {
-          "IService.dll": {}
+          "IService.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "RequestResponseModels/1.0.0": {
@@ -169,7 +172,10 @@
           "Microsoft.Extensions.Configuration.Json": "8.0.0"
         },
         "runtime": {
-          "RequestResponseModels.dll": {}
+          "RequestResponseModels.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

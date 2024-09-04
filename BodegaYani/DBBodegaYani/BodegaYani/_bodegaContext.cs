@@ -80,13 +80,13 @@ public partial class _bodegaContext : DbContext
 
         modelBuilder.Entity<Caja>(entity =>
         {
-            entity.HasKey(e => e.CodigoCaja).HasName("PK__Cajas__D33367CFB4BD7DB5");
+            entity.HasKey(e => e.CodigoCaja).HasName("PK__Cajas__D33367CFE86A8681");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
 
             entity.HasOne(d => d.CodigoUsuarioNavigation).WithMany(p => p.Cajas)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Cajas__CodigoUsu__6754599E");
+                .HasConstraintName("FK__Cajas__CodigoUsu__151B244E");
         });
 
         modelBuilder.Entity<Categoria>(entity =>
@@ -98,9 +98,15 @@ public partial class _bodegaContext : DbContext
 
         modelBuilder.Entity<DetallePedido>(entity =>
         {
-            entity.HasKey(e => e.CodigoDetallePedido).HasName("PK__DetalleP__8168822D1FBF70B2");
+            entity.HasKey(e => e.CodigoDetallePedido).HasName("PK__DetalleP__8168822DFE0AB468");
 
-            entity.Property(e => e.Estado).HasDefaultValue(true);
+            entity.HasOne(d => d.CodigoPedidoNavigation).WithMany(p => p.DetallePedidos)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__DetallePe__Codig__114A936A");
+
+            entity.HasOne(d => d.CodigoProductoNavigation).WithMany(p => p.DetallePedidos)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__DetallePe__Codig__10566F31");
         });
 
         modelBuilder.Entity<Error>(entity =>
@@ -132,34 +138,22 @@ public partial class _bodegaContext : DbContext
 
         modelBuilder.Entity<MovimientoCaja>(entity =>
         {
-            entity.HasKey(e => e.CodigoMovimientoCaja).HasName("PK__Movimien__53FB280F4D877865");
+            entity.HasKey(e => e.CodigoMovimientoCaja).HasName("PK__Movimien__53FB280F75CF5C4E");
 
             entity.HasOne(d => d.CodigoCajaNavigation).WithMany(p => p.MovimientoCajas)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Movimient__Codig__6B24EA82");
+                .HasConstraintName("FK__Movimient__Codig__18EBB532");
 
             entity.HasOne(d => d.CodigoPedidoNavigation).WithMany(p => p.MovimientoCajas)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Movimient__Codig__6A30C649");
+                .HasConstraintName("FK__Movimient__Codig__17F790F9");
         });
 
         modelBuilder.Entity<Pedido>(entity =>
         {
-            entity.HasKey(e => e.CodigoPedido).HasName("PK__Pedidos__72162F0B627BA733");
+            entity.HasKey(e => e.CodigoPedido).HasName("PK__Pedidos__72162F0BA6678393");
 
             entity.Property(e => e.Estado).HasDefaultValue(true);
-
-            entity.HasOne(d => d.CodigoDetallePedidoNavigation).WithMany(p => p.Pedidos)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Pedidos__CodigoD__6383C8BA");
-
-            entity.HasOne(d => d.CodigoProductoNavigation).WithMany(p => p.Pedidos)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Pedidos__CodigoP__628FA481");
-
-            entity.HasOne(d => d.CodigoUsuarioNavigation).WithMany(p => p.Pedidos)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Pedidos__CodigoU__619B8048");
         });
 
         modelBuilder.Entity<Persona>(entity =>

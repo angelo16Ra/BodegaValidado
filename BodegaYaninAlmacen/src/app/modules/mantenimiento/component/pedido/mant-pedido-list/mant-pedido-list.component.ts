@@ -5,14 +5,9 @@ import { SharedModule } from '../../../../shared/shared.module';
 import { RequestFilterGeneric } from '../../../../../models/request-filter-generic.model';
 import { Vpedido } from '../../../models/VPedido.model';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { AccionMantConst } from '../../../../../constans/general.constants';
-import { ResponseUsuario } from '../../../models/usuario.response.model';
 import { ResponseProducto } from '../../../models/producto-response.model';
-import { ResponseDetallePedido } from '../../../models/detallePedido-response.model';
 import { ProductoService } from '../../../service/producto.service';
 import { PedidoService } from '../../../service/pedido.service';
-import { UsuarioService } from '../../../service/usuario.service';
-import { DetallePedidoService } from '../../../service/detalle-pedido.service';
 import { ResponseFilterGeneric } from '../../../../../models/response-filter-generic.model';
 import { forkJoin } from 'rxjs';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -23,7 +18,6 @@ import { PageChangedEvent } from 'ngx-bootstrap/pagination';
   selector: 'app-mant-pedido-list',
   standalone: true,
   imports: [
-    MantPedidoRegisterComponent,
     CommonModule,
     SharedModule
   ],
@@ -48,17 +42,13 @@ export class MantPedidoListComponent implements OnInit{
   request: RequestFilterGeneric = new RequestFilterGeneric();
 
   
-  tipoUsuario: ResponseUsuario [] = [];
   tipoProducto: ResponseProducto [] = [];
-  tipoDetallePedido: ResponseDetallePedido [] = []; 
 
   
   constructor(
     private _pedidoService: PedidoService,
     private modalService: BsModalService,
-    private _usuarioService: UsuarioService,
     private _productoService: ProductoService,
-    private _detallePedidoService: DetallePedidoService,
 
     private _route:Router,
     private fb: FormBuilder,
@@ -66,10 +56,15 @@ export class MantPedidoListComponent implements OnInit{
   {
     this.myFormFilter= this.fb.group({
       codigoPedido: ["", []],
+      montoTotalPedido: ["", []],
+      montoPagado: ["", []],
+      vuelto: ["", []],
       registroPedido: ["", []],
       entregaPedido: ["", []],
-      nombreUsuario: ["", []],
-      nombreProducto: ["", []],
+      cantidad: ["", []],
+      precioUnitario: ["", []],
+      precioTotal: ["", []],
+      NombreProducto: ["", []],
     });
   }
 
@@ -98,36 +93,14 @@ export class MantPedidoListComponent implements OnInit{
       }
     });
   }
-
-  nuevoRegistro(template: TemplateRef<any>)
-  {
-    this.pedidoSelect = new Vpedido();
-    this.titleModal = "Nuevo Pedido";
-    this.accionModal = AccionMantConst.crear;
-    this.openModal(template);
-    
-  }
-
-  editarRegistro(template: TemplateRef<any>, pedido:Vpedido)
-  {
-    this.pedidoSelect = new Vpedido();
-    this.titleModal = "editar Pedido";
-    this.accionModal = AccionMantConst.editar;
-    this.openModal(template);
-    
-  }
   
   obtenerListas()
   {
     forkJoin([
-      this._usuarioService.getAll(),
       this._productoService.getAll(),
-      this._detallePedidoService.getAll(),
     ]).subscribe({
       next:(data:any) => {
-        this.tipoUsuario = data[0];
         this.tipoProducto = data[1];
-        this.tipoDetallePedido = data[2];
       },
       error:(err) => {
         
@@ -158,11 +131,16 @@ export class MantPedidoListComponent implements OnInit{
     let request: RequestFilterGeneric = new RequestFilterGeneric(); 
     let valueForm = this.myFormFilter.getRawValue();
 
-    this.request.filtros.push({name:"codigoPedido", value: valueForm.codigoPedido});
-    this.request.filtros.push({name:"registroPedido", value: valueForm.registroPedido});
-    this.request.filtros.push({name:"entregaPedido", value: valueForm.entregaPedido});
-    this.request.filtros.push({name:"nombreUsuario", value: valueForm.nombreUsuario});
-    this.request.filtros.push({name:"nombreProducto", value: valueForm.nombreProducto});
+    this.request.filtros.push({name:"CodigoPedido", value: valueForm.codigoPedido});
+    this.request.filtros.push({name:"MontoTotalPedido", value: valueForm.montoTotalPedido});
+    this.request.filtros.push({name:"MontoPagado", value: valueForm.montoPagado});
+    this.request.filtros.push({name:"Vuelto", value: valueForm.vuelto});
+    this.request.filtros.push({name:"RegistroPedido", value: valueForm.registroPedido});
+    this.request.filtros.push({name:"EntregaPedido", value: valueForm.entregaPedido});
+    this.request.filtros.push({name:"Cantidad", value: valueForm.cantidad});
+    this.request.filtros.push({name:"PrecioUnitario", value: valueForm.precioUnitario});
+    this.request.filtros.push({name:"PrecioTotal", value: valueForm.precioTotal});
+    this.request.filtros.push({name:"NombreProducto", value: valueForm.nombreProducto});
 
     this._pedidoService.genericFilterView(this.request).subscribe({
       next: (data: ResponseFilterGeneric<Vpedido> ) => {
@@ -194,5 +172,22 @@ export class MantPedidoListComponent implements OnInit{
     this.filtrar();
   }
 
+
+  limpiar() {
+    this.myFormFilter.reset({
+      "codigoProducto": '',
+      "nombre": '',
+      "stock": '',
+      "precio": '',
+      "imagen": '',
+      "descripcion": '',
+      "nomnombreMedida": '',
+      "nombreCategoria": '',
+      "nombreSub": '',
+      "nombreProveedor": '',
+      "nombreAlmacen": ''
+    });
+    this.filtrar();
+  }
 
 }

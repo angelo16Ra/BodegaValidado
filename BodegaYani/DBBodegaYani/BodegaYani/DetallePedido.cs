@@ -11,6 +11,10 @@ public partial class DetallePedido
     [Key]
     public int CodigoDetallePedido { get; set; }
 
+    public int CodigoProducto { get; set; }
+
+    public int CodigoPedido { get; set; }
+
     [Column(TypeName = "decimal(8, 2)")]
     public decimal Cantidad { get; set; }
 
@@ -20,8 +24,11 @@ public partial class DetallePedido
     [Column(TypeName = "decimal(8, 2)")]
     public decimal PrecioUnitario { get; set; }
 
-    public bool Estado { get; set; }
+    [ForeignKey("CodigoPedido")]
+    [InverseProperty("DetallePedidos")]
+    public virtual Pedido CodigoPedidoNavigation { get; set; } = null!;
 
-    [InverseProperty("CodigoDetallePedidoNavigation")]
-    public virtual ICollection<Pedido> Pedidos { get; set; } = new List<Pedido>();
+    [ForeignKey("CodigoProducto")]
+    [InverseProperty("DetallePedidos")]
+    public virtual Producto CodigoProductoNavigation { get; set; } = null!;
 }

@@ -19,6 +19,24 @@
                         </div>
                         <div class="col-3">
                             <div class="form-group">
+                                <label for="montoTotalPedido">monto Total Pedido</label>
+                                <input formControlName="montoTotalPedido" type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="montoPagado">Monto Pagado</label>
+                                <input formControlName="montoPagado" type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="vuelto">Vuelto</label>
+                                <input formControlName="vuelto" type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
                                 <label for="registroPedido">registroPedido</label>
                                 <input formControlName="registroPedido" type="datetime-local" class="form-control">
                             </div>
@@ -31,8 +49,20 @@
                         </div>
                         <div class="col-3">
                             <div class="form-group">
-                                <label for="nombreUsuario">nombreUsuario</label>
-                                <input formControlName="nombreUsuario" type="text" class="form-control">
+                                <label for="cantidad">Cantidad</label>
+                                <input formControlName="cantidad" type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="precioUnitario">precio Unitario</label>
+                                <input formControlName="precioUnitario" type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="PrecioTotal">Precio Total</label>
+                                <input formControlName="PrecioTotal" type="number" class="form-control">
                             </div>
                         </div>
                         <div class="col-3">
@@ -45,7 +75,7 @@
                             <button (click)="filtrar()" class="btn btn-primary me-2">
                                 <i class="fas fa-search"></i> Buscar
                             </button>
-                            <button class="btn btn-secondary">
+                            <button class="btn btn-secondary" (click)="limpiar()">
                                 <i class="fas fa-broom"></i> Limpiar
                             </button>
                         </div>
@@ -59,22 +89,16 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th class="text-center">codigoPedido</th>
-                            <th class="text-center">montoTotal</th>
-                            <th class="text-center">montoPagado</th>
-                            <th class="text-center">vuelto</th>
-                            <th class="text-center">registroPedido</th>
-                            <th class="text-center">entregaPedido</th>
-                            <th class="text-center">nombreUsuario</th>
-                            <th class="text-center">nombreProducto</th>
-                            <th class="text-center">cantidad</th>
-                            <th class="text-center">precioTotal</th>
-                            <th class="text-center">precioUnitario</th>
-                            <th>
-                                <button (click)="nuevoRegistro(modalEdit)" class="btn btn-primary btn-sm">
-                                    <i class="fas fa-plus"></i>
-                                </button>
-                            </th>
+                            <th class="text-center">CodigoPedido</th>
+                            <th class="text-center">Monto Total Pedido</th>
+                            <th class="text-center">Monto Pagado</th>
+                            <th class="text-center">Vuelto</th>
+                            <th class="text-center">Registro Pedido</th>
+                            <th class="text-center">Entrega Pedido</th>
+                            <th class="text-center">Cantidad</th>
+                            <th class="text-center">Precio Unitario</th>
+                            <th class="text-center">Precio Total</th>
+                            <th class="text-center">Nombre Producto</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -85,16 +109,10 @@
                             <td class="text-center">{{d.vuelto}}</td>
                             <td class="text-center">{{d.registroPedido}}</td>
                             <td class="text-center">{{d.entregaPedido}}</td>
-                            <td class="text-center">{{d.nombreUsuario}}</td>
-                            <td class="text-center">{{d.nombreProducto}}</td>
                             <td class="text-center">{{d.cantidad}}</td>
-                            <td class="text-center">{{d.precioTotal}}</td>
                             <td class="text-center">{{d.precioUnitario}}</td>
-                            <td>
-                                <button (click)="editarRegistro(modalEdit,d)" class="btn btn-warning btn-sm">
-                                    <i class="fas fa-edit"></i>
-                                </button> 
-                            </td>
+                            <td class="text-center">{{d.precioTotal}}</td>
+                            <td class="text-center">{{d.nombreProducto}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -129,14 +147,12 @@
 </div>
 
 
-<ng-template #modalEdit>
+<!-- <ng-template #modalEdit>
     <app-mant-pedido-register
         [title]="titleModal"
         [accion]="accionModal"
         [pedido]="pedidoSelect"
-        [tipoUsuario]="tipoUsuario"
         [tipoProducto]="tipoProducto"
-        [tipoDetallePedido]="tipoDetallePedido"
         (closeModalEmmit)="getCloseModalEmmit($event)"
     ></app-mant-pedido-register>
-</ng-template>
+</ng-template> -->

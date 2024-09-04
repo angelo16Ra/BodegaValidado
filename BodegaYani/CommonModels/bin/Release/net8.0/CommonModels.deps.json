@@ -148,7 +148,10 @@
       },
       "Constants/1.0.0": {
         "runtime": {
-          "Constants.dll": {}
+          "Constants.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

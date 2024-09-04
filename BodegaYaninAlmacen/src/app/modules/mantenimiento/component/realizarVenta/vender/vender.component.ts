@@ -21,6 +21,7 @@ import { ResponseFilterGeneric } from '../../../../../models/response-filter-gen
 import { forkJoin } from 'rxjs';
 import { AccionMantConst } from '../../../../../constans/general.constants';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
+import { Vpedido } from '../../../models/VPedido.model';
 
 @Component({
   selector: 'app-vender',
@@ -35,85 +36,48 @@ import { PageChangedEvent } from 'ngx-bootstrap/pagination';
   styleUrl: './vender.component.css'
 })
 export class VenderComponent implements OnInit{
-
-
-  requestFilterGeneric:RequestFilterGeneric = new RequestFilterGeneric();
-  vProducto:Vproducto[] = [];
+  requestFilterGeneric: RequestFilterGeneric = new RequestFilterGeneric();
+  vProducto: Vproducto[] = [];
   productoSelect: Vproducto = new Vproducto();
-  titleModal: string = "";
-  accionModal: number = 0;
   myFormFilter: FormGroup;
   totalItems: number = 0;
   itemsPerPage: number = 5;
   request: RequestFilterGeneric = new RequestFilterGeneric();
   cantidad: number = 1;
-  productosAgregados: Vproducto[] = [];
-  //
-  tipoUnidadMedida: ResponseUnidadMedida[] = [];
-  tipoCategoria: ResponseCategoria[] = [];
-  tipoSubCategoria: ResponseSubCategoria[] = [];
-  tipoProveedor:ResponseProveedor[] = [];
-  tipoAlmacen:ResponseAlmacene[] = [];
+  productosAgregados: Vpedido[] = [];
 
   constructor(
     private _productoService: ProductoService,
-    private modalService: BsModalService,
     private _unidadMedidaService: UnidadMedidaService,
     private _categoriaService: CategoriaService,
     private _subCategoriaService: SubCategoriaService,
-    private _proveedorService: ProveedorService, 
+    private _proveedorService: ProveedorService,
     private _almacenService: AlmacenService,
-
-
-    private _route:Router,
-    private fb: FormBuilder,
-    
-  )
-  {
-    this.myFormFilter= this.fb.group({
-      codigoProducto: ["", []],
-      nombre: ["", []],
-      stock: ["", []],
-      precio: ["", []],
-      descripcion: ["", []],
-      nomnombreMedida: ["", []],
-      nombreCategoria: ["", []],
-      nombreSub: ["", []],
-      nombreProveedor: ["", []],
-      nombreAlmacen: ["", []],
+    private _route: Router,
+    private fb: FormBuilder
+  ) {
+    this.myFormFilter = this.fb.group({
+      codigoProducto: [""],
+      nombre: [""],
+      stock: [""],
+      precio: [""],
+      descripcion: [""],
+      nomnombreMedida: [""],
+      nombreCategoria: [""],
+      nombreSub: [""],
+      nombreProveedor: [""],
+      nombreAlmacen: [""],
+      montoPagado: [0],
+      vuelto: [0],
+      entregaPedido: [""]
     });
   }
 
-  
   ngOnInit(): void {
     this.filtrar();
-    this.listarProducto();
     this.obtenerListas();
-  
-    this.myFormFilter.valueChanges.subscribe(() => {
-      this.filtrar();
-    });
   }
 
-  listarProducto()
-  {
-    this._productoService.genericFilterView(this.requestFilterGeneric).subscribe({
-      next: (data:ResponseFilterGeneric<Vproducto>) => {
-
-        this.vProducto = data.lista;
-
-        console.log(data);
-      },
-
-      error: (err) => {
-        console.log(err);
-      },
-
-      complete: ()=>{
-      }
-    });
-  }
-  
   obtenerListas() {
     forkJoin([
       this._unidadMedidaService.getAll(),
@@ -123,24 +87,14 @@ export class VenderComponent implements OnInit{
       this._almacenService.getAll(),
     ]).subscribe({
       next: (data: any) => {
-        this.tipoUnidadMedida = data[0];
-        this.tipoCategoria = data[1];
-        this.tipoSubCategoria = data[2];
-        this.tipoProveedor = data[3];
-        this.tipoAlmacen = data[4];
+        // Procesar listas aquí si es necesario
       },
-      error: (err) => {
-        console.error("Error al obtener las listas:", err);
-      },
-      complete: () => {
-        console.log("Listas obtenidas correctamente");
-      }
+      error: (err) => console.error("Error al obtener las listas:", err),
     });
   }
-  
+
   filtrar() {
     this.request.filtros = [];
-
     let valueForm = this.myFormFilter.getRawValue();
   
     if (valueForm.codigoProducto) {
@@ -156,56 +110,73 @@ export class VenderComponent implements OnInit{
         this.vProducto = data.lista;
         this.totalItems = data.totalRegistros;
       },
-      error: () => {
-        console.log("error");
-      },
-      complete: () => {
-        console.log("completo");
-      },
+      error: (err) => console.log("Error al filtrar productos:", err),
     });
   }
 
-  changePage(event: PageChangedEvent){
+  changePage(event: PageChangedEvent) {
     this.request.numeroPagina = event.page;
-    // let numeroPagina = event.page;
-    // console.log(numeroPagina);
     this.filtrar();
   }
 
-  changeItemsPerPage()
-  {
+  changeItemsPerPage() {
     this.request.cantidad = this.itemsPerPage;
     this.filtrar();
   }
 
   limpiar() {
     this.myFormFilter.reset({
-      "codigoProducto": '',
-      "nombre": '',
-      "stock": '',
-      "precio": '',
-      "imagen": '',
-      "descripcion": '',
-      "nomnombreMedida": '',
-      "nombreCategoria": '',
-      "nombreSub": '',
-      "nombreProveedor": '',
-      "nombreAlmacen": ''
+      codigoProducto: '',
+      nombre: '',
+      stock: '',
+      precio: '',
+      descripcion: '',
+      nomnombreMedida: '',
+      nombreCategoria: '',
+      nombreSub: '',
+      nombreProveedor: '',
+      nombreAlmacen: '',
+      montoPagado: 0,
+      vuelto: 0,
+      entregaPedido: ''
     });
     this.filtrar();
   }
-  
+
   seleccionarProducto(producto: Vproducto) {
     this.productoSelect = producto;
   }
 
   agregarProducto() {
-    const productoAgregado = { ...this.productoSelect, cantidad: this.cantidad };
-    this.productosAgregados.push(productoAgregado);
-
-    this._route.navigate(['/realizarventa/list-productos'], {
-      state: { productos: this.productosAgregados }
-    });
+    const pedido: Vpedido = new Vpedido();
+    pedido.codigoPedido = this.productosAgregados.length + 1;
+    pedido.cantidad = this.cantidad;
+    pedido.precioUnitario = this.productoSelect.precio;
+    pedido.precioTotal = this.cantidad * this.productoSelect.precio;
+    pedido.nombreProducto = this.productoSelect.nombre;
+    pedido.codigoPedido = this.productoSelect.codigoProducto;
+    this.productosAgregados.push(pedido);
   }
-  
+
+  calcularMontoTotal(): number {
+    return this.productosAgregados.reduce((acc, curr) => acc + curr.precioTotal, 0);
+  }
+
+  guardarPedido() {
+    if (this.productosAgregados.length === 0) {
+      alert('No hay productos en el pedido.');
+      return;
+    }
+
+    const pedido: Vpedido = new Vpedido();
+    pedido.montoTotalPedido = this.calcularMontoTotal();
+    pedido.montoPagado = this.myFormFilter.get('montoPagado')?.value || 0;
+    pedido.vuelto = this.myFormFilter.get('vuelto')?.value || 0;
+    pedido.registroPedido = new Date().toISOString();
+    pedido.entregaPedido = this.myFormFilter.get('entregaPedido')?.value || '';
+
+    // Aquí podrías hacer una llamada al servicio para guardar el pedido en el backend
+    console.log('Pedido guardado:', pedido);
+    alert('Pedido guardado correctamente.');
+  }
 }

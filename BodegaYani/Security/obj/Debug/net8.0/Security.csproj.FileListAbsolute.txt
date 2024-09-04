@@ -60,3 +60,16 @@ E:\BACKYFROM\BodegaYani\Security\obj\Debug\net8.0\Security.dll
 E:\BACKYFROM\BodegaYani\Security\obj\Debug\net8.0\refint\Security.dll
 E:\BACKYFROM\BodegaYani\Security\obj\Debug\net8.0\Security.pdb
 E:\BACKYFROM\BodegaYani\Security\obj\Debug\net8.0\ref\Security.dll
+F:\BodegaValidado\BodegaYani\Security\bin\Debug\net8.0\Security.deps.json
+F:\BodegaValidado\BodegaYani\Security\bin\Debug\net8.0\Security.dll
+F:\BodegaValidado\BodegaYani\Security\bin\Debug\net8.0\Security.pdb
+F:\BodegaValidado\BodegaYani\Security\obj\Debug\net8.0\Security.csproj.AssemblyReference.cache
+F:\BodegaValidado\BodegaYani\Security\obj\Debug\net8.0\Security.GeneratedMSBuildEditorConfig.editorconfig
+F:\BodegaValidado\BodegaYani\Security\obj\Debug\net8.0\Security.AssemblyInfoInputs.cache
+F:\BodegaValidado\BodegaYani\Security\obj\Debug\net8.0\Security.AssemblyInfo.cs
+F:\BodegaValidado\BodegaYani\Security\obj\Debug\net8.0\Security.csproj.CoreCompileInputs.cache
+F:\BodegaValidado\BodegaYani\Security\obj\Debug\net8.0\Security.sourcelink.json
+F:\BodegaValidado\BodegaYani\Security\obj\Debug\net8.0\Security.dll
+F:\BodegaValidado\BodegaYani\Security\obj\Debug\net8.0\refint\Security.dll
+F:\BodegaValidado\BodegaYani\Security\obj\Debug\net8.0\Security.pdb
+F:\BodegaValidado\BodegaYani\Security\obj\Debug\net8.0\ref\Security.dll

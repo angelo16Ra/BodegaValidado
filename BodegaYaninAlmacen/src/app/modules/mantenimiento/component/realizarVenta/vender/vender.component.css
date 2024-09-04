@@ -1,16 +1,20 @@
+/* Contenedor principal */
 .container {
-  margin-top: 10px;
   display: flex;
   width: 100%;
   height: 700px;
+  margin-top: 20px;
+  box-sizing: border-box;
 }
 
-/* Sección izquierda con fondo naranja */
+/* Sección izquierda */
 .left-section {
-  width: 90%;
-  background-color: rgb(231, 241, 255);
+  flex: 3; /* Toma más espacio en comparación con la sección derecha */
+  background-color: #f4f7f9; /* Fondo gris claro */
   padding: 20px;
   box-sizing: border-box;
+  overflow-y: auto; /* Permite el scroll si el contenido excede el área visible */
+  border-right: 2px solid #ddd; /* Línea divisoria entre secciones */
 }
 
 /* Buscador */
@@ -21,19 +25,25 @@
 }
 
 .search-bar input[type="text"] {
-  width: 90%;
+  width: calc(100% - 120px); /* Ajusta el tamaño del campo de búsqueda */
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 .search-bar .search-button {
-  padding: 20px 20px;
-  background-color: #4CAF50; /* Verde */
+  padding: 10px 20px;
+  background-color: #007bff; /* Azul primario */
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-bar .search-button:hover {
+  background-color: #0056b3; /* Azul oscuro al pasar el mouse */
 }
 
 /* Tabla de productos */
@@ -42,31 +52,31 @@
   border-collapse: collapse;
 }
 
-.table th {
-  background-color: rgb(88, 194, 255); /* Azul */
-  color: white;
+.table th, .table td {
+  padding: 12px;
+  border: 1px solid #ddd;
   text-align: center;
-  padding: 10px;
-  border: 1px solid white;
 }
 
-/* Filas de la tabla con fondo blanco y texto negro */
+.table th {
+  background-color: #007bff; /* Azul primario */
+  color: white;
+}
+
 .table td {
-  background-color: white;
-  color: black;
-  padding: 8px;
-  text-align: center;
-  border: 1px solid #ccc;
+  background-color: #ffffff; /* Blanco */
 }
 
 /* Sección derecha */
 .right-section {
-  width: 20%;
+  flex: 1; /* Toma menos espacio en comparación con la sección izquierda */
+  background-color: #f4f7f9; /* Fondo gris claro */
   padding: 20px;
-  background-color: rgb(231, 245, 255);
   box-sizing: border-box;
+  overflow-y: auto; /* Permite el scroll si el contenido excede el área visible */
 }
 
+/* Estilo para productos seleccionados */
 .selected-products {
   display: flex;
   flex-direction: column;
@@ -75,31 +85,33 @@
 
 /* Imagen del producto */
 .product-image {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
   background-color: #ddd;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
+
 /* Estilo para la sección de cantidad */
 .quantity-input {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .quantity-input label {
   font-size: 16px;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 .quantity-input input[type="number"] {
-  width: 70px;
-  padding: 6px;
+  width: 80px;
+  padding: 8px;
   font-size: 16px;
-  text-align: left;
+  text-align: center;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-left: 10px;
@@ -108,20 +120,49 @@
 /* Estilo para el botón agregar producto */
 .btn {
   padding: 12px 25px;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 .btn-warning {
-  background-color: #FFC107;
+  background-color: #ffc107;
   color: white;
-  border: none;
-  border-radius: 5px;
   margin-top: 10px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn-warning:hover {
   background-color: #e0a800;
+}
+
+/* Estilo para campos de entrada de texto y botones */
+input[type="text"], input[type="number"], select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Títulos y encabezados */
+h1, h2, h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
 }

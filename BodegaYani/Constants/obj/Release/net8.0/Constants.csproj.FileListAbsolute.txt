@@ -10,3 +10,15 @@ E:\BACKYFROM\BodegaYani\Constants\obj\Release\net8.0\Constants.dll
 E:\BACKYFROM\BodegaYani\Constants\obj\Release\net8.0\refint\Constants.dll
 E:\BACKYFROM\BodegaYani\Constants\obj\Release\net8.0\Constants.pdb
 E:\BACKYFROM\BodegaYani\Constants\obj\Release\net8.0\ref\Constants.dll
+F:\BodegaValidado\BodegaYani\Constants\bin\Release\net8.0\Constants.deps.json
+F:\BodegaValidado\BodegaYani\Constants\bin\Release\net8.0\Constants.dll
+F:\BodegaValidado\BodegaYani\Constants\bin\Release\net8.0\Constants.pdb
+F:\BodegaValidado\BodegaYani\Constants\obj\Release\net8.0\Constants.GeneratedMSBuildEditorConfig.editorconfig
+F:\BodegaValidado\BodegaYani\Constants\obj\Release\net8.0\Constants.AssemblyInfoInputs.cache
+F:\BodegaValidado\BodegaYani\Constants\obj\Release\net8.0\Constants.AssemblyInfo.cs
+F:\BodegaValidado\BodegaYani\Constants\obj\Release\net8.0\Constants.csproj.CoreCompileInputs.cache
+F:\BodegaValidado\BodegaYani\Constants\obj\Release\net8.0\Constants.sourcelink.json
+F:\BodegaValidado\BodegaYani\Constants\obj\Release\net8.0\Constants.dll
+F:\BodegaValidado\BodegaYani\Constants\obj\Release\net8.0\refint\Constants.dll
+F:\BodegaValidado\BodegaYani\Constants\obj\Release\net8.0\Constants.pdb
+F:\BodegaValidado\BodegaYani\Constants\obj\Release\net8.0\ref\Constants.dll

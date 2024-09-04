@@ -11,3 +11,16 @@ E:\BACKYFROM\BodegaYani\PDF\obj\Release\net8.0\PDF.dll
 E:\BACKYFROM\BodegaYani\PDF\obj\Release\net8.0\refint\PDF.dll
 E:\BACKYFROM\BodegaYani\PDF\obj\Release\net8.0\PDF.pdb
 E:\BACKYFROM\BodegaYani\PDF\obj\Release\net8.0\ref\PDF.dll
+F:\BodegaValidado\BodegaYani\PDF\bin\Release\net8.0\PDF.deps.json
+F:\BodegaValidado\BodegaYani\PDF\bin\Release\net8.0\PDF.dll
+F:\BodegaValidado\BodegaYani\PDF\bin\Release\net8.0\PDF.pdb
+F:\BodegaValidado\BodegaYani\PDF\obj\Release\net8.0\PDF.csproj.AssemblyReference.cache
+F:\BodegaValidado\BodegaYani\PDF\obj\Release\net8.0\PDF.GeneratedMSBuildEditorConfig.editorconfig
+F:\BodegaValidado\BodegaYani\PDF\obj\Release\net8.0\PDF.AssemblyInfoInputs.cache
+F:\BodegaValidado\BodegaYani\PDF\obj\Release\net8.0\PDF.AssemblyInfo.cs
+F:\BodegaValidado\BodegaYani\PDF\obj\Release\net8.0\PDF.csproj.CoreCompileInputs.cache
+F:\BodegaValidado\BodegaYani\PDF\obj\Release\net8.0\PDF.sourcelink.json
+F:\BodegaValidado\BodegaYani\PDF\obj\Release\net8.0\PDF.dll
+F:\BodegaValidado\BodegaYani\PDF\obj\Release\net8.0\refint\PDF.dll
+F:\BodegaValidado\BodegaYani\PDF\obj\Release\net8.0\PDF.pdb
+F:\BodegaValidado\BodegaYani\PDF\obj\Release\net8.0\ref\PDF.dll

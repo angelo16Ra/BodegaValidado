@@ -62,5 +62,5 @@ public partial class Producto
     public virtual UnidadMedida CodigoUnidadMedidaNavigation { get; set; } = null!;
 
     [InverseProperty("CodigoProductoNavigation")]
-    public virtual ICollection<Pedido> Pedidos { get; set; } = new List<Pedido>();
+    public virtual ICollection<DetallePedido> DetallePedidos { get; set; } = new List<DetallePedido>();
 }

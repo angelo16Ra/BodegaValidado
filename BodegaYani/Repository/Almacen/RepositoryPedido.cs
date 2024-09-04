@@ -24,15 +24,6 @@ namespace Repository.Almacen
                         case "codigo":
                             query = query.Where(x => x.CodigoPedido == int.Parse(j.Value));
                             break;
-                        case "codigoUsuario":
-                            query = query.Where(x => x.CodigoUsuario == int.Parse(j.Value));
-                            break;
-                        case "codigoProducto":
-                            query = query.Where(x => x.CodigoProducto == int.Parse(j.Value));
-                            break;
-                        case "CodigoDetallePedido":
-                            query = query.Where(x => x.CodigoDetallePedido == int.Parse(j.Value));
-                            break;
                         case "MontoTotalPedido":
                             query = query.Where(x => x.MontoTotalPedido == decimal.Parse(j.Value));
                             break;
@@ -79,15 +70,6 @@ namespace Repository.Almacen
                         case "codigo":
                             query = query.Where(x => x.CodigoPedido == int.Parse(j.Value));
                             break;
-                        case "codigoUsuario":
-                            query = query.Where(x => x.CodigoUsuario == int.Parse(j.Value));
-                            break;
-                        case "codigoProducto":
-                            query = query.Where(x => x.CodigoProducto == int.Parse(j.Value));
-                            break;
-                        case "CodigoDetallePedido":
-                            query = query.Where(x => x.CodigoDetallePedido == int.Parse(j.Value));
-                            break;
                         case "montoTotalPedido":
                             query = query.Where(x => x.MontoTotalPedido == decimal.Parse(j.Value));
                             break;
@@ -102,9 +84,6 @@ namespace Repository.Almacen
                             break;
                         case "entregaPedido":
                             query = query.Where(x => x.EntregaPedido == DateTime.Parse(j.Value));
-                            break;
-                        case "nombreUsuario":
-                            query = query.Where(x => x.NombreUsuario.ToLower().Contains(j.Value.ToLower()));
                             break;
                         case "nombreProducto":
                             query = query.Where(x => x.NombreProducto.ToLower().Contains(j.Value.ToLower()));

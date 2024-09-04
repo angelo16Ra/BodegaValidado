@@ -42,7 +42,7 @@ export class MantDetallePedidoRegisterComponent implements OnInit{
       cantidad: [null, [Validators.required]],
       precioTotal: [null, [Validators.required]],
       precioUnitario: [null, [Validators.required]],
-      estado: [null, [Validators.required]],
+      estado: [null, [Validators.required]],      
     });
   }
 
@@ -58,8 +58,6 @@ export class MantDetallePedidoRegisterComponent implements OnInit{
   {
 
     this.detallePedidoEnvio= this.myForm.getRawValue();
-
-    this.detallePedidoEnvio.estado = convertToBoolean(this.detallePedidoEnvio.estado.toString());
 
     switch(this.accion){
       case AccionMantConst.crear: 

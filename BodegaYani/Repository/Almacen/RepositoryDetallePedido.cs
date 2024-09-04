@@ -33,9 +33,6 @@ namespace Repository.Almacen
                         case "precioUnitario":
                             query = query.Where(x => x.PrecioUnitario == decimal.Parse(j.Value));
                             break;
-                        case "estado":
-                            query = query.Where(x => x.Estado == bool.Parse(j.Value));
-                            break;
                     }
                 }
             });
