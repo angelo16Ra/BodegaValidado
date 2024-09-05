@@ -59,7 +59,6 @@ export class TemplateSidebarComponent implements OnInit{
           {
             name:"Ventas",target:"TargerMantenimiento", icon:"fas fa-cash-register",
             subMenu:[
-              { name: "Unidad Medida", url: "mantenimiento/unidad-medida", icon: "fas fa-file-alt" },
               { name: "caja", url: "mantenimiento/caja", icon: "fa  s fa-cash-register" },
               { name: "pedido", url: "mantenimiento/pedido", icon: "fas fa-shopping-cart" },
               { name: "RealizarVenta", url: "mantenimiento/realizarVenta", icon: "fas fa-shopping-cart" },
