@@ -198,6 +198,7 @@ export class MantPersonaListComponent {
       "estado" : '',
       "nombreDocumento" : ''
     });
+    this.request = new RequestFilterGeneric(); 
     this.filtrar();
   }
   

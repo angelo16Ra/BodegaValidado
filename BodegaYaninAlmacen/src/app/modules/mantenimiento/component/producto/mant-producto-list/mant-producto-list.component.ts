@@ -229,6 +229,7 @@ export class MantProductoListComponent implements OnInit{
       "nombreProveedor": '',
       "nombreAlmacen": ''
     });
+    this.request = new RequestFilterGeneric(); 
     this.filtrar();
   }
 }

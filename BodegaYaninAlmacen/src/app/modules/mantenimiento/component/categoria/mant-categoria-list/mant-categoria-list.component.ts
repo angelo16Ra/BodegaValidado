@@ -59,7 +59,7 @@ export class MantCategoriaListComponent {
   ngOnInit(): void {
     
     this.filtrar();
-
+    
   }
 
   listarcategorias() {
@@ -169,6 +169,7 @@ export class MantCategoriaListComponent {
       "fechaRegistro": '',
       "fechaActualizacion": '',
     });
+    this.request = new RequestFilterGeneric(); 
     this.filtrar();
   }
 

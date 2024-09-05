@@ -187,6 +187,7 @@ export class MantPedidoListComponent implements OnInit{
       "nombreProveedor": '',
       "nombreAlmacen": ''
     });
+    this.request = new RequestFilterGeneric(); 
     this.filtrar();
   }
 

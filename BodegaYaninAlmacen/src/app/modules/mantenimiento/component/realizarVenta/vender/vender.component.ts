@@ -76,6 +76,9 @@ export class VenderComponent implements OnInit{
   ngOnInit(): void {
     this.filtrar();
     this.obtenerListas();
+    this.myFormFilter.get('nombre')?.valueChanges.subscribe(value => {
+      this.filtrar();
+    });
   }
 
   obtenerListas() {
@@ -140,6 +143,7 @@ export class VenderComponent implements OnInit{
       vuelto: 0,
       entregaPedido: ''
     });
+    this.request = new RequestFilterGeneric(); 
     this.filtrar();
   }
 
@@ -175,8 +179,11 @@ export class VenderComponent implements OnInit{
     pedido.registroPedido = new Date().toISOString();
     pedido.entregaPedido = this.myFormFilter.get('entregaPedido')?.value || '';
 
-    // Aquí podrías hacer una llamada al servicio para guardar el pedido en el backend
     console.log('Pedido guardado:', pedido);
     alert('Pedido guardado correctamente.');
+  }
+
+  eliminarProducto(index: number) {
+    this.productosAgregados.splice(index, 1);
   }
 }

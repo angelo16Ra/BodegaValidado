@@ -165,6 +165,7 @@ export class MantAlmacenListComponent {
       "estado": '',
 
     });
+    this.request = new RequestFilterGeneric(); 
     this.filtrar();
   }
 

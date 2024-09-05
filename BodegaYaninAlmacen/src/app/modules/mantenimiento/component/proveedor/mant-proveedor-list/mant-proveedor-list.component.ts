@@ -171,6 +171,7 @@ export class MantProveedorListComponent {
       "estado": '',
      
     });
+    this.request = new RequestFilterGeneric();  
     this.filtrar();
   }
 }

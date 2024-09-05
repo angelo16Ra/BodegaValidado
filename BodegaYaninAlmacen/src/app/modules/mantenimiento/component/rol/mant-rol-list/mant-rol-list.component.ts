@@ -55,13 +55,7 @@ export class MantRolListComponent implements OnInit{
       estado: ["", []],
     });
   }
-
-
-
-  /**
-   * FIXME: es el primer evento que ejecuta el componente
-   */
-
+  
   ngOnInit(): void {
     
     this.filtrar();
@@ -173,13 +167,16 @@ export class MantRolListComponent implements OnInit{
     this.filtrar();
   }
 
-limpiar() {
+  limpiar() {
     this.myFormFilter.reset({
       "codigoRol": '',
       "nombre": '',
       "descripcion": '',
       "estado": '',
     });
+
+    // Reinicia la solicitud de filtro eliminando cualquier filtro previo.
+    this.request = new RequestFilterGeneric(); 
     this.filtrar();
-  }
+}
 }
