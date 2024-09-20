@@ -4,92 +4,89 @@
             <h1 class="mt-4"> PEDIDOS</h1>
         </div>
         <div class="card-body">
-
-            <!-- TODO: seccion para los filtros  -->
             <form [formGroup]="myFormFilter" class="mb-3">
                 <div class="card bg-light">
                     <div class="card-header bg-secondary text-white">BÚSQUEDA POR FILTRO</div>
                     <div class="card-body">
-                      <div class="row">
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label for="codigoPedido">codigoPedido</label>
-                                <input formControlName="codigoPedido" type="text" class="form-control">   
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="codigoPedido">codigoPedido</label>
+                                    <input formControlName="codigoPedido" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="montoTotalPedido">Monto Total Pedido</label>
+                                    <input formControlName="montoTotalPedido" type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="montoPagado">Monto Pagado</label>
+                                    <input formControlName="montoPagado" type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="vuelto">Vuelto</label>
+                                    <input formControlName="vuelto" type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="registroPedido">Registro Pedido</label>
+                                    <input formControlName="registroPedido" type="datetime-local" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="entregaPedido">Entrega Pedido</label>
+                                    <input formControlName="entregaPedido" type="datetime-local" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="cantidad">Cantidad</label>
+                                    <input formControlName="cantidad" type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="precioUnitario">Precio Unitario</label>
+                                    <input formControlName="precioUnitario" type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="PrecioTotal">Precio Total</label>
+                                    <input formControlName="PrecioTotal" type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="nombreProducto">Nombre Producto</label>
+                                    <input formControlName="nombreProducto" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-end mt-3">
+                                <button (click)="filtrar()" class="btn btn-primary me-2">
+                                    <i class="fas fa-search"></i> Buscar
+                                </button>
+                                <button class="btn btn-secondary" (click)="limpiar()">
+                                    <i class="fas fa-broom"></i> Limpiar
+                                </button>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label for="montoTotalPedido">monto Total Pedido</label>
-                                <input formControlName="montoTotalPedido" type="number" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label for="montoPagado">Monto Pagado</label>
-                                <input formControlName="montoPagado" type="number" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label for="vuelto">Vuelto</label>
-                                <input formControlName="vuelto" type="number" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label for="registroPedido">registroPedido</label>
-                                <input formControlName="registroPedido" type="datetime-local" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label for="entregaPedido">entregaPedido</label>
-                                <input formControlName="entregaPedido" type="datetime-local" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label for="cantidad">Cantidad</label>
-                                <input formControlName="cantidad" type="number" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label for="precioUnitario">precio Unitario</label>
-                                <input formControlName="precioUnitario" type="number" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label for="PrecioTotal">Precio Total</label>
-                                <input formControlName="PrecioTotal" type="number" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label for="nombreProducto">nombreProducto</label>
-                                <input formControlName="nombreProducto" type="text" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-12 text-end mt-3">
-                            <button (click)="filtrar()" class="btn btn-primary me-2">
-                                <i class="fas fa-search"></i> Buscar
-                            </button>
-                            <button class="btn btn-secondary" (click)="limpiar()">
-                                <i class="fas fa-broom"></i> Limpiar
-                            </button>
-                        </div>
-                      </div>
                     </div>
                 </div>
             </form>
 
-            <!-- TODO: tabla de resultados   -->
             <div class="table table-responsive">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th class="text-center">CodigoPedido</th>
+                            <th class="text-center">Codigo Pedido</th>
                             <th class="text-center">Monto Total Pedido</th>
                             <th class="text-center">Monto Pagado</th>
                             <th class="text-center">Vuelto</th>
@@ -102,7 +99,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let d of vPedido ">
+                        <tr *ngFor="let d of vPedido">
                             <td class="text-center">{{d.codigoPedido}}</td>
                             <td class="text-center">{{d.montoTotalPedido}}</td>
                             <td class="text-center">{{d.montoPagado}}</td>
@@ -118,15 +115,12 @@
                 </table>
             </div>
 
-            <!-- TODO: seccion de paginacion  -->
             <div class="row">
                 <div class="col-xs-8 col-8">
-                  <!-- <pagination [totalItems]="66" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)"></pagination> -->
-                    <pagination (pageChanged)="changePage($event)" [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [previousText]="'Anterior'" [nextText]="'Siguiente'"> </pagination>
-                    
+                    <pagination (pageChanged)="changePage($event)" [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [previousText]="'Anterior'" [nextText]="'Siguiente'"></pagination>
                 </div>
                 <div class="col-xs-4 col-4">
-                    <select (change)="changeItemsPerPage()"  [(ngModel)]="itemsPerPage" class="form-select">
+                    <select (change)="changeItemsPerPage()" [(ngModel)]="itemsPerPage" class="form-select">
                         <option value="3">3</option>
                         <option value="5">5</option>
                         <option value="10">10</option>
@@ -134,25 +128,9 @@
                         <option value="30">30</option>
                         <option value="50">50</option>
                         <option value="100">100</option>
-                    </select>     
+                    </select>
                 </div>
-
             </div>
-
-
-
-            
         </div>
     </div>
 </div>
-
-
-<!-- <ng-template #modalEdit>
-    <app-mant-pedido-register
-        [title]="titleModal"
-        [accion]="accionModal"
-        [pedido]="pedidoSelect"
-        [tipoProducto]="tipoProducto"
-        (closeModalEmmit)="getCloseModalEmmit($event)"
-    ></app-mant-pedido-register>
-</ng-template> -->

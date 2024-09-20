@@ -1,111 +1,133 @@
-  <div class="left-section">
-    <h1 class="text-center">Venta de productos</h1>
-    <div class="products-container">
-      <form [formGroup]="myFormFilter">
-        <div class="search-bar">
-          <input formControlName="nombre" type="text" class="form-control" id="nombreProducto" placeholder="Buscar por nombre">
-          <button (click)="limpiar()" class="btn btn-secondary me-2">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-      </form>
+<div class="left-section">
+  <h1 class="text-center">Venta de productos</h1>
+  <div class="products-container">
+    <form [formGroup]="myFormFilter">
+      <div class="search-bar">
+        <input formControlName="nombre" type="text" class="form-control" id="nombreProducto" placeholder="Buscar por nombre">
+        <button (click)="limpiar()" class="btn btn-secondary me-2">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </form>
 
-      <table class="table">
-        <thead>
-          <tr>
-            <th class="text-center">Código</th>
-            <th class="text-center">Nombre</th>
-            <th class="text-center">Unidad Medida</th>
-            <th class="text-center">Categoría</th>
-            <th class="text-center">Almacén</th>
-            <th class="text-center">Stock</th>
-            <th class="text-center">Precio (/s)</th>
-            <th class="text-center">Seleccionar</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let d of vProducto">
-            <td class="text-center">{{ d.codigoProducto }}</td>
-            <td class="text-center">{{ d.nombre }}</td>
-            <td class="text-center">{{ d.nomnombreMedida }}</td>
-            <td class="text-center">{{ d.nombreCategoria }}</td>
-            <td class="text-center">{{ d.nombreAlmacen }}</td>
-            <td class="text-center">{{ d.stock }}</td>
-            <td class="text-center">{{ d.precio }}</td>
-            <td class="text-center">
-              <button class="btn btn-success btn-sm" (click)="seleccionarProducto(d)">
-                <i class="bi bi-plus-circle"></i> Seleccionar
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <div class="row">
-        <div class="col-xs-8 col-8">
-          <pagination
-            (pageChanged)="changePage($event)"
-            [totalItems]="totalItems"
-            [itemsPerPage]="itemsPerPage"
-            [previousText]="'Anterior'"
-            [nextText]="'Siguiente'"
-          >
-          </pagination>
-        </div>
-        <div class="col-xs-4 col-4">
-          <select (change)="changeItemsPerPage()" [(ngModel)]="itemsPerPage" class="form-select">
-            <option value="3">3</option>
-            <option value="5">5</option>
-          </select>
-        </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="text-center">Código</th>
+          <th class="text-center">Nombre</th>
+          <th class="text-center">Unidad Medida</th>
+          <th class="text-center">Categoría</th>
+          <th class="text-center">Almacén</th>
+          <th class="text-center">Stock</th>
+          <th class="text-center">Precio (/s)</th>
+          <th class="text-center">Seleccionar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of vProducto">
+          <td class="text-center">{{ d.codigoProducto }}</td>
+          <td class="text-center">{{ d.nombre }}</td>
+          <td class="text-center">{{ d.nomnombreMedida }}</td>
+          <td class="text-center">{{ d.nombreCategoria }}</td>
+          <td class="text-center">{{ d.nombreAlmacen }}</td>
+          <td class="text-center">{{ d.stock }}</td>
+          <td class="text-center">{{ d.precio }}</td>
+          <td class="text-center">
+            <button class="btn btn-success btn-sm" (click)="seleccionarProducto(d)">
+              <i class="bi bi-plus-circle"></i> Seleccionar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="row">
+      <div class="col-xs-8 col-8">
+        <pagination
+          (pageChanged)="changePage($event)"
+          [totalItems]="totalItems"
+          [itemsPerPage]="itemsPerPage"
+          [previousText]="'Anterior'"
+          [nextText]="'Siguiente'"
+        ></pagination>
+      </div>
+      <div class="col-xs-4 col-4">
+        <select (change)="changeItemsPerPage()" [(ngModel)]="itemsPerPage" class="form-select">
+          <option value="3">3</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="30">30</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="right-section">
-    <div *ngIf="productoSelect" class="selected-products">
-      <div class="product-image">
-        <img [src]="productoSelect.imagen" alt="{{ productoSelect.nombre }}" style="width: 100%; max-height: 200px; object-fit: cover;">
-      </div>
-      <div class="quantity-input">
-        <label for="quantity">Agregar cantidad:</label>
-        <input id="quantity" type="number" min="1" [(ngModel)]="cantidad" class="form-control">
-        <button (click)="agregarProducto()" class="btn btn-primary">Agregar a pedido</button>
-      </div>
+<div class="right-section">
+  <div *ngIf="productoSelect" class="selected-products">
+    <div class="product-image">
+      <img [src]="productoSelect.imagen" alt="{{ productoSelect.nombre }}" style="width: 100%; max-height: 200px; object-fit: cover;">
     </div>
-
-    <div class="order-summary mt-4">
-      <h3>Resumen del pedido</h3>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Nombre Producto</th>
-            <th>Cantidad</th>
-            <th>Precio Unitario</th>
-            <th>Precio Total</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of productosAgregados; let i = index">
-            <td>{{ item.nombreProducto }}</td>
-            <td>{{ item.cantidad }}</td>
-            <td>{{ item.precioUnitario }}</td>
-            <td>{{ item.precioTotal }}</td>
-            <td>
-              <button (click)="eliminarProducto(i)" class="btn btn-danger btn-sm">
-                <i class="bi bi-trash"></i> Eliminar
-              </button>
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="3" class="text-right"><strong>Total:</strong></td>
-            <td><strong>{{ calcularMontoTotal() }}</strong></td>
-          </tr>
-        </tfoot>
-      </table>
-      <button (click)="guardarPedido()" class="btn btn-success">Guardar Pedido</button>
+    <div class="quantity-input">
+      <label for="quantity">Agregar cantidad:</label>
+      <input id="quantity" type="number" min="1" [(ngModel)]="cantidad" class="form-control">
+      <button (click)="agregarProducto()" class="btn btn-primary">Agregar a pedido</button>
     </div>
   </div>
+
+  <div class="order-summary mt-4">
+    <h3>Resumen del pedido</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre Producto</th>
+          <th>Cantidad</th>
+          <th>Precio Unitario</th>
+          <th>Precio Total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of productosAgregados; let i = index">
+          <td>{{ item.nombreProducto }}</td>
+          <td>{{ item.cantidad }}</td>
+          <td>{{ item.precioUnitario }}</td>
+          <td>{{ item.precioTotal }}</td>
+          <td>
+            <button (click)="eliminarProducto(i)" class="btn btn-danger btn-sm">
+              <i class="bi bi-trash"></i> Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" class="text-right"><strong>Total:</strong></td>
+          <td><strong>{{ calcularMontoTotal() }}</strong></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <form [formGroup]="myFormFilter">
+      <div>
+        <label for="montoPagado">Monto Pagado:</label>
+        <input id="montoPagado" type="number" formControlName="montoPagado" class="form-control" (change)="calcularVuelto()">
+      </div>
+
+      <div>
+        <label for="vuelto">Vuelto:</label>
+        <input id="vuelto" type="number" [value]="calcularVuelto()" class="form-control" disabled>
+      </div>
+      <div class="form-group">
+        <label for="entregaPedido">Fecha de Entrega:</label>
+        <input type="date" id="entregaPedido" formControlName="entregaPedido" class="form-control" required />
+      </div>
+    
+    </form>
+
+    <button (click)="guardarPedido()" class="btn btn-success">COMPLETAR VENTA</button>
+  </div>
+</div>

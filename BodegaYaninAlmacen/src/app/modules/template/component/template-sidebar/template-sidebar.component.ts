@@ -95,9 +95,9 @@ export class TemplateSidebarComponent implements OnInit{
         {
           name:"Ventas",target:"TargerMantenimiento", icon:"fas fa-cash-register",
           subMenu:[
-            { name: "producto", url: "mantenimiento/producto", icon: "fas fa-box" },
             { name: "caja", url: "mantenimiento/caja", icon: "fas fa-cash-register" },
             { name: "pedido", url: "mantenimiento/pedido", icon: "fas fa-shopping-cart" },
+            { name: "RealizarVenta", url: "mantenimiento/realizarVenta", icon: "fas fa-shopping-cart" },
 
           ]
         },

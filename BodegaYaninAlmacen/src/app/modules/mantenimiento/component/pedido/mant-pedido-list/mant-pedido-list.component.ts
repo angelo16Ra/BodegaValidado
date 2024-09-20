@@ -10,7 +10,7 @@ import { ProductoService } from '../../../service/producto.service';
 import { PedidoService } from '../../../service/pedido.service';
 import { ResponseFilterGeneric } from '../../../../../models/response-filter-generic.model';
 import { forkJoin } from 'rxjs';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 
@@ -19,7 +19,8 @@ import { PageChangedEvent } from 'ngx-bootstrap/pagination';
   standalone: true,
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ],
   templateUrl: './mant-pedido-list.component.html',
   styleUrl: './mant-pedido-list.component.css'
@@ -64,7 +65,7 @@ export class MantPedidoListComponent implements OnInit{
       cantidad: ["", []],
       precioUnitario: ["", []],
       precioTotal: ["", []],
-      NombreProducto: ["", []],
+      nombreProducto: ["", []],
     });
   }
 
